@@ -9,3 +9,7 @@ latex:
 
 execute:
   timeout: 600
+
+# Information about where the book exists on the web
+repository:
+  url : https://github.com/aiola-lab/from-excel-to-pandas  
