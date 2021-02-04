@@ -307,8 +307,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linear-programming-definition">
-     Linear Programming Definition
+    <a class="reference internal nav-link" href="#linear-programming-lp-definition">
+     Linear Programming (LP) Definition
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -569,7 +569,7 @@
 </div>
 <div class="section" id="installing-the-lp-library">
 <h2>Installing the LP Library<a class="headerlink" href="#installing-the-lp-library" title="Permalink to this headline">¶</a></h2>
-<p>Many times you can find a python library that is implementing many of the fucntions that you are needed. This is another major benefit of Python and Pandas over close tools such as Excel.</p>
+<p>Many times you can find a python library that is implementing many of the fucntions that you need. This is another major benefit of Python over close tools such as Excel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pulp</span>
@@ -579,8 +579,8 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pulp in /Users/guy/miniconda3/lib/python3.8/site-packages (2.4)
 Requirement already satisfied: amply&gt;=0.1.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pulp) (0.1.4)
-Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (2.4.7)
 Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (0.15.2)
+Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (2.4.7)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -593,6 +593,7 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 <h2>Defining the problem variables<a class="headerlink" href="#defining-the-problem-variables" title="Permalink to this headline">¶</a></h2>
 <p>The most complicated part of the analysis is to understand how to map it into the domain of the algorithm.</p>
 <p>The current problem that we want to solve using Linear Programming (LP) is what is the best roaster of NBA players we want to choose for our fantasy league. The output is this case is the list of the players names.</p>
+<p>We will create a list of all the players and assign them either 1 (selected to the team) or 0 (not selected)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
@@ -607,8 +608,8 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 <div class="section" id="problem-target">
 <h3>Problem target<a class="headerlink" href="#problem-target" title="Permalink to this headline">¶</a></h3>
-<p>In the fantasy league we want to maximize the number of points that the player that we choose will score in the next round.</p>
-<p>Let’s start with defining the LP problem as a maximization problem</p>
+<p>In the fantasy league games, we want to maximize the number of points that the player that we choose will score in the next game.</p>
+<p>Let’s start with defining the LP problem as a maximization problem:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s2">&quot;Fantasy_Points_Problem&quot;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
@@ -619,7 +620,7 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 <div class="section" id="variable-dictionaries">
 <h3>Variable Dictionaries<a class="headerlink" href="#variable-dictionaries" title="Permalink to this headline">¶</a></h3>
-<p>The library is expecting to get a set of dictionaries each with the name of the player as common index and the numeric value for each. We will do that for the Points (the target to maximize), the Positions (that we need to pick a couple of each position), and the Salaries (that we need to cap to a specific limit).</p>
+<p>The library is expecting to get a set of dictionaries each with the name of the player as the common index and the numeric value for each. We will do that for the Points (the target to maximize), the Positions (that we need to pick a couple of each position), and the Salaries (that we need to cap to a specific limit).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="p">(</span>
@@ -645,9 +646,9 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
-<div class="section" id="linear-programming-definition">
-<h3>Linear Programming Definition<a class="headerlink" href="#linear-programming-definition" title="Permalink to this headline">¶</a></h3>
-<p>The LP problem is defined as a set of linear expression of the form:
+<div class="section" id="linear-programming-lp-definition">
+<h3>Linear Programming (LP) Definition<a class="headerlink" href="#linear-programming-lp-definition" title="Permalink to this headline">¶</a></h3>
+<p>The LP problem is defined as a set of linear expressions of the form:
 <span class="math notranslate nohighlight">\(𝑎_1𝑥_1+𝑎_2𝑥_2+𝑎_3𝑥_3+...𝑎_𝑛𝑥_𝑛{&lt;=,=,&gt;=}𝑏\)</span></p>
 <p>Where <span class="math notranslate nohighlight">\(x_1, x_2 ... x_n\)</span> are the <em>decision</em> variables we want to choose (the player names), and <span class="math notranslate nohighlight">\(a_1, a_2, ... a_n\)</span> are the <em>objective</em> and <em>constrains</em> variables we have in our data.</p>
 <p>First, we add the LP sum of the points where <span class="math notranslate nohighlight">\(a_i\)</span> is the points each player scored, and <span class="math notranslate nohighlight">\(x_i\)</span> is the player. In a real application we will want to have the projected number of points and not the sum of past points, and we will calculated a forecasting model that can identify trends or recent injuries. But for this simple example, we will take that sum as a good estimator for their expected points in the next game.</p>
@@ -658,7 +659,7 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
-<p>Second, we add the LP sum constrain of the salaries where <span class="math notranslate nohighlight">\(a_i\)</span> is the salary of each player, and <span class="math notranslate nohighlight">\(x_i\)</span> is the player, and the constrain for the sum of all the salaries of the players we choose not to exceed $60,000:</p>
+<p>Second, we add the constrain the salaries where <span class="math notranslate nohighlight">\(a_i\)</span> is the salary of each player, and <span class="math notranslate nohighlight">\(x_i\)</span> is the player, and the constrain value for the sum of all the salaries of the players we choose not to exceed $60,000:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">salaries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">60_000</span>
@@ -666,7 +667,7 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
-<p>Last, we want to make sure that we have right number of players in each position in the fantasy team. We will create a list of players for each of the positions Point Guard (PG), Shooting Guard (SG), Small Forward (SF), Power Forward (PF), and Center (C)</p>
+<p>Last, we want to make sure that we have the right number of players in each position in the fantasy team. We will create a list of players for each of the positions: Point Guard (PG), Shooting Guard (SG), Small Forward (SF), Power Forward (PF), and Center (C)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span> <span class="o">=</span> <span class="p">(</span>
@@ -703,7 +704,7 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
-<p>And add the constrains to have exactly 2 PG, 2 SG, 2 SF, 2 PF and 1 C:</p>
+<p>And add the constrains to have exactly two PG, two SG, two SF, two PF and one C:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set Constraints</span>
@@ -732,7 +733,7 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
-<p>And filter the list of the possible players to the ones that were selected (their variable is 1):</p>
+<p>And filter the list of the possible players to the ones that were selected (their variable value is 1):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> 
