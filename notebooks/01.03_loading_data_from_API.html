@@ -178,6 +178,11 @@
    Logistics Analysis
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.02_Linear_optimization.html">
+   Logistics Analysis
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -357,7 +362,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [403]&gt;
 </pre></div>
 </div>
 </div>
@@ -377,87 +382,46 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">JSONDecodeError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">d4065943b639</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="s1">&#39;items&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">~/miniconda3/lib/python3.8/site-packages/requests/models.py</span> in <span class="ni">json</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span>                     <span class="c1"># used.</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span>                     <span class="k">pass</span>
+<span class="ne">--&gt; </span><span class="mi">898</span>         <span class="k">return</span> <span class="n">complexjson</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span> 
+<span class="g g-Whitespace">    </span><span class="mi">900</span>     <span class="nd">@property</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>project</th>
-      <th>article</th>
-      <th>granularity</th>
-      <th>timestamp</th>
-      <th>access</th>
-      <th>agent</th>
-      <th>views</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>en.wikipedia</td>
-      <td>AMZN</td>
-      <td>daily</td>
-      <td>2020030100</td>
-      <td>all-access</td>
-      <td>all-agents</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>en.wikipedia</td>
-      <td>AMZN</td>
-      <td>daily</td>
-      <td>2020030200</td>
-      <td>all-access</td>
-      <td>all-agents</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>en.wikipedia</td>
-      <td>AMZN</td>
-      <td>daily</td>
-      <td>2020030300</td>
-      <td>all-access</td>
-      <td>all-agents</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>en.wikipedia</td>
-      <td>AMZN</td>
-      <td>daily</td>
-      <td>2020030400</td>
-      <td>all-access</td>
-      <td>all-agents</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>en.wikipedia</td>
-      <td>AMZN</td>
-      <td>daily</td>
-      <td>2020030500</td>
-      <td>all-access</td>
-      <td>all-agents</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">~/miniconda3/lib/python3.8/json/__init__.py</span> in <span class="ni">loads</span><span class="nt">(s, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>             <span class="n">parse_int</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parse_float</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>             <span class="n">parse_constant</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">object_pairs_hook</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">kw</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">357</span>         <span class="k">return</span> <span class="n">_default_decoder</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>         <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONDecoder</span>
+
+<span class="nn">~/miniconda3/lib/python3.8/json/decoder.py</span> in <span class="ni">decode</span><span class="nt">(self, s, _w)</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span> 
+<span class="g g-Whitespace">    </span><span class="mi">336</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">337</span><span class="s2">         obj, end = self.raw_decode(s, idx=_w(s, 0).end())</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span><span class="s2">         end = _w(s, end).end()</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="s2">         if end != len(s):</span>
+
+<span class="nn">~/miniconda3/lib/python3.8/json/decoder.py</span> in <span class="ni">raw_decode</span><span class="nt">(self, s, idx)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span><span class="s2">             obj, end = self.scan_once(s, idx)</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span><span class="s2">         except StopIteration as err:</span>
+<span class="ne">--&gt; </span><span class="mi">355</span><span class="s2">             raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span><span class="s2">         return obj, end</span>
+
+<span class="ne">JSONDecodeError</span>: Expecting value: line 1 column 1 (char 0)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,8 +549,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_10_0.png" src="../_images/01.03_loading_data_from_API_10_0.png" />
-</div>
+<img alt="../_images/01.03_loading_data_from_API_10_0.svg" src="../_images/01.03_loading_data_from_API_10_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="loading-the-page-views-of-all-nasdaq-100">
@@ -1299,8 +1262,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_22_0.png" src="../_images/01.03_loading_data_from_API_22_0.png" />
-</div>
+<img alt="../_images/01.03_loading_data_from_API_22_0.svg" src="../_images/01.03_loading_data_from_API_22_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="loading-from-complex-api">
@@ -1318,28 +1280,22 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython-secrets in /Users/guy/miniconda3/lib/python3.8/site-packages (1.1.1)
 Requirement already satisfied: ipython in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-secrets) (7.18.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: keyring in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-secrets) (21.8.0)
-Requirement already satisfied: traitlets&gt;=4.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (5.0.5)
-Requirement already satisfied: pexpect&gt;4.3; sys_platform != &quot;win32&quot; in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.8.0)
-Requirement already satisfied: pygments in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (2.7.1)
-Requirement already satisfied: backcall in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.2.0)
-Requirement already satisfied: decorator in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.4.2)
+Requirement already satisfied: keyring in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-secrets) (21.8.0)
 Requirement already satisfied: jedi&gt;=0.10 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.17.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (3.0.8)
 Requirement already satisfied: pickleshare in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.7.5)
+Requirement already satisfied: traitlets&gt;=4.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (5.0.5)
+Requirement already satisfied: pygments in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (2.7.1)
 Requirement already satisfied: appnope; sys_platform == &quot;darwin&quot; in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.1.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (3.0.8)
 Requirement already satisfied: setuptools&gt;=18.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (46.4.0.post20200518)
-Requirement already satisfied: ipython-genutils in /Users/guy/miniconda3/lib/python3.8/site-packages (from traitlets&gt;=4.2-&gt;ipython-&gt;ipython-secrets) (0.2.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pexpect&gt;4.3; sys_platform != &quot;win32&quot;-&gt;ipython-&gt;ipython-secrets) (0.6.0)
+Requirement already satisfied: decorator in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.4.2)
+Requirement already satisfied: pexpect&gt;4.3; sys_platform != &quot;win32&quot; in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.8.0)
+Requirement already satisfied: backcall in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.2.0)
 Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from jedi&gt;=0.10-&gt;ipython-&gt;ipython-secrets) (0.7.1)
+Requirement already satisfied: ipython-genutils in /Users/guy/miniconda3/lib/python3.8/site-packages (from traitlets&gt;=4.2-&gt;ipython-&gt;ipython-secrets) (0.2.0)
 Requirement already satisfied: wcwidth in /Users/guy/miniconda3/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;ipython-secrets) (0.2.5)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pexpect&gt;4.3; sys_platform != &quot;win32&quot;-&gt;ipython-&gt;ipython-secrets) (0.6.0)
+Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
@@ -1416,7 +1372,7 @@ Requirement already satisfied: wcwidth in /Users/guy/miniconda3/lib/python3.8/si
     </tr>
     <tr>
       <th>3. Last Refreshed</th>
-      <td>2021-01-15 19:49:00</td>
+      <td>2021-01-08 19:52:00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1435,29 +1391,29 @@ Requirement already satisfied: wcwidth in /Users/guy/miniconda3/lib/python3.8/si
       <td>...</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:07:00</th>
+      <th>2021-01-08 14:58:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3101.0000', '2. high': '3102.3600...</td>
+      <td>{'1. open': '3168.8631', '2. high': '3169.3100...</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:06:00</th>
+      <th>2021-01-08 14:57:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3103.5000', '2. high': '3103.5000...</td>
+      <td>{'1. open': '3168.1900', '2. high': '3169.1800...</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:05:00</th>
+      <th>2021-01-08 14:56:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3104.1100', '2. high': '3104.1800...</td>
+      <td>{'1. open': '3166.7500', '2. high': '3168.1500...</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:04:00</th>
+      <th>2021-01-08 14:55:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3105.9900', '2. high': '3106.1300...</td>
+      <td>{'1. open': '3167.8750', '2. high': '3168.4999...</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:03:00</th>
+      <th>2021-01-08 14:54:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3104.1713', '2. high': '3105.6600...</td>
+      <td>{'1. open': '3167.9000', '2. high': '3168.8300...</td>
     </tr>
   </tbody>
 </table>
@@ -1522,44 +1478,44 @@ Requirement already satisfied: wcwidth in /Users/guy/miniconda3/lib/python3.8/si
   </thead>
   <tbody>
     <tr>
-      <th>2021-01-15 19:49:00</th>
-      <td>3099.0000</td>
-      <td>3099.0000</td>
-      <td>3099.0000</td>
-      <td>3099.0000</td>
-      <td>146</td>
+      <th>2021-01-08 19:52:00</th>
+      <td>3179.9999</td>
+      <td>3179.9999</td>
+      <td>3179.9999</td>
+      <td>3179.9999</td>
+      <td>245</td>
     </tr>
     <tr>
-      <th>2021-01-15 19:38:00</th>
-      <td>3098.1200</td>
-      <td>3098.1200</td>
-      <td>3098.1200</td>
-      <td>3098.1200</td>
-      <td>114</td>
+      <th>2021-01-08 19:35:00</th>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>256</td>
     </tr>
     <tr>
-      <th>2021-01-15 19:24:00</th>
-      <td>3099.0000</td>
-      <td>3099.0000</td>
-      <td>3099.0000</td>
-      <td>3099.0000</td>
-      <td>484</td>
+      <th>2021-01-08 19:29:00</th>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>108</td>
     </tr>
     <tr>
-      <th>2021-01-15 19:17:00</th>
-      <td>3098.0000</td>
-      <td>3098.0000</td>
-      <td>3098.0000</td>
-      <td>3098.0000</td>
-      <td>295</td>
+      <th>2021-01-08 19:13:00</th>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>3178.0000</td>
+      <td>155</td>
     </tr>
     <tr>
-      <th>2021-01-15 18:50:00</th>
-      <td>3098.3300</td>
-      <td>3098.3300</td>
-      <td>3098.0000</td>
-      <td>3098.0000</td>
-      <td>412</td>
+      <th>2021-01-08 19:00:00</th>
+      <td>3179.0300</td>
+      <td>3179.0300</td>
+      <td>3179.0300</td>
+      <td>3179.0300</td>
+      <td>111</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1570,44 +1526,44 @@ Requirement already satisfied: wcwidth in /Users/guy/miniconda3/lib/python3.8/si
       <td>...</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:07:00</th>
-      <td>3101.0000</td>
-      <td>3102.3600</td>
-      <td>3101.0000</td>
-      <td>3101.2300</td>
-      <td>8288</td>
+      <th>2021-01-08 14:58:00</th>
+      <td>3168.8631</td>
+      <td>3169.3100</td>
+      <td>3168.4950</td>
+      <td>3168.4950</td>
+      <td>2734</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:06:00</th>
-      <td>3103.5000</td>
-      <td>3103.5000</td>
-      <td>3100.5400</td>
-      <td>3101.2700</td>
-      <td>11412</td>
+      <th>2021-01-08 14:57:00</th>
+      <td>3168.1900</td>
+      <td>3169.1800</td>
+      <td>3168.1900</td>
+      <td>3168.8505</td>
+      <td>5019</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:05:00</th>
-      <td>3104.1100</td>
-      <td>3104.1800</td>
-      <td>3102.6200</td>
-      <td>3103.2543</td>
-      <td>7850</td>
+      <th>2021-01-08 14:56:00</th>
+      <td>3166.7500</td>
+      <td>3168.1500</td>
+      <td>3166.7500</td>
+      <td>3167.5833</td>
+      <td>4853</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:04:00</th>
-      <td>3105.9900</td>
-      <td>3106.1300</td>
-      <td>3104.3000</td>
-      <td>3104.3000</td>
-      <td>6382</td>
+      <th>2021-01-08 14:55:00</th>
+      <td>3167.8750</td>
+      <td>3168.4999</td>
+      <td>3167.0229</td>
+      <td>3167.0229</td>
+      <td>4240</td>
     </tr>
     <tr>
-      <th>2021-01-15 15:03:00</th>
-      <td>3104.1713</td>
-      <td>3105.6600</td>
-      <td>3104.0700</td>
-      <td>3105.6600</td>
-      <td>7150</td>
+      <th>2021-01-08 14:54:00</th>
+      <td>3167.9000</td>
+      <td>3168.8300</td>
+      <td>3167.3600</td>
+      <td>3167.8600</td>
+      <td>3811</td>
     </tr>
   </tbody>
 </table>
@@ -1643,8 +1599,7 @@ Requirement already satisfied: wcwidth in /Users/guy/miniconda3/lib/python3.8/si
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_37_0.png" src="../_images/01.03_loading_data_from_API_37_0.png" />
-</div>
+<img alt="../_images/01.03_loading_data_from_API_37_0.svg" src="../_images/01.03_loading_data_from_API_37_0.svg" /></div>
 </div>
 </div>
 </div>
