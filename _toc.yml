@@ -22,4 +22,5 @@
 - part: Industries Use Cases
   chapters:
   - file: notebooks/08.01_Logistics_analysis.ipynb
-  - file: notebooks/08.02_Linear_optimization.ipynb
+  - file: notebooks/08.02_Currency_analysis.ipynb
+  - file: notebooks/08.03_Linear_optimization.ipynb
