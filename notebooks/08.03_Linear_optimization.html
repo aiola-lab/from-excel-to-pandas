@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logistics Analysis &#8212; From Excel to Pandas</title>
+    <title>Linear Programming (Optimization) &#8212; From Excel to Pandas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -27,6 +27,8 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -184,7 +186,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Logistics Analysis
+   Linear Programming (Optimization)
   </a>
  </li>
 </ul>
@@ -284,6 +286,38 @@
    Loading the data
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-the-lp-library">
+   Installing the LP Library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-the-problem-variables">
+   Defining the problem variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-target">
+     Problem target
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-dictionaries">
+     Variable Dictionaries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-programming-definition">
+     Linear Programming Definition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lp-solution">
+     LP Solution
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -294,9 +328,9 @@
         
               <div>
                 
-  <div class="section" id="logistics-analysis">
-<h1>Logistics Analysis<a class="headerlink" href="#logistics-analysis" title="Permalink to this headline">¶</a></h1>
-<p>In this example, we will analyze the accuracy of a public transit system. The example, is analyzing three lines in Seattle, and it is based on the great blog post <a class="reference external" href="https://towardsdatascience.com/how-to-solve-optimization-problems-with-python-9088bf8d48e5">How to Solve Optimization Problems with Python</a></p>
+  <div class="section" id="linear-programming-optimization">
+<h1>Linear Programming (Optimization)<a class="headerlink" href="#linear-programming-optimization" title="Permalink to this headline">¶</a></h1>
+<p>In this example, we will use an common analysis that is used to optimize decision based on constrains, and it is based on the great blog post <a class="reference external" href="https://towardsdatascience.com/how-to-solve-optimization-problems-with-python-9088bf8d48e5">How to Solve Optimization Problems with Python</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -324,7 +358,8 @@
 <li><p>Start with the dataframe at index 5 of the list of table from the HTML page above</p></li>
 <li><p>Rename the column to be: Position, Name,FD Points, Salary, Team, Opp., Score, Min, Stats</p></li>
 <li><p>Filter out rows with Position string longer than 2 characters (header lines)</p></li>
-<li><p>Remove the dollar sign ($) and commas from the Salary column</p></li>
+<li><p>Add a column with the float value of the points to be used as the target of the optimization</p></li>
+<li><p>Remove the dollar sign ($) and commas from the Salary column and convert it to integer value</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -392,61 +427,61 @@
       <td>dal</td>
       <td>@ atl</td>
       <td>122-116</td>
-      <td>37:49</td>
+      <td>37:50</td>
       <td>27pt 8rb 14as 2st 1bl 4to 1trey 8-20fg 10-10ft</td>
       <td>62.6</td>
     </tr>
     <tr>
       <th>3</th>
       <td>SG</td>
-      <td>Huerter, Kevin^</td>
-      <td>46</td>
-      <td>4500</td>
-      <td>atl</td>
-      <td>v dal</td>
-      <td>116-122</td>
-      <td>38:30</td>
-      <td>21pt 5rb 10as 2st 2to 4trey 8-15fg 1-1ft</td>
-      <td>46.0</td>
+      <td>George, Paul^</td>
+      <td>49.8</td>
+      <td>8400</td>
+      <td>lac</td>
+      <td>@ cle</td>
+      <td>121-99</td>
+      <td>34:05</td>
+      <td>36pt 4rb 6as 8trey 13-20fg 2-3ft</td>
+      <td>49.8</td>
     </tr>
     <tr>
       <th>4</th>
       <td>SG</td>
-      <td>George, Paul^</td>
-      <td>45.3</td>
-      <td>8400</td>
-      <td>lac</td>
-      <td>@ cle</td>
-      <td>103-93</td>
-      <td>31:48</td>
-      <td>33pt 4rb 5as 7trey 12-19fg 2-3ft</td>
-      <td>45.3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>SG</td>
       <td>Beal, Bradley^</td>
-      <td>44.6</td>
+      <td>48.6</td>
       <td>10800</td>
       <td>was</td>
       <td>@ mia</td>
-      <td>95-89</td>
-      <td>31:59</td>
-      <td>27pt 8rb 4as 1st 1bl 4to 4trey 10-21fg 3-4ft</td>
-      <td>44.6</td>
+      <td>103-100</td>
+      <td>38:05</td>
+      <td>32pt 8rb 4as 1st 1bl 5to 4trey 11-23fg 6-8ft</td>
+      <td>48.6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PG</td>
+      <td>Fox, De'Aaron^</td>
+      <td>46.7</td>
+      <td>8200</td>
+      <td>sac</td>
+      <td>v bos</td>
+      <td>116-111</td>
+      <td>38:05</td>
+      <td>26pt 1rb 11as 2st 3to 2trey 9-17fg 6-6ft</td>
+      <td>46.7</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>PG</td>
-      <td>Young, Trae^</td>
-      <td>38.3</td>
-      <td>10400</td>
-      <td>atl</td>
-      <td>v dal</td>
-      <td>116-122</td>
-      <td>35:40</td>
-      <td>21pt 4rb 9as 1st 4to 3trey 8-18fg 2-3ft</td>
-      <td>38.3</td>
+      <td>SG</td>
+      <td>DeRozan, DeMar^</td>
+      <td>46.6</td>
+      <td>7200</td>
+      <td>sas</td>
+      <td>v min</td>
+      <td>111-108</td>
+      <td>40:17</td>
+      <td>30pt 8rb 6as 2to 10-19fg 10-11ft</td>
+      <td>46.6</td>
     </tr>
     <tr>
       <th>...</th>
@@ -469,7 +504,7 @@
       <td>5900</td>
       <td>chi</td>
       <td>v nyk</td>
-      <td>96-99</td>
+      <td>103-107</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
@@ -482,7 +517,7 @@
       <td>3500</td>
       <td>nor</td>
       <td>v pho</td>
-      <td>22-20</td>
+      <td>123-101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
@@ -495,7 +530,7 @@
       <td>6400</td>
       <td>was</td>
       <td>@ mia</td>
-      <td>95-89</td>
+      <td>103-100</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
@@ -508,7 +543,7 @@
       <td>3500</td>
       <td>mia</td>
       <td>v was</td>
-      <td>89-95</td>
+      <td>100-103</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
@@ -521,7 +556,7 @@
       <td>3500</td>
       <td>lac</td>
       <td>@ cle</td>
-      <td>103-93</td>
+      <td>121-99</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
@@ -531,6 +566,10 @@
 <p>332 rows × 10 columns</p>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="installing-the-lp-library">
+<h2>Installing the LP Library<a class="headerlink" href="#installing-the-lp-library" title="Permalink to this headline">¶</a></h2>
+<p>Many times you can find a python library that is implementing many of the fucntions that you are needed. This is another major benefit of Python and Pandas over close tools such as Excel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pulp</span>
@@ -549,24 +588,27 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a list of players</span>
-<span class="n">players</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">all_players</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
-</pre></div>
 </div>
-</div>
-</div>
+<div class="section" id="defining-the-problem-variables">
+<h2>Defining the problem variables<a class="headerlink" href="#defining-the-problem-variables" title="Permalink to this headline">¶</a></h2>
+<p>The most complicated part of the analysis is to understand how to map it into the domain of the algorithm.</p>
+<p>The current problem that we want to solve using Linear Programming (LP) is what is the best roaster of NBA players we want to choose for our fantasy league. The output is this case is the list of the players names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
 
+<span class="c1"># Get a list of players</span>
+<span class="n">players</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">all_players</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
 <span class="c1"># Set Players to Take either 1 or 0 values (owned or not)</span>
 <span class="n">player_vars</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">players</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="section" id="problem-target">
+<h3>Problem target<a class="headerlink" href="#problem-target" title="Permalink to this headline">¶</a></h3>
+<p>In the fantasy league we want to maximize the number of points that the player that we choose will score in the next round.</p>
+<p>Let’s start with defining the LP problem as a maximization problem</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s2">&quot;Fantasy_Points_Problem&quot;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
@@ -574,6 +616,10 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="variable-dictionaries">
+<h3>Variable Dictionaries<a class="headerlink" href="#variable-dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>The library is expecting to get a set of dictionaries each with the name of the player as common index and the numeric value for each. We will do that for the Points (the target to maximize), the Positions (that we need to pick a couple of each position), and the Salaries (that we need to cap to a specific limit).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="p">(</span>
@@ -581,18 +627,6 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
     <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
     <span class="p">[</span><span class="s1">&#39;Points&#39;</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">all_players</span>
-    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
-    <span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -610,6 +644,13 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="linear-programming-definition">
+<h3>Linear Programming Definition<a class="headerlink" href="#linear-programming-definition" title="Permalink to this headline">¶</a></h3>
+<p>The LP problem is defined as a set of linear expression of the form:
+<span class="math notranslate nohighlight">\(𝑎_1𝑥_1+𝑎_2𝑥_2+𝑎_3𝑥_3+...𝑎_𝑛𝑥_𝑛{&lt;=,=,&gt;=}𝑏\)</span></p>
+<p>Where <span class="math notranslate nohighlight">\(x_1, x_2 ... x_n\)</span> are the <em>decision</em> variables we want to choose (the player names), and <span class="math notranslate nohighlight">\(a_1, a_2, ... a_n\)</span> are the <em>objective</em> and <em>constrains</em> variables we have in our data.</p>
+<p>First, we add the LP sum of the points where <span class="math notranslate nohighlight">\(a_i\)</span> is the points each player scored, and <span class="math notranslate nohighlight">\(x_i\)</span> is the player. In a real application we will want to have the projected number of points and not the sum of past points, and we will calculated a forecasting model that can identify trends or recent injuries. But for this simple example, we will take that sum as a good estimator for their expected points in the next game.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span>
@@ -617,22 +658,55 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
+<p>Second, we add the LP sum constrain of the salaries where <span class="math notranslate nohighlight">\(a_i\)</span> is the salary of each player, and <span class="math notranslate nohighlight">\(x_i\)</span> is the player, and the constrain for the sum of all the salaries of the players we choose not to exceed $60,000:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">salaries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">60000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">salaries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">60_000</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Last, we want to make sure that we have right number of players in each position in the fantasy team. We will create a list of players for each of the positions Point Guard (PG), Shooting Guard (SG), Small Forward (SF), Power Forward (PF), and Center (C)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get indices of players for each position</span>
-<span class="n">pg</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PG&#39;</span><span class="p">]</span>
-<span class="n">sg</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SG&#39;</span><span class="p">]</span>
-<span class="n">sf</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SF&#39;</span><span class="p">]</span>
-<span class="n">pf</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PF&#39;</span><span class="p">]</span>
-<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
-<span class="c1"># Set Constraints</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Position == &#39;PG&#39;&quot;</span><span class="p">)</span>
+    <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">sg</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Position == &#39;SG&#39;&quot;</span><span class="p">)</span>
+    <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Position == &#39;SF&#39;&quot;</span><span class="p">)</span>
+    <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Position == &#39;PF&#39;&quot;</span><span class="p">)</span>
+    <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Position == &#39;C&#39;&quot;</span><span class="p">)</span>
+    <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And add the constrains to have exactly 2 PG, 2 SG, 2 SF, 2 PF and 1 C:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set Constraints</span>
 <span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
 <span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
 <span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sf</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
@@ -642,6 +716,10 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="lp-solution">
+<h3>LP Solution<a class="headerlink" href="#lp-solution" title="Permalink to this headline">¶</a></h3>
+<p>Finally, we can solve the set of linear expressions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
@@ -654,25 +732,32 @@ Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/pyt
 </div>
 </div>
 </div>
+<p>And filter the list of the possible players to the ones that were selected (their variable is 1):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">total_score</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">varValue</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> 
+    <span class="nb">list</span><span class="p">(</span>
+        <span class="nb">filter</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">varValue</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> 
+            <span class="n">total_score</span><span class="o">.</span><span class="n">variables</span><span class="p">()</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player_Doncic,_Luka^
-Player_Embiid,_Joel^
-Player_Hayward,_Gordon^
-Player_Huerter,_Kevin^
-Player_Payton,_Elfrid^
-Player_Portis,_Bobby
-Player_Richardson,_Josh^
-Player_Sabonis,_Domantas^
-Player_Valentine,_Denzel
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Player_Barnes,_Harrison^,
+ Player_Beasley,_Malik^,
+ Player_Doncic,_Luka^,
+ Player_George,_Paul^,
+ Player_Huerter,_Kevin^,
+ Player_Payton,_Elfrid^,
+ Player_Portis,_Bobby,
+ Player_Sabonis,_Domantas^,
+ Player_Zubac,_Ivica]
 </pre></div>
+</div>
 </div>
 </div>
 </div>
