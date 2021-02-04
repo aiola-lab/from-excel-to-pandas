@@ -2,6 +2,8 @@ jupyter-book
 matplotlib
 numpy
 pandas
+lxml
 xlrd
 openpyxl
 seaborn
+pulp
