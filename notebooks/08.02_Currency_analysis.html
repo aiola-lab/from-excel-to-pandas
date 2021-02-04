@@ -1,0 +1,2308 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency &#8212; From Excel to Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Logistics Analysis" href="08.03_Linear_optimization.html" />
+    <link rel="prev" title="Logistics Analysis" href="08.01_Logistics_analysis.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html">
+   Install Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
+   Open in Binder/Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
+   Open in Visual Studio Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Loading Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20loading%20files.html">
+   Loading Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.02%20-%20loading%20data%20from%20HTML.html">
+   Reading Data from Web Sites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.03_loading_data_from_API.html">
+   Reading Data from External API
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Adding Columns
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.01_Adding_New_Columns.html">
+   Adding New Columns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.02_date_functions.html">
+   Date Functions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Aggregation and Reshaping
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.01_pivot_tables.html">
+   Creating a Pivot Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.02_group_by.html">
+   Split a Table into Groups
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Enrichment with Merge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.03_merge.html">
+   Merge/Join Tables (VLOOKUP)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Industries Use Cases
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.01_Logistics_analysis.html">
+   Logistics Analysis
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Currency
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.03_Linear_optimization.html">
+   Logistics Analysis
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/08.02_Currency_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/08.02_Currency_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/08.02_Currency_analysis.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#money-often-costs-too-much-ralph-waldo-emerson">
+   Money often costs too much. –Ralph Waldo Emerson
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-very-used-expression-in-our-life-in-if-utilized-just-right-also-very-useful-br">
+     A very used expression in our life, in if utilized just right, also very useful.
+     <br/>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api">
+   Api
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-let-s-get-our-data-br">
+     Now let’s get our data.
+     <br/>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-as-a-way-to-simplify-repeated-actions">
+   Functions as a way to simplify repeated actions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analysis-use-case">
+   Analysis Use-case
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-use-case-to-show-how-useful-descion-based-data-regarding-currency-could-be">
+     Now, use case to show how useful descion based data regarding currency could be.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bottom-line-if-you-are-converting-nis-to-usd-try-doing-it-on-sunday-you-will-probably-get-the-better-rate">
+     Bottom line, if you are converting NIS to USD, try doing it on Sunday. You will probably get the better rate.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-the-other-hand-if-you-are-trading-usd-to-nis-just-don-t-do-it-on-sunday">
+     On the other hand, if you are trading USD to NIS, just don’t do it on Sunday.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-char">
+     Line Char
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter">
+     Scatter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupby">
+     Groupby
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-here-is-the-answer-for-all-of-our-questions-which-days-are-the-best-day-to-conduct-a-currency-conversion">
+     And here is the answer for all of our questions - which days are the best day to conduct a currency conversion.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="currency">
+<h1>Currency<a class="headerlink" href="#currency" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="money-often-costs-too-much-ralph-waldo-emerson">
+<h2>Money often costs too much. –Ralph Waldo Emerson<a class="headerlink" href="#money-often-costs-too-much-ralph-waldo-emerson" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-very-used-expression-in-our-life-in-if-utilized-just-right-also-very-useful-br">
+<h3>A very used expression in our life, in if utilized just right, also very useful. <br><a class="headerlink" href="#a-very-used-expression-in-our-life-in-if-utilized-just-right-also-very-useful-br" title="Permalink to this headline">¶</a></h3>
+<p>In this notebook, were are query a rest API in order to get the latest currency rates for all currencies out there.<br>
+It will always be as updated to the time-of-running.</p>
+</div>
+</div>
+<div class="section" id="api">
+<h2>Api<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>First of all, let’s get our data.<br>
+In order to do so, let’s start with installing all the needed libraries and get the right imports.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install forex-python
+<span class="kn">from</span> <span class="nn">forex_python.converter</span> <span class="kn">import</span> <span class="n">CurrencyRates</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting forex-python
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading forex-python-1.5.tar.gz (7.5 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /Users/guy/miniconda3/lib/python3.8/site-packages (from forex-python) (2.23.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting simplejson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading simplejson-3.17.2-cp38-cp38-macosx_10_14_x86_64.whl (74 kB)
+?25l
+     |████▍                           | 10 kB 819 kB/s eta 0:00:01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |████████▉                       | 20 kB 196 kB/s eta 0:00:01
+     |█████████████▎                  | 30 kB 294 kB/s eta 0:00:01
+     |█████████████████▊              | 40 kB 392 kB/s eta 0:00:01
+     |██████████████████████          | 51 kB 489 kB/s eta 0:00:01
+     |██████████████████████████▌     | 61 kB 586 kB/s eta 0:00:01
+     |███████████████████████████████ | 71 kB 682 kB/s eta 0:00:01
+     |████████████████████████████████| 74 kB 745 kB/s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.8)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.9)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (3.0.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.6.20)
+Building wheels for collected packages: forex-python
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for forex-python (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25h  Created wheel for forex-python: filename=forex_python-1.5-py3-none-any.whl size=7234 sha256=671db5e65adfd206d7b62f99cca5a414a50e28375e3af25724520d748c5c8849
+  Stored in directory: /Users/guy/Library/Caches/pip/wheels/2a/ed/cd/27419d49a382d12b6beeaa9f7dfc4f1e7b5045e693c7247d6c
+Successfully built forex-python
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: simplejson, forex-python
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed forex-python-1.5 simplejson-3.17.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="now-let-s-get-our-data-br">
+<h3>Now let’s get our data. <br><a class="headerlink" href="#now-let-s-get-our-data-br" title="Permalink to this headline">¶</a></h3>
+<p>In that case, the function here is given by the provider of this API, and for more methods, you can go to the following URL -<br> https://forex-python.readthedocs.io/en/latest/usage.html</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">CurrencyRates</span><span class="p">()</span>
+<span class="n">usd_rates</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s turn it into something more readable, by converting its type from Dictionary to DataFrame, and give its columns more informative names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usd_rates</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">usd_rates</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+             <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+             <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;Rate&#39;</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span> <span class="p">:</span> <span class="s1">&#39;Currency&#39;</span><span class="p">}))</span>
+<span class="n">usd_rates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Currency</th>
+      <th>Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GBP</td>
+      <td>0.733503</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>HKD</td>
+      <td>7.751519</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>IDR</td>
+      <td>14024.199051</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ILS</td>
+      <td>3.303237</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>DKK</td>
+      <td>6.189149</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>INR</td>
+      <td>72.912124</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>CHF</td>
+      <td>0.899060</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>MXN</td>
+      <td>20.153949</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>CZK</td>
+      <td>21.573604</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>SGD</td>
+      <td>1.333195</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>THB</td>
+      <td>30.049929</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>HRK</td>
+      <td>6.298827</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>EUR</td>
+      <td>0.832154</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MYR</td>
+      <td>4.051011</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NOK</td>
+      <td>8.616127</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>CNY</td>
+      <td>6.459432</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BGN</td>
+      <td>1.627528</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHP</td>
+      <td>48.032787</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PLN</td>
+      <td>3.737788</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>ZAR</td>
+      <td>14.929849</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>CAD</td>
+      <td>1.279271</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>ISK</td>
+      <td>129.899309</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>BRL</td>
+      <td>5.347092</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>RON</td>
+      <td>4.055421</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>NZD</td>
+      <td>1.389282</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>TRY</td>
+      <td>7.167846</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>JPY</td>
+      <td>105.059499</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>RUB</td>
+      <td>75.910543</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>KRW</td>
+      <td>1115.944079</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>USD</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>AUD</td>
+      <td>1.313223</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>HUF</td>
+      <td>295.839228</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>SEK</td>
+      <td>8.429974</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now, I’m guessing we could all agree that even as is, this could be one of the most useful datasets for any organization.</p>
+<p>One more useful function, checking the rate on a specific day. <br>
+And also on this case, the function itself will be based on a given method from the API provider.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_time_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">usd_rate_on_date</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">date_time_obj</span><span class="p">)</span>
+<span class="n">usd_rate_on_date</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GBP&#39;: 0.8213774762,
+ &#39;HKD&#39;: 7.7559611152,
+ &#39;IDR&#39;: 14901.9992663243,
+ &#39;ILS&#39;: 3.527054292,
+ &#39;DKK&#39;: 6.8395084373,
+ &#39;INR&#39;: 75.8680300807,
+ &#39;CHF&#39;: 0.9712949376,
+ &#39;MXN&#39;: 22.9686353632,
+ &#39;CZK&#39;: 24.9541452678,
+ &#39;SGD&#39;: 1.4234225972,
+ &#39;THB&#39;: 31.8947175348,
+ &#39;HRK&#39;: 6.9557043287,
+ &#39;EUR&#39;: 0.9170946442,
+ &#39;MYR&#39;: 4.3625275128,
+ &#39;NOK&#39;: 10.0034849596,
+ &#39;CNY&#39;: 7.1347212032,
+ &#39;BGN&#39;: 1.7936537051,
+ &#39;PHP&#39;: 50.76027146,
+ &#39;PLN&#39;: 4.1460931768,
+ &#39;ZAR&#39;: 17.6518708731,
+ &#39;CAD&#39;: 1.40067865,
+ &#39;ISK&#39;: 143.3418928833,
+ &#39;BRL&#39;: 5.581162876,
+ &#39;RON&#39;: 4.441947909,
+ &#39;NZD&#39;: 1.6388481291,
+ &#39;TRY&#39;: 6.8073184153,
+ &#39;JPY&#39;: 107.5385179751,
+ &#39;RUB&#39;: 71.4544203962,
+ &#39;KRW&#39;: 1241.2967718269,
+ &#39;USD&#39;: 1.0,
+ &#39;AUD&#39;: 1.530997799,
+ &#39;HUF&#39;: 320.432868672,
+ &#39;SEK&#39;: 9.663701394}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, try to use the functions showed prior in order to convert it into a dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And in case you wondered how to do so.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usd_rate_on_date</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">usd_rate_on_date</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+             <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+             <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;Rate&#39;</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span> <span class="p">:</span> <span class="s1">&#39;Currency&#39;</span><span class="p">}))</span>
+<span class="n">usd_rate_on_date</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Currency</th>
+      <th>Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GBP</td>
+      <td>0.821377</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>HKD</td>
+      <td>7.755961</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>IDR</td>
+      <td>14901.999266</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ILS</td>
+      <td>3.527054</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>DKK</td>
+      <td>6.839508</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>INR</td>
+      <td>75.868030</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>CHF</td>
+      <td>0.971295</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>MXN</td>
+      <td>22.968635</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>CZK</td>
+      <td>24.954145</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>SGD</td>
+      <td>1.423423</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>THB</td>
+      <td>31.894718</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>HRK</td>
+      <td>6.955704</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>EUR</td>
+      <td>0.917095</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>MYR</td>
+      <td>4.362528</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NOK</td>
+      <td>10.003485</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>CNY</td>
+      <td>7.134721</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BGN</td>
+      <td>1.793654</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PHP</td>
+      <td>50.760271</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PLN</td>
+      <td>4.146093</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>ZAR</td>
+      <td>17.651871</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>CAD</td>
+      <td>1.400679</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>ISK</td>
+      <td>143.341893</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>BRL</td>
+      <td>5.581163</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>RON</td>
+      <td>4.441948</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>NZD</td>
+      <td>1.638848</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>TRY</td>
+      <td>6.807318</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>JPY</td>
+      <td>107.538518</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>RUB</td>
+      <td>71.454420</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>KRW</td>
+      <td>1241.296772</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>USD</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>AUD</td>
+      <td>1.530998</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>HUF</td>
+      <td>320.432869</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>SEK</td>
+      <td>9.663701</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now, we will use the same method, but with another parameter, in order to pull the conversion rate, on a specific date.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">151012</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">date_obj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GBP&#39;: 0.5938004402,
+ &#39;HKD&#39;: 7.7518708731,
+ &#39;IDR&#39;: 11612.4431401321,
+ &#39;ILS&#39;: 3.486133529,
+ &#39;DKK&#39;: 5.4762289068,
+ &#39;INR&#39;: 58.5085840059,
+ &#39;CHF&#39;: 0.8958180484,
+ &#39;MXN&#39;: 12.8934702861,
+ &#39;SGD&#39;: 1.2526779164,
+ &#39;CZK&#39;: 20.1305942773,
+ &#39;THB&#39;: 32.6001467351,
+ &#39;HRK&#39;: 5.5750550257,
+ &#39;EUR&#39;: 0.7336757153,
+ &#39;MYR&#39;: 3.2100513573,
+ &#39;NOK&#39;: 5.9651504035,
+ &#39;CNY&#39;: 6.2377109318,
+ &#39;BGN&#39;: 1.434922964,
+ &#39;PLN&#39;: 3.0543653705,
+ &#39;LTL&#39;: 2.5332355099,
+ &#39;ZAR&#39;: 10.3557593544,
+ &#39;CAD&#39;: 1.0900953778,
+ &#39;PHP&#39;: 43.7212032282,
+ &#39;BRL&#39;: 2.2178283199,
+ &#39;RON&#39;: 3.2358767425,
+ &#39;NZD&#39;: 1.170726339,
+ &#39;TRY&#39;: 2.0888481291,
+ &#39;JPY&#39;: 101.9222303742,
+ &#39;RUB&#39;: 34.1217168012,
+ &#39;KRW&#39;: 1024.8569332355,
+ &#39;USD&#39;: 1.0,
+ &#39;AUD&#39;: 1.0845194424,
+ &#39;HUF&#39;: 222.6632428467,
+ &#39;SEK&#39;: 6.6471019809}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions-as-a-way-to-simplify-repeated-actions">
+<h2>Functions as a way to simplify repeated actions<a class="headerlink" href="#functions-as-a-way-to-simplify-repeated-actions" title="Permalink to this headline">¶</a></h2>
+<p>And since most of us don’t remember or even have the actual time they bought the currency, let’s try to simplify it.</p>
+<p>The following conversion of data types will be used in order to convert a date to the full date and time format.<br>
+The value that we will get in the end, will include the data and a default hour, in our case 00:00:00.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_str</span> <span class="o">=</span> <span class="s1">&#39;01-01-2018&#39;</span>
+<span class="n">date_object</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_str</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">-%m-%Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">())</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">date_object</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GBP&#39;: 0.7397898774,
+ &#39;HKD&#39;: 7.8145584925,
+ &#39;IDR&#39;: 13540.4986241974,
+ &#39;ILS&#39;: 3.4716084383,
+ &#39;DKK&#39;: 6.2077044943,
+ &#39;INR&#39;: 63.8751771867,
+ &#39;CHF&#39;: 0.9757358459,
+ &#39;MXN&#39;: 19.7291753523,
+ &#39;CZK&#39;: 21.2915867589,
+ &#39;SGD&#39;: 1.3361127324,
+ &#39;THB&#39;: 32.6198615859,
+ &#39;HRK&#39;: 6.2036187776,
+ &#39;EUR&#39;: 0.8338197282,
+ &#39;MYR&#39;: 4.0470274327,
+ &#39;NOK&#39;: 8.2050362712,
+ &#39;CNY&#39;: 6.5074626866,
+ &#39;BGN&#39;: 1.6307846244,
+ &#39;PHP&#39;: 49.8582506462,
+ &#39;PLN&#39;: 3.4828650046,
+ &#39;ZAR&#39;: 12.3450346035,
+ &#39;CAD&#39;: 1.2539814892,
+ &#39;BRL&#39;: 3.3126823981,
+ &#39;RON&#39;: 3.8843492037,
+ &#39;NZD&#39;: 1.404986242,
+ &#39;TRY&#39;: 3.7908780122,
+ &#39;JPY&#39;: 112.5740015009,
+ &#39;RUB&#39;: 57.8604185775,
+ &#39;KRW&#39;: 1066.9640623697,
+ &#39;USD&#39;: 1.0,
+ &#39;AUD&#39;: 1.2795797549,
+ &#39;HUF&#39;: 258.7592762445,
+ &#39;SEK&#39;: 8.2079546402}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, we can conduct it as part of a function, in order to simplify it even more.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">date_convert</span><span class="p">(</span><span class="n">date_of_conversion</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">date_str</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">date_str</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">):</span>
+        <span class="n">date_object</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_of_conversion</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">-%m-%Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">date_object</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Make sure you have entered the date in the right format (dd-mm-yyyy)&#39;</span>
+        <span class="k">return</span> <span class="n">message</span>
+
+<span class="n">date_object</span> <span class="o">=</span> <span class="n">date_convert</span><span class="p">(</span><span class="s1">&#39;13-03-1996&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">date_object</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RatesNotAvailableError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mf">5489e3943217</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">date_object</span> <span class="o">=</span> <span class="n">date_convert</span><span class="p">(</span><span class="s1">&#39;13-03-1996&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">date_object</span><span class="p">)</span>
+
+<span class="nn">~/miniconda3/lib/python3.8/site-packages/forex_python/converter.py</span> in <span class="ni">get_rates</span><span class="nt">(self, base_cur, date_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>             <span class="n">rates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode_rates</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>             <span class="k">return</span> <span class="n">rates</span>
+<span class="ne">---&gt; </span><span class="mi">56</span>         <span class="k">raise</span> <span class="n">RatesNotAvailableError</span><span class="p">(</span><span class="s2">&quot;Currency Rates Source Not Ready&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> 
+<span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="k">def</span> <span class="nf">get_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_cur</span><span class="p">,</span> <span class="n">dest_cur</span><span class="p">,</span> <span class="n">date_obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<span class="ne">RatesNotAvailableError</span>: Currency Rates Source Not Ready
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now try it yourself</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_object</span> <span class="o">=</span> <span class="n">date_convert</span><span class="p">(</span><span class="s1">&#39;Enter your date here&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="n">date_object</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s create a calculator that get’s the amount of money we got/payed and in which currency, <br> and returns the values of the transaction, in the type of currency we have converted to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deal_convert</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">from_currency</span><span class="p">,</span> <span class="n">to_currency</span><span class="p">):</span>
+    <span class="n">date_object</span> <span class="o">=</span> <span class="n">date_convert</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">from_currency</span><span class="p">,</span> <span class="n">to_currency</span><span class="p">,</span> <span class="n">amount</span><span class="p">))</span>
+
+<span class="n">deal_convert</span><span class="p">(</span><span class="s1">&#39;01-01-2019&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="s1">&#39;EUR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now this data is extremly useful while trying to calculate all sort of financial related data.</p>
+<p>And for cases when the wanted currency is not available through the API, there is always the option of scrapping it.<br>
+Here is example of scrapping NIS rate to USD from one of the popular financial websites in Israel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://www.globes.co.il/portal/instrument.aspx?instrumentid=10463&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">USD_NIS</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">USD_NIS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.288&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example we have scrapped the currency rate from a non-API based website for our use.<br>
+As for this example, this technique is relevent for many optional analysis.</p>
+</div>
+<div class="section" id="analysis-use-case">
+<h2>Analysis Use-case<a class="headerlink" href="#analysis-use-case" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="now-use-case-to-show-how-useful-descion-based-data-regarding-currency-could-be">
+<h3>Now, use case to show how useful descion based data regarding currency could be.<a class="headerlink" href="#now-use-case-to-show-how-useful-descion-based-data-regarding-currency-could-be" title="Permalink to this headline">¶</a></h3>
+<p>In order to show that, we will scrap a dataframe of the rates of the NIS-USD for the last almost full year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://www.exchange-rates.org/history/ILS/USD/T&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Renaming columns in order to ease the analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;Rate&#39;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">:</span> <span class="s1">&#39;Notes&#39;</span><span class="p">})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Day</th>
+      <th>Rate</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2/1/2021</td>
+      <td>Monday</td>
+      <td>3.29927 ILS</td>
+      <td>USD ILS rate for 2/1/2021</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1/29/2021</td>
+      <td>Friday</td>
+      <td>3.27730 ILS</td>
+      <td>USD ILS rate for 1/29/2021</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1/28/2021</td>
+      <td>Thursday</td>
+      <td>3.28339 ILS</td>
+      <td>USD ILS rate for 1/28/2021</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1/27/2021</td>
+      <td>Wednesday</td>
+      <td>3.26198 ILS</td>
+      <td>USD ILS rate for 1/27/2021</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1/26/2021</td>
+      <td>Tuesday</td>
+      <td>3.26567 ILS</td>
+      <td>USD ILS rate for 1/26/2021</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>8/10/2020</td>
+      <td>Monday</td>
+      <td>3.41772 ILS</td>
+      <td>USD ILS rate for 8/10/2020</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>8/9/2020</td>
+      <td>Sunday</td>
+      <td>3.41120 ILS</td>
+      <td>USD ILS rate for 8/9/2020</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>8/7/2020</td>
+      <td>Friday</td>
+      <td>3.41111 ILS</td>
+      <td>USD ILS rate for 8/7/2020</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>8/6/2020</td>
+      <td>Thursday</td>
+      <td>3.39446 ILS</td>
+      <td>USD ILS rate for 8/6/2020</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>8/5/2020</td>
+      <td>Wednesday</td>
+      <td>3.40728 ILS</td>
+      <td>USD ILS rate for 8/5/2020</td>
+    </tr>
+  </tbody>
+</table>
+<p>137 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Now let’s check in which day of the week, does the rate of the ILS is “stronger”, in accordance to the USD.<br>
+This data could be useful in order to maximize the rate when doing currency conversions on a regular basis.</p>
+<p>But first, let’s “clean” the Rate column using regular expressions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;\d+\.\d+&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Day</th>
+      <th>Rate</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2/1/2021</td>
+      <td>Monday</td>
+      <td>3.29927</td>
+      <td>USD ILS rate for 2/1/2021</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1/29/2021</td>
+      <td>Friday</td>
+      <td>3.27730</td>
+      <td>USD ILS rate for 1/29/2021</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1/28/2021</td>
+      <td>Thursday</td>
+      <td>3.28339</td>
+      <td>USD ILS rate for 1/28/2021</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1/27/2021</td>
+      <td>Wednesday</td>
+      <td>3.26198</td>
+      <td>USD ILS rate for 1/27/2021</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1/26/2021</td>
+      <td>Tuesday</td>
+      <td>3.26567</td>
+      <td>USD ILS rate for 1/26/2021</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>8/10/2020</td>
+      <td>Monday</td>
+      <td>3.41772</td>
+      <td>USD ILS rate for 8/10/2020</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>8/9/2020</td>
+      <td>Sunday</td>
+      <td>3.41120</td>
+      <td>USD ILS rate for 8/9/2020</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>8/7/2020</td>
+      <td>Friday</td>
+      <td>3.41111</td>
+      <td>USD ILS rate for 8/7/2020</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>8/6/2020</td>
+      <td>Thursday</td>
+      <td>3.39446</td>
+      <td>USD ILS rate for 8/6/2020</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>8/5/2020</td>
+      <td>Wednesday</td>
+      <td>3.40728</td>
+      <td>USD ILS rate for 8/5/2020</td>
+    </tr>
+  </tbody>
+</table>
+<p>137 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>And also, if you will check it, our Rate data is a string rather then float.<br>
+So let’s also convert it to float.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      3.29927
+1      3.27730
+2      3.28339
+3      3.26198
+4      3.26567
+        ...   
+132    3.41772
+133    3.41120
+134    3.41111
+135    3.39446
+136    3.40728
+Name: Rate, Length: 137, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s try to check for the days with the highest average rate of the NIS in comparing to the USD.<br>
+In order to do so, we will aggregate with Group-by, all of the values by the Day of the week, and check for the average (mean) value for each day.<br>
+Beside that, let’s also orgnaize our data by some order, in order case descending.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Day&#39;</span><span class="p">])[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
+Sunday       3.410314
+Friday       3.341304
+Monday       3.341083
+Tuesday      3.337737
+Thursday     3.336425
+Wednesday    3.336420
+Name: Rate, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the result is? Well, Sunday.<br></p>
+<p>Our guess is that its related to the fact that Sunday is weekend in the US and therefore, trade volumes are lower.<br>
+This, we assess, reduces the affect of the general trend.</p>
+<p>Another test, would be to do the same, but with the median value for each week day.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Day&#39;</span><span class="p">])[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
+Sunday       3.406880
+Tuesday      3.381130
+Wednesday    3.374810
+Thursday     3.369285
+Friday       3.362920
+Monday       3.362670
+Name: Rate, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bottom-line-if-you-are-converting-nis-to-usd-try-doing-it-on-sunday-you-will-probably-get-the-better-rate">
+<h3>Bottom line, if you are converting NIS to USD, try doing it on Sunday. You will probably get the better rate.<a class="headerlink" href="#bottom-line-if-you-are-converting-nis-to-usd-try-doing-it-on-sunday-you-will-probably-get-the-better-rate" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="on-the-other-hand-if-you-are-trading-usd-to-nis-just-don-t-do-it-on-sunday">
+<h3>On the other hand, if you are trading USD to NIS, just don’t do it on Sunday.<a class="headerlink" href="#on-the-other-hand-if-you-are-trading-usd-to-nis-just-don-t-do-it-on-sunday" title="Permalink to this headline">¶</a></h3>
+<p>One more note, did you notice how we used and scrapped many types of websites, side by our API.<br>
+The reason? None of them was sufficient so we had to dig deeper. and thats OK.<br>
+So, one last tip from us to you, don’t be afraid of looking for your data source.</p>
+</div>
+</div>
+<div class="section" id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="line-char">
+<h3>Line Char<a class="headerlink" href="#line-char" title="Permalink to this headline">¶</a></h3>
+<p>Now, let’s try to better see and and possibly explorate, the results we just recieved.</p>
+<p>First, few actions needs to be done in prior.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Conduction the plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f88f04632b0&gt;
+</pre></div>
+</div>
+<img alt="../_images/08.02_Currency_analysis_59_1.png" src="../_images/08.02_Currency_analysis_59_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="scatter">
+<h3>Scatter<a class="headerlink" href="#scatter" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s try something else, to demonstrate the differences between the days.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Day</th>
+      <th>Rate</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2021-02-01</td>
+      <td>Monday</td>
+      <td>3.29927</td>
+      <td>USD ILS rate for 2/1/2021</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-01-29</td>
+      <td>Friday</td>
+      <td>3.27730</td>
+      <td>USD ILS rate for 1/29/2021</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-01-28</td>
+      <td>Thursday</td>
+      <td>3.28339</td>
+      <td>USD ILS rate for 1/28/2021</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-01-27</td>
+      <td>Wednesday</td>
+      <td>3.26198</td>
+      <td>USD ILS rate for 1/27/2021</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-01-26</td>
+      <td>Tuesday</td>
+      <td>3.26567</td>
+      <td>USD ILS rate for 1/26/2021</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>2020-08-10</td>
+      <td>Monday</td>
+      <td>3.41772</td>
+      <td>USD ILS rate for 8/10/2020</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>2020-08-09</td>
+      <td>Sunday</td>
+      <td>3.41120</td>
+      <td>USD ILS rate for 8/9/2020</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>2020-08-07</td>
+      <td>Friday</td>
+      <td>3.41111</td>
+      <td>USD ILS rate for 8/7/2020</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>2020-08-06</td>
+      <td>Thursday</td>
+      <td>3.39446</td>
+      <td>USD ILS rate for 8/6/2020</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>2020-08-05</td>
+      <td>Wednesday</td>
+      <td>3.40728</td>
+      <td>USD ILS rate for 8/5/2020</td>
+    </tr>
+  </tbody>
+</table>
+<p>137 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Day&#39;</span><span class="p">,</span>
+                      <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rate&#39;</span><span class="p">,</span>
+                      <span class="n">c</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/08.02_Currency_analysis_63_0.png" src="../_images/08.02_Currency_analysis_63_0.png" />
+</div>
+</div>
+<p>Something here looks odd. it appears there are less trading ‘Sundays’, which could be the reason for our former result.<br>
+Let’s check it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Monday&#39;</span><span class="p">]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8, 26, 25)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yep, totally true. therefore, let’s check for the all the other days excluding Sunday.<br>
+Filtering the Dataframe to exclude Sundays.</p>
+<p>And one more data cleaning</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Day&#39;</span><span class="p">,</span>
+                      <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rate&#39;</span><span class="p">,</span>
+                      <span class="n">c</span><span class="o">=</span><span class="s1">&#39;Green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/08.02_Currency_analysis_69_0.png" src="../_images/08.02_Currency_analysis_69_0.png" />
+</div>
+</div>
+<p>And based on the most lower points, we can now see that the lowest days occurs in the mid-of-the-week days.<br></p>
+</div>
+<div class="section" id="groupby">
+<h3>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h3>
+<p>Another cool way to possible be able to better identifiy the aforementioned trend, check the max &amp; min weekly rate, and on which day did it happen.<br>
+First, let’s set up our data in a way that will allow us to analyze it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Week&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">week</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ec2-user/anaconda3/envs/python3/lib/python3.6/site-packages/ipykernel/__main__.py:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  if __name__ == &#39;__main__&#39;:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Day</th>
+      <th>Rate</th>
+      <th>Notes</th>
+      <th>Week</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2021-02-01</td>
+      <td>Monday</td>
+      <td>3.29927</td>
+      <td>USD ILS rate for 2/1/2021</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-01-29</td>
+      <td>Friday</td>
+      <td>3.27730</td>
+      <td>USD ILS rate for 1/29/2021</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-01-28</td>
+      <td>Thursday</td>
+      <td>3.28339</td>
+      <td>USD ILS rate for 1/28/2021</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-01-27</td>
+      <td>Wednesday</td>
+      <td>3.26198</td>
+      <td>USD ILS rate for 1/27/2021</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-01-26</td>
+      <td>Tuesday</td>
+      <td>3.26567</td>
+      <td>USD ILS rate for 1/26/2021</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>2020-08-11</td>
+      <td>Tuesday</td>
+      <td>3.41368</td>
+      <td>USD ILS rate for 8/11/2020</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>2020-08-10</td>
+      <td>Monday</td>
+      <td>3.41772</td>
+      <td>USD ILS rate for 8/10/2020</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>2020-08-07</td>
+      <td>Friday</td>
+      <td>3.41111</td>
+      <td>USD ILS rate for 8/7/2020</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>2020-08-06</td>
+      <td>Thursday</td>
+      <td>3.39446</td>
+      <td>USD ILS rate for 8/6/2020</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>2020-08-05</td>
+      <td>Wednesday</td>
+      <td>3.40728</td>
+      <td>USD ILS rate for 8/5/2020</td>
+      <td>32</td>
+    </tr>
+  </tbody>
+</table>
+<p>129 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>And by a grouped table, which will show the day of each week which the highest, and later the lowest rate occured on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">cmap_reversed</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;summer&#39;</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Week&#39;</span><span class="p">])[</span><span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+     <span class="o">.</span><span class="n">style</span>
+     <span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap_reversed</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ec2-user/anaconda3/envs/python3/lib/python3.6/site-packages/ipykernel/__main__.py:4: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row0_col1 {
+            background-color:  #008066;
+            color:  #f1f1f1;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row1_col1 {
+            background-color:  #399c66;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row2_col1 {
+            background-color:  #399c66;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row3_col1 {
+            background-color:  #43a166;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row4_col1 {
+            background-color:  #52a866;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row5_col1 {
+            background-color:  #c0e066;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row6_col1 {
+            background-color:  #c6e266;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row7_col1 {
+            background-color:  #c6e266;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row8_col1 {
+            background-color:  #bcde66;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row9_col1 {
+            background-color:  #95ca66;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row10_col1 {
+            background-color:  #eaf466;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row11_col1 {
+            background-color:  #d6eb66;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row12_col1 {
+            background-color:  #ffff66;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row13_col1 {
+            background-color:  #ecf666;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row14_col1 {
+            background-color:  #cbe566;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row15_col1 {
+            background-color:  #abd566;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row16_col1 {
+            background-color:  #abd566;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row17_col1 {
+            background-color:  #c6e266;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row18_col1 {
+            background-color:  #c0e066;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row19_col1 {
+            background-color:  #a3d166;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row20_col1 {
+            background-color:  #93c966;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row21_col1 {
+            background-color:  #80c066;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row22_col1 {
+            background-color:  #61b066;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row23_col1 {
+            background-color:  #2d9666;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row24_col1 {
+            background-color:  #279366;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row25_col1 {
+            background-color:  #1d8e66;
+            color:  #000000;
+        }    #T_44ab74e6_6571_11eb_8437_f7c881e899a7row26_col1 {
+            background-color:  #168a66;
+            color:  #000000;
+        }</style><table id="T_44ab74e6_6571_11eb_8437_f7c881e899a7" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row0" class="row_heading level0 row0" >1</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row0_col0" class="data row0 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row0_col1" class="data row0 col1" >3.214590</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row1" class="row_heading level0 row1" >2</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row1_col0" class="data row1 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row1_col1" class="data row1 col1" >3.273360</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row2" class="row_heading level0 row2" >3</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row2_col0" class="data row2 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row2_col1" class="data row2 col1" >3.272890</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row3" class="row_heading level0 row3" >4</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row3_col0" class="data row3 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row3_col1" class="data row3 col1" >3.283390</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row4" class="row_heading level0 row4" >5</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row4_col0" class="data row4 col0" >Monday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row4_col1" class="data row4 col1" >3.299270</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row5" class="row_heading level0 row5" >32</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row5_col0" class="data row5 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row5_col1" class="data row5 col1" >3.411110</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row6" class="row_heading level0 row6" >33</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row6_col0" class="data row6 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row6_col1" class="data row6 col1" >3.417720</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row7" class="row_heading level0 row7" >34</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row7_col0" class="data row7 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row7_col1" class="data row7 col1" >3.417870</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row8" class="row_heading level0 row8" >35</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row8_col0" class="data row8 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row8_col1" class="data row8 col1" >3.406910</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row9" class="row_heading level0 row9" >36</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row9_col0" class="data row9 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row9_col1" class="data row9 col1" >3.367810</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row10" class="row_heading level0 row10" >37</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row10_col0" class="data row10 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row10_col1" class="data row10 col1" >3.454420</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row11" class="row_heading level0 row11" >38</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row11_col0" class="data row11 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row11_col1" class="data row11 col1" >3.433940</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row12" class="row_heading level0 row12" >39</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row12_col0" class="data row12 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row12_col1" class="data row12 col1" >3.476130</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row13" class="row_heading level0 row13" >40</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row13_col0" class="data row13 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row13_col1" class="data row13 col1" >3.456290</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row14" class="row_heading level0 row14" >41</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row14_col0" class="data row14 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row14_col1" class="data row14 col1" >3.422490</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row15" class="row_heading level0 row15" >42</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row15_col0" class="data row15 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row15_col1" class="data row15 col1" >3.389590</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row16" class="row_heading level0 row16" >43</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row16_col0" class="data row16 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row16_col1" class="data row16 col1" >3.389790</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row17" class="row_heading level0 row17" >44</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row17_col0" class="data row17 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row17_col1" class="data row17 col1" >3.417380</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row18" class="row_heading level0 row18" >45</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row18_col0" class="data row18 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row18_col1" class="data row18 col1" >3.411570</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row19" class="row_heading level0 row19" >46</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row19_col0" class="data row19 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row19_col1" class="data row19 col1" >3.381830</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row20" class="row_heading level0 row20" >47</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row20_col0" class="data row20 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row20_col1" class="data row20 col1" >3.364970</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row21" class="row_heading level0 row21" >48</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row21_col0" class="data row21 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row21_col1" class="data row21 col1" >3.345720</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row22" class="row_heading level0 row22" >49</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row22_col0" class="data row22 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row22_col1" class="data row22 col1" >3.314280</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row23" class="row_heading level0 row23" >50</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row23_col0" class="data row23 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row23_col1" class="data row23 col1" >3.261470</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row24" class="row_heading level0 row24" >51</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row24_col0" class="data row24 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row24_col1" class="data row24 col1" >3.255380</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row25" class="row_heading level0 row25" >52</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row25_col0" class="data row25 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row25_col1" class="data row25 col1" >3.244400</td>
+            </tr>
+            <tr>
+                        <th id="T_44ab74e6_6571_11eb_8437_f7c881e899a7level0_row26" class="row_heading level0 row26" >53</th>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row26_col0" class="data row26 col0" >Wednesday</td>
+                        <td id="T_44ab74e6_6571_11eb_8437_f7c881e899a7row26_col1" class="data row26 col1" >3.237460</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Week&#39;</span><span class="p">])[</span><span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Rate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+     <span class="o">.</span><span class="n">style</span>
+     <span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;summer&#39;</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Rate&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ec2-user/anaconda3/envs/python3/lib/python3.6/site-packages/ipykernel/__main__.py:1: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+  if __name__ == &#39;__main__&#39;:
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+    #T_3e810342_6571_11eb_8437_f7c881e899a7row0_col1 {
+            background-color:  #249266;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row1_col1 {
+            background-color:  #008066;
+            color:  #f1f1f1;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row2_col1 {
+            background-color:  #55aa66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row3_col1 {
+            background-color:  #6eb666;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row4_col1 {
+            background-color:  #8ec666;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row5_col1 {
+            background-color:  #deee66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row6_col1 {
+            background-color:  #e5f266;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row7_col1 {
+            background-color:  #dfef66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row8_col1 {
+            background-color:  #c2e066;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row9_col1 {
+            background-color:  #c0e066;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row10_col1 {
+            background-color:  #d4ea66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row11_col1 {
+            background-color:  #f1f866;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row12_col1 {
+            background-color:  #ffff66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row13_col1 {
+            background-color:  #f5fa66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row14_col1 {
+            background-color:  #cde666;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row15_col1 {
+            background-color:  #d1e866;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row16_col1 {
+            background-color:  #cbe566;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row17_col1 {
+            background-color:  #ddee66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row18_col1 {
+            background-color:  #cce666;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row19_col1 {
+            background-color:  #c5e266;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row20_col1 {
+            background-color:  #aed666;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row21_col1 {
+            background-color:  #98cc66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row22_col1 {
+            background-color:  #76bb66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row23_col1 {
+            background-color:  #63b166;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row24_col1 {
+            background-color:  #56ab66;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row25_col1 {
+            background-color:  #45a266;
+            color:  #000000;
+        }    #T_3e810342_6571_11eb_8437_f7c881e899a7row26_col1 {
+            background-color:  #47a366;
+            color:  #000000;
+        }</style><table id="T_3e810342_6571_11eb_8437_f7c881e899a7" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row0" class="row_heading level0 row0" >1</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row0_col0" class="data row0 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row0_col1" class="data row0 col1" >3.174440</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row1" class="row_heading level0 row1" >2</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row1_col0" class="data row1 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row1_col1" class="data row1 col1" >3.130680</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row2" class="row_heading level0 row2" >3</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row2_col0" class="data row2 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row2_col1" class="data row2 col1" >3.231710</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row3" class="row_heading level0 row3" >4</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row3_col0" class="data row3 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row3_col1" class="data row3 col1" >3.261980</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row4" class="row_heading level0 row4" >5</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row4_col0" class="data row4 col0" >Monday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row4_col1" class="data row4 col1" >3.299270</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row5" class="row_heading level0 row5" >32</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row5_col0" class="data row5 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row5_col1" class="data row5 col1" >3.394460</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row6" class="row_heading level0 row6" >33</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row6_col0" class="data row6 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row6_col1" class="data row6 col1" >3.403130</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row7" class="row_heading level0 row7" >34</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row7_col0" class="data row7 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row7_col1" class="data row7 col1" >3.395600</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row8" class="row_heading level0 row8" >35</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row8_col0" class="data row8 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row8_col1" class="data row8 col1" >3.360950</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row9" class="row_heading level0 row9" >36</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row9_col0" class="data row9 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row9_col1" class="data row9 col1" >3.358820</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row10" class="row_heading level0 row10" >37</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row10_col0" class="data row10 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row10_col1" class="data row10 col1" >3.381950</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row11" class="row_heading level0 row11" >38</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row11_col0" class="data row11 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row11_col1" class="data row11 col1" >3.416340</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row12" class="row_heading level0 row12" >39</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row12_col0" class="data row12 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row12_col1" class="data row12 col1" >3.433970</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row13" class="row_heading level0 row13" >40</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row13_col0" class="data row13 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row13_col1" class="data row13 col1" >3.421860</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row14" class="row_heading level0 row14" >41</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row14_col0" class="data row14 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row14_col1" class="data row14 col1" >3.373740</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row15" class="row_heading level0 row15" >42</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row15_col0" class="data row15 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row15_col1" class="data row15 col1" >3.378600</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row16" class="row_heading level0 row16" >43</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row16_col0" class="data row16 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row16_col1" class="data row16 col1" >3.371880</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row17" class="row_heading level0 row17" >44</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row17_col0" class="data row17 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row17_col1" class="data row17 col1" >3.393210</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row18" class="row_heading level0 row18" >45</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row18_col0" class="data row18 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row18_col1" class="data row18 col1" >3.372910</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row19" class="row_heading level0 row19" >46</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row19_col0" class="data row19 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row19_col1" class="data row19 col1" >3.364520</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row20" class="row_heading level0 row20" >47</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row20_col0" class="data row20 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row20_col1" class="data row20 col1" >3.337940</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row21" class="row_heading level0 row21" >48</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row21_col0" class="data row21 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row21_col1" class="data row21 col1" >3.311760</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row22" class="row_heading level0 row22" >49</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row22_col0" class="data row22 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row22_col1" class="data row22 col1" >3.270920</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row23" class="row_heading level0 row23" >50</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row23_col0" class="data row23 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row23_col1" class="data row23 col1" >3.248420</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row24" class="row_heading level0 row24" >51</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row24_col0" class="data row24 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row24_col1" class="data row24 col1" >3.232720</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row25" class="row_heading level0 row25" >52</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row25_col0" class="data row25 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row25_col1" class="data row25 col1" >3.213200</td>
+            </tr>
+            <tr>
+                        <th id="T_3e810342_6571_11eb_8437_f7c881e899a7level0_row26" class="row_heading level0 row26" >53</th>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row26_col0" class="data row26 col0" >Friday</td>
+                        <td id="T_3e810342_6571_11eb_8437_f7c881e899a7row26_col1" class="data row26 col1" >3.215330</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+</div>
+<div class="section" id="and-here-is-the-answer-for-all-of-our-questions-which-days-are-the-best-day-to-conduct-a-currency-conversion">
+<h3>And here is the answer for all of our questions - which days are the best day to conduct a currency conversion.<a class="headerlink" href="#and-here-is-the-answer-for-all-of-our-questions-which-days-are-the-best-day-to-conduct-a-currency-conversion" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="08.01_Logistics_analysis.html" title="previous page">Logistics Analysis</a>
+    <a class='right-next' id="next-link" href="08.03_Linear_optimization.html" title="next page">Logistics Analysis</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Aiola Team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

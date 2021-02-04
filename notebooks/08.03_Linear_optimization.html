@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logistics Analysis &#8212; From Excel to Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Currency" href="08.02_Currency_analysis.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html">
+   Install Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
+   Open in Binder/Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
+   Open in Visual Studio Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Loading Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20loading%20files.html">
+   Loading Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.02%20-%20loading%20data%20from%20HTML.html">
+   Reading Data from Web Sites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.03_loading_data_from_API.html">
+   Reading Data from External API
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Adding Columns
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.01_Adding_New_Columns.html">
+   Adding New Columns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.02_date_functions.html">
+   Date Functions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Aggregation and Reshaping
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.01_pivot_tables.html">
+   Creating a Pivot Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.02_group_by.html">
+   Split a Table into Groups
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Enrichment with Merge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.03_merge.html">
+   Merge/Join Tables (VLOOKUP)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Industries Use Cases
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.01_Logistics_analysis.html">
+   Logistics Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.02_Currency_analysis.html">
+   Currency
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Logistics Analysis
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/08.03_Linear_optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/08.03_Linear_optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/08.03_Linear_optimization.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-the-data">
+   Loading the data
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="logistics-analysis">
+<h1>Logistics Analysis<a class="headerlink" href="#logistics-analysis" title="Permalink to this headline">¶</a></h1>
+<p>In this example, we will analyze the accuracy of a public transit system. The example, is analyzing three lines in Seattle, and it is based on the great blog post <a class="reference external" href="https://towardsdatascience.com/how-to-solve-optimization-problems-with-python-9088bf8d48e5">How to Solve Optimization Problems with Python</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-the-data">
+<h2>Loading the data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We will get the data from HTML table that are available from <a class="reference external" href="http://rotoguru.net">Rotoguru</a>, that is gather stats data from fantasy league. We will focus on the data of the NBA players.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;http://rotoguru1.com/cgi-bin/hyday.pl?game=fd&#39;</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a few HTML table in the page, and after some scorlling we can see that the table with the players data is the 6th one (index=5):</p>
+<ul class="simple">
+<li><p>Start with the dataframe at index 5 of the list of table from the HTML page above</p></li>
+<li><p>Rename the column to be: Position, Name,FD Points, Salary, Team, Opp., Score, Min, Stats</p></li>
+<li><p>Filter out rows with Position string longer than 2 characters (header lines)</p></li>
+<li><p>Remove the dollar sign ($) and commas from the Salary column</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_players</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">dfs</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+            <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span>
+            <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+            <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;FD Points&#39;</span><span class="p">,</span>
+            <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Salary&#39;</span><span class="p">,</span>
+            <span class="mi">4</span><span class="p">:</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span>
+            <span class="mi">5</span><span class="p">:</span><span class="s1">&#39;Opp.&#39;</span><span class="p">,</span>
+            <span class="mi">6</span><span class="p">:</span><span class="s1">&#39;Score&#39;</span><span class="p">,</span>
+            <span class="mi">7</span><span class="p">:</span><span class="s1">&#39;Min&#39;</span><span class="p">,</span>
+            <span class="mi">8</span><span class="p">:</span><span class="s1">&#39;Stats&#39;</span>
+            <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Position.str.len() &lt;= 2&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Points</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;FD Points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Salary</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Salary</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[$,]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="n">all_players</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Position</th>
+      <th>Name</th>
+      <th>FD Points</th>
+      <th>Salary</th>
+      <th>Team</th>
+      <th>Opp.</th>
+      <th>Score</th>
+      <th>Min</th>
+      <th>Stats</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>PG</td>
+      <td>Doncic, Luka^</td>
+      <td>62.6</td>
+      <td>11500</td>
+      <td>dal</td>
+      <td>@ atl</td>
+      <td>122-116</td>
+      <td>37:49</td>
+      <td>27pt 8rb 14as 2st 1bl 4to 1trey 8-20fg 10-10ft</td>
+      <td>62.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SG</td>
+      <td>Huerter, Kevin^</td>
+      <td>46</td>
+      <td>4500</td>
+      <td>atl</td>
+      <td>v dal</td>
+      <td>116-122</td>
+      <td>38:30</td>
+      <td>21pt 5rb 10as 2st 2to 4trey 8-15fg 1-1ft</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SG</td>
+      <td>George, Paul^</td>
+      <td>45.3</td>
+      <td>8400</td>
+      <td>lac</td>
+      <td>@ cle</td>
+      <td>103-93</td>
+      <td>31:48</td>
+      <td>33pt 4rb 5as 7trey 12-19fg 2-3ft</td>
+      <td>45.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>SG</td>
+      <td>Beal, Bradley^</td>
+      <td>44.6</td>
+      <td>10800</td>
+      <td>was</td>
+      <td>@ mia</td>
+      <td>95-89</td>
+      <td>31:59</td>
+      <td>27pt 8rb 4as 1st 1bl 4to 4trey 10-21fg 3-4ft</td>
+      <td>44.6</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG</td>
+      <td>Young, Trae^</td>
+      <td>38.3</td>
+      <td>10400</td>
+      <td>atl</td>
+      <td>v dal</td>
+      <td>116-122</td>
+      <td>35:40</td>
+      <td>21pt 4rb 9as 1st 4to 3trey 8-18fg 2-3ft</td>
+      <td>38.3</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>333</th>
+      <td>C</td>
+      <td>Carter Jr., Wendell</td>
+      <td>0</td>
+      <td>5900</td>
+      <td>chi</td>
+      <td>v nyk</td>
+      <td>96-99</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>C</td>
+      <td>Magnay, Will</td>
+      <td>0</td>
+      <td>3500</td>
+      <td>nor</td>
+      <td>v pho</td>
+      <td>22-20</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>C</td>
+      <td>Bryant, Thomas</td>
+      <td>0</td>
+      <td>6400</td>
+      <td>was</td>
+      <td>@ mia</td>
+      <td>95-89</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>336</th>
+      <td>C</td>
+      <td>Leonard, Meyers</td>
+      <td>0</td>
+      <td>3500</td>
+      <td>mia</td>
+      <td>v was</td>
+      <td>89-95</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>337</th>
+      <td>C</td>
+      <td>Oturu, Daniel</td>
+      <td>0</td>
+      <td>3500</td>
+      <td>lac</td>
+      <td>@ cle</td>
+      <td>103-93</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>332 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pulp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pulp in /Users/guy/miniconda3/lib/python3.8/site-packages (2.4)
+Requirement already satisfied: amply&gt;=0.1.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pulp) (0.1.4)
+Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (2.4.7)
+Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (0.15.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a list of players</span>
+<span class="n">players</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">all_players</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Set Players to Take either 1 or 0 values (owned or not)</span>
+<span class="n">player_vars</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">players</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s2">&quot;Fantasy_Points_Problem&quot;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+    <span class="p">[</span><span class="s1">&#39;Points&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+    <span class="p">[</span><span class="s1">&#39;Position&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">salaries</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+    <span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">salaries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">60000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get indices of players for each position</span>
+<span class="n">pg</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PG&#39;</span><span class="p">]</span>
+<span class="n">sg</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SG&#39;</span><span class="p">]</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SF&#39;</span><span class="p">]</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PF&#39;</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">positions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="c1"># Set Constraints</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sf</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pf</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">total_score</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">varValue</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player_Doncic,_Luka^
+Player_Embiid,_Joel^
+Player_Hayward,_Gordon^
+Player_Huerter,_Kevin^
+Player_Payton,_Elfrid^
+Player_Portis,_Bobby
+Player_Richardson,_Josh^
+Player_Sabonis,_Domantas^
+Player_Valentine,_Denzel
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="08.02_Currency_analysis.html" title="previous page">Currency</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Aiola Team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
