@@ -17,32 +17,26 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-def date_convert(date_of_conversion):
-    if (date_str[2] == '-') and (date_str[5] == '-'):
-        date_object = pd.Timestamp(datetime.strptime(date_of_conversion, '%d-%m-%Y').date())
-        return date_object
-    else:
-        message = 'Make sure you have entered the date in the right format (dd-mm-yyyy)'
-        return message
-
-date_object = date_convert('13-03-1996')
-c.get_rates('USD', date_object)
+(
+     usd_to_ils_rates
+     .assign(Week = df.index.week)
+     .groupby(['Week'])
+     ['Day', 'Rate']
+     .max()
+     .style
+     .background_gradient(cmap='summer', subset=['Rate'])
+)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mRatesNotAvailableError[0m                    Traceback (most recent call last)
-[0;32m<ipython-input-9-5489e3943217>[0m in [0;36m<module>[0;34m[0m
-[1;32m      8[0m [0;34m[0m[0m
-[1;32m      9[0m [0mdate_object[0m [0;34m=[0m [0mdate_convert[0m[0;34m([0m[0;34m'13-03-1996'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 10[0;31m [0mc[0m[0;34m.[0m[0mget_rates[0m[0;34m([0m[0;34m'USD'[0m[0;34m,[0m [0mdate_object[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;32m~/miniconda3/lib/python3.8/site-packages/forex_python/converter.py[0m in [0;36mget_rates[0;34m(self, base_cur, date_obj)[0m
-[1;32m     54[0m             [0mrates[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_decode_rates[0m[0;34m([0m[0mresponse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     55[0m             [0;32mreturn[0m [0mrates[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 56[0;31m         [0;32mraise[0m [0mRatesNotAvailableError[0m[0;34m([0m[0;34m"Currency Rates Source Not Ready"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     57[0m [0;34m[0m[0m
-[1;32m     58[0m     [0;32mdef[0m [0mget_rate[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mbase_cur[0m[0;34m,[0m [0mdest_cur[0m[0;34m,[0m [0mdate_obj[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m<ipython-input-20-9803dcc28f7b>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m (
+[1;32m      2[0m      [0musd_to_ils_rates[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m      [0;34m.[0m[0massign[0m[0;34m([0m[0mWeek[0m [0;34m=[0m [0mdf[0m[0;34m.[0m[0mindex[0m[0;34m.[0m[0mweek[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      4[0m      [0;34m.[0m[0mgroupby[0m[0;34m([0m[0;34m[[0m[0;34m'Week'[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m      [0;34m[[0m[0;34m'Day'[0m[0;34m,[0m [0;34m'Rate'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mRatesNotAvailableError[0m: Currency Rates Source Not Ready
-RatesNotAvailableError: Currency Rates Source Not Ready
+[0;31mAttributeError[0m: 'RangeIndex' object has no attribute 'week'
+AttributeError: 'RangeIndex' object has no attribute 'week'
 
