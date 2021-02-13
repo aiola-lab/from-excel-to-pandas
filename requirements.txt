@@ -7,3 +7,4 @@ xlrd
 openpyxl
 seaborn
 pulp
+statsmodels
