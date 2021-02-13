@@ -356,6 +356,13 @@
     qcut
    </em>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heat-map-with-the-new-value-group">
+     Heat map with the new value group
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -991,6 +998,36 @@ Name: usage_level, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/02.08_group_values_28_0.svg" src="../_images/02.08_group_values_28_0.svg" /></div>
+</div>
+<div class="section" id="heat-map-with-the-new-value-group">
+<h3>Heat map with the new value group<a class="headerlink" href="#heat-map-with-the-new-value-group" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have the new value categories and we can create heat map to see the hours of the day that are the peak hours that can be used with higher price tiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[[</span><span class="s1">&#39;usage_level&#39;</span><span class="p">,</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span><span class="s1">&#39;Date&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;usage_level&#39;</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;count&#39;</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_31_0.svg" src="../_images/02.08_group_values_31_0.svg" /></div>
+</div>
 </div>
 </div>
 </div>

@@ -388,10 +388,10 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: forex-python in /Users/guy/miniconda3/lib/python3.8/site-packages (1.5)
 Requirement already satisfied: requests in /Users/guy/miniconda3/lib/python3.8/site-packages (from forex-python) (2.23.0)
 Requirement already satisfied: simplejson in /Users/guy/miniconda3/lib/python3.8/site-packages (from forex-python) (3.17.2)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.6.20)
-Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (3.0.4)
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.9)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (3.0.4)
 Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.8)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.6.20)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -1099,7 +1099,7 @@ Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in 
 <div class="section" id="additional-rates-sources">
 <h3>Additional rates sources<a class="headerlink" href="#additional-rates-sources" title="Permalink to this headline">¶</a></h3>
 <p>And for cases when the wanted currency is not available through the API, there is always the option of scrapping it.</p>
-<p>Here is example of scrapping NIS rate to USD from one of the popular financial websites in Israel.</p>
+<p>Here is example of scrapping ILS rate to USD from one of the popular financial websites in Israel.</p>
 <ul class="simple">
 <li><p>Create dataframes from HTML tables in the newspaper currency website</p></li>
 <li><p>Take the first table (index 0)</p></li>
@@ -1129,7 +1129,7 @@ As for this example, this technique is relevent for many optional analysis.</p>
 <div class="section" id="analysis-use-case">
 <h2>Analysis Use-case<a class="headerlink" href="#analysis-use-case" title="Permalink to this headline">¶</a></h2>
 <p>Now, use case to show how useful descion based data regarding currency could be.</p>
-<p>In order to show that, we will scrap a dataframe of the rates of the NIS-USD for the last almost full year.</p>
+<p>In order to show that, we will scrap a dataframe of the rates of the ILS-USD for the last almost full year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
@@ -1253,7 +1253,7 @@ As for this example, this technique is relevent for many optional analysis.</p>
 </div>
 <p>Now let’s check in which day of the week, does the rate of the ILS is “stronger”, in accordance to the USD.<br>
 This data could be useful in order to maximize the rate when doing currency conversions on a regular basis.</p>
-<p>Now let’s try to check for the days with the highest average rate of the NIS in comparing to the USD.</p>
+<p>Now let’s try to check for the days with the highest average rate of the ILS in comparing to the USD.</p>
 <p>In order to do so, we will aggregate with Group-by, all of the values by the Day of the week, and check for the average (mean) value for each day.</p>
 <p>Beside that, let’s also orgnaize our data by some order, in order case descending.</p>
 <div class="cell docutils container">
@@ -1312,7 +1312,7 @@ Name: Rate, dtype: float64
 </div>
 <div class="section" id="analysis-output">
 <h3>Analysis output<a class="headerlink" href="#analysis-output" title="Permalink to this headline">¶</a></h3>
-<p>Bottom line, if you are converting NIS to USD, try doing it on Sunday. You will probably get the better rate. On the other hand, if you are trading USD to NIS, just don’t do it on Sunday.</p>
+<p>Bottom line, if you are converting ILS to USD, try doing it on Sunday. You will probably get the better rate. On the other hand, if you are trading USD to ILS, just don’t do it on Sunday.</p>
 <p>One more note, did you notice how we used and scrapped many types of websites, side by our API.</p>
 <p>The reason? None of them was sufficient so we had to dig deeper. and thats OK.</p>
 <p>So, one last tip from us to you, don’t be afraid of looking for your data source.</p>
@@ -1563,216 +1563,216 @@ Filtering the Dataframe to exclude Sundays.</p>
 </pre></div>
 </div>
 <div class="output text_html"><style  type="text/css" >
-#T_deeacb8c_6e14_11eb_bf92_acde48001122row0_col1{
+#T_eae084ae_6e32_11eb_b86f_acde48001122row0_col1{
             background-color:  #008066;
             color:  #f1f1f1;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row1_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row1_col1{
             background-color:  #399c66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row2_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row2_col1{
             background-color:  #389c66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row3_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row3_col1{
             background-color:  #43a166;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row4_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row4_col1{
             background-color:  #52a866;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row5_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row5_col1{
             background-color:  #319866;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row6_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row6_col1{
             background-color:  #b7db66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row7_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row7_col1{
             background-color:  #c6e266;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row8_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row8_col1{
             background-color:  #bbdd66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row9_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row9_col1{
             background-color:  #95ca66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row10_col1,#T_deeacb8c_6e14_11eb_bf92_acde48001122row13_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row10_col1,#T_eae084ae_6e32_11eb_b86f_acde48001122row13_col1{
             background-color:  #ebf566;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row11_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row11_col1{
             background-color:  #d5ea66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row12_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row12_col1{
             background-color:  #ffff66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row14_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row14_col1{
             background-color:  #cae466;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row15_col1,#T_deeacb8c_6e14_11eb_bf92_acde48001122row16_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row15_col1,#T_eae084ae_6e32_11eb_b86f_acde48001122row16_col1{
             background-color:  #aad466;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row17_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row17_col1{
             background-color:  #c5e266;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row18_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row18_col1{
             background-color:  #c0e066;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row19_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row19_col1{
             background-color:  #a3d166;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row20_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row20_col1{
             background-color:  #92c866;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row21_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row21_col1{
             background-color:  #7fbf66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row22_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row22_col1{
             background-color:  #61b066;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row23_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row23_col1{
             background-color:  #2d9666;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row24_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row24_col1{
             background-color:  #279366;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row25_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row25_col1{
             background-color:  #1d8e66;
             color:  #000000;
-        }#T_deeacb8c_6e14_11eb_bf92_acde48001122row26_col1{
+        }#T_eae084ae_6e32_11eb_b86f_acde48001122row26_col1{
             background-color:  #168a66;
             color:  #000000;
-        }</style><table id="T_deeacb8c_6e14_11eb_bf92_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+        }</style><table id="T_eae084ae_6e32_11eb_b86f_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row0_col0" class="data row0 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row0_col1" class="data row0 col1" >3.214590</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row0_col0" class="data row0 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row0_col1" class="data row0 col1" >3.214590</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row1_col0" class="data row1 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row1_col1" class="data row1 col1" >3.273360</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row1_col0" class="data row1 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row1_col1" class="data row1 col1" >3.273360</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row2_col0" class="data row2 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row2_col1" class="data row2 col1" >3.272890</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row2_col0" class="data row2 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row2_col1" class="data row2 col1" >3.272890</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row3_col0" class="data row3 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row3_col1" class="data row3 col1" >3.283390</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row3_col0" class="data row3 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row3_col1" class="data row3 col1" >3.283390</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row4_col0" class="data row4 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row4_col1" class="data row4 col1" >3.299270</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row4_col0" class="data row4 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row4_col1" class="data row4 col1" >3.299270</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row5_col0" class="data row5 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row5_col1" class="data row5 col1" >3.265650</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row5_col0" class="data row5 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row5_col1" class="data row5 col1" >3.265650</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row6" class="row_heading level0 row6" >33</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row6_col0" class="data row6 col0" >Sunday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row6_col1" class="data row6 col1" >3.402560</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row6" class="row_heading level0 row6" >33</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row6_col0" class="data row6 col0" >Sunday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row6_col1" class="data row6 col1" >3.402560</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row7_col0" class="data row7 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row7_col1" class="data row7 col1" >3.417870</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row7_col0" class="data row7 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row7_col1" class="data row7 col1" >3.417870</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row8_col0" class="data row8 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row8_col1" class="data row8 col1" >3.406910</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row8_col0" class="data row8 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row8_col1" class="data row8 col1" >3.406910</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row9_col0" class="data row9 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row9_col1" class="data row9 col1" >3.367810</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row9_col0" class="data row9 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row9_col1" class="data row9 col1" >3.367810</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row10_col0" class="data row10 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row10_col1" class="data row10 col1" >3.456460</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row10_col0" class="data row10 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row10_col1" class="data row10 col1" >3.456460</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row11_col0" class="data row11 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row11_col1" class="data row11 col1" >3.433940</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row11_col0" class="data row11 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row11_col1" class="data row11 col1" >3.433940</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row12_col0" class="data row12 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row12_col1" class="data row12 col1" >3.477150</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row12_col0" class="data row12 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row12_col1" class="data row12 col1" >3.477150</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row13_col0" class="data row13 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row13_col1" class="data row13 col1" >3.456290</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row13_col0" class="data row13 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row13_col1" class="data row13 col1" >3.456290</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row14_col0" class="data row14 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row14_col1" class="data row14 col1" >3.422490</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row14_col0" class="data row14 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row14_col1" class="data row14 col1" >3.422490</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row15_col0" class="data row15 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row15_col1" class="data row15 col1" >3.389590</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row15_col0" class="data row15 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row15_col1" class="data row15 col1" >3.389590</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row16_col0" class="data row16 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row16_col1" class="data row16 col1" >3.389790</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row16_col0" class="data row16 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row16_col1" class="data row16 col1" >3.389790</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row17_col0" class="data row17 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row17_col1" class="data row17 col1" >3.417380</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row17_col0" class="data row17 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row17_col1" class="data row17 col1" >3.417380</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row18_col0" class="data row18 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row18_col1" class="data row18 col1" >3.411570</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row18_col0" class="data row18 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row18_col1" class="data row18 col1" >3.411570</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row19_col0" class="data row19 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row19_col1" class="data row19 col1" >3.381830</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row19_col0" class="data row19 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row19_col1" class="data row19 col1" >3.381830</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row20_col0" class="data row20 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row20_col1" class="data row20 col1" >3.364970</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row20_col0" class="data row20 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row20_col1" class="data row20 col1" >3.364970</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row21_col0" class="data row21 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row21_col1" class="data row21 col1" >3.345720</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row21_col0" class="data row21 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row21_col1" class="data row21 col1" >3.345720</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row22_col0" class="data row22 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row22_col1" class="data row22 col1" >3.314280</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row22_col0" class="data row22 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row22_col1" class="data row22 col1" >3.314280</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row23_col0" class="data row23 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row23_col1" class="data row23 col1" >3.261470</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row23_col0" class="data row23 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row23_col1" class="data row23 col1" >3.261470</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row24_col0" class="data row24 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row24_col1" class="data row24 col1" >3.255380</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row24_col0" class="data row24 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row24_col1" class="data row24 col1" >3.255380</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row25_col0" class="data row25 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row25_col1" class="data row25 col1" >3.244400</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row25_col0" class="data row25 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row25_col1" class="data row25 col1" >3.244400</td>
             </tr>
             <tr>
-                        <th id="T_deeacb8c_6e14_11eb_bf92_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row26_col0" class="data row26 col0" >Wednesday</td>
-                        <td id="T_deeacb8c_6e14_11eb_bf92_acde48001122row26_col1" class="data row26 col1" >3.237460</td>
+                        <th id="T_eae084ae_6e32_11eb_b86f_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row26_col0" class="data row26 col0" >Wednesday</td>
+                        <td id="T_eae084ae_6e32_11eb_b86f_acde48001122row26_col1" class="data row26 col1" >3.237460</td>
             </tr>
     </tbody></table></div></div>
 </div>
@@ -1798,222 +1798,222 @@ Filtering the Dataframe to exclude Sundays.</p>
 </pre></div>
 </div>
 <div class="output text_html"><style  type="text/css" >
-#T_deed9cea_6e14_11eb_bf92_acde48001122row0_col1{
+#T_eae38104_6e32_11eb_b86f_acde48001122row0_col1{
             background-color:  #249266;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row1_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row1_col1{
             background-color:  #008066;
             color:  #f1f1f1;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row2_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row2_col1{
             background-color:  #55aa66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row3_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row3_col1{
             background-color:  #6eb666;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row4_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row4_col1{
             background-color:  #7fbf66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row5_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row5_col1{
             background-color:  #5faf66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row6_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row6_col1{
             background-color:  #e5f266;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row7_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row7_col1{
             background-color:  #dfef66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row8_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row8_col1{
             background-color:  #bfdf66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row9_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row9_col1{
             background-color:  #c0e066;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row10_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row10_col1{
             background-color:  #d4ea66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row11_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row11_col1{
             background-color:  #f1f866;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row12_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row12_col1{
             background-color:  #ffff66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row13_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row13_col1{
             background-color:  #f5fa66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row14_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row14_col1{
             background-color:  #cde666;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row15_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row15_col1{
             background-color:  #d1e866;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row16_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row16_col1{
             background-color:  #cbe566;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row17_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row17_col1{
             background-color:  #ddee66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row18_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row18_col1{
             background-color:  #cce666;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row19_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row19_col1{
             background-color:  #c5e266;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row20_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row20_col1{
             background-color:  #aed666;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row21_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row21_col1{
             background-color:  #98cc66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row22_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row22_col1{
             background-color:  #76bb66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row23_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row23_col1{
             background-color:  #63b166;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row24_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row24_col1{
             background-color:  #56ab66;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row25_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row25_col1{
             background-color:  #45a266;
             color:  #000000;
-        }#T_deed9cea_6e14_11eb_bf92_acde48001122row26_col1{
+        }#T_eae38104_6e32_11eb_b86f_acde48001122row26_col1{
             background-color:  #47a366;
             color:  #000000;
-        }</style><table id="T_deed9cea_6e14_11eb_bf92_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+        }</style><table id="T_eae38104_6e32_11eb_b86f_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row0_col0" class="data row0 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row0_col1" class="data row0 col1" >3.174440</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row0_col0" class="data row0 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row0_col1" class="data row0 col1" >3.174440</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row1_col0" class="data row1 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row1_col1" class="data row1 col1" >3.130680</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row1_col0" class="data row1 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row1_col1" class="data row1 col1" >3.130680</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row2_col0" class="data row2 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row2_col1" class="data row2 col1" >3.231710</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row2_col0" class="data row2 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row2_col1" class="data row2 col1" >3.231710</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row3_col0" class="data row3 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row3_col1" class="data row3 col1" >3.261980</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row3_col0" class="data row3 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row3_col1" class="data row3 col1" >3.261980</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row4_col0" class="data row4 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row4_col1" class="data row4 col1" >3.281990</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row4_col0" class="data row4 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row4_col1" class="data row4 col1" >3.281990</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row5_col0" class="data row5 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row5_col1" class="data row5 col1" >3.244050</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row5_col0" class="data row5 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row5_col1" class="data row5 col1" >3.244050</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row6" class="row_heading level0 row6" >33</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row6_col0" class="data row6 col0" >Sunday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row6_col1" class="data row6 col1" >3.402560</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row6" class="row_heading level0 row6" >33</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row6_col0" class="data row6 col0" >Sunday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row6_col1" class="data row6 col1" >3.402560</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row7_col0" class="data row7 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row7_col1" class="data row7 col1" >3.395600</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row7_col0" class="data row7 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row7_col1" class="data row7 col1" >3.395600</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row8_col0" class="data row8 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row8_col1" class="data row8 col1" >3.358090</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row8_col0" class="data row8 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row8_col1" class="data row8 col1" >3.358090</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row9_col0" class="data row9 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row9_col1" class="data row9 col1" >3.358820</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row9_col0" class="data row9 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row9_col1" class="data row9 col1" >3.358820</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row10_col0" class="data row10 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row10_col1" class="data row10 col1" >3.381950</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row10_col0" class="data row10 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row10_col1" class="data row10 col1" >3.381950</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row11_col0" class="data row11 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row11_col1" class="data row11 col1" >3.416340</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row11_col0" class="data row11 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row11_col1" class="data row11 col1" >3.416340</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row12_col0" class="data row12 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row12_col1" class="data row12 col1" >3.433970</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row12_col0" class="data row12 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row12_col1" class="data row12 col1" >3.433970</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row13_col0" class="data row13 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row13_col1" class="data row13 col1" >3.421860</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row13_col0" class="data row13 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row13_col1" class="data row13 col1" >3.421860</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row14_col0" class="data row14 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row14_col1" class="data row14 col1" >3.373740</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row14_col0" class="data row14 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row14_col1" class="data row14 col1" >3.373740</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row15_col0" class="data row15 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row15_col1" class="data row15 col1" >3.378600</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row15_col0" class="data row15 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row15_col1" class="data row15 col1" >3.378600</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row16_col0" class="data row16 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row16_col1" class="data row16 col1" >3.371880</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row16_col0" class="data row16 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row16_col1" class="data row16 col1" >3.371880</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row17_col0" class="data row17 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row17_col1" class="data row17 col1" >3.393210</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row17_col0" class="data row17 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row17_col1" class="data row17 col1" >3.393210</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row18_col0" class="data row18 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row18_col1" class="data row18 col1" >3.372910</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row18_col0" class="data row18 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row18_col1" class="data row18 col1" >3.372910</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row19_col0" class="data row19 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row19_col1" class="data row19 col1" >3.364520</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row19_col0" class="data row19 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row19_col1" class="data row19 col1" >3.364520</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row20_col0" class="data row20 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row20_col1" class="data row20 col1" >3.337940</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row20_col0" class="data row20 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row20_col1" class="data row20 col1" >3.337940</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row21_col0" class="data row21 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row21_col1" class="data row21 col1" >3.311760</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row21_col0" class="data row21 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row21_col1" class="data row21 col1" >3.311760</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row22_col0" class="data row22 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row22_col1" class="data row22 col1" >3.270920</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row22_col0" class="data row22 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row22_col1" class="data row22 col1" >3.270920</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row23_col0" class="data row23 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row23_col1" class="data row23 col1" >3.248420</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row23_col0" class="data row23 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row23_col1" class="data row23 col1" >3.248420</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row24_col0" class="data row24 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row24_col1" class="data row24 col1" >3.232720</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row24_col0" class="data row24 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row24_col1" class="data row24 col1" >3.232720</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row25_col0" class="data row25 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row25_col1" class="data row25 col1" >3.213200</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row25_col0" class="data row25 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row25_col1" class="data row25 col1" >3.213200</td>
             </tr>
             <tr>
-                        <th id="T_deed9cea_6e14_11eb_bf92_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row26_col0" class="data row26 col0" >Friday</td>
-                        <td id="T_deed9cea_6e14_11eb_bf92_acde48001122row26_col1" class="data row26 col1" >3.215330</td>
+                        <th id="T_eae38104_6e32_11eb_b86f_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row26_col0" class="data row26 col0" >Friday</td>
+                        <td id="T_eae38104_6e32_11eb_b86f_acde48001122row26_col1" class="data row26 col1" >3.215330</td>
             </tr>
     </tbody></table></div></div>
 </div>
