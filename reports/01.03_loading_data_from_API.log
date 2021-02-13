@@ -43,26 +43,25 @@ df.head(5)
 [0m[1;32m    899[0m [0;34m[0m[0m
 [1;32m    900[0m     [0;34m@[0m[0mproperty[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/miniconda3/lib/python3.8/json/__init__.py[0m in [0;36mloads[0;34m(s, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)[0m
-[1;32m    355[0m             [0mparse_int[0m [0;32mis[0m [0;32mNone[0m [0;32mand[0m [0mparse_float[0m [0;32mis[0m [0;32mNone[0m [0;32mand[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    356[0m             parse_constant is None and object_pairs_hook is None and not kw):
-[0;32m--> 357[0;31m         [0;32mreturn[0m [0m_default_decoder[0m[0;34m.[0m[0mdecode[0m[0;34m([0m[0ms[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    358[0m     [0;32mif[0m [0mcls[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    359[0m         [0mcls[0m [0;34m=[0m [0mJSONDecoder[0m[0;34m[0m[0;34m[0m[0m
+[0;32m~/miniconda3/lib/python3.8/site-packages/simplejson/__init__.py[0m in [0;36mloads[0;34m(s, encoding, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, use_decimal, **kw)[0m
+[1;32m    523[0m             [0mparse_constant[0m [0;32mis[0m [0;32mNone[0m [0;32mand[0m [0mobject_pairs_hook[0m [0;32mis[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    524[0m             and not use_decimal and not kw):
+[0;32m--> 525[0;31m         [0;32mreturn[0m [0m_default_decoder[0m[0;34m.[0m[0mdecode[0m[0;34m([0m[0ms[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    526[0m     [0;32mif[0m [0mcls[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    527[0m         [0mcls[0m [0;34m=[0m [0mJSONDecoder[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/miniconda3/lib/python3.8/json/decoder.py[0m in [0;36mdecode[0;34m(self, s, _w)[0m
-[1;32m    335[0m [0;34m[0m[0m
-[1;32m    336[0m         """
-[0;32m--> 337[0;31m         [0mobj[0m[0;34m,[0m [0mend[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mraw_decode[0m[0;34m([0m[0ms[0m[0;34m,[0m [0midx[0m[0;34m=[0m[0m_w[0m[0;34m([0m[0ms[0m[0;34m,[0m [0;36m0[0m[0;34m)[0m[0;34m.[0m[0mend[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    338[0m         [0mend[0m [0;34m=[0m [0m_w[0m[0;34m([0m[0ms[0m[0;34m,[0m [0mend[0m[0;34m)[0m[0;34m.[0m[0mend[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    339[0m         [0;32mif[0m [0mend[0m [0;34m!=[0m [0mlen[0m[0;34m([0m[0ms[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m~/miniconda3/lib/python3.8/site-packages/simplejson/decoder.py[0m in [0;36mdecode[0;34m(self, s, _w, _PY3)[0m
+[1;32m    368[0m         [0;32mif[0m [0m_PY3[0m [0;32mand[0m [0misinstance[0m[0;34m([0m[0ms[0m[0;34m,[0m [0mbytes[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    369[0m             [0ms[0m [0;34m=[0m [0mstr[0m[0;34m([0m[0ms[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mencoding[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 370[0;31m         [0mobj[0m[0;34m,[0m [0mend[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mraw_decode[0m[0;34m([0m[0ms[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    371[0m         [0mend[0m [0;34m=[0m [0m_w[0m[0;34m([0m[0ms[0m[0;34m,[0m [0mend[0m[0;34m)[0m[0;34m.[0m[0mend[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    372[0m         [0;32mif[0m [0mend[0m [0;34m!=[0m [0mlen[0m[0;34m([0m[0ms[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/miniconda3/lib/python3.8/json/decoder.py[0m in [0;36mraw_decode[0;34m(self, s, idx)[0m
-[1;32m    353[0m             [0mobj[0m[0;34m,[0m [0mend[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mscan_once[0m[0;34m([0m[0ms[0m[0;34m,[0m [0midx[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    354[0m         [0;32mexcept[0m [0mStopIteration[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 355[0;31m             [0;32mraise[0m [0mJSONDecodeError[0m[0;34m([0m[0;34m"Expecting value"[0m[0;34m,[0m [0ms[0m[0;34m,[0m [0merr[0m[0;34m.[0m[0mvalue[0m[0;34m)[0m [0;32mfrom[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    356[0m         [0;32mreturn[0m [0mobj[0m[0;34m,[0m [0mend[0m[0;34m[0m[0;34m[0m[0m
-
+[0;32m~/miniconda3/lib/python3.8/site-packages/simplejson/decoder.py[0m in [0;36mraw_decode[0;34m(self, s, idx, _w, _PY3)[0m
+[1;32m    398[0m             [0;32melif[0m [0mord0[0m [0;34m==[0m [0;36m0xef[0m [0;32mand[0m [0ms[0m[0;34m[[0m[0midx[0m[0;34m:[0m[0midx[0m [0;34m+[0m [0;36m3[0m[0;34m][0m [0;34m==[0m [0;34m'\xef\xbb\xbf'[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    399[0m                 [0midx[0m [0;34m+=[0m [0;36m3[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 400[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mscan_once[0m[0;34m([0m[0ms[0m[0;34m,[0m [0midx[0m[0;34m=[0m[0m_w[0m[0;34m([0m[0ms[0m[0;34m,[0m [0midx[0m[0;34m)[0m[0;34m.[0m[0mend[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
 [0;31mJSONDecodeError[0m: Expecting value: line 1 column 1 (char 0)
 JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 

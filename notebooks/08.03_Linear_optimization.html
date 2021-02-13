@@ -38,7 +38,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Currency" href="08.02_Currency_analysis.html" />
+    <link rel="prev" title="Currency Rate Analysis" href="08.02_Currency_analysis.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -138,6 +138,11 @@
    Date Functions
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.08_group_values.html">
+   How to Group Values
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -181,7 +186,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08.02_Currency_analysis.html">
-   Currency
+   Currency Rate Analysis
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -358,8 +363,8 @@
 <li><p>Start with the dataframe at index 5 of the list of table from the HTML page above</p></li>
 <li><p>Rename the column to be: Position, Name,FD Points, Salary, Team, Opp., Score, Min, Stats</p></li>
 <li><p>Filter out rows with Position string longer than 2 characters (header lines)</p></li>
-<li><p>Add a column with the float value of the points to be used as the target of the optimization</p></li>
-<li><p>Remove the dollar sign ($) and commas from the Salary column and convert it to integer value</p></li>
+<li><p>Add a column called <em>Points</em> with the float value of the points to be used as the target of the optimization</p></li>
+<li><p>Remove the dollar sign and commas ([$,]) from the Salary column and convert it to its integer value</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -422,66 +427,66 @@
       <th>2</th>
       <td>PG</td>
       <td>Doncic, Luka^</td>
-      <td>62.6</td>
-      <td>11500</td>
+      <td>76.6</td>
+      <td>11200</td>
       <td>dal</td>
-      <td>@ atl</td>
-      <td>122-116</td>
-      <td>37:50</td>
-      <td>27pt 8rb 14as 2st 1bl 4to 1trey 8-20fg 10-10ft</td>
-      <td>62.6</td>
+      <td>v nor</td>
+      <td>143-130</td>
+      <td>40:01</td>
+      <td>46pt 8rb 12as 1st 1bl 3to 5trey 17-30fg 7-9ft</td>
+      <td>76.6</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>SG</td>
-      <td>George, Paul^</td>
-      <td>49.8</td>
-      <td>8400</td>
-      <td>lac</td>
-      <td>@ cle</td>
-      <td>121-99</td>
-      <td>34:05</td>
-      <td>36pt 4rb 6as 8trey 13-20fg 2-3ft</td>
-      <td>49.8</td>
+      <td>PG</td>
+      <td>Rozier, Terry^</td>
+      <td>52.9</td>
+      <td>6400</td>
+      <td>cha</td>
+      <td>v min</td>
+      <td>120-114</td>
+      <td>40:55</td>
+      <td>41pt 7rb 3as 1bl 4to 6trey 13-20fg 9-9ft</td>
+      <td>52.9</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>SG</td>
-      <td>Beal, Bradley^</td>
-      <td>48.6</td>
-      <td>10800</td>
+      <td>PG</td>
+      <td>Westbrook, Russell^</td>
+      <td>46.8</td>
+      <td>8700</td>
       <td>was</td>
-      <td>@ mia</td>
-      <td>103-100</td>
-      <td>38:05</td>
-      <td>32pt 8rb 4as 1st 1bl 5to 4trey 11-23fg 6-8ft</td>
-      <td>48.6</td>
+      <td>v nyk</td>
+      <td>91-109</td>
+      <td>34:32</td>
+      <td>23pt 9rb 10as 1st 5to 10-22fg 3-6ft</td>
+      <td>46.8</td>
     </tr>
     <tr>
       <th>5</th>
       <td>PG</td>
-      <td>Fox, De'Aaron^</td>
-      <td>46.7</td>
-      <td>8200</td>
-      <td>sac</td>
-      <td>v bos</td>
-      <td>116-111</td>
-      <td>38:05</td>
-      <td>26pt 1rb 11as 2st 3to 2trey 9-17fg 6-6ft</td>
-      <td>46.7</td>
+      <td>Ball, LaMelo^</td>
+      <td>44.2</td>
+      <td>7700</td>
+      <td>cha</td>
+      <td>v min</td>
+      <td>120-114</td>
+      <td>36:45</td>
+      <td>20pt 11rb 4as 3st 4to 2trey 8-15fg 2-2ft</td>
+      <td>44.2</td>
     </tr>
     <tr>
       <th>6</th>
       <td>SG</td>
-      <td>DeRozan, DeMar^</td>
-      <td>46.6</td>
-      <td>7200</td>
-      <td>sas</td>
-      <td>v min</td>
-      <td>111-108</td>
-      <td>40:17</td>
-      <td>30pt 8rb 6as 2to 10-19fg 10-11ft</td>
-      <td>46.6</td>
+      <td>LaVine, Zach^</td>
+      <td>43.8</td>
+      <td>9600</td>
+      <td>chi</td>
+      <td>v lac</td>
+      <td>106-125</td>
+      <td>34:12</td>
+      <td>26pt 9rb 6as 2to 4trey 11-21fg</td>
+      <td>43.8</td>
     </tr>
     <tr>
       <th>...</th>
@@ -497,73 +502,73 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>333</th>
-      <td>C</td>
-      <td>Carter Jr., Wendell</td>
-      <td>0</td>
-      <td>5900</td>
-      <td>chi</td>
-      <td>v nyk</td>
-      <td>103-107</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>334</th>
+      <th>364</th>
       <td>C</td>
       <td>Magnay, Will</td>
       <td>0</td>
       <td>3500</td>
       <td>nor</td>
-      <td>v pho</td>
-      <td>123-101</td>
+      <td>@ dal</td>
+      <td>130-143</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>335</th>
+      <th>365</th>
+      <td>C</td>
+      <td>Azubuike, Udoka</td>
+      <td>0</td>
+      <td>3500</td>
+      <td>uta</td>
+      <td>v mil</td>
+      <td>129-115</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>366</th>
       <td>C</td>
       <td>Bryant, Thomas</td>
       <td>0</td>
-      <td>6400</td>
+      <td>6200</td>
       <td>was</td>
-      <td>@ mia</td>
-      <td>103-100</td>
+      <td>v nyk</td>
+      <td>91-109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>336</th>
+      <th>367</th>
       <td>C</td>
-      <td>Leonard, Meyers</td>
+      <td>Plumlee, Mason</td>
       <td>0</td>
-      <td>3500</td>
-      <td>mia</td>
-      <td>v was</td>
-      <td>100-103</td>
+      <td>7400</td>
+      <td>det</td>
+      <td>@ bos</td>
+      <td>108-102</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <th>337</th>
+      <th>368</th>
       <td>C</td>
       <td>Oturu, Daniel</td>
       <td>0</td>
       <td>3500</td>
       <td>lac</td>
-      <td>@ cle</td>
-      <td>121-99</td>
+      <td>@ chi</td>
+      <td>125-106</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>332 rows × 10 columns</p>
+<p>363 rows × 10 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -579,8 +584,8 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pulp in /Users/guy/miniconda3/lib/python3.8/site-packages (2.4)
 Requirement already satisfied: amply&gt;=0.1.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pulp) (0.1.4)
-Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (0.15.2)
 Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (2.4.7)
+Requirement already satisfied: docutils&gt;=0.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from amply&gt;=0.1.2-&gt;pulp) (0.15.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -601,7 +606,7 @@ Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/
 <span class="c1"># Get a list of players</span>
 <span class="n">players</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">all_players</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
 <span class="c1"># Set Players to Take either 1 or 0 values (owned or not)</span>
-<span class="n">player_vars</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">players</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+<span class="n">player_vars</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">players</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +617,13 @@ Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/
 <p>Let’s start with defining the LP problem as a maximization problem:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s2">&quot;Fantasy_Points_Problem&quot;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;Fantasy Points Problem&#39;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/guy/miniconda3/lib/python3.8/site-packages/pulp/pulp.py:1199: UserWarning: Spaces are not permitted in the name. Converted to &#39;_&#39;
+  warnings.warn(&quot;Spaces are not permitted in the name. Converted to &#39;_&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -654,7 +665,7 @@ Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/
 <p>First, we add the LP sum of the points where <span class="math notranslate nohighlight">\(a_i\)</span> is the points each player scored, and <span class="math notranslate nohighlight">\(x_i\)</span> is the player. In a real application we will want to have the projected number of points and not the sum of past points, and we will calculated a forecasting model that can identify trends or recent injuries. But for this simple example, we will take that sum as a good estimator for their expected points in the next game.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">points</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -662,7 +673,7 @@ Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/
 <p>Second, we add the constrain the salaries where <span class="math notranslate nohighlight">\(a_i\)</span> is the salary of each player, and <span class="math notranslate nohighlight">\(x_i\)</span> is the player, and the constrain value for the sum of all the salaries of the players we choose not to exceed $60,000:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">salaries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">60_000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">salaries</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="o">*</span> <span class="n">player_vars</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">player_vars</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">60_000</span>
 </pre></div>
 </div>
 </div>
@@ -708,11 +719,11 @@ Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set Constraints</span>
-<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sf</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pf</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">pg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">sg</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">sf</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">pf</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">total_score</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">player_vars</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">c</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -748,15 +759,15 @@ Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Player_Barnes,_Harrison^,
- Player_Beasley,_Malik^,
- Player_Doncic,_Luka^,
- Player_George,_Paul^,
- Player_Huerter,_Kevin^,
- Player_Payton,_Elfrid^,
- Player_Portis,_Bobby,
- Player_Sabonis,_Domantas^,
- Player_Zubac,_Ivica]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_Allen,_Grayson^,
+ _Antetokounmpo,_Giannis^,
+ _Bey,_Saddiq,
+ _Bjelica,_Nemanja,
+ _Clarkson,_Jordan,
+ _Doncic,_Luka^,
+ _Ingles,_Joe^,
+ _Rozier,_Terry^,
+ _Vucevic,_Nikola^]
 </pre></div>
 </div>
 </div>
@@ -793,7 +804,7 @@ Requirement already satisfied: pyparsing in /Users/guy/miniconda3/lib/python3.8/
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="08.02_Currency_analysis.html" title="previous page">Currency</a>
+    <a class='left-prev' id="prev-link" href="08.02_Currency_analysis.html" title="previous page">Currency Rate Analysis</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

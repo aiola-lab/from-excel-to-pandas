@@ -27,6 +27,8 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -36,7 +38,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating a Pivot Table" href="03.01_pivot_tables.html" />
+    <link rel="next" title="How to Group Values" href="02.08_group_values.html" />
     <link rel="prev" title="Adding New Columns" href="02.01_Adding_New_Columns.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,6 +139,11 @@
    Date Functions
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.08_group_values.html">
+   How to Group Values
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -180,12 +187,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08.02_Currency_analysis.html">
-   Currency
+   Currency Rate Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08.03_Linear_optimization.html">
-   Logistics Analysis
+   Linear Programming (Optimization)
   </a>
  </li>
 </ul>
@@ -381,7 +388,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2021-02-04 02:07:12.165171-0600&#39;, tz=&#39;America/Chicago&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2021-02-13 09:58:51.362812-0600&#39;, tz=&#39;America/Chicago&#39;)
 </pre></div>
 </div>
 </div>
@@ -397,7 +404,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 2, 2021)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(13, 2, 2021)
 </pre></div>
 </div>
 </div>
@@ -447,7 +454,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31
 </pre></div>
 </div>
 </div>
@@ -1083,46 +1090,46 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style  type="text/css" >
-#T_fe238658_66bf_11eb_beb1_acde48001122row0_col0{
+#T_68913700_6e14_11eb_a22b_acde48001122row0_col0{
             background-color:  green;
-        }#T_fe238658_66bf_11eb_beb1_acde48001122row7_col0{
+        }#T_68913700_6e14_11eb_a22b_acde48001122row7_col0{
             background-color:  red;
-        }</style><table id="T_fe238658_66bf_11eb_beb1_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Rented Bike Count</th>    </tr></thead><tbody>
+        }</style><table id="T_68913700_6e14_11eb_a22b_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Rented Bike Count</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row0" class="row_heading level0 row0" >Temperature(°C)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row0_col0" class="data row0 col0" >0.699824</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row0" class="row_heading level0 row0" >Temperature(°C)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row0_col0" class="data row0 col0" >0.699824</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row1" class="row_heading level0 row1" >Humidity(%)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row1_col0" class="data row1 col0" >0.028158</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row1" class="row_heading level0 row1" >Humidity(%)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row1_col0" class="data row1 col0" >0.028158</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row2" class="row_heading level0 row2" >Wind speed (m/s)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row2_col0" class="data row2 col0" >-0.174859</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row2" class="row_heading level0 row2" >Wind speed (m/s)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row2_col0" class="data row2 col0" >-0.174859</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row3" class="row_heading level0 row3" >Visibility (10m)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row3_col0" class="data row3 col0" >0.145376</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row3" class="row_heading level0 row3" >Visibility (10m)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row3_col0" class="data row3 col0" >0.145376</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row4" class="row_heading level0 row4" >Dew point temperature(°C)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row4_col0" class="data row4 col0" >0.602648</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row4" class="row_heading level0 row4" >Dew point temperature(°C)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row4_col0" class="data row4 col0" >0.602648</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row5" class="row_heading level0 row5" >Solar Radiation (MJ/m2)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row5_col0" class="data row5 col0" >0.684069</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row5" class="row_heading level0 row5" >Solar Radiation (MJ/m2)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row5_col0" class="data row5 col0" >0.684069</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row6" class="row_heading level0 row6" >Rainfall(mm)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row6_col0" class="data row6 col0" >-0.214252</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row6" class="row_heading level0 row6" >Rainfall(mm)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row6_col0" class="data row6 col0" >-0.214252</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row7" class="row_heading level0 row7" >Snowfall (cm)</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row7_col0" class="data row7 col0" >-0.240836</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row7" class="row_heading level0 row7" >Snowfall (cm)</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row7_col0" class="data row7 col0" >-0.240836</td>
             </tr>
             <tr>
-                        <th id="T_fe238658_66bf_11eb_beb1_acde48001122level0_row8" class="row_heading level0 row8" >month</th>
-                        <td id="T_fe238658_66bf_11eb_beb1_acde48001122row8_col0" class="data row8 col0" >0.201733</td>
+                        <th id="T_68913700_6e14_11eb_a22b_acde48001122level0_row8" class="row_heading level0 row8" >month</th>
+                        <td id="T_68913700_6e14_11eb_a22b_acde48001122row8_col0" class="data row8 col0" >0.201733</td>
             </tr>
     </tbody></table></div></div>
 </div>
@@ -1160,7 +1167,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="02.01_Adding_New_Columns.html" title="previous page">Adding New Columns</a>
-    <a class='right-next' id="next-link" href="03.01_pivot_tables.html" title="next page">Creating a Pivot Table</a>
+    <a class='right-next' id="next-link" href="02.08_group_values.html" title="next page">How to Group Values</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

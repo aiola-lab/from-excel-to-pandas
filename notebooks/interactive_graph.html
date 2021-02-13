@@ -27,6 +27,8 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -135,6 +137,11 @@
    Date Functions
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.08_group_values.html">
+   How to Group Values
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -178,12 +185,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08.02_Currency_analysis.html">
-   Currency
+   Currency Rate Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08.03_Linear_optimization.html">
-   Logistics Analysis
+   Linear Programming (Optimization)
   </a>
  </li>
 </ul>
@@ -341,7 +348,7 @@ Requirement already satisfied: retrying&gt;=1.3.3 in /Users/guy/miniconda3/lib/p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://revelio-public-files.s3.amazonaws.com/interactive_graph/test.html?AWSAccessKeyId=AKIAW2PPOHJSSZRBS4H4&amp;Signature=U5WNGRs2h5S21SVgIcrlG5SIpr4%3D&amp;Expires=1612429802&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://revelio-public-files.s3.amazonaws.com/interactive_graph/test.html?AWSAccessKeyId=AKIAW2PPOHJSSZRBS4H4&amp;Signature=ZXlfddmpjk4%2BwC4DkABBUOFfySU%3D&amp;Expires=1613235766&#39;
 </pre></div>
 </div>
 </div>
@@ -359,12 +366,12 @@ Requirement already satisfied: retrying&gt;=1.3.3 in /Users/guy/miniconda3/lib/p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ResponseMetadata&#39;: {&#39;RequestId&#39;: &#39;00886BCF7C0C7CE8&#39;,
-  &#39;HostId&#39;: &#39;nQ4/wDT53aQg6SpiNXwT3dBtchNbq3e/rZJxteTT4ivrr6W944lGeZ1lNbNtYzIjF00bzDSyRu8=&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ResponseMetadata&#39;: {&#39;RequestId&#39;: &#39;DD957035542EAB48&#39;,
+  &#39;HostId&#39;: &#39;2yGKR0u1wvRERdugQNdzA22sy0Xt0QSDrnCreyD22nPekTxKgQwPe+g5dzWyUOyuZfldiIkIyK4=&#39;,
   &#39;HTTPStatusCode&#39;: 200,
-  &#39;HTTPHeaders&#39;: {&#39;x-amz-id-2&#39;: &#39;nQ4/wDT53aQg6SpiNXwT3dBtchNbq3e/rZJxteTT4ivrr6W944lGeZ1lNbNtYzIjF00bzDSyRu8=&#39;,
-   &#39;x-amz-request-id&#39;: &#39;00886BCF7C0C7CE8&#39;,
-   &#39;date&#39;: &#39;Thu, 04 Feb 2021 08:10:04 GMT&#39;,
+  &#39;HTTPHeaders&#39;: {&#39;x-amz-id-2&#39;: &#39;2yGKR0u1wvRERdugQNdzA22sy0Xt0QSDrnCreyD22nPekTxKgQwPe+g5dzWyUOyuZfldiIkIyK4=&#39;,
+   &#39;x-amz-request-id&#39;: &#39;DD957035542EAB48&#39;,
+   &#39;date&#39;: &#39;Sat, 13 Feb 2021 16:02:47 GMT&#39;,
    &#39;content-length&#39;: &#39;0&#39;,
    &#39;server&#39;: &#39;AmazonS3&#39;},
   &#39;RetryAttempts&#39;: 0}}
