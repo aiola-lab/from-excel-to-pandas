@@ -1,0 +1,1115 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Files &#8212; From Excel to Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reading Data from Web Sites" href="01.02%20-%20loading%20data%20from%20HTML.html" />
+    <link rel="prev" title="Install Locally" href="../getting_started.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html">
+   Install Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
+   Open in Binder/Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
+   Open in Visual Studio Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Loading Data
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Loading Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.02%20-%20loading%20data%20from%20HTML.html">
+   Reading Data from Web Sites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.03_loading_data_from_API.html">
+   Reading Data from External API
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Adding Columns
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.01_Adding_New_Columns.html">
+   Adding New Columns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.02_date_functions.html">
+   Date Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.08_group_values.html">
+   Categories from numeric values
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Aggregation and Reshaping
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.01_pivot_tables.html">
+   Creating a Pivot Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.02_group_by.html">
+   Split a Table into Groups
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Enrichment with Merge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.03_merge.html">
+   Merge/Join Tables (VLOOKUP)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Industries Use Cases
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.01_Logistics_analysis.html">
+   Logistics Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.02_Currency_analysis.html">
+   Currency Rate Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.03_Linear_optimization.html">
+   Linear Programming (Optimization)
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/01 - loading files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/01 - loading files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/01 - loading files.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-csv-file">
+   Loading CSV file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-data-visualization">
+   Simple data visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-new-columns">
+   Adding new columns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-excel-files">
+   Loading Excel Files
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="loading-files">
+<h1>Loading Files<a class="headerlink" href="#loading-files" title="Permalink to this headline">¶</a></h1>
+<p>In the first chapter we will learn how to load data into Pandas DataFrames. We will load multile formats of data sources including CSV files, Excel files, tables from web sites, tables in Databases, etc.</p>
+<p>You can review the official Pandas documentation about <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/io.html">reading and writing data</a>, or you can follow the simple examples here with real life examples.</p>
+<p>To make the notebooks cleaner and easier to read we will suppress warnings. Bad practice, however, OK for a tutorial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-csv-file">
+<h2>Loading CSV file<a class="headerlink" href="#loading-csv-file" title="Permalink to this headline">¶</a></h2>
+<p>The comma-separated-values (CSV) format is one of the simplest and pupolar way to share (small) data. You can save an Excel files as CSV and it is the default format of many bulk download of data from databases and other sources.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first example is using data file about permits for restaurants in NY city. It was downloaded from the open data web site <a class="reference external" href="https://data.world/city-of-ny/pitm-atqc">data.world</a>, and we will use the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">read_csv</a> option with default values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/open_restaurant_applications_1.csv&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once we loaded the data into the table DataFrame, we can browse parts of the data and its statistics. Let’s start with browsing the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html">head</a> of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>objectid</th>
+      <th>globalid</th>
+      <th>seating_interest_sidewalk_roadway_both</th>
+      <th>restaurant_name</th>
+      <th>legal_business_name</th>
+      <th>doing_business_as_dba</th>
+      <th>bulding_number</th>
+      <th>street</th>
+      <th>borough</th>
+      <th>postcode</th>
+      <th>...</th>
+      <th>time_of_submission</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>community_board</th>
+      <th>council_district</th>
+      <th>census_tract</th>
+      <th>bin</th>
+      <th>bbl</th>
+      <th>nta</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>32</td>
+      <td>ae5914d4-6080-4144-8634-98ca22b215de</td>
+      <td>sidewalk</td>
+      <td>Arbuz Cafe</td>
+      <td>Arbuz Cafe NY inc.</td>
+      <td>Arbuz Cafe NY inc.</td>
+      <td>1706</td>
+      <td>Sheepshead Bay Rd</td>
+      <td>Brooklyn</td>
+      <td>11235</td>
+      <td>...</td>
+      <td>2020-06-19</td>
+      <td>40.585724</td>
+      <td>-73.951767</td>
+      <td>315.0</td>
+      <td>48.0</td>
+      <td>606.0</td>
+      <td>3343289.0</td>
+      <td>3.087700e+09</td>
+      <td>Sheepshead Bay-Gerritsen Beach-Manhattan Beach</td>
+      <td>POINT(-73.951767 40.585724)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>33</td>
+      <td>81a2bad2-5bdc-49ed-8bb6-9dc3f9798732</td>
+      <td>roadway</td>
+      <td>Nerai</td>
+      <td>Koureli Restaurant Group Inc</td>
+      <td>Nerai</td>
+      <td>55</td>
+      <td>East 54th Street</td>
+      <td>Manhattan</td>
+      <td>10022</td>
+      <td>...</td>
+      <td>2020-06-19</td>
+      <td>40.760117</td>
+      <td>-73.973162</td>
+      <td>105.0</td>
+      <td>4.0</td>
+      <td>102.0</td>
+      <td>1035748.0</td>
+      <td>1.012900e+09</td>
+      <td>Midtown-Midtown South</td>
+      <td>POINT(-73.973162 40.760117)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34</td>
+      <td>b4bcb3a5-e2f7-4069-8c3b-21f47f051a63</td>
+      <td>roadway</td>
+      <td>Hill Country</td>
+      <td>Hill Country New York, LLC</td>
+      <td>Hill Country</td>
+      <td>30</td>
+      <td>West 26th</td>
+      <td>Manhattan</td>
+      <td>10010</td>
+      <td>...</td>
+      <td>2020-06-19</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35</td>
+      <td>a1054682-ff93-4b07-8f99-daa2a7b0daaf</td>
+      <td>both</td>
+      <td>Sundays Well</td>
+      <td>Two Bridge Tavern LLC</td>
+      <td>Sundays Well</td>
+      <td>360</td>
+      <td>3rd Ave</td>
+      <td>Manhattan</td>
+      <td>10016</td>
+      <td>...</td>
+      <td>2020-06-19</td>
+      <td>40.740892</td>
+      <td>-73.981657</td>
+      <td>106.0</td>
+      <td>2.0</td>
+      <td>68.0</td>
+      <td>1018142.0</td>
+      <td>1.008820e+09</td>
+      <td>Gramercy</td>
+      <td>POINT(-73.981657 40.740892)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>36</td>
+      <td>1dd1f4e5-3e2c-4522-89e4-b3f4fc802436</td>
+      <td>roadway</td>
+      <td>Le Baba Cool, Inc</td>
+      <td>Le Baba Cool, Inc</td>
+      <td>Le Baba Cool, Inc</td>
+      <td>64</td>
+      <td>Lafayette AVe</td>
+      <td>Brooklyn</td>
+      <td>11217</td>
+      <td>...</td>
+      <td>2020-06-19</td>
+      <td>40.687102</td>
+      <td>-73.975365</td>
+      <td>302.0</td>
+      <td>35.0</td>
+      <td>35.0</td>
+      <td>3059298.0</td>
+      <td>3.021160e+09</td>
+      <td>Fort Greene</td>
+      <td>POINT(-73.975365 40.687102)</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 36 columns</p>
+</div></div></div>
+</div>
+<p>As you can see, it is only showing part of the rows and parts of the columns.</p>
+<p>If we want to understand what are the columns of the table, we can use the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.info.html">info</a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 7939 entries, 0 to 7938
+Data columns (total 36 columns):
+ #   Column                                  Non-Null Count  Dtype  
+---  ------                                  --------------  -----  
+ 0   objectid                                7939 non-null   int64  
+ 1   globalid                                7939 non-null   object 
+ 2   seating_interest_sidewalk_roadway_both  7939 non-null   object 
+ 3   restaurant_name                         7939 non-null   object 
+ 4   legal_business_name                     7938 non-null   object 
+ 5   doing_business_as_dba                   7929 non-null   object 
+ 6   bulding_number                          7939 non-null   object 
+ 7   street                                  7939 non-null   object 
+ 8   borough                                 7939 non-null   object 
+ 9   postcode                                7939 non-null   int64  
+ 10  business_address                        7939 non-null   object 
+ 11  food_service_establishment_permit       7935 non-null   object 
+ 12  sidewalk_dimensions_length              7120 non-null   float64
+ 13  sidewalk_dimensions_width               7120 non-null   float64
+ 14  sidewalk_dimensions_area                7120 non-null   float64
+ 15  roadway_dimensions_length               5080 non-null   float64
+ 16  roadway_dimensions_width                5080 non-null   float64
+ 17  roadway_dimensions_area                 5080 non-null   float64
+ 18  approved_for_sidewalk_seating           7939 non-null   object 
+ 19  approved_for_roadway_seating            7939 non-null   object 
+ 20  qualify_alcohol                         7939 non-null   object 
+ 21  sla_serial_number                       5774 non-null   object 
+ 22  sla_license_type                        5774 non-null   object 
+ 23  landmark_district_or_building           7939 non-null   object 
+ 24  landmarkdistrict_terms                  1210 non-null   object 
+ 25  healthcompliance_terms                  7939 non-null   object 
+ 26  time_of_submission                      7939 non-null   object 
+ 27  latitude                                6943 non-null   float64
+ 28  longitude                               6943 non-null   float64
+ 29  community_board                         6943 non-null   float64
+ 30  council_district                        6943 non-null   float64
+ 31  census_tract                            6943 non-null   float64
+ 32  bin                                     6888 non-null   float64
+ 33  bbl                                     6888 non-null   float64
+ 34  nta                                     6943 non-null   object 
+ 35  location                                6943 non-null   object 
+dtypes: float64(13), int64(2), object(21)
+memory usage: 2.2+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we want to some statistics on the various numeric values. with <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">describe</a> we can see how many values do we have in each numeric column and some statistics such as average, minimum, maximum and their quantiles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>objectid</th>
+      <th>postcode</th>
+      <th>sidewalk_dimensions_length</th>
+      <th>sidewalk_dimensions_width</th>
+      <th>sidewalk_dimensions_area</th>
+      <th>roadway_dimensions_length</th>
+      <th>roadway_dimensions_width</th>
+      <th>roadway_dimensions_area</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>community_board</th>
+      <th>council_district</th>
+      <th>census_tract</th>
+      <th>bin</th>
+      <th>bbl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>7939.000000</td>
+      <td>7939.000000</td>
+      <td>7120.000000</td>
+      <td>7120.000000</td>
+      <td>7120.000000</td>
+      <td>5080.000000</td>
+      <td>5080.000000</td>
+      <td>5080.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6.888000e+03</td>
+      <td>6.888000e+03</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4006.485452</td>
+      <td>10619.992442</td>
+      <td>34.319101</td>
+      <td>10.602247</td>
+      <td>410.681882</td>
+      <td>31.530709</td>
+      <td>8.590945</td>
+      <td>280.760236</td>
+      <td>40.732316</td>
+      <td>-73.952988</td>
+      <td>231.494167</td>
+      <td>17.970906</td>
+      <td>3241.251476</td>
+      <td>2.332593e+06</td>
+      <td>2.277429e+09</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2297.885878</td>
+      <td>1091.934677</td>
+      <td>38.058425</td>
+      <td>7.241442</td>
+      <td>1109.156427</td>
+      <td>30.240655</td>
+      <td>4.384592</td>
+      <td>513.508993</td>
+      <td>0.057959</td>
+      <td>0.061280</td>
+      <td>128.857022</td>
+      <td>15.370382</td>
+      <td>13737.582279</td>
+      <td>1.329363e+06</td>
+      <td>1.296711e+09</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>32.000000</td>
+      <td>7002.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>40.511019</td>
+      <td>-74.248014</td>
+      <td>101.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000e+06</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2016.500000</td>
+      <td>10016.000000</td>
+      <td>16.000000</td>
+      <td>6.000000</td>
+      <td>120.000000</td>
+      <td>17.000000</td>
+      <td>8.000000</td>
+      <td>128.000000</td>
+      <td>40.705540</td>
+      <td>-73.990058</td>
+      <td>105.000000</td>
+      <td>3.000000</td>
+      <td>70.000000</td>
+      <td>1.026910e+06</td>
+      <td>1.008740e+09</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4005.000000</td>
+      <td>10454.000000</td>
+      <td>24.000000</td>
+      <td>8.000000</td>
+      <td>225.000000</td>
+      <td>24.000000</td>
+      <td>8.000000</td>
+      <td>192.000000</td>
+      <td>40.734268</td>
+      <td>-73.968501</td>
+      <td>208.000000</td>
+      <td>15.000000</td>
+      <td>151.000000</td>
+      <td>2.046050e+06</td>
+      <td>2.037640e+09</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5993.500000</td>
+      <td>11220.000000</td>
+      <td>40.000000</td>
+      <td>14.000000</td>
+      <td>420.000000</td>
+      <td>38.000000</td>
+      <td>8.000000</td>
+      <td>320.000000</td>
+      <td>40.761935</td>
+      <td>-73.922195</td>
+      <td>314.000000</td>
+      <td>33.000000</td>
+      <td>483.500000</td>
+      <td>3.335991e+06</td>
+      <td>3.066340e+09</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7992.000000</td>
+      <td>91206.000000</td>
+      <td>1000.000000</td>
+      <td>50.000000</td>
+      <td>50000.000000</td>
+      <td>1000.000000</td>
+      <td>50.000000</td>
+      <td>25000.000000</td>
+      <td>40.911190</td>
+      <td>-73.702668</td>
+      <td>503.000000</td>
+      <td>51.000000</td>
+      <td>157903.000000</td>
+      <td>5.169029e+06</td>
+      <td>5.080430e+09</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You can modify the percentile that are calculated for the numeric columns by setting the values that you care about. For example, to get the p10, p50 and p90, you can pass the following array of values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">percentiles</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">10</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">90</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>objectid</th>
+      <th>postcode</th>
+      <th>sidewalk_dimensions_length</th>
+      <th>sidewalk_dimensions_width</th>
+      <th>sidewalk_dimensions_area</th>
+      <th>roadway_dimensions_length</th>
+      <th>roadway_dimensions_width</th>
+      <th>roadway_dimensions_area</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>community_board</th>
+      <th>council_district</th>
+      <th>census_tract</th>
+      <th>bin</th>
+      <th>bbl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>7939.000000</td>
+      <td>7939.000000</td>
+      <td>7120.000000</td>
+      <td>7120.000000</td>
+      <td>7120.000000</td>
+      <td>5080.000000</td>
+      <td>5080.000000</td>
+      <td>5080.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6943.000000</td>
+      <td>6.888000e+03</td>
+      <td>6.888000e+03</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4006.485452</td>
+      <td>10619.992442</td>
+      <td>34.319101</td>
+      <td>10.602247</td>
+      <td>410.681882</td>
+      <td>31.530709</td>
+      <td>8.590945</td>
+      <td>280.760236</td>
+      <td>40.732316</td>
+      <td>-73.952988</td>
+      <td>231.494167</td>
+      <td>17.970906</td>
+      <td>3241.251476</td>
+      <td>2.332593e+06</td>
+      <td>2.277429e+09</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2297.885878</td>
+      <td>1091.934677</td>
+      <td>38.058425</td>
+      <td>7.241442</td>
+      <td>1109.156427</td>
+      <td>30.240655</td>
+      <td>4.384592</td>
+      <td>513.508993</td>
+      <td>0.057959</td>
+      <td>0.061280</td>
+      <td>128.857022</td>
+      <td>15.370382</td>
+      <td>13737.582279</td>
+      <td>1.329363e+06</td>
+      <td>1.296711e+09</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>32.000000</td>
+      <td>7002.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>40.511019</td>
+      <td>-74.248014</td>
+      <td>101.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000e+06</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>10%</th>
+      <td>825.800000</td>
+      <td>10009.000000</td>
+      <td>12.000000</td>
+      <td>4.000000</td>
+      <td>64.000000</td>
+      <td>12.000000</td>
+      <td>6.000000</td>
+      <td>96.000000</td>
+      <td>40.661594</td>
+      <td>-74.003282</td>
+      <td>102.000000</td>
+      <td>2.000000</td>
+      <td>38.000000</td>
+      <td>1.007896e+06</td>
+      <td>1.004610e+09</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4005.000000</td>
+      <td>10454.000000</td>
+      <td>24.000000</td>
+      <td>8.000000</td>
+      <td>225.000000</td>
+      <td>24.000000</td>
+      <td>8.000000</td>
+      <td>192.000000</td>
+      <td>40.734268</td>
+      <td>-73.968501</td>
+      <td>208.000000</td>
+      <td>15.000000</td>
+      <td>151.000000</td>
+      <td>2.046050e+06</td>
+      <td>2.037640e+09</td>
+    </tr>
+    <tr>
+      <th>90%</th>
+      <td>7197.200000</td>
+      <td>11369.000000</td>
+      <td>70.000000</td>
+      <td>19.000000</td>
+      <td>800.000000</td>
+      <td>60.000000</td>
+      <td>9.000000</td>
+      <td>504.000000</td>
+      <td>40.795218</td>
+      <td>-73.869113</td>
+      <td>405.000000</td>
+      <td>39.000000</td>
+      <td>2602.000000</td>
+      <td>4.087712e+06</td>
+      <td>4.030800e+09</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7992.000000</td>
+      <td>91206.000000</td>
+      <td>1000.000000</td>
+      <td>50.000000</td>
+      <td>50000.000000</td>
+      <td>1000.000000</td>
+      <td>50.000000</td>
+      <td>25000.000000</td>
+      <td>40.911190</td>
+      <td>-73.702668</td>
+      <td>503.000000</td>
+      <td>51.000000</td>
+      <td>157903.000000</td>
+      <td>5.169029e+06</td>
+      <td>5.080430e+09</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="simple-data-visualization">
+<h2>Simple data visualization<a class="headerlink" href="#simple-data-visualization" title="Permalink to this headline">¶</a></h2>
+<p>As part of the data exploration phase, you want to look at the columns, a few rows (<em>head</em>), column statistics (<em>describe</em>), data types and number of values (<em>info</em>). However, usually the most effective way is to visualize the data to understand it.</p>
+<p>In the next cell, we build a simple scatter plot of the data with <em>longitude</em> and <em>latitude</em> as x-axis and y-axis, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">table_df</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01 - loading files_16_0.png" src="../_images/01 - loading files_16_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="adding-new-columns">
+<h2>Adding new columns<a class="headerlink" href="#adding-new-columns" title="Permalink to this headline">¶</a></h2>
+<p>One of the most common tasks that we do when building an analysis is to add calcualted fields, based on the other columns in our table/DataFrame. We will discuss power of Pandas in adding new columns in the next sections of this guide. However, here is an example of calcuting the color of a data point, based on the value of <em>approved_for_roadway_seating</em> column. It will be green (<em>g</em>) if the value is <em>yes</em>, or red (<em>r</em>) otherwise.</p>
+<ul class="simple">
+<li><p>Start with the loaded table data DataFrame</p></li>
+<li><p>Add a column to color approval for road way seating as green, if approved, or red otherwise</p></li>
+<li><p>Plot the result</p></li>
+<li><p>as a scatter plot with each place color as defined above in the right geo location from longitude and latitude columns</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">table_df</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">approved</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">approved_for_roadway_seating</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;approved&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01 - loading files_18_0.png" src="../_images/01 - loading files_18_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="loading-excel-files">
+<h2>Loading Excel Files<a class="headerlink" href="#loading-excel-files" title="Permalink to this headline">¶</a></h2>
+<p>You can also read files that were edited in Excel and saved in the Excel format.</p>
+<p>If the python environment that we are using is missing part of the needed functionality, such as the ability to parse the format of the Microsoft Excel files, we need to install using the following command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">xlrd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: xlrd in /Users/guy/miniconda3/lib/python3.8/site-packages (1.2.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can call <em>read_excel</em> instead of <em>read_csv</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table_df_from_excel</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data/open_restaurant_applications.xlsx&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and since the data now is in the Pandas (<em>pd</em>) DataFrame format, all the rest of the commands are exactly the same. For example, here is the same first chart we plotted before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">table_df_from_excel</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01 - loading files_24_0.png" src="../_images/01 - loading files_24_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../getting_started.html" title="previous page">Install Locally</a>
+    <a class='right-next' id="next-link" href="01.02%20-%20loading%20data%20from%20HTML.html" title="next page">Reading Data from Web Sites</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Aiola Team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

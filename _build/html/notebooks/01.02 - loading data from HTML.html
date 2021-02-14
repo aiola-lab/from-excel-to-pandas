@@ -1,0 +1,1946 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Data from Web Sites &#8212; From Excel to Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reading Data from External API" href="01.03_loading_data_from_API.html" />
+    <link rel="prev" title="Loading Files" href="01%20-%20loading%20files.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html">
+   Install Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
+   Open in Binder/Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
+   Open in Visual Studio Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Loading Data
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20loading%20files.html">
+   Loading Files
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Reading Data from Web Sites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.03_loading_data_from_API.html">
+   Reading Data from External API
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Adding Columns
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.01_Adding_New_Columns.html">
+   Adding New Columns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.02_date_functions.html">
+   Date Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.08_group_values.html">
+   Categories from numeric values
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Aggregation and Reshaping
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.01_pivot_tables.html">
+   Creating a Pivot Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.02_group_by.html">
+   Split a Table into Groups
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Enrichment with Merge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.03_merge.html">
+   Merge/Join Tables (VLOOKUP)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Industries Use Cases
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.01_Logistics_analysis.html">
+   Logistics Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.02_Currency_analysis.html">
+   Currency Rate Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.03_Linear_optimization.html">
+   Linear Programming (Optimization)
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/01.02 - loading data from HTML.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/01.02 - loading data from HTML.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/01.02 - loading data from HTML.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-html-data">
+   Loading HTML data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-from-simple-web-sites">
+   Loading from simple web sites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-from-complex-web-sites">
+   Loading from complex web sites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-data-visualization">
+   Simple Data Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-examples">
+   More examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-functions">
+     Using Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cleaning-the-data">
+     Cleaning the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enriching-the-data">
+     Enriching the data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#search-domain-function">
+       Search Domain Function
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-to-csv-excel-file">
+     Writing to CSV/Excel file
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="reading-data-from-web-sites">
+<h1>Reading Data from Web Sites<a class="headerlink" href="#reading-data-from-web-sites" title="Permalink to this headline">¶</a></h1>
+<p>Many times you want to add external data to your analysis. External data is often found in external web sites, usually in the format of an HTML table. You can import HTML directly into Excel using <em>“Import”</em>.</p>
+<p>In this notebook, we will learn how to use pandas <em>read_html</em> to load tables from web site with ease, including cases where the data is complex to retrieve.</p>
+<div class="section" id="loading-html-data">
+<h2>Loading HTML data<a class="headerlink" href="#loading-html-data" title="Permalink to this headline">¶</a></h2>
+<p>We will load a few tables from simple sites as well as complex ones</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-from-simple-web-sites">
+<h2>Loading from simple web sites<a class="headerlink" href="#loading-from-simple-web-sites" title="Permalink to this headline">¶</a></h2>
+<p>If you have a simple web page with a few tables, you can pass the URL of the page to Pandas and call read_html.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/The_Championships,_Wimbledon&#39;</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>read_html is returning a list of all the tables in the page. We can scroll through the content of the tables on that page, by changing the index in the list. We can print the third element (index 2 in the list), we will get the table with the prize amounts for the Wimbeldon Tennis competition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>ATP</th>
+      <th>WTA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>First round</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Second round</td>
+      <td>45</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Third round</td>
+      <td>90</td>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Fourth round</td>
+      <td>180</td>
+      <td>240</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Quarterfinalist</td>
+      <td>360</td>
+      <td>430</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Semifinalist</td>
+      <td>720</td>
+      <td>780</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Runner-up</td>
+      <td>1200</td>
+      <td>1300</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Champion</td>
+      <td>2000</td>
+      <td>2000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="loading-from-complex-web-sites">
+<h2>Loading from complex web sites<a class="headerlink" href="#loading-from-complex-web-sites" title="Permalink to this headline">¶</a></h2>
+<p>Many times pages will be more complex and we can still extract the relevant data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://ncov2019.live/data&#39;</span>
+<span class="n">table_id</span> <span class="o">=</span> <span class="s1">&#39;sortable_table_world&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we will look like a browser to the web site, as some web sites block their context to bots and crawlers. Since we are not hitting the web site a lot, pretending to be a browser is considered as acceptable usage.</p>
+<p>We will send to the web site a header that a browser is sending and get the reply of the page as text. The text (<em>r.text</em>) will be parsed by the <em>read_html</em> function and create the dataframe. We will also add the HTML id of the table that we want. This id (<em>‘sortable_table_world’</em>) can be found when using the <em>inspect</em> option in Chrome, Safari, Firefox and other browsers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;X-Requested-With&quot;</span><span class="p">:</span> <span class="s2">&quot;XMLHttpRequest&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="n">pd</span>
+  <span class="o">.</span><span class="n">read_html</span><span class="p">(</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> 
+    <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">table_id</span><span class="p">}</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Confirmed</th>
+      <th>Per Million</th>
+      <th>Changes Today</th>
+      <th>Percentage Day Change</th>
+      <th>Critical</th>
+      <th>Deceased</th>
+      <th>Per Million.1</th>
+      <th>Changes Today.1</th>
+      <th>Percentage Death Change</th>
+      <th>Tests</th>
+      <th>Active</th>
+      <th>Recovered</th>
+      <th>Per Million.2</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TOTAL</td>
+      <td>109,166,257  +76,065</td>
+      <td>13984</td>
+      <td>76065</td>
+      <td>0.07%</td>
+      <td>98,700  +11</td>
+      <td>2,406,680  +2,524</td>
+      <td>308</td>
+      <td>2,406,680  +2,524</td>
+      <td>0.1%</td>
+      <td>1,533,714,152  +1,269,040</td>
+      <td>25625647</td>
+      <td>81,142,531  +35,070</td>
+      <td>10394</td>
+      <td>7806296484</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>★  Afghanistan</td>
+      <td>55,508  +16</td>
+      <td>1406</td>
+      <td>16</td>
+      <td>0.03%</td>
+      <td>1012</td>
+      <td>2427</td>
+      <td>61</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>275465</td>
+      <td>4686</td>
+      <td>48395</td>
+      <td>1226</td>
+      <td>39468080</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>★  Albania</td>
+      <td>91987</td>
+      <td>31986</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>37</td>
+      <td>1543</td>
+      <td>537</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>402000</td>
+      <td>34461</td>
+      <td>55983</td>
+      <td>19467</td>
+      <td>2875837</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>★  Algeria</td>
+      <td>110513</td>
+      <td>2492</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>42</td>
+      <td>2935</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>75816</td>
+      <td>1710</td>
+      <td>44339845</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>★  Andorra</td>
+      <td>10463</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>15</td>
+      <td>107</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>193595</td>
+      <td>488</td>
+      <td>9868</td>
+      <td>0</td>
+      <td>77342</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>216</th>
+      <td>★  Anguilla</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>8256</td>
+      <td>Unknown</td>
+      <td>16</td>
+      <td>0</td>
+      <td>15086</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>★  Western Sahara</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>Unknown</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>8</td>
+      <td>0</td>
+      <td>606369</td>
+    </tr>
+    <tr>
+      <th>218</th>
+      <td>★  Wallis and Futuna</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>1202</td>
+      <td>Unknown</td>
+      <td>5</td>
+      <td>0</td>
+      <td>11115</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>★  Micronesia</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>1</td>
+      <td>0</td>
+      <td>115771</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>★  China</td>
+      <td>89,763  +7</td>
+      <td>62</td>
+      <td>7</td>
+      <td>0.01%</td>
+      <td>12</td>
+      <td>4636</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0%</td>
+      <td>160000000</td>
+      <td>689</td>
+      <td>84,438  +81</td>
+      <td>59</td>
+      <td>1439323776</td>
+    </tr>
+  </tbody>
+</table>
+<p>221 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">covid_19_status</span> <span class="o">=</span> <span class="n">df_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simple-data-visualization">
+<h2>Simple Data Visualization<a class="headerlink" href="#simple-data-visualization" title="Permalink to this headline">¶</a></h2>
+<p>External data is often “messy”, and it is a best practice to clean it up before staring to work with it. In the next cell we will make sure that the numeric columns are indeed numeric (removing “Unknown”, for example). We will also resolve the conflict of having multiple columns with the same name (“Per Million”, in this exammple), and translate to more meaningful names.</p>
+<ul class="simple">
+<li><p>Start with the Covid-19 status table</p></li>
+<li><p>Convert the first ‘Per Million’ column from the table to be numeric</p></li>
+<li><p>Convert the second ‘Per Million’ column from the table to be numeric</p></li>
+<li><p>Fill missing values in the table with 0</p></li>
+<li><p>Sort the table in decreasing order by number of deceased cases</p></li>
+<li><p>Take the first top 20 country rows</p></li>
+<li><p>Plot the results</p></li>
+<li><p>as bar graph with the name of the country and the number of deceased cases per million people</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">covid_19_status</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">confirmed_cases_per_m</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Per Million&#39;</span><span class="p">],</span>  <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">deceased_cases_per_m</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Per Million.1&#39;</span><span class="p">],</span>  <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;deceased_cases_per_m&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">20</span><span class="p">,:]</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> 
+        <span class="n">y</span><span class="o">=</span><span class="s1">&#39;deceased_cases_per_m&#39;</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Death Cases by COVID-19 by Country&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01.02 - loading data from HTML_15_0.png" src="../_images/01.02 - loading data from HTML_15_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="more-examples">
+<h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-functions">
+<h3>Using Functions<a class="headerlink" href="#using-functions" title="Permalink to this headline">¶</a></h3>
+<p>Functions are a more complicated topic and you are not expected to write functions most of the times. Functions are also available in Excel as Macros. You should be familiar with using functions, read them to understand what they do, and also modifying them to fit your needs.</p>
+<p>We often find the a set of commands is repeating itself many times in our analyses. This is the time to wrap these commands as a function. In the next cell, we will create a function that is wrapping a few of the commands that we used in the previous cells such as choosing a specific index of a table from the table list and setting the first row as header.</p>
+<ul class="simple">
+<li><p>Read the HTML content of the given URL</p></li>
+<li><p>Parse the HTML and extract all the tables in it</p></li>
+<li><p>Take the first (of other given index) table from that list</p></li>
+<li><p>Set the header of the table from the values in the first row</p></li>
+<li><p>Skip the first (header) row</p></li>
+<li><p>Return that table</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_table_from_html</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+    <span class="n">df_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">attrs</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once we have the function defined (<em>def</em>), we can try it in a simple way. Let’s say that we want to add to our CRM (Customer Relationship Management) system a new target market, as the consumer good companies (CPG). We find in the web a table with the top CPG companies for 2019.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url_top_companies</span> <span class="o">=</span> <span class="s1">&#39;https://consumergoods.com/top-100-consumer-goods-companies-2019&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">get_table_from_html</span><span class="p">(</span><span class="n">url_top_companies</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at the table</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">style</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_a3bcf664_6ec0_11eb_b324_acde48001122" ><thead>    <tr>        <th class="index_name level0" >0</th>        <th class="col_heading level0 col0" >Rank/Company</th>        <th class="col_heading level0 col1" >Net Revenue ($M)</th>        <th class="col_heading level0 col2" >1-Year Sales Growth</th>        <th class="col_heading level0 col3" >Key Product Categories</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row0_col0" class="data row0 col0" >1. Nestle SA*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row0_col1" class="data row0 col1" >$92,085</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row0_col2" class="data row0 col2" >2.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row0_col3" class="data row0 col3" >Food, Beverage, Confectionery</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row1_col0" class="data row1 col0" >2. Procter & Gamble</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row1_col1" class="data row1 col1" >$66,832</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row1_col2" class="data row1 col2" >2.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row1_col3" class="data row1 col3" >Household Goods, Health & Beauty Aids, OTC Pharma</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row2_col0" class="data row2 col0" >3. PepsiCo</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row2_col1" class="data row2 col1" >$64,661</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row2_col2" class="data row2 col2" >1.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row2_col3" class="data row2 col3" >Food, Beverage</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row3_col0" class="data row3 col0" >4. Unilever N.V.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row3_col1" class="data row3 col1" >$56,188</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row3_col2" class="data row3 col2" >-5.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row3_col3" class="data row3 col3" >Household Goods, Food, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row4_col0" class="data row4 col0" >5. Anheuser-Busch InBev</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row4_col1" class="data row4 col1" >$54,619</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row4_col2" class="data row4 col2" >-3.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row4_col3" class="data row4 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row5_col0" class="data row5 col0" >6. Christian Dior*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row5_col1" class="data row5 col1" >$51,607</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row5_col2" class="data row5 col2" >7.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row5_col3" class="data row5 col3" >Apparel/Footwear/Accessories, Wine & Spirits, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row6" class="row_heading level0 row6" >7</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row6_col0" class="data row6 col0" >7. LVMH Moët Hennessy Louis Vuitton*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row6_col1" class="data row6 col1" >$51,607</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row6_col2" class="data row6 col2" >9.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row6_col3" class="data row6 col3" >Apparel/Footwear/Accessories, Wine & Spirits, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row7" class="row_heading level0 row7" >8</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row7_col0" class="data row7 col0" >8. JBS S.A.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row7_col1" class="data row7 col1" >$44,587</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row7_col2" class="data row7 col2" >11.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row7_col3" class="data row7 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row8" class="row_heading level0 row8" >9</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row8_col0" class="data row8 col0" >9. Tyson Foods</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row8_col1" class="data row8 col1" >$40,052</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row8_col2" class="data row8 col2" >4.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row8_col3" class="data row8 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row9" class="row_heading level0 row9" >10</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row9_col0" class="data row9 col0" >10. Nike Inc.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row9_col1" class="data row9 col1" >$36,397</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row9_col2" class="data row9 col2" >6.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row9_col3" class="data row9 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row10" class="row_heading level0 row10" >11</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row10_col0" class="data row10 col0" >11. Imperial Brands PLC*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row10_col1" class="data row10 col1" >$33,641</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row10_col2" class="data row10 col2" >0.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row10_col3" class="data row10 col3" >Tobacco</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row11" class="row_heading level0 row11" >12</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row11_col0" class="data row11 col0" >12. 3M Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row11_col1" class="data row11 col1" >$32,765</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row11_col2" class="data row11 col2" >3.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row11_col3" class="data row11 col3" >Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row12" class="row_heading level0 row12" >13</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row12_col0" class="data row12 col0" >13. Coca-Cola Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row12_col1" class="data row12 col1" >$31,856</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row12_col2" class="data row12 col2" >-10.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row12_col3" class="data row12 col3" >Beverage, Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row13" class="row_heading level0 row13" >14</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row13_col0" class="data row13 col0" >14. L’Oreal*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row13_col1" class="data row13 col1" >$29,687</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row13_col2" class="data row13 col2" >3.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row13_col3" class="data row13 col3" >Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row14" class="row_heading level0 row14" >15</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row14_col0" class="data row14 col0" >15. Philip Morris International</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row14_col1" class="data row14 col1" >$29,625</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row14_col2" class="data row14 col2" >3.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row14_col3" class="data row14 col3" >Tobacco</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row15" class="row_heading level0 row15" >16</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row15_col0" class="data row15 col0" >16. Danone*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row15_col1" class="data row15 col1" >$27,168</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row15_col2" class="data row15 col2" >-0.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row15_col3" class="data row15 col3" >Food, Beverage</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row16" class="row_heading level0 row16" >17</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row16_col0" class="data row16 col0" >17. British American Tobacco PLC*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row16_col1" class="data row16 col1" >$26,993</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row16_col2" class="data row16 col2" >25.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row16_col3" class="data row16 col3" >Tobacco</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row17" class="row_heading level0 row17" >18</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row17_col0" class="data row17 col0" >18. Kraft Heinz</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row17_col1" class="data row17 col1" >$26,259</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row17_col2" class="data row17 col2" >0.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row17_col3" class="data row17 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row18" class="row_heading level0 row18" >19</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row18_col0" class="data row18 col0" >19. Mondelez International</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row18_col1" class="data row18 col1" >$25,938</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row18_col2" class="data row18 col2" >0.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row18_col3" class="data row18 col3" >Food, Confectionary</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row19" class="row_heading level0 row19" >20</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row19_col0" class="data row19 col0" >20. Haier Smart Home Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row19_col1" class="data row19 col1" >$25,755</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row19_col2" class="data row19 col2" >12.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row19_col3" class="data row19 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row20" class="row_heading level0 row20" >21</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row20_col0" class="data row20 col0" >21. Altria Group</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row20_col1" class="data row20 col1" >$25,364</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row20_col2" class="data row20 col2" >-0.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row20_col3" class="data row20 col3" >Tobacco</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row21" class="row_heading level0 row21" >22</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row21_col0" class="data row21 col0" >22. Heineken Holding N.V.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row21_col1" class="data row21 col1" >$24,765</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row21_col2" class="data row21 col2" >3.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row21_col3" class="data row21 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row22" class="row_heading level0 row22" >23</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row22_col0" class="data row22 col0" >23. Adidas AG*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row22_col1" class="data row22 col1" >$24,153</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row22_col2" class="data row22 col2" >3.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row22_col3" class="data row22 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row23" class="row_heading level0 row23" >24</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row23_col0" class="data row23 col0" >24. WH Group Ltd.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row23_col1" class="data row23 col1" >$22,605</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row23_col2" class="data row23 col2" >1.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row23_col3" class="data row23 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row24" class="row_heading level0 row24" >25</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row24_col0" class="data row24 col0" >25. Henkel AG*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row24_col1" class="data row24 col1" >$21,931</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row24_col2" class="data row24 col2" >-0.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row24_col3" class="data row24 col3" >Household Goods, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row25" class="row_heading level0 row25" >26</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row25_col0" class="data row25 col0" >26. Whirlpool Corp.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row25_col1" class="data row25 col1" >$21,037</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row25_col2" class="data row25 col2" >-1.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row25_col3" class="data row25 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row26" class="row_heading level0 row26" >27</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row26_col0" class="data row26 col0" >27. Japan Tobacco*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row26_col1" class="data row26 col1" >$20,565</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row26_col2" class="data row26 col2" >3.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row26_col3" class="data row26 col3" >Tobacco</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row27" class="row_heading level0 row27" >28</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row27_col0" class="data row27 col0" >28. Fonterra Cooperative Group</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row27_col1" class="data row27 col1" >$20,438</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row27_col2" class="data row27 col2" >6.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row27_col3" class="data row27 col3" >Food, Beverage</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row28" class="row_heading level0 row28" >29</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row28_col0" class="data row28 col0" >29. Asahi Group Holdings*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row28_col1" class="data row28 col1" >$19,677</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row28_col2" class="data row28 col2" >1.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row28_col3" class="data row28 col3" >Wine & Spirits, Beverages, Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row29" class="row_heading level0 row29" >30</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row29_col0" class="data row29 col0" >30. BSH Hausgerate*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row29_col1" class="data row29 col1" >$19,667</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row29_col2" class="data row29 col2" >-3.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row29_col3" class="data row29 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row30" class="row_heading level0 row30" >31</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row30_col0" class="data row30 col0" >31. San Miguel Corp.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row30_col1" class="data row30 col1" >$19,652</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row30_col2" class="data row30 col2" >24.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row30_col3" class="data row30 col3" >Wine & Spirits, Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row31" class="row_heading level0 row31" >32</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row31_col0" class="data row31 col0" >32. Kimberly-Clark Corp.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row31_col1" class="data row31 col1" >$18,486</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row31_col2" class="data row31 col2" >0.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row31_col3" class="data row31 col3" >Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row32" class="row_heading level0 row32" >33</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row32_col0" class="data row32 col0" >33. Kirin Holdings*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row32_col1" class="data row32 col1" >$17,916</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row32_col2" class="data row32 col2" >3.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row32_col3" class="data row32 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row33" class="row_heading level0 row33" >34</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row33_col0" class="data row33 col0" >34. Associated British Foods*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row33_col1" class="data row33 col1" >$17,164</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row33_col2" class="data row33 col2" >1.40%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row33_col3" class="data row33 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row34" class="row_heading level0 row34" >35</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row34_col0" class="data row34 col0" >35. General Mills</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row34_col1" class="data row34 col1" >$15,740</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row34_col2" class="data row34 col2" >0.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row34_col3" class="data row34 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row35" class="row_heading level0 row35" >36</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row35_col0" class="data row35 col0" >36. Colgate-Palmolive Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row35_col1" class="data row35 col1" >$15,544</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row35_col2" class="data row35 col2" >0.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row35_col3" class="data row35 col3" >Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row36" class="row_heading level0 row36" >37</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row36_col0" class="data row36 col0" >37. Kering*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row36_col1" class="data row36 col1" >$15,060</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row36_col2" class="data row36 col2" >26.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row36_col3" class="data row36 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row37" class="row_heading level0 row37" >38</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row37_col0" class="data row37 col0" >38. Grupo Bimbo*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row37_col1" class="data row37 col1" >$14,765</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row37_col2" class="data row37 col2" >7.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row37_col3" class="data row37 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row38" class="row_heading level0 row38" >39</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row38_col0" class="data row38 col0" >39. Kao Corp.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row38_col1" class="data row38 col1" >$13,995</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row38_col2" class="data row38 col2" >1.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row38_col3" class="data row38 col3" >Household Goods, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row39" class="row_heading level0 row39" >40</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row39_col0" class="data row39 col0" >40. Stanley Black & Decker</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row39_col1" class="data row39 col1" >$13,982</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row39_col2" class="data row39 col2" >7.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row39_col3" class="data row39 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row40" class="row_heading level0 row40" >41</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row40_col0" class="data row40 col0" >41. Johnson & Johnson (Consumer)</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row40_col1" class="data row40 col1" >$13,853</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row40_col2" class="data row40 col2" >1.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row40_col3" class="data row40 col3" >OTC Pharma, Household Goods, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row41" class="row_heading level0 row41" >42</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row41_col0" class="data row41 col0" >42. VF Corp.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row41_col1" class="data row41 col1" >$13,849</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row41_col2" class="data row41 col2" >17.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row41_col3" class="data row41 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row42" class="row_heading level0 row42" >43</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row42_col0" class="data row42 col0" >43. Uni-President Enterprises*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row42_col1" class="data row42 col1" >$13,845</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row42_col2" class="data row42 col2" >7.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row42_col3" class="data row42 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row43" class="row_heading level0 row43" >44</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row43_col0" class="data row43 col0" >44. Estee Lauder Companies</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row43_col1" class="data row43 col1" >$13,683</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row43_col2" class="data row43 col2" >15.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row43_col3" class="data row43 col3" >Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row44" class="row_heading level0 row44" >45</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row44_col0" class="data row44 col0" >45. Kellogg Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row44_col1" class="data row44 col1" >$13,547</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row44_col2" class="data row44 col2" >5.40%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row44_col3" class="data row44 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row45" class="row_heading level0 row45" >46</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row45_col0" class="data row45 col0" >46. Diageo PLC*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row45_col1" class="data row45 col1" >$13,405</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row45_col2" class="data row45 col2" >0.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row45_col3" class="data row45 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row46" class="row_heading level0 row46" >47</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row46_col0" class="data row46 col0" >47. AB Electrolux*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row46_col1" class="data row46 col1" >$12,821</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row46_col2" class="data row46 col2" >2.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row46_col3" class="data row46 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row47" class="row_heading level0 row47" >48</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row47_col0" class="data row47 col0" >48. RB*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row47_col1" class="data row47 col1" >$12,597</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row47_col2" class="data row47 col2" >-0.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row47_col3" class="data row47 col3" >Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row48" class="row_heading level0 row48" >49</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row48_col0" class="data row48 col0" >49. Essity*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row48_col1" class="data row48 col1" >$12,239</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row48_col2" class="data row48 col2" >8.40%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row48_col3" class="data row48 col3" >Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row49" class="row_heading level0 row49" >50</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row49_col0" class="data row49 col0" >50. Compagnie Financiere Richemont SA*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row49_col1" class="data row49 col1" >$12,100</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row49_col2" class="data row49 col2" >3.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row49_col3" class="data row49 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row50" class="row_heading level0 row50" >51</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row50_col0" class="data row50 col0" >51. Nipponham Group*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row50_col1" class="data row50 col1" >$11,779</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row50_col2" class="data row50 col2" >5.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row50_col3" class="data row50 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row51" class="row_heading level0 row51" >52</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row51_col0" class="data row51 col0" >52. Keurig Dr Pepper</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row51_col1" class="data row51 col1" >$11,024</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row51_col2" class="data row51 col2" >2.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row51_col3" class="data row51 col3" >Beverages</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row52" class="row_heading level0 row52" >53</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row52_col0" class="data row52 col0" >53. MolsonCoors Brewing Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row52_col1" class="data row52 col1" >$10,770</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row52_col2" class="data row52 col2" >-2.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row52_col3" class="data row52 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row53" class="row_heading level0 row53" >54</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row53_col0" class="data row53 col0" >54. Shiseido Co.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row53_col1" class="data row53 col1" >$10,160</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row53_col2" class="data row53 col2" >8.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row53_col3" class="data row53 col3" >Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row54" class="row_heading level0 row54" >55</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row54_col0" class="data row54 col0" >55. Pernod Ricard*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row54_col1" class="data row54 col1" >$9,905</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row54_col2" class="data row54 col2" >-0.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row54_col3" class="data row54 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row55" class="row_heading level0 row55" >56</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row55_col0" class="data row55 col0" >56. Nintendo Co.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row55_col1" class="data row55 col1" >$9,797</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row55_col2" class="data row55 col2" >115.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row55_col3" class="data row55 col3" >Toys & Games</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row56" class="row_heading level0 row56" >57</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row56_col0" class="data row56 col0" >57. China Mengniu Dairy Co.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row56_col1" class="data row56 col1" >$9,691</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row56_col2" class="data row56 col2" >14.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row56_col3" class="data row56 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row57" class="row_heading level0 row57" >58</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row57_col0" class="data row57 col0" >58. PVH Corp.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row57_col1" class="data row57 col1" >$9,657</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row57_col2" class="data row57 col2" >8.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row57_col3" class="data row57 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row58" class="row_heading level0 row58" >59</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row58_col0" class="data row58 col0" >59. Hormel Foods</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row58_col1" class="data row58 col1" >$9,546</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row58_col2" class="data row58 col2" >4.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row58_col3" class="data row58 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row59" class="row_heading level0 row59" >60</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row59_col0" class="data row59 col0" >60. Coty, Inc.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row59_col1" class="data row59 col1" >$9,398</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row59_col2" class="data row59 col2" >22.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row59_col3" class="data row59 col3" >Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row60" class="row_heading level0 row60" >61</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row60_col0" class="data row60 col0" >61. Carlsberg A/S*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row60_col1" class="data row60 col1" >$9,233</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row60_col2" class="data row60 col2" >3.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row60_col3" class="data row60 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row61" class="row_heading level0 row61" >62</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row61_col0" class="data row61 col0" >62. Saputo Inc.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row61_col1" class="data row61 col1" >$8,766</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row61_col2" class="data row61 col2" >3.40%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row61_col3" class="data row61 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row62" class="row_heading level0 row62" >63</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row62_col0" class="data row62 col0" >63. Campbell Soup Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row62_col1" class="data row62 col1" >$8,685</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row62_col2" class="data row62 col2" >10.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row62_col3" class="data row62 col3" >Food, Beverages</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row63" class="row_heading level0 row63" >64</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row63_col0" class="data row63 col0" >64. Newell Brands</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row63_col1" class="data row63 col1" >$8,631</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row63_col2" class="data row63 col2" >-9.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row63_col3" class="data row63 col3" >Household Goods, Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row64" class="row_heading level0 row64" >65</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row64_col0" class="data row64 col0" >65. Swatch Group SA*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row64_col1" class="data row64 col1" >$8,535</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row64_col2" class="data row64 col2" >6.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row64_col3" class="data row64 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row65" class="row_heading level0 row65" >66</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row65_col0" class="data row65 col0" >66. BRF - Brasil Foods*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row65_col1" class="data row65 col1" >$8,474</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row65_col2" class="data row65 col2" >3.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row65_col3" class="data row65 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row66" class="row_heading level0 row66" >67</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row66_col0" class="data row66 col0" >67. GlaxoSmithKline Consumer Healthcare*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row66_col1" class="data row66 col1" >$8,440</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row66_col2" class="data row66 col2" >-1.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row66_col3" class="data row66 col3" >OTC Pharma</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row67" class="row_heading level0 row67" >68</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row67_col0" class="data row67 col0" >68. Beiersdorf AG*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row67_col1" class="data row67 col1" >$7,972</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row67_col2" class="data row67 col2" >2.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row67_col3" class="data row67 col3" >Household Goods, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row68" class="row_heading level0 row68" >69</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row68_col0" class="data row68 col0" >69. Conagra Brands</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row68_col1" class="data row68 col1" >$7,938</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row68_col2" class="data row68 col2" >1.40%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row68_col3" class="data row68 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row69" class="row_heading level0 row69" >70</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row69_col0" class="data row69 col0" >70. Hershey Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row69_col1" class="data row69 col1" >$7,791</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row69_col2" class="data row69 col2" >3.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row69_col3" class="data row69 col3" >Food, Confectionery</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row70" class="row_heading level0 row70" >71</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row70_col0" class="data row70 col0" >71. Dean Foods Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row70_col1" class="data row70 col1" >$7,755</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row70_col2" class="data row70 col2" >-0.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row70_col3" class="data row70 col3" >Food, Beverages</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row71" class="row_heading level0 row71" >72</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row71_col0" class="data row71 col0" >72. Constellation Brands</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row71_col1" class="data row71 col1" >$7,585</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row71_col2" class="data row71 col2" >3.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row71_col3" class="data row71 col3" >Wine & Spirits</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row72" class="row_heading level0 row72" >73</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row72_col0" class="data row72 col0" >73. Groupe SEB*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row72_col1" class="data row72 col1" >$7,508</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row72_col2" class="data row72 col2" >5.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row72_col3" class="data row72 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row73" class="row_heading level0 row73" >74</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row73_col0" class="data row73 col0" >74. Thai Beverage Public Co.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row73_col1" class="data row73 col1" >$7,496</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row73_col2" class="data row73 col2" >20.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row73_col3" class="data row73 col3" >Wine & Spirits, Food, Beverages</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row74" class="row_heading level0 row74" >75</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row74_col0" class="data row74 col0" >75. J.M. Smucker Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row74_col1" class="data row74 col1" >$7,357</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row74_col2" class="data row74 col2" >-0.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row74_col3" class="data row74 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row75" class="row_heading level0 row75" >76</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row75_col0" class="data row75 col0" >76. PT Gudang Garam*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row75_col1" class="data row75 col1" >$6,805</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row75_col2" class="data row75 col2" >14.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row75_col3" class="data row75 col3" >Tobacco</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row76" class="row_heading level0 row76" >77</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row76_col0" class="data row76 col0" >77. Hanesbrands</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row76_col1" class="data row76 col1" >$6,804</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row76_col2" class="data row76 col2" >5.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row76_col3" class="data row76 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row77" class="row_heading level0 row77" >78</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row77_col0" class="data row77 col0" >78. Hermes International*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row77_col1" class="data row77 col1" >$6,575</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row77_col2" class="data row77 col2" >7.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row77_col3" class="data row77 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row78" class="row_heading level0 row78" >79</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row78_col0" class="data row78 col0" >79. Unicharm Corp.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row78_col1" class="data row78 col1" >$6,388</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row78_col2" class="data row78 col2" >7.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row78_col3" class="data row78 col3" >Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row79" class="row_heading level0 row79" >80</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row79_col0" class="data row79 col0" >80. Bandai Namco Holdings*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row79_col1" class="data row79 col1" >$6,295</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row79_col2" class="data row79 col2" >9.40%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row79_col3" class="data row79 col3" >Toys & Games</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row80" class="row_heading level0 row80" >81</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row80_col0" class="data row80 col0" >81. Post Holdings</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row80_col1" class="data row80 col1" >$6,257</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row80_col2" class="data row80 col2" >19.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row80_col3" class="data row80 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row81" class="row_heading level0 row81" >82</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row81_col0" class="data row81 col0" >82. Ralph Lauren Corp.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row81_col1" class="data row81 col1" >$6,182</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row81_col2" class="data row81 col2" >-7.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row81_col3" class="data row81 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row82" class="row_heading level0 row82" >83</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row82_col0" class="data row82 col0" >83. Clorox Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row82_col1" class="data row82 col1" >$6,124</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row82_col2" class="data row82 col2" >2.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row82_col3" class="data row82 col3" >Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row83" class="row_heading level0 row83" >84</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row83_col0" class="data row83 col0" >84. Bayer Consumer Health*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row83_col1" class="data row83 col1" >$6,006</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row83_col2" class="data row83 col2" >-7.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row83_col3" class="data row83 col3" >OTC Pharma</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row84" class="row_heading level0 row84" >85</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row84_col0" class="data row84 col0" >85. Tapestry Inc.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row84_col1" class="data row84 col1" >$5,880</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row84_col2" class="data row84 col2" >31.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row84_col3" class="data row84 col3" >Apparel/Footwear/Accessories</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row85" class="row_heading level0 row85" >86</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row85_col0" class="data row85 col0" >86. McCormick & Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row85_col1" class="data row85 col1" >$5,409</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row85_col2" class="data row85 col2" >11.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row85_col3" class="data row85 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row86" class="row_heading level0 row86" >87</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row86_col0" class="data row86 col0" >87. Savencia SA</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row86_col1" class="data row86 col1" >$5,360</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row86_col2" class="data row86 col2" >0.20%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row86_col3" class="data row86 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row87" class="row_heading level0 row87" >88</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row87_col0" class="data row87 col0" >88. Kewpie Corp.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row87_col1" class="data row87 col1" >$5,323</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row87_col2" class="data row87 col2" >2.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row87_col3" class="data row87 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row88" class="row_heading level0 row88" >89</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row88_col0" class="data row88 col0" >89. Avon Products</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row88_col1" class="data row88 col1" >$5,248</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row88_col2" class="data row88 col2" >-5.70%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row88_col3" class="data row88 col3" >Health & Beauty Aids, Apparel/Footwear/Accessories, Household Goods</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row89" class="row_heading level0 row89" >90</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row89_col0" class="data row89 col0" >90. Electronic Arts</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row89_col1" class="data row89 col1" >$5,150</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row89_col2" class="data row89 col2" >6.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row89_col3" class="data row89 col3" >Toys & Games</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row90" class="row_heading level0 row90" >91</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row90_col0" class="data row90 col0" >91. First Pacific Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row90_col1" class="data row90 col1" >$5,136</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row90_col2" class="data row90 col2" >-1.90%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row90_col3" class="data row90 col3" >Food</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row91" class="row_heading level0 row91" >92</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row91_col0" class="data row91 col0" >92. ITC Ltd.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row91_col1" class="data row91 col1" >$5,048</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row91_col2" class="data row91 col2" >-22.00%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row91_col3" class="data row91 col3" >Tobacco, Food, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row92" class="row_heading level0 row92" >93</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row92_col0" class="data row92 col0" >93. Herbalife Ltd.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row92_col1" class="data row92 col1" >$4,892</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row92_col2" class="data row92 col2" >10.50%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row92_col3" class="data row92 col3" >Food, Household Goods, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row93" class="row_heading level0 row93" >94</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row93_col0" class="data row93 col0" >94. Sapporo Holdings Ltd.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row93_col1" class="data row93 col1" >$4,843</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row93_col2" class="data row93 col2" >-5.40%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row93_col3" class="data row93 col3" >Wine & Spirits, Food, Beverages</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row94" class="row_heading level0 row94" >95</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row94_col0" class="data row94 col0" >95. Arcelik A.S.*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row94_col1" class="data row94 col1" >$4,665</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row94_col2" class="data row94 col2" >29.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row94_col3" class="data row94 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row95" class="row_heading level0 row95" >96</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row95_col0" class="data row95 col0" >96. Hasbro Inc.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row95_col1" class="data row95 col1" >$4,580</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row95_col2" class="data row95 col2" >-12.10%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row95_col3" class="data row95 col3" >Toys & Games</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row96" class="row_heading level0 row96" >97</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row96_col0" class="data row96 col0" >97. Mattel Inc.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row96_col1" class="data row96 col1" >$4,511</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row96_col2" class="data row96 col2" >-7.60%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row96_col3" class="data row96 col3" >Toys & Games</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row97" class="row_heading level0 row97" >98</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row97_col0" class="data row97 col0" >98. Husqvarna AB*</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row97_col1" class="data row97 col1" >$4,244</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row97_col2" class="data row97 col2" >4.30%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row97_col3" class="data row97 col3" >Housewares/Appliances</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row98" class="row_heading level0 row98" >99</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row98_col0" class="data row98 col0" >99. Church & Dwight Co.</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row98_col1" class="data row98 col1" >$4,146</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row98_col2" class="data row98 col2" >9.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row98_col3" class="data row98 col3" >Household Goods, Health & Beauty Aids</td>
+            </tr>
+            <tr>
+                        <th id="T_a3bcf664_6ec0_11eb_b324_acde48001122level0_row99" class="row_heading level0 row99" >100</th>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row99_col0" class="data row99 col0" >100. Spectrum Brands Holdings</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row99_col1" class="data row99 col1" >$3,809</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row99_col2" class="data row99 col2" >2.80%</td>
+                        <td id="T_a3bcf664_6ec0_11eb_b324_acde48001122row99_col3" class="data row99 col3" >Household Goods, Housewares/Appliances</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+</div>
+<div class="section" id="cleaning-the-data">
+<h3>Cleaning the data<a class="headerlink" href="#cleaning-the-data" title="Permalink to this headline">¶</a></h3>
+<p>We see that the table has a column with both the rank and the name of the company, and we want to have only the name of company in a column (as we have the rank in the index of the table). There are a fwe options to do it using string functions such as <em>RIGHT</em> or <em>LEFT</em>. In this case, you could use:</p>
+<div class="highlight-excel notranslate"><div class="highlight"><pre><span></span>RIGHT(cell,LEN(cell)-SEARCH(&quot;char&quot;, cell))
+</pre></div>
+</div>
+<p>In this example, we will use a powerful tool of regular expression (regex). We will not dive into the syntax of regex now, and it time you will find it easier to read or even write.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_names_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">company_name</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Rank/Company&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+. ([^*]*)[*]?&#39;</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next manipulation that we want to do is to have a numeric column with the annual revenues. The data in the table is in millions (which is better for presentation purposes). We will run two manipulations on the data:</p>
+<ul class="simple">
+<li><p>Start with the clean verion of the table data frame above</p></li>
+<li><p>Remove the dollar sign (<em>$</em>) and the comma (<em>,</em>) from the ‘Net Revenue’ Column</p></li>
+<li><p>Convert the above value to number and scale it to dollars by multipling by a million</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_names_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">clean_names_df</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">annual_num</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Net Revenue ($M)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[\$,]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">annual_revenues</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">annual_num</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_names_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank/Company</th>
+      <th>Net Revenue ($M)</th>
+      <th>1-Year Sales Growth</th>
+      <th>Key Product Categories</th>
+      <th>company_name</th>
+      <th>annual_num</th>
+      <th>annual_revenues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1. Nestle SA*</td>
+      <td>$92,085</td>
+      <td>2.10%</td>
+      <td>Food, Beverage, Confectionery</td>
+      <td>Nestle SA</td>
+      <td>92085</td>
+      <td>92085000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2. Procter &amp; Gamble</td>
+      <td>$66,832</td>
+      <td>2.70%</td>
+      <td>Household Goods, Health &amp; Beauty Aids, OTC Pharma</td>
+      <td>Procter &amp; Gamble</td>
+      <td>66832</td>
+      <td>66832000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3. PepsiCo</td>
+      <td>$64,661</td>
+      <td>1.80%</td>
+      <td>Food, Beverage</td>
+      <td>PepsiCo</td>
+      <td>64661</td>
+      <td>64661000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4. Unilever N.V.*</td>
+      <td>$56,188</td>
+      <td>-5.10%</td>
+      <td>Household Goods, Food, Health &amp; Beauty Aids</td>
+      <td>Unilever N.V.</td>
+      <td>56188</td>
+      <td>56188000000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5. Anheuser-Busch InBev</td>
+      <td>$54,619</td>
+      <td>-3.20%</td>
+      <td>Wine &amp; Spirits</td>
+      <td>Anheuser-Busch InBev</td>
+      <td>54619</td>
+      <td>54619000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="enriching-the-data">
+<h3>Enriching the data<a class="headerlink" href="#enriching-the-data" title="Permalink to this headline">¶</a></h3>
+<p>The next column we want to add to our table before importing it to our CRM system is domain of the company. We will need to use for it a search engine such as Google and a python library that is wrapping it to make it easy for us to use it. First, let’s install the python library:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">google</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: google in /Users/guy/miniconda3/lib/python3.8/site-packages (3.0.0)
+Requirement already satisfied: beautifulsoup4 in /Users/guy/miniconda3/lib/python3.8/site-packages (from google) (4.9.1)
+Requirement already satisfied: soupsieve&gt;1.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from beautifulsoup4-&gt;google) (2.0.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s try it on one of the company names</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">googlesearch</span> <span class="kn">import</span> <span class="n">search</span>
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">search</span><span class="p">(</span><span class="s1">&#39;Nestle&#39;</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://www.nestle.com/
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above cell is using a powerful concept in programming called <em>for-loop</em> or <em>list-comprehesion</em>. However, we will try to minimize this programming concept and convert it to a simpler command that is returning the first value</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Hasbro Inc.&#39;</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;Nope&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://shop.hasbro.com/en-us&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="search-domain-function">
+<h4>Search Domain Function<a class="headerlink" href="#search-domain-function" title="Permalink to this headline">¶</a></h4>
+<p>Now we can see the following function that will return to us the domain name of every company we will call it. The function is using various complicated concepts such as regex that we already saw, and <em>try-except</em> part which is used to handle errors (what happened if we don’t find a domain name). The function is also waiting 20 seconds before calling the search engine to avoid exceeding some limits that systems are putting against bots (which we just created). The <em>sleep</em> will make the actual run of the data much longer, but it is still automated and we don’t need to run this repeative task manually.</p>
+<p>For now, we don’t need to understand these details:</p>
+<ul class="simple">
+<li><p>Wait 20 seconds between calls to avoid throttling by Google</p></li>
+<li><p>Search for the website of the name of the company and return the first result</p></li>
+<li><p>Extract the format of the http or https of the above result</p></li>
+<li><p>Take the first match</p></li>
+<li><p>Return the match or ‘NA’ if not found</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">search_domain</span><span class="p">(</span><span class="n">company_name</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span> 
+        <span class="n">domain</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">search</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">company_name</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; website&#39;</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;https?://.*?\.?([0-9a-z-]+\.co[^/]+)/.*&#39;</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="s1">&#39;NA&#39;</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s test it with one of the compamy names</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_domain</span><span class="p">(</span><span class="s1">&#39;3M co.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3m.com&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now it is time to call our <em>search_domain</em> function on all the rows in our table. This will take an hour or so, due to our <em>sleep</em> time between the calls. For now, let’s run it only on the head (first 5) of the table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_names_df_head</span> <span class="o">=</span> <span class="n">clean_names_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">clean_names_df_head</span><span class="p">[</span><span class="s1">&#39;domain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">clean_names_df_head</span>
+    <span class="o">.</span><span class="n">company_name</span>
+    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">search_domain</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean_names_df_head</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank/Company</th>
+      <th>Net Revenue ($M)</th>
+      <th>1-Year Sales Growth</th>
+      <th>Key Product Categories</th>
+      <th>company_name</th>
+      <th>annual_num</th>
+      <th>annual_revenues</th>
+      <th>domain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1. Nestle SA*</td>
+      <td>$92,085</td>
+      <td>2.10%</td>
+      <td>Food, Beverage, Confectionery</td>
+      <td>Nestle SA</td>
+      <td>92085</td>
+      <td>92085000000</td>
+      <td>nestle.com</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2. Procter &amp; Gamble</td>
+      <td>$66,832</td>
+      <td>2.70%</td>
+      <td>Household Goods, Health &amp; Beauty Aids, OTC Pharma</td>
+      <td>Procter &amp; Gamble</td>
+      <td>66832</td>
+      <td>66832000000</td>
+      <td>pg.com</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3. PepsiCo</td>
+      <td>$64,661</td>
+      <td>1.80%</td>
+      <td>Food, Beverage</td>
+      <td>PepsiCo</td>
+      <td>64661</td>
+      <td>64661000000</td>
+      <td>pepsico.com</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4. Unilever N.V.*</td>
+      <td>$56,188</td>
+      <td>-5.10%</td>
+      <td>Household Goods, Food, Health &amp; Beauty Aids</td>
+      <td>Unilever N.V.</td>
+      <td>56188</td>
+      <td>56188000000</td>
+      <td>unilever.com</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5. Anheuser-Busch InBev</td>
+      <td>$54,619</td>
+      <td>-3.20%</td>
+      <td>Wine &amp; Spirits</td>
+      <td>Anheuser-Busch InBev</td>
+      <td>54619</td>
+      <td>54619000000</td>
+      <td>ab-inbev.com</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="writing-to-csv-excel-file">
+<h3>Writing to CSV/Excel file<a class="headerlink" href="#writing-to-csv-excel-file" title="Permalink to this headline">¶</a></h3>
+<p>Once we finished our table creation, we can write it as a file that we can later import to our CRM system.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">clean_names_df</span>
+    <span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+        <span class="s1">&#39;../data/top_100_cpg_companies.csv&#39;</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01%20-%20loading%20files.html" title="previous page">Loading Files</a>
+    <a class='right-next' id="next-link" href="01.03_loading_data_from_API.html" title="next page">Reading Data from External API</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Aiola Team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

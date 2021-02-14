@@ -1,0 +1,1192 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Functions &#8212; From Excel to Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Categories from numeric values" href="02.08_group_values.html" />
+    <link rel="prev" title="Adding New Columns" href="02.01_Adding_New_Columns.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html">
+   Install Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
+   Open in Binder/Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
+   Open in Visual Studio Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Loading Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20loading%20files.html">
+   Loading Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.02%20-%20loading%20data%20from%20HTML.html">
+   Reading Data from Web Sites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.03_loading_data_from_API.html">
+   Reading Data from External API
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Adding Columns
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.01_Adding_New_Columns.html">
+   Adding New Columns
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Date Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.08_group_values.html">
+   Categories from numeric values
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Aggregation and Reshaping
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.01_pivot_tables.html">
+   Creating a Pivot Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.02_group_by.html">
+   Split a Table into Groups
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Enrichment with Merge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.03_merge.html">
+   Merge/Join Tables (VLOOKUP)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Industries Use Cases
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.01_Logistics_analysis.html">
+   Logistics Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.02_Currency_analysis.html">
+   Currency Rate Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.03_Linear_optimization.html">
+   Linear Programming (Optimization)
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/02.02_date_functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/02.02_date_functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/02.02_date_functions.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Date Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#today">
+     TODAY
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#day-month-year">
+     DAY, MONTH, YEAR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#date">
+     DATE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#networkdays">
+     NETWORKDAYS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#workday">
+     WORKDAY
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-life-example">
+   Real life example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-data">
+     Loading Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#date-columns-manipulations">
+     Date Columns Manipulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-data-visulizations">
+     Simple Data Visulizations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyzing-corrlations-between-the-columns">
+     Analyzing Corrlations between the columns
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="date-functions">
+<h1>Date Functions<a class="headerlink" href="#date-functions" title="Permalink to this headline">¶</a></h1>
+<p>In the previous section we created an advanced analysis with <em>merge</em> and <em>groupby</em> and other Pandas capabilities, which are harder to do in Excel. In this section, we will check the more traditional functions that are often used in Excel spreadsheet and we will see how to use them easily in Pandas.</p>
+<div class="section" id="id1">
+<h2>Date Functions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Let’s review some common functions in Excel and their replacement in Pandas</p>
+<div class="section" id="today">
+<h3>TODAY<a class="headerlink" href="#today" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">=TODAY()</span></code></p>
+<p>Like many of the Pandas functions, most of the arguments are optional and the default values are often as expected. For example, the time stamp and even the date depends on the timezone needed. In the next example, we will specific the optional tz value to <em>‘America/Chicago’</em>:</p>
+<p>You can see that the data includes columns such as <em>Seasons</em> or <em>Functioning Day</em>, however, we might want to calculate such columns differently.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">now</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">Timestamp</span>
+    <span class="o">.</span><span class="n">today</span><span class="p">(</span>
+        <span class="n">tz</span><span class="o">=</span><span class="s1">&#39;America/Chicago&#39;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">now</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2021-02-14 06:35:25.946514-0600&#39;, tz=&#39;America/Chicago&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="day-month-year">
+<h3>DAY, MONTH, YEAR<a class="headerlink" href="#day-month-year" title="Permalink to this headline">¶</a></h3>
+<p>We can apply all the various date functions from excel such as <em>DAY</em>, <em>MINUTE</em>, <em>HOUR</em> etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(14, 2, 2021)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="date">
+<h3>DATE<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h3>
+<p>we can create a date with given values such as day, month, and year</p>
+<p><code class="docutils literal notranslate"><span class="pre">=Date(2021,1,1)</span></code></p>
+<p>and in pandas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_year</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span>
+        <span class="n">year</span><span class="o">=</span><span class="mi">2021</span><span class="p">,</span>
+        <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">day</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">new_year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2021-01-01 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="networkdays">
+<h3>NETWORKDAYS<a class="headerlink" href="#networkdays" title="Permalink to this headline">¶</a></h3>
+<p>A common function in business context is <code class="docutils literal notranslate"><span class="pre">=NETWORKDAYS()</span></code>, that calculates the number of working days between two dates. In Pandas we can use the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="p">(</span>
+    <span class="n">np</span>
+    <span class="o">.</span><span class="n">busday_count</span><span class="p">(</span>
+        <span class="n">new_year</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> 
+        <span class="n">now</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="workday">
+<h3>WORKDAY<a class="headerlink" href="#workday" title="Permalink to this headline">¶</a></h3>
+<p>The next useful function is <code class="docutils literal notranslate"><span class="pre">=WORKDAY(NUMBER)</span></code> that can be used when you want to get the date after a given number of working days</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_year</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">&quot;2021-01-01&quot;</span><span class="p">)</span>
+<span class="n">new_year</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Friday&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workday_100</span> <span class="o">=</span> <span class="n">new_year</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">pd</span><span class="o">.</span><span class="n">offsets</span><span class="o">.</span><span class="n">BusinessDay</span><span class="p">()</span>
+<span class="n">workday_100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2021-05-21 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The one hundred working day in 2021 is May 21st.</p>
+<p>Pandas has a wide range of options for date offsets, such as weeks, month-end, semi-month-end (15th day), querter, retail year (aka 52-53 week), and many <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects">others</a>.</p>
+</div>
+</div>
+<div class="section" id="real-life-example">
+<h2>Real life example<a class="headerlink" href="#real-life-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loading-data">
+<h3>Loading Data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h3>
+<p>As usual, let’s load a dataset to work on. We will take another dataset that is used in machine learning education, “Bike Share”. This is a data set about the demand of bike share service in Seoul. Please note that we need to modify the default encoding of <em>read_csv</em> from ‘UTF-8’ to ‘latin1’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv&#39;</span><span class="p">,</span> 
+        <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">bike_share_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Rented Bike Count</th>
+      <th>Hour</th>
+      <th>Temperature(°C)</th>
+      <th>Humidity(%)</th>
+      <th>Wind speed (m/s)</th>
+      <th>Visibility (10m)</th>
+      <th>Dew point temperature(°C)</th>
+      <th>Solar Radiation (MJ/m2)</th>
+      <th>Rainfall(mm)</th>
+      <th>Snowfall (cm)</th>
+      <th>Seasons</th>
+      <th>Holiday</th>
+      <th>Functioning Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>01/12/2017</td>
+      <td>254</td>
+      <td>0</td>
+      <td>-5.2</td>
+      <td>37</td>
+      <td>2.2</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>01/12/2017</td>
+      <td>204</td>
+      <td>1</td>
+      <td>-5.5</td>
+      <td>38</td>
+      <td>0.8</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>01/12/2017</td>
+      <td>173</td>
+      <td>2</td>
+      <td>-6.0</td>
+      <td>39</td>
+      <td>1.0</td>
+      <td>2000</td>
+      <td>-17.7</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>01/12/2017</td>
+      <td>107</td>
+      <td>3</td>
+      <td>-6.2</td>
+      <td>40</td>
+      <td>0.9</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>01/12/2017</td>
+      <td>78</td>
+      <td>4</td>
+      <td>-6.0</td>
+      <td>36</td>
+      <td>2.3</td>
+      <td>2000</td>
+      <td>-18.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>8755</th>
+      <td>30/11/2018</td>
+      <td>1003</td>
+      <td>19</td>
+      <td>4.2</td>
+      <td>34</td>
+      <td>2.6</td>
+      <td>1894</td>
+      <td>-10.3</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8756</th>
+      <td>30/11/2018</td>
+      <td>764</td>
+      <td>20</td>
+      <td>3.4</td>
+      <td>37</td>
+      <td>2.3</td>
+      <td>2000</td>
+      <td>-9.9</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8757</th>
+      <td>30/11/2018</td>
+      <td>694</td>
+      <td>21</td>
+      <td>2.6</td>
+      <td>39</td>
+      <td>0.3</td>
+      <td>1968</td>
+      <td>-9.9</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8758</th>
+      <td>30/11/2018</td>
+      <td>712</td>
+      <td>22</td>
+      <td>2.1</td>
+      <td>41</td>
+      <td>1.0</td>
+      <td>1859</td>
+      <td>-9.8</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8759</th>
+      <td>30/11/2018</td>
+      <td>584</td>
+      <td>23</td>
+      <td>1.9</td>
+      <td>43</td>
+      <td>1.3</td>
+      <td>1909</td>
+      <td>-9.3</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+<p>8760 rows × 14 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="date-columns-manipulations">
+<h3>Date Columns Manipulations<a class="headerlink" href="#date-columns-manipulations" title="Permalink to this headline">¶</a></h3>
+<p>We will start with creating a few columns based on the date column, such as day of the week and month.</p>
+<ul class="simple">
+<li><p>Start with the table we loaded above</p></li>
+<li><p>Make sure that the Date column is in datetime format that we see (note the day before the month)</p></li>
+<li><p>Calculate the day-of-week (DOW) of each row (to use the built-in functions we need to access the date accessor (<em>.dt</em>))</p></li>
+<li><p>Calculate the month value of each row</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enriched_bike_share_data</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">bike_share_data</span><span class="o">.</span><span class="n">Date</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">DOW</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">())</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">month</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">enriched_bike_share_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Rented Bike Count</th>
+      <th>Hour</th>
+      <th>Temperature(°C)</th>
+      <th>Humidity(%)</th>
+      <th>Wind speed (m/s)</th>
+      <th>Visibility (10m)</th>
+      <th>Dew point temperature(°C)</th>
+      <th>Solar Radiation (MJ/m2)</th>
+      <th>Rainfall(mm)</th>
+      <th>Snowfall (cm)</th>
+      <th>Seasons</th>
+      <th>Holiday</th>
+      <th>Functioning Day</th>
+      <th>DOW</th>
+      <th>month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2017-12-01</td>
+      <td>254</td>
+      <td>0</td>
+      <td>-5.2</td>
+      <td>37</td>
+      <td>2.2</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017-12-01</td>
+      <td>204</td>
+      <td>1</td>
+      <td>-5.5</td>
+      <td>38</td>
+      <td>0.8</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017-12-01</td>
+      <td>173</td>
+      <td>2</td>
+      <td>-6.0</td>
+      <td>39</td>
+      <td>1.0</td>
+      <td>2000</td>
+      <td>-17.7</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017-12-01</td>
+      <td>107</td>
+      <td>3</td>
+      <td>-6.2</td>
+      <td>40</td>
+      <td>0.9</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017-12-01</td>
+      <td>78</td>
+      <td>4</td>
+      <td>-6.0</td>
+      <td>36</td>
+      <td>2.3</td>
+      <td>2000</td>
+      <td>-18.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>8755</th>
+      <td>2018-11-30</td>
+      <td>1003</td>
+      <td>19</td>
+      <td>4.2</td>
+      <td>34</td>
+      <td>2.6</td>
+      <td>1894</td>
+      <td>-10.3</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>8756</th>
+      <td>2018-11-30</td>
+      <td>764</td>
+      <td>20</td>
+      <td>3.4</td>
+      <td>37</td>
+      <td>2.3</td>
+      <td>2000</td>
+      <td>-9.9</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>8757</th>
+      <td>2018-11-30</td>
+      <td>694</td>
+      <td>21</td>
+      <td>2.6</td>
+      <td>39</td>
+      <td>0.3</td>
+      <td>1968</td>
+      <td>-9.9</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>8758</th>
+      <td>2018-11-30</td>
+      <td>712</td>
+      <td>22</td>
+      <td>2.1</td>
+      <td>41</td>
+      <td>1.0</td>
+      <td>1859</td>
+      <td>-9.8</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>8759</th>
+      <td>2018-11-30</td>
+      <td>584</td>
+      <td>23</td>
+      <td>1.9</td>
+      <td>43</td>
+      <td>1.3</td>
+      <td>1909</td>
+      <td>-9.3</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+      <td>Friday</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+<p>8760 rows × 16 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="simple-data-visulizations">
+<h3>Simple Data Visulizations<a class="headerlink" href="#simple-data-visulizations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Start with the enriched table above</p></li>
+<li><p>Group the data by date column</p></li>
+<li><p>Calculate the mean of values per each day</p></li>
+<li><p>Plot the results with date as x and number of rented bike as y</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">enriched_bike_share_data</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.02_date_functions_20_0.png" src="../_images/02.02_date_functions_20_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Start with the enriched table above</p></li>
+<li><p>Group the data by date column</p></li>
+<li><p>Calculate the mean of values per each day</p></li>
+<li><p>Plot the results</p></li>
+<li><p>with scatter plot with temp as x and number of rented bike as y</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">enriched_bike_share_data</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.02_date_functions_22_0.png" src="../_images/02.02_date_functions_22_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="analyzing-corrlations-between-the-columns">
+<h3>Analyzing Corrlations between the columns<a class="headerlink" href="#analyzing-corrlations-between-the-columns" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Start with the enriched table above</p></li>
+<li><p>Group the data by date column</p></li>
+<li><p>Calculate the mean of values per each day</p></li>
+<li><p>Calculate the correlation values between the numeric values</p></li>
+<li><p>Take the values that are related to the first column (<em>Rented Bike Count</em>), skip the first two rows (self correlation, and hour column)</p></li>
+<li><p>Add style to the output</p></li>
+<li><p>Highlight the maximum correlation value with green background</p></li>
+<li><p>and Highlight the minimum correlation value with red background</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">enriched_bike_share_data</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:,[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">style</span>
+    <span class="o">.</span><span class="n">highlight_max</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">highlight_min</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style  type="text/css" >
+#T_1fa36fc4_6ec1_11eb_be5f_acde48001122row0_col0{
+            background-color:  green;
+        }#T_1fa36fc4_6ec1_11eb_be5f_acde48001122row7_col0{
+            background-color:  red;
+        }</style><table id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Rented Bike Count</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row0" class="row_heading level0 row0" >Temperature(°C)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row0_col0" class="data row0 col0" >0.699824</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row1" class="row_heading level0 row1" >Humidity(%)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row1_col0" class="data row1 col0" >0.028158</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row2" class="row_heading level0 row2" >Wind speed (m/s)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row2_col0" class="data row2 col0" >-0.174859</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row3" class="row_heading level0 row3" >Visibility (10m)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row3_col0" class="data row3 col0" >0.145376</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row4" class="row_heading level0 row4" >Dew point temperature(°C)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row4_col0" class="data row4 col0" >0.602648</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row5" class="row_heading level0 row5" >Solar Radiation (MJ/m2)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row5_col0" class="data row5 col0" >0.684069</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row6" class="row_heading level0 row6" >Rainfall(mm)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row6_col0" class="data row6 col0" >-0.214252</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row7" class="row_heading level0 row7" >Snowfall (cm)</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row7_col0" class="data row7 col0" >-0.240836</td>
+            </tr>
+            <tr>
+                        <th id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122level0_row8" class="row_heading level0 row8" >month</th>
+                        <td id="T_1fa36fc4_6ec1_11eb_be5f_acde48001122row8_col0" class="data row8 col0" >0.201733</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+<p>We can see that the higher correlation is with the temperature (the higher the temperature, the more bikes are rented), and with the Snowfall (the more snowfall, the fewer bikes are reneted), which make sense.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02.01_Adding_New_Columns.html" title="previous page">Adding New Columns</a>
+    <a class='right-next' id="next-link" href="02.08_group_values.html" title="next page">Categories from numeric values</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Aiola Team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
