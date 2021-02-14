@@ -1,0 +1,1566 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating a Pivot Table &#8212; From Excel to Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Split a Table into Groups" href="03.02_group_by.html" />
+    <link rel="prev" title="Categories from numeric values" href="02.08_group_values.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html">
+   Install Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
+   Open in Binder/Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
+   Open in Visual Studio Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Loading Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20loading%20files.html">
+   Loading Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.02%20-%20loading%20data%20from%20HTML.html">
+   Reading Data from Web Sites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.03_loading_data_from_API.html">
+   Reading Data from External API
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Adding Columns
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.01_Adding_New_Columns.html">
+   Adding New Columns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.02_date_functions.html">
+   Date Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.08_group_values.html">
+   Categories from numeric values
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Aggregation and Reshaping
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Creating a Pivot Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.02_group_by.html">
+   Split a Table into Groups
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Enrichment with Merge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.03_merge.html">
+   Merge/Join Tables (VLOOKUP)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Industries Use Cases
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.01_Logistics_analysis.html">
+   Logistics Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.02_Currency_analysis.html">
+   Currency Rate Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.03_Linear_optimization.html">
+   Linear Programming (Optimization)
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/03.01_pivot_tables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/03.01_pivot_tables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/03.01_pivot_tables.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data">
+   Loading Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-pivot-table">
+   Simple Pivot Table
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-index">
+   Multi-Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-values">
+   Choosing Values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chossing-aggregation-function">
+   Chossing aggregation function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-columns">
+   Choosing Columns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-null-nan-values">
+   Removing Null (NaN) values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#showing-totals">
+   Showing Totals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-the-pivot-table">
+   Visualize the pivot table
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-aggregation-functions">
+   Multiple Aggregation Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#format-the-values">
+   Format the values
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="creating-a-pivot-table">
+<h1>Creating a Pivot Table<a class="headerlink" href="#creating-a-pivot-table" title="Permalink to this headline">¶</a></h1>
+<p>Pivot Tables are one of the most used features in Excel. You can point to a large table of data and interactively group the data and calculate multiple statistics on each of the groups and sub groups. Pandas makes it easy to do similar functionalities using the <em>pivot_table</em> function. There are multiple options to achieve similar and even more powerful calculations with other Pandas functions, which we will cover later, however, <em>pivot_table</em> is the most straight comparison to the one in Excel, and therefore, we will start with it</p>
+<div class="section" id="loading-data">
+<h2>Loading Data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h2>
+<p>As always, we will start with loading some data set (using the great tutorial from <a class="reference external" href="https://pbpython.com/pandas-pivot-table-explained.html">pbpython</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># import numpy as np</span>
+
+<span class="n">sales_funnel</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://pbpython.com/extras/sales-funnel.xlsx&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">sales_funnel</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Account</th>
+      <th>Name</th>
+      <th>Rep</th>
+      <th>Manager</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>714466</td>
+      <td>Trantow-Barrows</td>
+      <td>Craig Booker</td>
+      <td>Debra Henley</td>
+      <td>CPU</td>
+      <td>1</td>
+      <td>30000</td>
+      <td>presented</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>714466</td>
+      <td>Trantow-Barrows</td>
+      <td>Craig Booker</td>
+      <td>Debra Henley</td>
+      <td>Software</td>
+      <td>1</td>
+      <td>10000</td>
+      <td>presented</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>714466</td>
+      <td>Trantow-Barrows</td>
+      <td>Craig Booker</td>
+      <td>Debra Henley</td>
+      <td>Maintenance</td>
+      <td>2</td>
+      <td>5000</td>
+      <td>pending</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>737550</td>
+      <td>Fritsch, Russel and Anderson</td>
+      <td>Craig Booker</td>
+      <td>Debra Henley</td>
+      <td>CPU</td>
+      <td>1</td>
+      <td>35000</td>
+      <td>declined</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>146832</td>
+      <td>Kiehn-Spinka</td>
+      <td>Daniel Hilton</td>
+      <td>Debra Henley</td>
+      <td>CPU</td>
+      <td>2</td>
+      <td>65000</td>
+      <td>won</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="simple-pivot-table">
+<h2>Simple Pivot Table<a class="headerlink" href="#simple-pivot-table" title="Permalink to this headline">¶</a></h2>
+<p>The simplest usage is to define what will be the index of the pivot table, which is equivalent to <em>Rows</em> in Excel pivot table. All the numeric values will be added automatically and their <strong>average</strong> will be calculated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Account</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Barton LLC</th>
+      <td>740150</td>
+      <td>35000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>Fritsch, Russel and Anderson</th>
+      <td>737550</td>
+      <td>35000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>Herman LLC</th>
+      <td>141962</td>
+      <td>65000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>Jerde-Hilpert</th>
+      <td>412290</td>
+      <td>5000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>Kassulke, Ondricka and Metz</th>
+      <td>307599</td>
+      <td>7000</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>Keeling LLC</th>
+      <td>688981</td>
+      <td>100000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>Kiehn-Spinka</th>
+      <td>146832</td>
+      <td>65000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>Koepp Ltd</th>
+      <td>729833</td>
+      <td>35000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>Kulas Inc</th>
+      <td>218895</td>
+      <td>25000</td>
+      <td>1.500000</td>
+    </tr>
+    <tr>
+      <th>Purdy-Kunde</th>
+      <td>163416</td>
+      <td>30000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>Stokes LLC</th>
+      <td>239344</td>
+      <td>7500</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>Trantow-Barrows</th>
+      <td>714466</td>
+      <td>15000</td>
+      <td>1.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="multi-index">
+<h2>Multi-Index<a class="headerlink" href="#multi-index" title="Permalink to this headline">¶</a></h2>
+<p>We can define multiple columns as index and create a multi-index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">])</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Account</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>720237.0</td>
+      <td>20000.000000</td>
+      <td>1.250000</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>194874.0</td>
+      <td>38333.333333</td>
+      <td>1.666667</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>576220.0</td>
+      <td>20000.000000</td>
+      <td>1.500000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>196016.5</td>
+      <td>27500.000000</td>
+      <td>1.250000</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>614061.5</td>
+      <td>44250.000000</td>
+      <td>3.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="choosing-values">
+<h2>Choosing Values<a class="headerlink" href="#choosing-values" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Account</em> number is also a numeric column, however, it is not relevant for us to look at in the pivot table, and the same goes for the <em>Quantity</em> column. Therefore, we can choose to take only the <em>Price</em> column for our pivot table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>20000.000000</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>38333.333333</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>20000.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>27500.000000</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>44250.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="chossing-aggregation-function">
+<h2>Chossing aggregation function<a class="headerlink" href="#chossing-aggregation-function" title="Permalink to this headline">¶</a></h2>
+<p>We want to see the sum of the sales of each sales rep and not the average size of the sales. Let’s request to use the <em>sum</em> as the aggregation function. Other functions are <em>mean</em> (default), <em>median</em> <em>count</em>, <em>min</em>, <em>max</em>, <em>var</em>, <em>std</em>, and <em>prod</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>80000</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>115000</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>40000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>110000</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>177000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="choosing-columns">
+<h2>Choosing Columns<a class="headerlink" href="#choosing-columns" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Columns</em> selection in Excel is similar to the one in pivot table in Pandas. We can add a breakdown of the sales per product, by adding it as the <em>Columns</em> of the pivot table</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Product&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="4" halign="left">Price</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>65000.0</td>
+      <td>5000.0</td>
+      <td>NaN</td>
+      <td>10000.0</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>105000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10000.0</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>35000.0</td>
+      <td>5000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>95000.0</td>
+      <td>5000.0</td>
+      <td>NaN</td>
+      <td>10000.0</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>165000.0</td>
+      <td>7000.0</td>
+      <td>5000.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="removing-null-nan-values">
+<h2>Removing Null (NaN) values<a class="headerlink" href="#removing-null-nan-values" title="Permalink to this headline">¶</a></h2>
+<p>To make the table cleaner we can replace all the NaN values with 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Product&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="4" halign="left">Price</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>65000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>105000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10000</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>35000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>95000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>165000</td>
+      <td>7000</td>
+      <td>5000</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can add more values such as <em>Quantity</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">,</span><span class="s2">&quot;Quantity&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Product&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="4" halign="left">Price</th>
+      <th colspan="4" halign="left">Quantity</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>65000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>105000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>35000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>95000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>165000</td>
+      <td>7000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>7</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="showing-totals">
+<h2>Showing Totals<a class="headerlink" href="#showing-totals" title="Permalink to this headline">¶</a></h2>
+<p>The default pivot table in Pandas is not showing the totals of the columns or rows, however, we can add it with <em>margins=True</em>. It will add <em>All</em> both for the columns at the bottom and for the rows on the right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Product&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">margins</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="5" halign="left">Price</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>65000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>80000</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>105000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>115000</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>35000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>95000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>110000</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>165000</td>
+      <td>7000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>177000</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <th></th>
+      <td>465000</td>
+      <td>22000</td>
+      <td>5000</td>
+      <td>30000</td>
+      <td>522000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="visualize-the-pivot-table">
+<h2>Visualize the pivot table<a class="headerlink" href="#visualize-the-pivot-table" title="Permalink to this headline">¶</a></h2>
+<p>we can see the values in a graph</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Product&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> 
+        <span class="n">rot</span><span class="o">=</span><span class="mi">45</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03.01_pivot_tables_20_0.png" src="../_images/03.01_pivot_tables_20_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="multiple-aggregation-functions">
+<h2>Multiple Aggregation Functions<a class="headerlink" href="#multiple-aggregation-functions" title="Permalink to this headline">¶</a></h2>
+<p>You can define multiple Aggregation functions for a value or different Aggregation functions for different values. You can either pass an array of function or a dictionary for different columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">,</span><span class="s2">&quot;Quantity&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Product&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="p">{</span> 
+            <span class="s2">&quot;Price&quot;</span> <span class="p">:[</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">],</span>
+            <span class="s2">&quot;Quantity&quot;</span> <span class="p">:</span> <span class="s1">&#39;sum&#39;</span>
+        <span class="p">},</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="8" halign="left">Price</th>
+      <th colspan="4" halign="left">Quantity</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="4" halign="left">median</th>
+      <th colspan="4" halign="left">sum</th>
+      <th colspan="4" halign="left">sum</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+      <th>CPU</th>
+      <th>Maintenance</th>
+      <th>Monitor</th>
+      <th>Software</th>
+    </tr>
+    <tr>
+      <th>Manager</th>
+      <th>Rep</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Debra Henley</th>
+      <th>Craig Booker</th>
+      <td>32500</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>65000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Daniel Hilton</th>
+      <td>52500</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>105000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>John Smith</th>
+      <td>35000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>35000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Fred Anderson</th>
+      <th>Cedric Moss</th>
+      <td>47500</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>95000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>10000</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Wendy Yule</th>
+      <td>82500</td>
+      <td>7000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>165000</td>
+      <td>7000</td>
+      <td>5000</td>
+      <td>0</td>
+      <td>7</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="format-the-values">
+<h2>Format the values<a class="headerlink" href="#format-the-values" title="Permalink to this headline">¶</a></h2>
+<p>A pivot table is simply a dataframe in Pandas and you can format the values similar to the formating of any other dataframe. We will cover Styling in a dedicated section, however, here is a quick preview to formating the the <em>Price</em> column as currency</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">sales_funnel</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span><span class="s2">&quot;Rep&quot;</span><span class="p">],</span> 
+        <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">],</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">style</span>
+    <span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="s1">&#39;Price&#39;</span><span class="p">:</span><span class="s1">&#39;$</span><span class="si">{0:,.0f}</span><span class="s1">&#39;</span><span class="p">})</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_06b59a72_6e95_11eb_9ba2_acde48001122" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Price</th>    </tr>    <tr>        <th class="index_name level0" >Manager</th>        <th class="index_name level1" >Rep</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_06b59a72_6e95_11eb_9ba2_acde48001122level0_row0" class="row_heading level0 row0" rowspan=3>Debra Henley</th>
+                        <th id="T_06b59a72_6e95_11eb_9ba2_acde48001122level1_row0" class="row_heading level1 row0" >Craig Booker</th>
+                        <td id="T_06b59a72_6e95_11eb_9ba2_acde48001122row0_col0" class="data row0 col0" >$80,000</td>
+            </tr>
+            <tr>
+                                <th id="T_06b59a72_6e95_11eb_9ba2_acde48001122level1_row1" class="row_heading level1 row1" >Daniel Hilton</th>
+                        <td id="T_06b59a72_6e95_11eb_9ba2_acde48001122row1_col0" class="data row1 col0" >$115,000</td>
+            </tr>
+            <tr>
+                                <th id="T_06b59a72_6e95_11eb_9ba2_acde48001122level1_row2" class="row_heading level1 row2" >John Smith</th>
+                        <td id="T_06b59a72_6e95_11eb_9ba2_acde48001122row2_col0" class="data row2 col0" >$40,000</td>
+            </tr>
+            <tr>
+                        <th id="T_06b59a72_6e95_11eb_9ba2_acde48001122level0_row3" class="row_heading level0 row3" rowspan=2>Fred Anderson</th>
+                        <th id="T_06b59a72_6e95_11eb_9ba2_acde48001122level1_row3" class="row_heading level1 row3" >Cedric Moss</th>
+                        <td id="T_06b59a72_6e95_11eb_9ba2_acde48001122row3_col0" class="data row3 col0" >$110,000</td>
+            </tr>
+            <tr>
+                                <th id="T_06b59a72_6e95_11eb_9ba2_acde48001122level1_row4" class="row_heading level1 row4" >Wendy Yule</th>
+                        <td id="T_06b59a72_6e95_11eb_9ba2_acde48001122row4_col0" class="data row4 col0" >$177,000</td>
+            </tr>
+    </tbody></table></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02.08_group_values.html" title="previous page">Categories from numeric values</a>
+    <a class='right-next' id="next-link" href="03.02_group_by.html" title="next page">Split a Table into Groups</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Aiola Team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

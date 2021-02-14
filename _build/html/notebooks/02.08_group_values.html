@@ -1,0 +1,1086 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories from numeric values &#8212; From Excel to Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating a Pivot Table" href="03.01_pivot_tables.html" />
+    <link rel="prev" title="Date Functions" href="02.02_date_functions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html">
+   Install Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
+   Open in Binder/Colab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
+   Open in Visual Studio Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Loading Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20loading%20files.html">
+   Loading Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.02%20-%20loading%20data%20from%20HTML.html">
+   Reading Data from Web Sites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.03_loading_data_from_API.html">
+   Reading Data from External API
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Adding Columns
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.01_Adding_New_Columns.html">
+   Adding New Columns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.02_date_functions.html">
+   Date Functions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Categories from numeric values
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Aggregation and Reshaping
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.01_pivot_tables.html">
+   Creating a Pivot Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.02_group_by.html">
+   Split a Table into Groups
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Table Enrichment with Merge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.03_merge.html">
+   Merge/Join Tables (VLOOKUP)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Industries Use Cases
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.01_Logistics_analysis.html">
+   Logistics Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.02_Currency_analysis.html">
+   Currency Rate Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.03_Linear_optimization.html">
+   Linear Programming (Optimization)
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/02.08_group_values.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/02.08_group_values.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/02.08_group_values.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cut-function">
+   Cut Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-life-example">
+   Real life example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-data">
+     Loading Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-data-visulizations">
+     Simple Data Visulizations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-bins-with-cut">
+     Creating bins with
+     <em>
+      Cut
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-the-bins-limits">
+     Setting the bins’ limits
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-meaningful-labels">
+     Adding meaningful labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boxplot-for-each-bin">
+     Boxplot for each bin
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-wrong-with-historgram">
+   What is wrong with Historgram
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernel-density-estimator-kde">
+     Kernel Density Estimator (KDE)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">
+     Cumulative Distribution Function (CDF)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-by-quantiles-using-qcut">
+   Group by Quantiles using
+   <em>
+    qcut
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heat-map-with-the-new-value-group">
+     Heat map with the new value group
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="categories-from-numeric-values">
+<h1>Categories from numeric values<a class="headerlink" href="#categories-from-numeric-values" title="Permalink to this headline">¶</a></h1>
+<p>We often have a column with many numeric values and we want to group them to bins or buckets, such as age groups or value tiers. In Excel we can do it using:</p>
+<ul class="simple">
+<li><p>Data Menu -&gt; Data Analysis -&gt; Histogram or Rank and Percentile</p></li>
+<li><p><em>VLOOKUP</em> (<code class="docutils literal notranslate"><span class="pre">=LOOKUP(A1,{0,7,14,31,90,180,360},{&quot;0-6&quot;,&quot;7-13&quot;,&quot;14-30&quot;,&quot;31-89&quot;,&quot;90-179&quot;,&quot;180-359&quot;,&quot;&gt;360&quot;})</span></code>, for example), or</p></li>
+<li><p><em>IF</em> (<code class="docutils literal notranslate"><span class="pre">=if(b2&gt;30,&quot;large&quot;,if(A1&gt;20,&quot;medium&quot;,if(A1&gt;=10,&quot;small&quot;,if(A1&lt;10,&quot;tiny&quot;,&quot;&quot;))))</span></code>, for example)</p></li>
+<li><p><em>INDEX</em> (<code class="docutils literal notranslate"><span class="pre">=INDEX({&quot;Small&quot;,&quot;Medium&quot;,&quot;Large&quot;},LARGE(IF(A1&gt;{0,11,21},{1,2,3}),1))</span></code>, for example)</p></li>
+</ul>
+<div class="section" id="cut-function">
+<h2>Cut Function<a class="headerlink" href="#cut-function" title="Permalink to this headline">¶</a></h2>
+<p>Since this is a common need, Pandas has a built-in function that makes it more flexible and accurate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="real-life-example">
+<h2>Real life example<a class="headerlink" href="#real-life-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loading-data">
+<h3>Loading Data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h3>
+<p>As usual, let’s load a dataset to work on. We will use the dataset that is used before, “Bike Share”. This is a data set about the demand of bike share service in Seoul. Please note that we need to modify the default encoding of <em>read_csv</em> from ‘UTF-8’ to ‘latin1’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv&#39;</span><span class="p">,</span> 
+        <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">bike_share_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Rented Bike Count</th>
+      <th>Hour</th>
+      <th>Temperature(°C)</th>
+      <th>Humidity(%)</th>
+      <th>Wind speed (m/s)</th>
+      <th>Visibility (10m)</th>
+      <th>Dew point temperature(°C)</th>
+      <th>Solar Radiation (MJ/m2)</th>
+      <th>Rainfall(mm)</th>
+      <th>Snowfall (cm)</th>
+      <th>Seasons</th>
+      <th>Holiday</th>
+      <th>Functioning Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>01/12/2017</td>
+      <td>254</td>
+      <td>0</td>
+      <td>-5.2</td>
+      <td>37</td>
+      <td>2.2</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>01/12/2017</td>
+      <td>204</td>
+      <td>1</td>
+      <td>-5.5</td>
+      <td>38</td>
+      <td>0.8</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>01/12/2017</td>
+      <td>173</td>
+      <td>2</td>
+      <td>-6.0</td>
+      <td>39</td>
+      <td>1.0</td>
+      <td>2000</td>
+      <td>-17.7</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>01/12/2017</td>
+      <td>107</td>
+      <td>3</td>
+      <td>-6.2</td>
+      <td>40</td>
+      <td>0.9</td>
+      <td>2000</td>
+      <td>-17.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>01/12/2017</td>
+      <td>78</td>
+      <td>4</td>
+      <td>-6.0</td>
+      <td>36</td>
+      <td>2.3</td>
+      <td>2000</td>
+      <td>-18.6</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Winter</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>8755</th>
+      <td>30/11/2018</td>
+      <td>1003</td>
+      <td>19</td>
+      <td>4.2</td>
+      <td>34</td>
+      <td>2.6</td>
+      <td>1894</td>
+      <td>-10.3</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8756</th>
+      <td>30/11/2018</td>
+      <td>764</td>
+      <td>20</td>
+      <td>3.4</td>
+      <td>37</td>
+      <td>2.3</td>
+      <td>2000</td>
+      <td>-9.9</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8757</th>
+      <td>30/11/2018</td>
+      <td>694</td>
+      <td>21</td>
+      <td>2.6</td>
+      <td>39</td>
+      <td>0.3</td>
+      <td>1968</td>
+      <td>-9.9</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8758</th>
+      <td>30/11/2018</td>
+      <td>712</td>
+      <td>22</td>
+      <td>2.1</td>
+      <td>41</td>
+      <td>1.0</td>
+      <td>1859</td>
+      <td>-9.8</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>8759</th>
+      <td>30/11/2018</td>
+      <td>584</td>
+      <td>23</td>
+      <td>1.9</td>
+      <td>43</td>
+      <td>1.3</td>
+      <td>1909</td>
+      <td>-9.3</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Autumn</td>
+      <td>No Holiday</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+<p>8760 rows × 14 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="simple-data-visulizations">
+<h3>Simple Data Visulizations<a class="headerlink" href="#simple-data-visulizations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Start with the table above</p></li>
+<li><p>Create Histograms for numeric columns</p></li>
+<li><p>Plot the histograms</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> 
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Rented Bike Count&#39;</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_6_0.png" src="../_images/02.08_group_values_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> 
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Temperature(°C)&#39;</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_7_0.png" src="../_images/02.08_group_values_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="creating-bins-with-cut">
+<h3>Creating bins with <em>Cut</em><a class="headerlink" href="#creating-bins-with-cut" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Start with the table above</p></li>
+<li><p>Focus on the temperature column</p></li>
+<li><p>Create 5 bins</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">cut</span><span class="p">(</span>
+        <span class="n">bike_share_data</span>
+        <span class="p">[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">],</span> 
+        <span class="mi">5</span>
+    <span class="p">)</span>  
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       (-6.36, 5.08]
+1       (-6.36, 5.08]
+2       (-6.36, 5.08]
+3       (-6.36, 5.08]
+4       (-6.36, 5.08]
+            ...      
+8755    (-6.36, 5.08]
+8756    (-6.36, 5.08]
+8757    (-6.36, 5.08]
+8758    (-6.36, 5.08]
+8759    (-6.36, 5.08]
+Name: Temperature(°C), Length: 8760, dtype: category
+Categories (5, interval[float64]): [(-17.857, -6.36] &lt; (-6.36, 5.08] &lt; (5.08, 16.52] &lt; (16.52, 27.96] &lt; (27.96, 39.4]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see the interval fo each of the bins:
+<code class="docutils literal notranslate"><span class="pre">[(-17.857,</span> <span class="pre">-6.36]</span> <span class="pre">&lt;</span> <span class="pre">(-6.36,</span> <span class="pre">5.08]</span> <span class="pre">&lt;</span> <span class="pre">(5.08,</span> <span class="pre">16.52]</span> <span class="pre">&lt;</span> <span class="pre">(16.52,</span> <span class="pre">27.96]</span> <span class="pre">&lt;</span> <span class="pre">(27.96,</span> <span class="pre">39.4]]</span></code> that are in order and split to more or less equal sizes from temperature values perspective. Let’s see how well they split the data:</p>
+<ul class="simple">
+<li><p>Split the temperature value into 5 bins</p></li>
+<li><p>Count the number of records in each bins</p></li>
+<li><p>Sort the value by the temperature range (the index of the series)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">cut</span><span class="p">(</span>
+        <span class="n">bike_share_data</span>
+        <span class="p">[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">],</span> 
+        <span class="mi">5</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-17.857, -6.36]     529
+(-6.36, 5.08]       1989
+(5.08, 16.52]       2428
+(16.52, 27.96]      2923
+(27.96, 39.4]        891
+Name: Temperature(°C), dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, we see that the bins are in order when we sort them, and not by alphabetic order. More importanty, we see that they are not equal in size of records, and not based on any other meaningful split.</p>
+</div>
+<div class="section" id="setting-the-bins-limits">
+<h3>Setting the bins’ limits<a class="headerlink" href="#setting-the-bins-limits" title="Permalink to this headline">¶</a></h3>
+<p>We can set the bing to be more meaningful by setting the limits specifically. As experts in bicycles, we know the temperature ranges that are suitable for different accessories and clothings. Let’s fix the ranges based on this domain knowledge:</p>
+<ul class="simple">
+<li><p>Split the temperature value into 5 bins based on bicycle professional ranges</p></li>
+<li><p>Count the number of records in each bins</p></li>
+<li><p>Sort the value by the temperature range (the index of the series)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">cut</span><span class="p">(</span>
+        <span class="n">bike_share_data</span>
+        <span class="p">[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">],</span> 
+        <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-18, 0]    1454
+(0, 8]      1731
+(8, 16]     1651
+(16, 24]    2148
+(24, 40]    1776
+Name: Temperature(°C), dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-meaningful-labels">
+<h3>Adding meaningful labels<a class="headerlink" href="#adding-meaningful-labels" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a new column in the table for the temperature ranges</p></li>
+<li><p>Split the temperature value into 5 bins based on bicycle professional ranges</p></li>
+<li><p>Count the number of records in each bins</p></li>
+<li><p>Add human readable labels to the regions</p></li>
+<li><p>Sort the value by the temperature range (the index of the series)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">cut</span><span class="p">(</span>
+        <span class="n">bike_share_data</span>
+        <span class="p">[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">],</span> 
+        <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+        <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Below Freezing&#39;</span><span class="p">,</span> <span class="s1">&#39;Freezing&#39;</span><span class="p">,</span> <span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Warm&#39;</span><span class="p">,</span><span class="s1">&#39;Sizzling&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+    
+<span class="p">)</span>
+<span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Below Freezing    1454
+Freezing          1731
+Cold              1651
+Warm              2148
+Sizzling          1776
+Name: temperature_range, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that the order is still the right order and not alphabetical, and the split is more balanced in number of records.</p>
+</div>
+<div class="section" id="boxplot-for-each-bin">
+<h3>Boxplot for each bin<a class="headerlink" href="#boxplot-for-each-bin" title="Permalink to this headline">¶</a></h3>
+<p>Now we can take every group of records and calculate and plot their box plot showing the mean and the different quantiles of the different groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">,</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_17_0.png" src="../_images/02.08_group_values_17_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-is-wrong-with-historgram">
+<h2>What is wrong with Historgram<a class="headerlink" href="#what-is-wrong-with-historgram" title="Permalink to this headline">¶</a></h2>
+<p>As much as historgrams are popular and simple to plot, they have many limitation:</p>
+<ul class="simple">
+<li><p>It depends (too much) on the number of bins.</p></li>
+<li><p>It depends (too much) on variable’s maximum and minimum.</p></li>
+<li><p>It doesn’t allow to detect relevant values.</p></li>
+<li><p>It doesn’t allow to discern continuous from discrete variables.</p></li>
+<li><p>It makes it hard to compare distributions.</p></li>
+</ul>
+<p>We will use a couple of other plot option to see the data distributions more accurately.</p>
+<div class="section" id="kernel-density-estimator-kde">
+<h3>Kernel Density Estimator (KDE)<a class="headerlink" href="#kernel-density-estimator-kde" title="Permalink to this headline">¶</a></h3>
+<p>This method is calculating and plotting the estimation of the data distribution, and it is part of the Pandas built-in functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">kde</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">,</span>
+        <span class="n">grid</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_20_0.png" src="../_images/02.08_group_values_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">plot</span>
+    <span class="o">.</span><span class="n">kde</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">,</span> 
+        <span class="n">grid</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_21_0.png" src="../_images/02.08_group_values_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="cumulative-distribution-function-cdf">
+<h3>Cumulative Distribution Function (CDF)<a class="headerlink" href="#cumulative-distribution-function-cdf" title="Permalink to this headline">¶</a></h3>
+<p>The second option is using counts of the different percentiles of the data and using a cumulative plot makes it easy to find the value of each percentile and calculate the percentage of data points between every given percentiles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.distributions.empirical_distribution</span> <span class="kn">import</span> <span class="n">ECDF</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">c455e50ce721</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">statsmodels.distributions.empirical_distribution</span> <span class="kn">import</span> <span class="n">ECDF</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecdf</span> <span class="o">=</span> <span class="n">ECDF</span><span class="p">(</span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ecdf</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ecdf</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_24_0.svg" src="../_images/02.08_group_values_24_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecdf</span> <span class="o">=</span> <span class="n">ECDF</span><span class="p">(</span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ecdf</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ecdf</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_25_0.svg" src="../_images/02.08_group_values_25_0.svg" /></div>
+</div>
+</div>
+</div>
+<div class="section" id="group-by-quantiles-using-qcut">
+<h2>Group by Quantiles using <em>qcut</em><a class="headerlink" href="#group-by-quantiles-using-qcut" title="Permalink to this headline">¶</a></h2>
+<p>When using a target score such as grades or number of rentals, it makes sense to use the split using the Quantiles of the scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;usage_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span>
+    <span class="o">.</span><span class="n">qcut</span><span class="p">(</span>
+        <span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">],</span> 
+        <span class="n">q</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;High&#39;</span><span class="p">,</span> <span class="s1">&#39;Very High&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[</span><span class="s1">&#39;usage_level&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Low          2194
+Medium       2186
+High         2190
+Very High    2190
+Name: usage_level, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">,</span><span class="s1">&#39;usage_level&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;usage_level&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_28_0.svg" src="../_images/02.08_group_values_28_0.svg" /></div>
+</div>
+<div class="section" id="heat-map-with-the-new-value-group">
+<h3>Heat map with the new value group<a class="headerlink" href="#heat-map-with-the-new-value-group" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have the new value categories and we can create heat map to see the hours of the day that are the peak hours that can be used with higher price tiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">bike_share_data</span>
+    <span class="p">[[</span><span class="s1">&#39;usage_level&#39;</span><span class="p">,</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span><span class="s1">&#39;Date&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span> 
+        <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;usage_level&#39;</span><span class="p">,</span>
+        <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;count&#39;</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02.08_group_values_31_0.svg" src="../_images/02.08_group_values_31_0.svg" /></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02.02_date_functions.html" title="previous page">Date Functions</a>
+    <a class='right-next' id="next-link" href="03.01_pivot_tables.html" title="next page">Creating a Pivot Table</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Aiola Team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
