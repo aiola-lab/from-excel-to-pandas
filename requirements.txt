@@ -8,3 +8,4 @@ openpyxl
 seaborn
 pulp
 statsmodels
+pingouin

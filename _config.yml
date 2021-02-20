@@ -16,3 +16,6 @@ execute:
 
 launch_buttons:
   binderhub_url: "https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas/" 
+
+bibtex_bibfiles:
+   - references.bib

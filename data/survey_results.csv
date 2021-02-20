@@ -1,0 +1,3050 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,Q_RecaptchaScore,E1,A2,C3,N4,I5,E6R,A7R,C8R,N9R,I10R,E11,A12,C13,N14,I15R,E16R,A17R,C18R,N19R,I20R,Q71_First Click,Q71_Last Click,Q71_Page Submit,Q71_Click Count,Q73_First Click,Q73_Last Click,Q73_Page Submit,Q73_Click Count,Expectation1,Expectation2,Trust1,Trust2,Trust5,Trust6,Trust7,Trust8,Trust9,Expectation3,Offering1,Offering2,Offering3,Gender,Age,Education,Region,Q53,Random ID
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Q_RecaptchaScore,Am the life of the party.,Sympathize with others' feelings.,Get chores done right away.,Have frequent mood swings.,Have a vivid imagination.,Don't talk a lot.,Am not interested in other people's problems.,Often forget to put things back in their proper place.,Am relaxed most of the time.,Am not interested in abstract ideas.,Talk to a lot of different people at parties.,Feel others' emotions.,Like order.,Get upset easily.,Have difficulty understanding abstract ideas.,Keep in the background.,Am not really interested in others.,Make a mess of things.,Seldom feel blue.,Do not have a good imagination.,Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,Timing - First Click,Timing - Last Click,Timing - Page Submit,Timing - Click Count,The chatbot's messages met my expectations.,The chatbot's messages corresponded to how I expected it to communicate with me.,The bike chatbot seemed to care about me.,The bike chatbot made me feel good.,I believe the bike chatbot was honest with me.,I believe the bike chatbot didn’t make false claims.,I believe the bike chatbot is trustworthy.,I trust the bike chatbot.,The bike chatbot seemed adequate to my needs.,The chatbot's messages were appropriate.,What is the likelihood that you would accept the chatbot’s offer to help find a bike?,How probable is it that you would accept the chatbot’s offer to help find a bike?,How influential do you perceive the chatbot’s offer to help you find a bike?,Gender,Age,Education,Please indicate your region of residence,"Please indicate the picture that carries the logo of ""Pfizer"":",Random ID
+2/19/2021 3:28:19,2/19/2021 3:30:28,IP Address,47.35.194.33,100,129,True,2/19/2021 3:30:29,R_2WUYft76PXR2zBS,,,,,35.0460052490234375,-81.9810028076171875,anonymous,EN,1,"Strongly Disagree
+1","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1",,,,,0,0,12.809,0,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",3,4,2,Female,40-50,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,58834
+2/19/2021 3:28:16,2/19/2021 3:30:36,IP Address,151.65.216.111,100,140,True,2/19/2021 3:30:37,R_3eq8jucMfNqn5A4,,,,,45.538604736328125,10.210601806640625,anonymous,EN,1,"Strongly Disagree
+1","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Neither agree nor disagree
+3","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly Disagree
+1",,,,,0,0,28.227,0,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3",5,5,3,Male,18-28,Bachelor’s degree,Europe,IM_6m0pkPqaVoiPxY1,21882
+2/19/2021 3:29:12,2/19/2021 3:31:01,IP Address,73.176.57.130,100,108,True,2/19/2021 3:31:01,R_1jOnl4rE5r7qMcE,,,,,41.94500732421875,-87.79959869384765625,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",,,,,0,0,11.981,0,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly disagree
+1","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Very likely
+7",6,6,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,59587
+2/19/2021 3:29:18,2/19/2021 3:31:07,IP Address,86.106.87.89,100,109,True,2/19/2021 3:31:07,R_BxBBo8wdgckIP7j,,,,,25.7805938720703125,-80.1826019287109375,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3",,,,,0,0,11.171,0,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat disagree
+2","Somewhat disagree
+2","Somewhat agree
+4","Strongly agree
+5",4,5,"Very influential
+7",Male,29-39,Bachelor’s degree,South America,IM_6m0pkPqaVoiPxY1,52402
+2/19/2021 3:29:06,2/19/2021 3:31:28,IP Address,27.57.12.252,100,142,True,2/19/2021 3:31:29,R_2ea55lhudZuzX2J,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3",17.403,20.282,27.122,9,,,,,"Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3",5,5,4,Male,29-39,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,64888
+2/19/2021 3:28:07,2/19/2021 3:31:32,IP Address,64.145.93.225,100,204,True,2/19/2021 3:31:32,R_3GpG5p7C4Pijxa6,,,,,39.738800048828125,-104.9868011474609375,anonymous,EN,0.7000000000000000000000000000000000000000000000000000,"Somewhat Disagree
+2","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Somewhat Disagree
+2","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",1.743,1.743,33.894,1,,,,,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5",6,"Very probable
+7",6,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,50263
+2/19/2021 3:30:20,2/19/2021 3:31:33,IP Address,154.9.128.133,100,73,True,2/19/2021 3:31:34,R_1IzPpUmqs9P1P7Z,,,,,47.3065948486328125,-122.26190185546875,anonymous,EN,1,"Somewhat Disagree
+2","Neither agree nor disagree
+3","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat Disagree
+2","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3",0,0,12.199,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat disagree
+2","Somewhat agree
+4","Somewhat disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Very likely
+7","Not probable at all
+1",3,Male,51-61,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,77539
+2/19/2021 3:28:32,2/19/2021 3:32:45,IP Address,217.138.208.148,100,253,True,2/19/2021 3:32:45,R_1K6FmlsGtTnMZM0,,,,,40.7156982421875,-74,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Somewhat Disagree
+2","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat agree
+4","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat Disagree
+2","Strongly Disagree
+1",23.523,24.218,29.092,2,,,,,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4",6,5,"Very influential
+7",Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,44647
+2/19/2021 3:29:50,2/19/2021 3:32:57,IP Address,98.226.112.63,100,186,True,2/19/2021 3:32:57,R_2o93PD8vos7FfcB,,,,,40.11199951171875,-88.23650360107421875,anonymous,EN,1,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Strongly Disagree
+1",,,,,0,0,15.259,0,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Very likely
+7",6,6,Female,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,42432
+2/19/2021 3:30:42,2/19/2021 3:33:11,IP Address,157.49.238.118,100,149,True,2/19/2021 3:33:12,R_pi3HS8JpVrNj8it,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",0,0,19.212,0,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4",6,"Very probable
+7","Very influential
+7",Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,48390
+2/19/2021 3:31:33,2/19/2021 3:33:28,IP Address,117.213.39.15,100,114,True,2/19/2021 3:33:29,R_3IXKj3oLo78Nu7a,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat Disagree
+2",4.694,4.694,22.191,1,,,,,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Very likely
+7",6,2,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,29070
+2/19/2021 3:31:49,2/19/2021 3:33:30,IP Address,71.9.134.120,100,101,True,2/19/2021 3:33:30,R_eeSWttHk2t0Pt2V,,,,,40.558502197265625,-122.4138946533203125,anonymous,EN,0.7000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",,,,,0,0,10.902,0,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Very likely
+7",6,5,Female,18-28,Bachelor’s degree,South America,IM_6m0pkPqaVoiPxY1,82482
+2/19/2021 3:29:52,2/19/2021 3:33:39,IP Address,171.49.164.172,100,226,True,2/19/2021 3:33:40,R_VP7rihfpEb6iC7T,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",1.407,1.407,12.549,1,,,,,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Very likely
+7","Very probable
+7",6,Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,65054
+2/19/2021 3:29:53,2/19/2021 3:33:44,IP Address,122.183.168.92,100,231,True,2/19/2021 3:33:45,R_3fwN3VnVzHRfDZB,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,1.62,16.61,17.881,5,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",6,6,"Very influential
+7",Female,29-39,Master Degree,Asia,IM_ctEt0a9JuCGoeLr,24294
+2/19/2021 3:28:12,2/19/2021 3:33:46,IP Address,157.51.163.173,100,334,True,2/19/2021 3:33:47,R_2P6Cj3k7eosFHaz,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",22.13,22.13,22.607,1,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Very likely
+7","Very probable
+7",6,Male,29-39,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,44537
+2/19/2021 3:29:53,2/19/2021 3:33:49,IP Address,46.20.90.146,100,236,True,2/19/2021 3:33:50,R_1QrsRlip0Fx6mgG,,,,,45.0635986328125,7.4272003173828125,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly agree
+5","Strongly Disagree
+1","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1",,,,,32.563,32.563,34.144,1,"Neither agree nor disagree
+3","Neither agree nor disagree
+3","Strongly disagree
+1","Neither agree nor disagree
+3","Somewhat disagree
+2","Neither agree nor disagree
+3","Strongly disagree
+1","Strongly disagree
+1","Neither agree nor disagree
+3","Neither agree nor disagree
+3",2,2,2,Male,29-39,High school,Europe,IM_6m0pkPqaVoiPxY1,66808
+2/19/2021 3:30:06,2/19/2021 3:34:13,IP Address,68.198.160.172,100,246,True,2/19/2021 3:34:13,R_21EWy5WMbeemYuS,,,,,40.8878936767578125,-73.008697509765625,anonymous,EN,1,"Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Strongly Disagree
+1","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1",0,0,13.248,0,,,,,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Strongly disagree
+1","Somewhat disagree
+2","Strongly disagree
+1",6,6,5,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,24964
+2/19/2021 3:28:17,2/19/2021 3:34:20,IP Address,5.181.234.84,100,362,True,2/19/2021 3:34:20,R_2scpeDuf7oTngDW,,,,,40.7156982421875,-74,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2",,,,,0,0,18.133,0,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Very likely
+7","Very probable
+7",6,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,32472
+2/19/2021 3:31:48,2/19/2021 3:34:45,IP Address,185.232.22.107,100,176,True,2/19/2021 3:34:45,R_WuidXwFWht2XHVf,,,,,40.7156982421875,-74,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",,,,,0,0,18.238,0,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Very likely
+7","Very probable
+7","Very influential
+7",Female,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,76917
+2/19/2021 3:29:43,2/19/2021 3:35:05,IP Address,89.187.164.150,100,321,True,2/19/2021 3:35:05,R_3j6XrAi0pKfOLrp,,,,,37.751007080078125,-97.82199859619140625,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat Disagree
+2",0,0,38.52,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4",5,5,6,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,60889
+2/19/2021 3:30:43,2/19/2021 3:35:26,IP Address,76.72.175.111,100,282,True,2/19/2021 3:35:26,R_12LVtZuRtl84giY,,,,,40.7279052734375,-73.9965972900390625,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3",,,,,0,0,88.623,0,"Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",5,5,4,Female,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,12273
+2/19/2021 3:34:11,2/19/2021 3:35:40,IP Address,64.203.213.61,100,89,True,2/19/2021 3:35:41,R_25QM5O2EL8NGR8c,,,,,32.25079345703125,-80.87180328369140625,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4",,,,,1.28,8.811,11.879,4,"Neither agree nor disagree
+3","Somewhat disagree
+2","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5",5,6,6,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,97761
+2/19/2021 3:30:20,2/19/2021 3:35:43,IP Address,171.49.164.184,100,323,True,2/19/2021 3:35:43,R_1flMX6dE8RuSe6k,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,20.386,0,,,,,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",5,5,5,Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,58313
+2/19/2021 3:34:19,2/19/2021 3:36:20,IP Address,171.49.164.102,100,120,True,2/19/2021 3:36:20,R_2ebcLU72r7HdpwR,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,35.734,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Very likely
+7",6,"Very influential
+7",Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,68801
+2/19/2021 3:34:32,2/19/2021 3:36:49,IP Address,69.136.206.147,100,136,True,2/19/2021 3:36:50,R_2R7Z7TLLFR8R0vV,,,,,32.10699462890625,-81.24990081787109375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4",,,,,0,0,35.161,0,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly disagree
+1","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",6,6,"Very influential
+7",Male,18-28,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,43944
+2/19/2021 3:34:23,2/19/2021 3:37:02,IP Address,103.127.179.126,100,158,True,2/19/2021 3:37:02,R_2PgRi078aO5i8Yj,,,,,23.790802001953125,90.410888671875,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4",,,,,0.818,3.186,27.785,2,"Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",6,4,5,Male,29-39,Bachelor’s degree,Europe,IM_6m0pkPqaVoiPxY1,10424
+2/19/2021 3:29:51,2/19/2021 3:38:00,IP Address,70.39.108.205,100,489,True,2/19/2021 3:38:00,R_234AXq4vd8liL6Q,,,,,37.751007080078125,-97.82199859619140625,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly Disagree
+1",0,0,60.593,0,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Very likely
+7","Very probable
+7","Very influential
+7",Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,74374
+2/19/2021 3:34:37,2/19/2021 3:38:28,IP Address,155.186.185.1,100,230,True,2/19/2021 3:38:28,R_27v4qB7y8JqQ9Lf,,,,,34.00140380859375,-84.01439666748046875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1",,,,,0,0,11.132,0,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Very likely
+7",6,6,Male,18-28,Bachelor’s degree,South America,IM_6m0pkPqaVoiPxY1,10010
+2/19/2021 3:33:13,2/19/2021 3:39:33,IP Address,157.46.109.47,100,379,True,2/19/2021 3:39:33,R_BFYhaPvblN6Yz3b,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2",0,0,68.698,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat disagree
+2","Somewhat agree
+4","Strongly agree
+5","Very likely
+7",5,"Very influential
+7",Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,79856
+2/19/2021 3:29:11,2/19/2021 3:39:36,IP Address,157.51.141.89,100,624,True,2/19/2021 3:39:37,R_Zrft2rfs52DkcCZ,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2",,,,,4.705,4.705,11.871,1,"Somewhat disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Very likely
+7",6,5,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,44183
+2/19/2021 3:28:19,2/19/2021 3:41:20,IP Address,117.223.14.63,100,780,True,2/19/2021 3:41:20,R_3pa27zNDpkL8GFJ,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2",3.695,44.413,46.339,10,,,,,"Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4",5,5,6,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,31926
+2/19/2021 3:40:47,2/19/2021 3:43:01,IP Address,73.209.199.101,100,134,True,2/19/2021 3:43:02,R_2qeAtl1DeUYwGMu,,,,,41.848602294921875,-87.6287994384765625,anonymous,EN,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",,,,,0,0,53.392,0,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat disagree
+2","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",6,6,"Very influential
+7",Male,29-39,Bachelor’s degree,South America,IM_6m0pkPqaVoiPxY1,63517
+2/19/2021 3:30:42,2/19/2021 3:43:14,IP Address,171.49.213.10,100,751,True,2/19/2021 3:43:14,R_1Qguh0km8U0eWWe,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",,,,,9.279,9.799,20.234,2,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",5,5,5,Female,29-39,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,88068
+2/19/2021 3:38:47,2/19/2021 3:43:40,IP Address,172.107.180.38,100,292,True,2/19/2021 3:43:41,R_2abElDnlNwPBXla,,,,,32.8137054443359375,-96.87039947509765625,anonymous,EN,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Strongly Disagree
+1",29.418,33.178,34.083,3,,,,,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",4,5,5,Male,29-39,Bachelor’s degree,South America,IM_6m0pkPqaVoiPxY1,29676
+2/19/2021 3:40:51,2/19/2021 3:43:46,IP Address,67.175.50.251,100,174,True,2/19/2021 3:43:46,R_3HFDEzsuk14yVfc,,,,,41.848602294921875,-87.6287994384765625,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",0,0,48.23,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",5,6,6,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,60501
+2/19/2021 3:28:27,2/19/2021 3:43:56,IP Address,122.164.215.200,100,929,True,2/19/2021 3:43:56,R_1BQPsVLedIO0Vkv,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4",5.465,17.137,18.633,5,,,,,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3",5,4,5,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,26426
+2/19/2021 3:36:04,2/19/2021 3:44:40,IP Address,106.198.118.92,100,516,True,2/19/2021 3:44:40,R_216eQFCna2mbNxV,,,,,11.6537933349609375,78.1553955078125,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Strongly agree
+5",0,0,99.955,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",4,5,"Very influential
+7",Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,19220
+2/19/2021 3:29:39,2/19/2021 3:45:10,IP Address,117.241.213.90,100,930,True,2/19/2021 3:45:10,R_ULM5ywc6LceIi9X,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",1.59,3.182,79.95,2,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly disagree
+1","Neither agree nor disagree
+3","Strongly agree
+5","Very likely
+7",4,"Very influential
+7",Female,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,64322
+2/19/2021 3:44:16,2/19/2021 3:46:52,IP Address,49.37.83.54,100,156,True,2/19/2021 3:46:53,R_22F7N9TJxD8lTBN,,,,,23.3426055908203125,85.309906005859375,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Strongly Disagree
+1","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2",11.463,11.463,11.879,1,,,,,"Somewhat disagree
+2","Strongly disagree
+1","Neither agree nor disagree
+3","Somewhat disagree
+2","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat disagree
+2","Neither agree nor disagree
+3","Neither agree nor disagree
+3",3,5,"Not influential at all
+1",Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,16747
+2/19/2021 3:28:17,2/19/2021 3:48:03,IP Address,171.49.216.200,100,1186,True,2/19/2021 3:48:04,R_1mUzoWTWyUaUDIf,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly Disagree
+1",,,,,0,0,48.722,0,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4",5,5,5,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,90202
+2/19/2021 3:29:16,2/19/2021 3:48:14,IP Address,117.199.130.163,100,1137,True,2/19/2021 3:48:14,R_PRqGS5s1UVRnBwB,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",0,0,13,0,,,,,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",5,6,6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,64249
+2/19/2021 3:28:47,2/19/2021 3:48:14,IP Address,117.201.9.183,100,1166,True,2/19/2021 3:48:14,R_55CE2pOLoobiBGh,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3",,,,,3.249,80.377,85.249,5,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4",4,4,"Very influential
+7",Female,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,83038
+2/19/2021 3:33:49,2/19/2021 3:48:27,IP Address,117.217.166.51,100,877,True,2/19/2021 3:48:28,R_2v8seQtxK4myvyi,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,0,0,13.097,0,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",6,6,6,Female,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,69648
+2/19/2021 3:46:02,2/19/2021 3:49:43,IP Address,117.213.34.215,100,220,True,2/19/2021 3:49:43,R_3saJvPAF7pwrCkR,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1",,,,,4.19,12.654,13.273,2,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5",6,"Very probable
+7",6,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,38751
+2/19/2021 3:47:53,2/19/2021 3:51:58,IP Address,73.3.216.2,100,245,True,2/19/2021 3:51:58,R_2an4ZFrXJJNGNou,,,,,39.706695556640625,-104.96939849853515625,anonymous,EN,1,"Strongly Disagree
+1","Strongly agree
+5","Neither agree nor disagree
+3","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Neither agree nor disagree
+3","Strongly Disagree
+1","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly Disagree
+1","Neither agree nor disagree
+3","Strongly Disagree
+1",,,,,0,0,37.763,0,"Somewhat disagree
+2","Strongly disagree
+1","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat disagree
+2","Strongly disagree
+1","Strongly disagree
+1","Somewhat disagree
+2","Somewhat disagree
+2","Not likely at all
+1",2,3,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,88294
+2/19/2021 3:37:59,2/19/2021 3:52:34,IP Address,72.68.205.5,100,875,True,2/19/2021 3:52:34,R_24jajgtEec1ZNNi,,,,,40.709503173828125,-73.296600341796875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Somewhat Disagree
+2","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly Disagree
+1","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Strongly Disagree
+1",,,,,9.057,9.057,11.518,1,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",5,5,4,Female,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,47967
+2/19/2021 3:28:09,2/19/2021 3:54:38,IP Address,171.49.200.142,100,1588,True,2/19/2021 3:54:38,R_2aCF2vALxuJd1Qq,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3",4.959,6.918,20.113,3,,,,,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3",4,5,4,Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,37993
+2/19/2021 3:53:26,2/19/2021 3:55:06,IP Address,122.164.215.164,100,99,True,2/19/2021 3:55:06,R_2SqOXUkYBEeIP6C,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5",0,0,26.251,0,,,,,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",6,5,5,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,38042
+2/19/2021 3:45:39,2/19/2021 3:55:11,IP Address,217.138.208.212,100,571,True,2/19/2021 3:55:11,R_29hot8i3g8aoklu,,,,,40.7156982421875,-74,anonymous,EN,0.8000000000000000000000000000000000000000000000000000,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly agree
+5","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",0,0,43.059,0,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly disagree
+1","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Very likely
+7","Very probable
+7","Very influential
+7",Female,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,80897
+2/19/2021 3:28:30,2/19/2021 3:55:11,IP Address,122.164.215.164,100,1600,True,2/19/2021 3:55:12,R_W80BmEF0rQiooTv,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",1.352,1.352,11.149,1,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",5,5,5,Male,18-28,Bachelor’s degree,Asia,IM_6S8IbaUbQrgqD3L,19359
+2/19/2021 3:53:38,2/19/2021 3:57:28,IP Address,212.162.151.27,100,229,True,2/19/2021 3:57:28,R_3Hpgi8hbb19OIQW,,,,,41.8777008056640625,-87.637603759765625,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly agree
+5","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat Disagree
+2",,,,,43.596,43.596,44.193,1,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat disagree
+2","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4",5,6,4,Male,18-28,Master Degree,North America,IM_6m0pkPqaVoiPxY1,91367
+2/19/2021 3:58:35,2/19/2021 4:00:30,IP Address,122.174.107.122,100,115,True,2/19/2021 4:00:30,R_1DSc7r2DAxHaDlf,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4",2.37,3.49,13.109,3,,,,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",6,6,6,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,65684
+2/19/2021 3:58:47,2/19/2021 4:00:34,IP Address,171.49.210.59,100,106,True,2/19/2021 4:00:34,R_1CD4VH0McSgs6fB,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",,,,,0,0,21.417,0,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",6,"Very probable
+7",6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,85174
+2/19/2021 3:58:31,2/19/2021 4:00:42,IP Address,117.213.32.252,100,130,True,2/19/2021 4:00:42,R_1KdJM83XWwNxZHj,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2",,,,,1.24,1.24,16.64,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",6,4,4,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,60629
+2/19/2021 3:59:04,2/19/2021 4:00:45,IP Address,75.22.103.98,100,101,True,2/19/2021 4:00:45,R_2pJDrY80JS4DAHV,,,,,40.1103973388671875,-83.11309814453125,anonymous,EN,1,"Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat agree
+4","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Strongly Disagree
+1","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2",0,0,14.858,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Very likely
+7","Very probable
+7",6,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,45224
+2/19/2021 3:58:04,2/19/2021 4:00:56,IP Address,171.49.206.69,100,172,True,2/19/2021 4:00:56,R_1E5px7hEQ3rxfcd,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,15.366,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Very likely
+7",6,"Very influential
+7",Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,62786
+2/19/2021 3:59:16,2/19/2021 4:01:07,IP Address,117.213.32.252,100,110,True,2/19/2021 4:01:08,R_214HHzTjAcYF8TA,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2",,,,,0,0,21.262,0,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",6,5,2,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,32679
+2/19/2021 3:59:18,2/19/2021 4:01:26,IP Address,67.63.184.83,100,128,True,2/19/2021 4:01:26,R_1jm0iS0e0xpPyq7,,,,,37.751007080078125,-97.82199859619140625,anonymous,EN,1,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Neither agree nor disagree
+3","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1",0,0,11.601,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5",4,5,5,Male,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,89816
+2/19/2021 3:59:32,2/19/2021 4:01:53,IP Address,122.174.75.179,100,140,True,2/19/2021 4:01:53,R_1FFJARi4hVtJIz9,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,1.914,3.209,12.489,3,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",6,6,"Very influential
+7",Male,29-39,Bachelor’s degree,Asia,IM_6VggE63z5a3BSHb,73614
+2/19/2021 3:58:39,2/19/2021 4:01:53,IP Address,59.98.133.215,100,193,True,2/19/2021 4:01:53,R_pMLEqS35euxOiqt,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,1.552,2.36,12.236,3,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",5,6,6,Female,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,82964
+2/19/2021 3:59:44,2/19/2021 4:01:54,IP Address,117.213.35.48,100,129,True,2/19/2021 4:01:54,R_25HDs4q7FsQ46Y5,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5",0,0,36.361,0,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Very likely
+7","Very probable
+7","Very influential
+7",Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,76781
+2/19/2021 4:00:04,2/19/2021 4:01:56,IP Address,171.49.162.166,100,111,True,2/19/2021 4:01:56,R_AiZUkvKyqmvBjvr,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",1.534,1.534,11.085,1,,,,,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",6,6,5,Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,43331
+2/19/2021 3:58:43,2/19/2021 4:02:10,IP Address,136.185.83.31,100,206,True,2/19/2021 4:02:11,R_1GUhuRTBBi6CA5I,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,0,0,96.025,0,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4",6,6,"Very influential
+7",Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,93397
+2/19/2021 4:00:54,2/19/2021 4:02:16,IP Address,122.164.239.172,100,82,True,2/19/2021 4:02:17,R_1JWoGigCPDvs4K2,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,11.375,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Very likely
+7",6,"Very influential
+7",Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,62472
+2/19/2021 3:35:34,2/19/2021 4:02:26,IP Address,117.199.129.172,100,1611,True,2/19/2021 4:02:26,R_50GVeOatXbp95tL,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,1.945,2.802,11.595,3,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Very likely
+7",6,6,Female,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,25213
+2/19/2021 3:59:39,2/19/2021 4:02:27,IP Address,157.51.155.6,100,167,True,2/19/2021 4:02:27,R_2OVGYSEQBmNEFk8,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Strongly Disagree
+1","Neither agree nor disagree
+3","Strongly Disagree
+1","Somewhat Disagree
+2","Strongly agree
+5","Strongly Disagree
+1","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly Disagree
+1",,,,,1.078,44.093,45.621,9,"Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat disagree
+2","Strongly agree
+5","Somewhat agree
+4","Somewhat disagree
+2","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4",5,6,4,Female,40-50,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,64460
+2/19/2021 3:33:21,2/19/2021 4:02:40,IP Address,117.217.161.208,100,1758,True,2/19/2021 4:02:40,R_ssTRpgaV605G5P3,,,,,9.91900634765625,78.1195068359375,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",1.407,9.614,11.37,7,,,,,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",6,"Very probable
+7",6,Female,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,24379
+2/19/2021 3:58:47,2/19/2021 4:03:08,IP Address,117.213.35.48,100,261,True,2/19/2021 4:03:08,R_237tJSGRr5lD0oX,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,141.577,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Very likely
+7","Very probable
+7",6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,33489
+2/19/2021 3:55:30,2/19/2021 4:03:12,IP Address,117.222.156.202,100,461,True,2/19/2021 4:03:12,R_paVvalvB7kesha1,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,12.089,0,,,,,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4",5,6,6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,65215
+2/19/2021 4:02:16,2/19/2021 4:03:29,IP Address,171.49.218.242,100,72,True,2/19/2021 4:03:29,R_2BA8Gofb9QcX4Vg,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",5.822,5.822,10.967,1,,,,,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",6,6,6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,92056
+2/19/2021 3:59:58,2/19/2021 4:03:42,IP Address,117.217.213.135,100,223,True,2/19/2021 4:03:42,R_1j6Vggbg5FpIeAN,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly Disagree
+1","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat Disagree
+2",,,,,0,0,26.462,0,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",6,6,4,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,30740
+2/19/2021 4:03:01,2/19/2021 4:04:10,IP Address,171.49.220.74,100,69,True,2/19/2021 4:04:10,R_3G1hjUKnD8w686v,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",,,,,1.908,2.204,11.609,2,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",6,"Very probable
+7",6,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,10567
+2/19/2021 3:58:42,2/19/2021 4:04:14,IP Address,117.213.39.15,100,332,True,2/19/2021 4:04:15,R_31FoiQCweuanCtX,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",3.344,3.344,54.926,1,,,,,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",6,6,5,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,72487
+2/19/2021 3:59:39,2/19/2021 4:04:32,IP Address,151.28.79.252,100,293,True,2/19/2021 4:04:32,R_1KkXPG8O3ThEyHG,,,,,41.8979949951171875,12.512603759765625,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Strongly Disagree
+1","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly Disagree
+1","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly Disagree
+1",,,,,0,0,23.889,0,"Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",5,5,5,Male,18-28,Bachelor’s degree,Europe,IM_6m0pkPqaVoiPxY1,12700
+2/19/2021 4:03:15,2/19/2021 4:04:38,IP Address,171.49.216.190,100,82,True,2/19/2021 4:04:39,R_3Rg2XWgnPq1KJjE,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,11.38,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",5,"Very probable
+7",6,Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,96836
+2/19/2021 3:59:11,2/19/2021 4:04:48,IP Address,117.213.35.48,100,337,True,2/19/2021 4:04:48,R_3j0QqWggDJ8Am1p,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",,,,,0,0,34.009,0,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",5,5,6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,67380
+2/19/2021 4:03:48,2/19/2021 4:05:34,IP Address,122.164.225.168,100,106,True,2/19/2021 4:05:35,R_4OxddP5qMz9igvf,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",0,0,11.014,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",6,"Very probable
+7","Very influential
+7",Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,22558
+2/19/2021 3:59:05,2/19/2021 4:07:00,IP Address,117.222.156.230,100,474,True,2/19/2021 4:07:01,R_Oj2FeJZ1ZLTszeh,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",0,0,12.592,0,,,,,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4",5,6,6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,53288
+2/19/2021 3:58:57,2/19/2021 4:07:06,IP Address,117.217.165.19,100,489,True,2/19/2021 4:07:07,R_2PiEte9LRdAMLAJ,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3",,,,,1.528,2.04,36.936,2,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",6,5,6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,53429
+2/19/2021 4:04:30,2/19/2021 4:07:23,IP Address,117.222.156.249,100,173,True,2/19/2021 4:07:24,R_1hLoop9rXLWmiBB,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",,,,,0,0,19.721,0,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",4,5,5,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,15519
+2/19/2021 3:58:23,2/19/2021 4:08:04,IP Address,117.222.156.233,100,580,True,2/19/2021 4:08:04,R_2dKlbS5ia20cwRy,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",0,0,18.337,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",5,4,5,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,97705
+2/19/2021 4:00:41,2/19/2021 4:09:30,IP Address,59.98.132.58,100,529,True,2/19/2021 4:09:31,R_27U3ni6u3eDZfL9,,,,,9.91900634765625,78.1195068359375,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",,,,,0,0,57.97,0,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Very likely
+7",6,"Very influential
+7",Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,23871
+2/19/2021 4:00:12,2/19/2021 4:09:34,IP Address,117.217.167.252,100,562,True,2/19/2021 4:09:36,R_p5xAEf3vaO1clrz,,,,,9.91900634765625,78.1195068359375,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",0,0,13.017,0,,,,,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",5,6,5,Female,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,74046
+2/19/2021 3:59:19,2/19/2021 4:09:37,IP Address,196.17.170.44,100,618,True,2/19/2021 4:09:38,R_21smrN5NxLU4V2z,,,,,51.5095977783203125,-0.097198486328125,anonymous,EN,1,"Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly agree
+5",,,,,1.698,20.514,21.81,6,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4",5,6,6,Male,51-61,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,44392
+2/19/2021 4:01:15,2/19/2021 4:09:40,IP Address,117.217.167.0,100,505,True,2/19/2021 4:09:41,R_WAPFWZ1iMI5IG5z,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,4.6,4.6,15.088,1,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",5,5,4,Female,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,79746
+2/19/2021 3:59:14,2/19/2021 4:09:53,IP Address,196.17.170.234,100,638,True,2/19/2021 4:09:53,R_2YLqB7hZE96Shmb,,,,,51.5095977783203125,-0.097198486328125,anonymous,EN,0.90000000000000000000000000000000000000000000000000000,"Neither agree nor disagree
+3","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly Disagree
+1","Strongly agree
+5",0,0,26.458,0,,,,,"Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",5,4,5,Male,51-61,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,83697
+2/19/2021 4:06:11,2/19/2021 4:10:41,IP Address,117.213.32.142,100,270,True,2/19/2021 4:10:42,R_2VHG5zOqq0z6qBD,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Strongly agree
+5","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2",,,,,46.943,51.583,53.481,6,"Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Neither agree nor disagree
+3","Strongly agree
+5",5,"Very probable
+7",6,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,70829
+2/19/2021 4:03:28,2/19/2021 4:12:26,IP Address,171.49.165.119,100,538,True,2/19/2021 4:12:26,R_ONZ459EAX8g9tap,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4",,,,,0,0,18.956,0,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3",5,6,6,Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,51401
+2/19/2021 4:05:16,2/19/2021 4:12:39,IP Address,171.49.213.102,100,443,True,2/19/2021 4:12:39,R_3sACSnDT4pAfOlF,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4",0,0,11.454,0,,,,,"Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4",5,5,5,Male,18-28,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,17025
+2/19/2021 3:59:37,2/19/2021 4:13:17,IP Address,117.222.152.252,100,820,True,2/19/2021 4:13:18,R_2dhZAyOD5tInsDs,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat agree
+4","Somewhat Disagree
+2",7.183,11.23,12.421,4,,,,,"Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",5,6,6,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,11538
+2/19/2021 4:00:39,2/19/2021 4:14:13,IP Address,117.222.155.187,100,814,True,2/19/2021 4:14:13,R_BKYk6a1ckRySaTD,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",7.543,8.092,62.08,2,,,,,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",5,5,6,Male,18-28,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,20642
+2/19/2021 4:01:13,2/19/2021 4:15:24,IP Address,117.199.129.182,100,850,True,2/19/2021 4:15:24,R_3HXHwga41cOCWJ3,,,,,9.91900634765625,78.1195068359375,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5",,,,,9.955,9.955,11.445,1,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5",6,5,"Very influential
+7",Female,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,23065
+2/19/2021 4:05:50,2/19/2021 4:15:54,IP Address,196.18.164.102,100,604,True,2/19/2021 4:15:55,R_2sTpV27TMoq55Nj,,,,,51.5095977783203125,-0.097198486328125,anonymous,EN,1,"Strongly Disagree
+1","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly Disagree
+1","Somewhat Disagree
+2","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Neither agree nor disagree
+3","Strongly Disagree
+1","Strongly Disagree
+1","Strongly Disagree
+1","Neither agree nor disagree
+3",2.663,18.102,19.381,4,,,,,"Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Neither agree nor disagree
+3","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3",5,5,5,Female,+62,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,56488
+2/19/2021 4:14:37,2/19/2021 4:17:39,IP Address,70.39.92.10,100,181,True,2/19/2021 4:17:39,R_10IT3z1yGSWIddU,,,,,37.751007080078125,-97.82199859619140625,anonymous,EN,1,"Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Neither agree nor disagree
+3","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Somewhat agree
+4","Neither agree nor disagree
+3","Strongly agree
+5","Strongly agree
+5","Strongly Disagree
+1","Strongly Disagree
+1","Somewhat agree
+4","Strongly Disagree
+1","Strongly Disagree
+1","Strongly agree
+5","Strongly Disagree
+1",,,,,0,0,21.916,0,"Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Very likely
+7","Very probable
+7","Very influential
+7",Female,29-39,Bachelor’s degree,North America,IM_6m0pkPqaVoiPxY1,10094
+2/19/2021 4:10:47,2/19/2021 4:18:35,IP Address,182.65.119.175,100,467,True,2/19/2021 4:18:35,R_2q9815sUara9kKO,,,,,13.0579071044921875,80.192108154296875,anonymous,EN,1,"Strongly Disagree
+1","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Somewhat agree
+4","Somewhat agree
+4","Neither agree nor disagree
+3","Neither agree nor disagree
+3","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat Disagree
+2","Strongly agree
+5","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2","Somewhat Disagree
+2","Somewhat agree
+4","Somewhat Disagree
+2",0,0,47.852,0,,,,,"Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5",6,"Very probable
+7","Very influential
+7",Female,29-39,Master Degree,Asia,IM_6m0pkPqaVoiPxY1,88800
+2/19/2021 4:20:30,2/19/2021 4:22:18,IP Address,117.213.34.183,100,108,True,2/19/2021 4:22:19,R_2VpU6ciTRw7Kdyf,,,,,8.1790008544921875,77.43231201171875,anonymous,EN,1,"Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Neither agree nor disagree
+3","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",,,,,0,0,16.232,0,"Somewhat agree
+4","Somewhat agree
+4","Strongly agree
+5","Strongly agree
+5","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4","Strongly agree
+5","Somewhat agree
+4",5,"Very probable
+7",6,Male,29-39,Bachelor’s degree,Asia,IM_6m0pkPqaVoiPxY1,68054
