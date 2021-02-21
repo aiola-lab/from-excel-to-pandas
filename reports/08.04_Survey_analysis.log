@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/Users/guy/miniconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/guy/miniconda3/lib/python3.8/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/guy/miniconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/guy/miniconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/guy/miniconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/guy/miniconda3/lib/python3.8/site-packages/nbclient/client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "/Users/guy/miniconda3/lib/python3.8/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/guy/miniconda3/lib/python3.8/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import seaborn as sns
+### PLOT BUILD
+fig, ax = plt.subplots(3, 2, figsize=(10,8))
+
+for idx, attribute in enumerate(['Expectation','Trust','Offering']):
+    for i,group in enumerate(['Group A', 'Group B']):
+        sub_df = summary_numeric_survey_df.query('group == @group')
+        sns
+        .regplot(
+            x=sub_df.E, 
+            y=sub_df[attribute], 
+            ax=ax[idx,i]
+        )
+        ax[idx,i].set_title(group, loc='left')
+
+fig.tight_layout()
+
+plt.show()
+------------------
+
+[0;36m  File [0;32m"<ipython-input-24-ef0d6f307a30>"[0;36m, line [0;32m9[0m
+[0;31m    .regplot([0m
+[0m    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (<ipython-input-24-ef0d6f307a30>, line 9)
+
