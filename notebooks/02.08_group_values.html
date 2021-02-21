@@ -195,6 +195,11 @@
    Linear Programming (Optimization)
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.04_Survey_analysis.html">
+   Survey Analysis
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -385,7 +390,7 @@
 </ul>
 <div class="section" id="cut-function">
 <h2>Cut Function<a class="headerlink" href="#cut-function" title="Permalink to this headline">¶</a></h2>
-<p>Since this is a common need, Pandas has a built-in function that makes it more flexible and accurate.</p>
+<p>Since this is a common need, Pandas has built-in functions <em>cut</em> and <em>qcut</em> that make it more flexible and accurate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -727,8 +732,8 @@ Categories (5, interval[float64]): [(-17.857, -6.36] &lt; (-6.36, 5.08] &lt; (5.
 <code class="docutils literal notranslate"><span class="pre">[(-17.857,</span> <span class="pre">-6.36]</span> <span class="pre">&lt;</span> <span class="pre">(-6.36,</span> <span class="pre">5.08]</span> <span class="pre">&lt;</span> <span class="pre">(5.08,</span> <span class="pre">16.52]</span> <span class="pre">&lt;</span> <span class="pre">(16.52,</span> <span class="pre">27.96]</span> <span class="pre">&lt;</span> <span class="pre">(27.96,</span> <span class="pre">39.4]]</span></code> that are in order and split to more or less equal sizes from temperature values perspective. Let’s see how well they split the data:</p>
 <ul class="simple">
 <li><p>Split the temperature value into 5 bins</p></li>
-<li><p>Count the number of records in each bins</p></li>
-<li><p>Sort the value by the temperature range (the index of the series)</p></li>
+<li><p>Count the number of records in each bin</p></li>
+<li><p>Sort the values by the temperature range (the index of the series)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,11 +765,11 @@ Name: Temperature(°C), dtype: int64
 </div>
 <div class="section" id="setting-the-bins-limits">
 <h3>Setting the bins’ limits<a class="headerlink" href="#setting-the-bins-limits" title="Permalink to this headline">¶</a></h3>
-<p>We can set the bing to be more meaningful by setting the limits specifically. As experts in bicycles, we know the temperature ranges that are suitable for different accessories and clothings. Let’s fix the ranges based on this domain knowledge:</p>
+<p>We can set the bins to be more meaningful by setting the limits explicitly. As experts in bicycles, we might know the temperature ranges that are suitable for different accessories and clothings. Let’s fix the ranges based on this domain knowledge:</p>
 <ul class="simple">
 <li><p>Split the temperature value into 5 bins based on bicycle professional ranges</p></li>
-<li><p>Count the number of records in each bins</p></li>
-<li><p>Sort the value by the temperature range (the index of the series)</p></li>
+<li><p>Count the number of records in each bin</p></li>
+<li><p>Sort the values by the temperature range (the index of the series)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,13 +803,13 @@ Name: Temperature(°C), dtype: int64
 <ul class="simple">
 <li><p>Create a new column in the table for the temperature ranges</p></li>
 <li><p>Split the temperature value into 5 bins based on bicycle professional ranges</p></li>
-<li><p>Count the number of records in each bins</p></li>
-<li><p>Add human readable labels to the regions</p></li>
-<li><p>Sort the value by the temperature range (the index of the series)</p></li>
+<li><p>Count the number of records in each bin</p></li>
+<li><p>Add human readable labels to the bins</p></li>
+<li><p>Sort the values by the temperature range (the index of the series)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;Temperature Range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">pd</span>
     <span class="o">.</span><span class="n">cut</span><span class="p">(</span>
         <span class="n">bike_share_data</span>
@@ -816,7 +821,7 @@ Name: Temperature(°C), dtype: int64
 <span class="p">)</span>
 <span class="p">(</span>
     <span class="n">bike_share_data</span>
-    <span class="p">[</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">]</span>
+    <span class="p">[</span><span class="s1">&#39;Temperature Range&#39;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
     <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 <span class="p">)</span>
@@ -829,22 +834,22 @@ Freezing          1731
 Cold              1651
 Warm              2148
 Sizzling          1776
-Name: temperature_range, dtype: int64
+Name: Temperature Range, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
-<p>We see that the order is still the right order and not alphabetical, and the split is more balanced in number of records.</p>
+<p>We see that the order is still the right order and not alphabetical, and the split is more balanced in the number of records.</p>
 </div>
 <div class="section" id="boxplot-for-each-bin">
 <h3>Boxplot for each bin<a class="headerlink" href="#boxplot-for-each-bin" title="Permalink to this headline">¶</a></h3>
-<p>Now we can take every group of records and calculate and plot their box plot showing the mean and the different quantiles of the different groups.</p>
+<p>Now we can take every group of records and calculate and plot their box-plot showing the mean and the different quantiles of the different groups.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">bike_share_data</span>
-    <span class="p">[[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">,</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">]]</span>
-    <span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;temperature_range&#39;</span><span class="p">)</span>
+    <span class="p">[[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature Range&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Temperature Range&#39;</span><span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
@@ -916,17 +921,6 @@ Name: temperature_range, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">c455e50ce721</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">statsmodels.distributions.empirical_distribution</span> <span class="kn">import</span> <span class="n">ECDF</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -938,7 +932,8 @@ Name: temperature_range, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_24_0.svg" src="../_images/02.08_group_values_24_0.svg" /></div>
+<img alt="../_images/02.08_group_values_24_0.png" src="../_images/02.08_group_values_24_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -950,7 +945,8 @@ Name: temperature_range, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_25_0.svg" src="../_images/02.08_group_values_25_0.svg" /></div>
+<img alt="../_images/02.08_group_values_25_0.png" src="../_images/02.08_group_values_25_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -959,7 +955,7 @@ Name: temperature_range, dtype: int64
 <p>When using a target score such as grades or number of rentals, it makes sense to use the split using the Quantiles of the scores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;usage_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;Usage Level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">pd</span>
     <span class="o">.</span><span class="n">qcut</span><span class="p">(</span>
         <span class="n">bike_share_data</span><span class="p">[</span><span class="s1">&#39;Rented Bike Count&#39;</span><span class="p">],</span> 
@@ -969,7 +965,7 @@ Name: temperature_range, dtype: int64
 <span class="p">)</span>
 <span class="p">(</span>
     <span class="n">bike_share_data</span>
-    <span class="p">[</span><span class="s1">&#39;usage_level&#39;</span><span class="p">]</span>
+    <span class="p">[</span><span class="s1">&#39;Usage Level&#39;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
     <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 <span class="p">)</span>
@@ -981,7 +977,7 @@ Name: temperature_range, dtype: int64
 Medium       2186
 High         2190
 Very High    2190
-Name: usage_level, dtype: int64
+Name: Usage Level, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -990,14 +986,15 @@ Name: usage_level, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">bike_share_data</span>
-    <span class="p">[[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">,</span><span class="s1">&#39;usage_level&#39;</span><span class="p">]]</span>
-    <span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;usage_level&#39;</span><span class="p">)</span>
+    <span class="p">[[</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">,</span><span class="s1">&#39;Usage Level&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Usage Level&#39;</span><span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_28_0.svg" src="../_images/02.08_group_values_28_0.svg" /></div>
+<img alt="../_images/02.08_group_values_28_0.png" src="../_images/02.08_group_values_28_0.png" />
+</div>
 </div>
 <div class="section" id="heat-map-with-the-new-value-group">
 <h3>Heat map with the new value group<a class="headerlink" href="#heat-map-with-the-new-value-group" title="Permalink to this headline">¶</a></h3>
@@ -1013,10 +1010,10 @@ Name: usage_level, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
     <span class="n">bike_share_data</span>
-    <span class="p">[[</span><span class="s1">&#39;usage_level&#39;</span><span class="p">,</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span><span class="s1">&#39;Date&#39;</span><span class="p">]]</span>
+    <span class="p">[[</span><span class="s1">&#39;Usage Level&#39;</span><span class="p">,</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span><span class="s1">&#39;Date&#39;</span><span class="p">]]</span>
     <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
         <span class="n">index</span><span class="o">=</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span> 
-        <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;usage_level&#39;</span><span class="p">,</span>
+        <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Usage Level&#39;</span><span class="p">,</span>
         <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;count&#39;</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">),</span>
@@ -1026,7 +1023,8 @@ Name: usage_level, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_31_0.svg" src="../_images/02.08_group_values_31_0.svg" /></div>
+<img alt="../_images/02.08_group_values_31_0.png" src="../_images/02.08_group_values_31_0.png" />
+</div>
 </div>
 </div>
 </div>

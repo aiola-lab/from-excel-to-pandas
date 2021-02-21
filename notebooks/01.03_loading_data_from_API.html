@@ -195,6 +195,11 @@
    Linear Programming (Optimization)
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.04_Survey_analysis.html">
+   Survey Analysis
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -365,16 +370,21 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page</span> <span class="o">=</span> <span class="s1">&#39;AMZN&#39;</span>
 
+<span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;X-Requested-With&quot;</span><span class="p">:</span> <span class="s2">&quot;XMLHttpRequest&quot;</span>
+<span class="p">}</span>
+
 <span class="n">page_views_api_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s1">/daily/2020030100/2020033000&#39;</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">page_views_api_url</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">page_views_api_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
 <span class="n">response</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [403]&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
 </pre></div>
 </div>
 </div>
@@ -394,51 +404,93 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">JSONDecodeError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">d4065943b639</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="s1">&#39;items&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">~/miniconda3/lib/python3.8/site-packages/requests/models.py</span> in <span class="ni">json</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">896</span>                     <span class="c1"># used.</span>
-<span class="g g-Whitespace">    </span><span class="mi">897</span>                     <span class="k">pass</span>
-<span class="ne">--&gt; </span><span class="mi">898</span>         <span class="k">return</span> <span class="n">complexjson</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">899</span> 
-<span class="g g-Whitespace">    </span><span class="mi">900</span>     <span class="nd">@property</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">~/miniconda3/lib/python3.8/site-packages/simplejson/__init__.py</span> in <span class="ni">loads</span><span class="nt">(s, encoding, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, use_decimal, **kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span>             <span class="n">parse_constant</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">object_pairs_hook</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span>             <span class="ow">and</span> <span class="ow">not</span> <span class="n">use_decimal</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">kw</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">525</span>         <span class="k">return</span> <span class="n">_default_decoder</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">527</span>         <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONDecoder</span>
-
-<span class="nn">~/miniconda3/lib/python3.8/site-packages/simplejson/decoder.py</span> in <span class="ni">decode</span><span class="nt">(self, s, _w, _PY3)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span>         <span class="k">if</span> <span class="n">_PY3</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span>             <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">370</span>         <span class="n">obj</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_decode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span>         <span class="n">end</span> <span class="o">=</span> <span class="n">_w</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="k">if</span> <span class="n">end</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-
-<span class="nn">~/miniconda3/lib/python3.8/site-packages/simplejson/decoder.py</span> in <span class="ni">raw_decode</span><span class="nt">(self, s, idx, _w, _PY3)</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span>             <span class="k">elif</span> <span class="n">ord0</span> <span class="o">==</span> <span class="mh">0xef</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">idx</span><span class="p">:</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\xef\xbb\xbf</span><span class="s1">&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span>                 <span class="n">idx</span> <span class="o">+=</span> <span class="mi">3</span>
-<span class="ne">--&gt; </span><span class="mi">400</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_once</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="n">_w</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">end</span><span class="p">())</span>
-
-<span class="ne">JSONDecodeError</span>: Expecting value: line 1 column 1 (char 0)
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>project</th>
+      <th>article</th>
+      <th>granularity</th>
+      <th>timestamp</th>
+      <th>access</th>
+      <th>agent</th>
+      <th>views</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>en.wikipedia</td>
+      <td>AMZN</td>
+      <td>daily</td>
+      <td>2020030100</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>en.wikipedia</td>
+      <td>AMZN</td>
+      <td>daily</td>
+      <td>2020030200</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>en.wikipedia</td>
+      <td>AMZN</td>
+      <td>daily</td>
+      <td>2020030300</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>en.wikipedia</td>
+      <td>AMZN</td>
+      <td>daily</td>
+      <td>2020030400</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>en.wikipedia</td>
+      <td>AMZN</td>
+      <td>daily</td>
+      <td>2020030500</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page_view_data</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">requests</span>
-    <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">page_views_api_url</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">page_views_api_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
     <span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;items&#39;</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="n">page_views_table</span> <span class="o">=</span> <span class="p">(</span>
@@ -560,7 +612,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_10_0.svg" src="../_images/01.03_loading_data_from_API_10_0.svg" /></div>
+<img alt="../_images/01.03_loading_data_from_API_10_0.png" src="../_images/01.03_loading_data_from_API_10_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="loading-the-page-views-of-all-nasdaq-100">
@@ -705,7 +758,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_views</span><span class="p">(</span><span class="n">company</span><span class="p">):</span>
     <span class="n">company_page_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/</span><span class="si">{</span><span class="n">company</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">/daily/2020090100/2020093000&#39;</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">company_page_url</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">company_page_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">pd</span>
@@ -788,55 +841,55 @@
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">ANSYS</th>
+      <th rowspan="5" valign="top">ASML Holding</th>
       <th>0</th>
       <td>en.wikipedia</td>
-      <td>ANSYS</td>
+      <td>ASML_Holding</td>
       <td>daily</td>
       <td>2020090100</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>94.0</td>
+      <td>699.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>en.wikipedia</td>
-      <td>ANSYS</td>
+      <td>ASML_Holding</td>
       <td>daily</td>
       <td>2020090200</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>62.0</td>
+      <td>722.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>en.wikipedia</td>
-      <td>ANSYS</td>
+      <td>ASML_Holding</td>
       <td>daily</td>
       <td>2020090300</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>59.0</td>
+      <td>673.0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>en.wikipedia</td>
-      <td>ANSYS</td>
+      <td>ASML_Holding</td>
       <td>daily</td>
       <td>2020090400</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>47.0</td>
+      <td>728.0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>en.wikipedia</td>
-      <td>ANSYS</td>
+      <td>ASML_Holding</td>
       <td>daily</td>
       <td>2020090500</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>38.0</td>
+      <td>598.0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -902,7 +955,7 @@
     </tr>
   </tbody>
 </table>
-<p>2435 rows × 7 columns</p>
+<p>2465 rows × 7 columns</p>
 </div></div></div>
 </div>
 <p>We see that we have more than 2000 rows in the concatenated dataframe where each line is a view of a company in a specific day in the range of September 2020.</p>
@@ -1273,7 +1326,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_22_0.svg" src="../_images/01.03_loading_data_from_API_22_0.svg" /></div>
+<img alt="../_images/01.03_loading_data_from_API_22_0.png" src="../_images/01.03_loading_data_from_API_22_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="loading-from-complex-api">
@@ -1291,22 +1345,28 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython-secrets in /Users/guy/miniconda3/lib/python3.8/site-packages (1.1.1)
 Requirement already satisfied: ipython in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-secrets) (7.18.1)
-Requirement already satisfied: keyring in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-secrets) (21.8.0)
-Requirement already satisfied: jedi&gt;=0.10 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.17.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: keyring in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-secrets) (21.8.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (3.0.8)
 Requirement already satisfied: pickleshare in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.7.5)
 Requirement already satisfied: traitlets&gt;=4.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (5.0.5)
 Requirement already satisfied: pygments in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (2.7.1)
+Requirement already satisfied: jedi&gt;=0.10 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.17.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pexpect&gt;4.3; sys_platform != &quot;win32&quot; in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.8.0)
 Requirement already satisfied: appnope; sys_platform == &quot;darwin&quot; in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.1.0)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (3.0.8)
 Requirement already satisfied: setuptools&gt;=18.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (46.4.0.post20200518)
 Requirement already satisfied: decorator in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.4.2)
-Requirement already satisfied: pexpect&gt;4.3; sys_platform != &quot;win32&quot; in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.8.0)
 Requirement already satisfied: backcall in /Users/guy/miniconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.2.0)
-Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from jedi&gt;=0.10-&gt;ipython-&gt;ipython-secrets) (0.7.1)
-Requirement already satisfied: ipython-genutils in /Users/guy/miniconda3/lib/python3.8/site-packages (from traitlets&gt;=4.2-&gt;ipython-&gt;ipython-secrets) (0.2.0)
 Requirement already satisfied: wcwidth in /Users/guy/miniconda3/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;ipython-secrets) (0.2.5)
+Requirement already satisfied: ipython-genutils in /Users/guy/miniconda3/lib/python3.8/site-packages (from traitlets&gt;=4.2-&gt;ipython-&gt;ipython-secrets) (0.2.0)
+Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from jedi&gt;=0.10-&gt;ipython-&gt;ipython-secrets) (0.7.1)
 Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pexpect&gt;4.3; sys_platform != &quot;win32&quot;-&gt;ipython-&gt;ipython-secrets) (0.6.0)
-Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
@@ -1383,7 +1443,7 @@ Note: you may need to restart the kernel to use updated packages.
     </tr>
     <tr>
       <th>3. Last Refreshed</th>
-      <td>2021-01-08 19:52:00</td>
+      <td>2021-02-19 19:57:00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1402,29 +1462,29 @@ Note: you may need to restart the kernel to use updated packages.
       <td>...</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:58:00</th>
+      <th>2021-02-19 15:26:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3168.8631', '2. high': '3169.3100...</td>
+      <td>{'1. open': '3262.1400', '2. high': '3266.0650...</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:57:00</th>
+      <th>2021-02-19 15:25:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3168.1900', '2. high': '3169.1800...</td>
+      <td>{'1. open': '3263.2800', '2. high': '3263.2800...</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:56:00</th>
+      <th>2021-02-19 15:24:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3166.7500', '2. high': '3168.1500...</td>
+      <td>{'1. open': '3266.0500', '2. high': '3266.6850...</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:55:00</th>
+      <th>2021-02-19 15:23:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3167.8750', '2. high': '3168.4999...</td>
+      <td>{'1. open': '3266.4400', '2. high': '3267.0000...</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:54:00</th>
+      <th>2021-02-19 15:22:00</th>
       <td>NaN</td>
-      <td>{'1. open': '3167.9000', '2. high': '3168.8300...</td>
+      <td>{'1. open': '3266.6300', '2. high': '3267.0700...</td>
     </tr>
   </tbody>
 </table>
@@ -1489,44 +1549,44 @@ Note: you may need to restart the kernel to use updated packages.
   </thead>
   <tbody>
     <tr>
-      <th>2021-01-08 19:52:00</th>
-      <td>3179.9999</td>
-      <td>3179.9999</td>
-      <td>3179.9999</td>
-      <td>3179.9999</td>
-      <td>245</td>
+      <th>2021-02-19 19:57:00</th>
+      <td>3249.0000</td>
+      <td>3249.0000</td>
+      <td>3248.0001</td>
+      <td>3248.0001</td>
+      <td>612</td>
     </tr>
     <tr>
-      <th>2021-01-08 19:35:00</th>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>256</td>
+      <th>2021-02-19 19:55:00</th>
+      <td>3249.0000</td>
+      <td>3249.0000</td>
+      <td>3249.0000</td>
+      <td>3249.0000</td>
+      <td>636</td>
     </tr>
     <tr>
-      <th>2021-01-08 19:29:00</th>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>108</td>
+      <th>2021-02-19 19:54:00</th>
+      <td>3248.9999</td>
+      <td>3248.9999</td>
+      <td>3248.9999</td>
+      <td>3248.9999</td>
+      <td>412</td>
     </tr>
     <tr>
-      <th>2021-01-08 19:13:00</th>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>155</td>
+      <th>2021-02-19 19:53:00</th>
+      <td>3249.0000</td>
+      <td>3249.0000</td>
+      <td>3249.0000</td>
+      <td>3249.0000</td>
+      <td>348</td>
     </tr>
     <tr>
-      <th>2021-01-08 19:00:00</th>
-      <td>3179.0300</td>
-      <td>3179.0300</td>
-      <td>3179.0300</td>
-      <td>3179.0300</td>
-      <td>111</td>
+      <th>2021-02-19 19:51:00</th>
+      <td>3248.5200</td>
+      <td>3248.5200</td>
+      <td>3248.5000</td>
+      <td>3248.5000</td>
+      <td>477</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1537,44 +1597,44 @@ Note: you may need to restart the kernel to use updated packages.
       <td>...</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:58:00</th>
-      <td>3168.8631</td>
-      <td>3169.3100</td>
-      <td>3168.4950</td>
-      <td>3168.4950</td>
-      <td>2734</td>
+      <th>2021-02-19 15:26:00</th>
+      <td>3262.1400</td>
+      <td>3266.0650</td>
+      <td>3262.1400</td>
+      <td>3266.0650</td>
+      <td>21217</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:57:00</th>
-      <td>3168.1900</td>
-      <td>3169.1800</td>
-      <td>3168.1900</td>
-      <td>3168.8505</td>
-      <td>5019</td>
+      <th>2021-02-19 15:25:00</th>
+      <td>3263.2800</td>
+      <td>3263.2800</td>
+      <td>3261.4400</td>
+      <td>3262.3200</td>
+      <td>19808</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:56:00</th>
-      <td>3166.7500</td>
-      <td>3168.1500</td>
-      <td>3166.7500</td>
-      <td>3167.5833</td>
-      <td>4853</td>
+      <th>2021-02-19 15:24:00</th>
+      <td>3266.0500</td>
+      <td>3266.6850</td>
+      <td>3262.8300</td>
+      <td>3263.0000</td>
+      <td>21488</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:55:00</th>
-      <td>3167.8750</td>
-      <td>3168.4999</td>
-      <td>3167.0229</td>
-      <td>3167.0229</td>
-      <td>4240</td>
+      <th>2021-02-19 15:23:00</th>
+      <td>3266.4400</td>
+      <td>3267.0000</td>
+      <td>3266.0100</td>
+      <td>3266.2500</td>
+      <td>20793</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:54:00</th>
-      <td>3167.9000</td>
-      <td>3168.8300</td>
-      <td>3167.3600</td>
-      <td>3167.8600</td>
-      <td>3811</td>
+      <th>2021-02-19 15:22:00</th>
+      <td>3266.6300</td>
+      <td>3267.0700</td>
+      <td>3265.6900</td>
+      <td>3266.1627</td>
+      <td>22912</td>
     </tr>
   </tbody>
 </table>
@@ -1610,7 +1670,8 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_37_0.svg" src="../_images/01.03_loading_data_from_API_37_0.svg" /></div>
+<img alt="../_images/01.03_loading_data_from_API_37_0.png" src="../_images/01.03_loading_data_from_API_37_0.png" />
+</div>
 </div>
 </div>
 </div>
