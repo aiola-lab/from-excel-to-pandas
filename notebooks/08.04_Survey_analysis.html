@@ -349,6 +349,13 @@
   <a class="reference internal nav-link" href="#anova">
    Anova
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#another-way-to-calculate-anova-one-way">
+     Another way to calculate Anova One Way
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graphs-of-all-questions">
@@ -1275,39 +1282,39 @@ Name: 0, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pingouin in /Users/guy/miniconda3/lib/python3.8/site-packages (0.3.10)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tabulate in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.8.7)
-Requirement already satisfied: seaborn&gt;=0.9.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.11.0)
-Requirement already satisfied: outdated in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.2.0)
-Requirement already satisfied: pandas&gt;=0.24 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (1.1.2)
-Requirement already satisfied: statsmodels&gt;=0.10.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.12.2)
+Requirement already satisfied: tabulate in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.8.7)
 Requirement already satisfied: numpy&gt;=1.15 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (1.19.2)
+Requirement already satisfied: matplotlib&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (3.3.2)
+Requirement already satisfied: statsmodels&gt;=0.10.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.12.2)
+Requirement already satisfied: outdated in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.2.0)
 Requirement already satisfied: scikit-learn in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.24.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas-flavor&gt;=0.1.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.2.0)
-Requirement already satisfied: matplotlib&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (3.3.2)
+Requirement already satisfied: seaborn&gt;=0.9.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.11.0)
+Requirement already satisfied: pandas&gt;=0.24 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (1.1.2)
 Requirement already satisfied: scipy&gt;=1.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (1.5.3)
-Requirement already satisfied: littleutils in /Users/guy/miniconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (0.2.2)
-Requirement already satisfied: requests in /Users/guy/miniconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (2.23.0)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;pingouin) (2.8.1)
-Requirement already satisfied: pytz&gt;=2017.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;pingouin) (2020.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2.4.7)
+Requirement already satisfied: pillow&gt;=6.2.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (7.2.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (1.2.0)
+Requirement already satisfied: certifi&gt;=2020.06.20 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2020.6.20)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (0.10.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2.8.1)
 Requirement already satisfied: patsy&gt;=0.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from statsmodels&gt;=0.10.0-&gt;pingouin) (0.5.1)
-Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (2.1.0)
-Requirement already satisfied: joblib&gt;=0.11 in /Users/guy/miniconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (1.0.1)
-Requirement already satisfied: xarray in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas-flavor&gt;=0.1.2-&gt;pingouin) (0.16.2)
+Requirement already satisfied: littleutils in /Users/guy/miniconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (0.2.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi&gt;=2020.06.20 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2020.6.20)
-Requirement already satisfied: pillow&gt;=6.2.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (7.2.0)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (0.10.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (1.2.0)
-Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2.4.7)
-Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (3.0.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /Users/guy/miniconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (2.23.0)
+Requirement already satisfied: joblib&gt;=0.11 in /Users/guy/miniconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (1.0.1)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (2.1.0)
+Requirement already satisfied: xarray in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas-flavor&gt;=0.1.2-&gt;pingouin) (0.16.2)
+Requirement already satisfied: pytz&gt;=2017.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;pingouin) (2020.1)
+Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-packages (from cycler&gt;=0.10-&gt;matplotlib&gt;=3.0.2-&gt;pingouin) (1.14.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (3.0.4)
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (2.9)
 Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (1.25.8)
-Requirement already satisfied: six&gt;=1.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.24-&gt;pingouin) (1.14.0)
 Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/python3.8/site-packages (from xarray-&gt;pandas-flavor&gt;=0.1.2-&gt;pingouin) (46.4.0.post20200518)
 </pre></div>
 </div>
@@ -1423,16 +1430,20 @@ Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;Expectation&#39;</span><span class="p">,</span><span class="s1">&#39;Trust&#39;</span><span class="p">,</span><span class="s1">&#39;Offering&#39;</span><span class="p">]):</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;Group A&#39;</span><span class="p">,</span> <span class="s1">&#39;Group B&#39;</span><span class="p">]):</span>
-        <span class="n">sub_df</span> <span class="o">=</span> <span class="n">summary_numeric_survey_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == @group&#39;</span><span class="p">)</span>
-        <span class="n">sns</span>
-        <span class="o">.</span><span class="n">regplot</span><span class="p">(</span>
-            <span class="n">x</span><span class="o">=</span><span class="n">sub_df</span><span class="o">.</span><span class="n">E</span><span class="p">,</span> 
-            <span class="n">y</span><span class="o">=</span><span class="n">sub_df</span><span class="p">[</span><span class="n">attribute</span><span class="p">],</span> 
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;Group A&#39;</span><span class="p">,</span> <span class="s1">&#39;Group B&#39;</span><span class="p">]):</span>
+        <span class="n">sub_df</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">summary_numeric_survey_df</span>
+            <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == @group&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(</span>
+            <span class="n">sns</span>
+            <span class="o">.</span><span class="n">regplot</span><span class="p">(</span>
+                <span class="n">x</span><span class="o">=</span><span class="n">sub_df</span><span class="o">.</span><span class="n">E</span><span class="p">,</span> 
+                <span class="n">y</span><span class="o">=</span><span class="n">sub_df</span><span class="p">[</span><span class="n">attribute</span><span class="p">],</span> 
+                <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+            <span class="p">)</span>
         <span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1440,12 +1451,7 @@ Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-24-ef0d6f307a30&gt;&quot;</span><span class="gt">, line </span><span class="mi">9</span>
-    <span class="o">.</span><span class="n">regplot</span><span class="p">(</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
+<img alt="../_images/08.04_Survey_analysis_43_0.png" src="../_images/08.04_Survey_analysis_43_0.png" />
 </div>
 </div>
 </div>
@@ -1462,8 +1468,10 @@ Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/
     <span class="nb">print</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span>
         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">attribute</span><span class="si">}</span><span class="s1"> ~ C(group) * E&#39;</span><span class="p">,</span> 
-        <span class="n">data</span><span class="o">=</span><span class="n">summary_numeric_survey_df</span>
-        <span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="n">attribute</span><span class="p">,</span><span class="s1">&#39;group&#39;</span><span class="p">]]</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">summary_numeric_survey_df</span>
+            <span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="n">attribute</span><span class="p">,</span><span class="s1">&#39;group&#39;</span><span class="p">]]</span>
+        <span class="p">)</span>
     <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
     <span class="n">anova_table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="n">anova_table</span><span class="p">)</span>
@@ -1870,11 +1878,19 @@ Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/
 </table>
 </div></div></div>
 </div>
+<div class="section" id="another-way-to-calculate-anova-one-way">
+<h3>Another way to calculate Anova One Way<a class="headerlink" href="#another-way-to-calculate-anova-one-way" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="c1"># stats f_oneway functions takes the groups as input and returns ANOVA F and p value</span>
-<span class="n">fvalue</span><span class="p">,</span> <span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">summary_numeric_survey_df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">],</span><span class="n">summary_numeric_survey_df</span><span class="p">[</span><span class="s1">&#39;Trust&#39;</span><span class="p">])</span>
+
+<span class="n">fvalue</span><span class="p">,</span> <span class="n">pvalue</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">stats</span>
+    <span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span>
+        <span class="n">summary_numeric_survey_df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">],</span>
+        <span class="n">summary_numeric_survey_df</span><span class="p">[</span><span class="s1">&#39;Trust&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fvalue</span><span class="p">,</span> <span class="n">pvalue</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1882,6 +1898,7 @@ Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>147.41775587209213 1.3074590620296686e-24
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1894,8 +1911,18 @@ Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">summary_numeric_survey_df</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">unique</span><span class="p">())):</span>
-        <span class="n">sub_df</span> <span class="o">=</span> <span class="n">summary_numeric_survey_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == @group&#39;</span><span class="p">)</span>
-        <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sub_df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">sub_df</span><span class="p">[</span><span class="n">q_num</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">sub_df</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">summary_numeric_survey_df</span>
+            <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == @group&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="p">(</span>
+            <span class="n">sns</span>
+            <span class="o">.</span><span class="n">regplot</span><span class="p">(</span>
+                <span class="n">x</span><span class="o">=</span><span class="n">sub_df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">],</span> 
+                <span class="n">y</span><span class="o">=</span><span class="n">sub_df</span><span class="p">[</span><span class="n">q_num</span><span class="p">],</span> 
+                <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
@@ -1906,7 +1933,20 @@ Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08.04_Survey_analysis_48_0.svg" src="../_images/08.04_Survey_analysis_48_0.svg" /><img alt="../_images/08.04_Survey_analysis_48_1.svg" src="../_images/08.04_Survey_analysis_48_1.svg" /><img alt="../_images/08.04_Survey_analysis_48_2.svg" src="../_images/08.04_Survey_analysis_48_2.svg" /><img alt="../_images/08.04_Survey_analysis_48_3.svg" src="../_images/08.04_Survey_analysis_48_3.svg" /><img alt="../_images/08.04_Survey_analysis_48_4.svg" src="../_images/08.04_Survey_analysis_48_4.svg" /><img alt="../_images/08.04_Survey_analysis_48_5.svg" src="../_images/08.04_Survey_analysis_48_5.svg" /><img alt="../_images/08.04_Survey_analysis_48_6.svg" src="../_images/08.04_Survey_analysis_48_6.svg" /><img alt="../_images/08.04_Survey_analysis_48_7.svg" src="../_images/08.04_Survey_analysis_48_7.svg" /><img alt="../_images/08.04_Survey_analysis_48_8.svg" src="../_images/08.04_Survey_analysis_48_8.svg" /><img alt="../_images/08.04_Survey_analysis_48_9.svg" src="../_images/08.04_Survey_analysis_48_9.svg" /><img alt="../_images/08.04_Survey_analysis_48_10.svg" src="../_images/08.04_Survey_analysis_48_10.svg" /><img alt="../_images/08.04_Survey_analysis_48_11.svg" src="../_images/08.04_Survey_analysis_48_11.svg" /><img alt="../_images/08.04_Survey_analysis_48_12.svg" src="../_images/08.04_Survey_analysis_48_12.svg" /></div>
+<img alt="../_images/08.04_Survey_analysis_49_0.png" src="../_images/08.04_Survey_analysis_49_0.png" />
+<img alt="../_images/08.04_Survey_analysis_49_1.png" src="../_images/08.04_Survey_analysis_49_1.png" />
+<img alt="../_images/08.04_Survey_analysis_49_2.png" src="../_images/08.04_Survey_analysis_49_2.png" />
+<img alt="../_images/08.04_Survey_analysis_49_3.png" src="../_images/08.04_Survey_analysis_49_3.png" />
+<img alt="../_images/08.04_Survey_analysis_49_4.png" src="../_images/08.04_Survey_analysis_49_4.png" />
+<img alt="../_images/08.04_Survey_analysis_49_5.png" src="../_images/08.04_Survey_analysis_49_5.png" />
+<img alt="../_images/08.04_Survey_analysis_49_6.png" src="../_images/08.04_Survey_analysis_49_6.png" />
+<img alt="../_images/08.04_Survey_analysis_49_7.png" src="../_images/08.04_Survey_analysis_49_7.png" />
+<img alt="../_images/08.04_Survey_analysis_49_8.png" src="../_images/08.04_Survey_analysis_49_8.png" />
+<img alt="../_images/08.04_Survey_analysis_49_9.png" src="../_images/08.04_Survey_analysis_49_9.png" />
+<img alt="../_images/08.04_Survey_analysis_49_10.png" src="../_images/08.04_Survey_analysis_49_10.png" />
+<img alt="../_images/08.04_Survey_analysis_49_11.png" src="../_images/08.04_Survey_analysis_49_11.png" />
+<img alt="../_images/08.04_Survey_analysis_49_12.png" src="../_images/08.04_Survey_analysis_49_12.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1958,21 +1998,6 @@ stat=0.126, p=0.434 How influential do you perceive the chatbot’s offer to hel
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pyreadstat
-  Downloading pyreadstat-1.0.9-cp38-cp38-macosx_10_9_x86_64.whl (557 kB)
-     |████████████████████████████████| 557 kB 804 kB/s 
-?25hRequirement already satisfied: pandas&gt;0.24.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pyreadstat) (1.1.2)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas&gt;0.24.0-&gt;pyreadstat) (2.8.1)
-Requirement already satisfied: numpy&gt;=1.15.4 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas&gt;0.24.0-&gt;pyreadstat) (1.19.2)
-Requirement already satisfied: pytz&gt;=2017.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas&gt;0.24.0-&gt;pyreadstat) (2020.1)
-Requirement already satisfied: six&gt;=1.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;0.24.0-&gt;pyreadstat) (1.14.0)
-Installing collected packages: pyreadstat
-Successfully installed pyreadstat-1.0.9
-Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1987,317 +2012,6 @@ Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>distracting_Q85_1</th>
-      <th>disturbing_Q85_2</th>
-      <th>forced_Q85_3</th>
-      <th>interfering_Q85_4</th>
-      <th>intrusive_Q85_5</th>
-      <th>invasive_Q85_6</th>
-      <th>obtrusive_Q85_7</th>
-      <th>politely_Q232</th>
-      <th>formally_Q233</th>
-      <th>helpful_Q236</th>
-      <th>...</th>
-      <th>feelhappy_Q181</th>
-      <th>feelsad_Q182</th>
-      <th>gender_Q70</th>
-      <th>age_Q80_4</th>
-      <th>Pfizer_Q71</th>
-      <th>type</th>
-      <th>perceived_intrusiveness</th>
-      <th>perceived_helpfulness</th>
-      <th>manipulation</th>
-      <th>involvement</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>...</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>46.0</td>
-      <td>2.0</td>
-      <td>FL_265</td>
-      <td>6.285714</td>
-      <td>10.000000</td>
-      <td>6.5</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>...</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>49.0</td>
-      <td>2.0</td>
-      <td>FL_265</td>
-      <td>6.000000</td>
-      <td>9.333333</td>
-      <td>6.5</td>
-      <td>6.6</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>4.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>...</td>
-      <td>6.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>41.0</td>
-      <td>2.0</td>
-      <td>FL_265</td>
-      <td>5.714286</td>
-      <td>5.000000</td>
-      <td>3.5</td>
-      <td>6.2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>...</td>
-      <td>5.0</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>35.0</td>
-      <td>2.0</td>
-      <td>FL_265</td>
-      <td>5.000000</td>
-      <td>8.666667</td>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>2.0</td>
-      <td>...</td>
-      <td>5.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>35.0</td>
-      <td>2.0</td>
-      <td>FL_265</td>
-      <td>7.000000</td>
-      <td>5.000000</td>
-      <td>4.0</td>
-      <td>4.2</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>231</th>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>...</td>
-      <td>7.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>34.0</td>
-      <td>2.0</td>
-      <td>FL_307</td>
-      <td>2.857143</td>
-      <td>6.666667</td>
-      <td>2.5</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>232</th>
-      <td>6.0</td>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>4.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>...</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>27.0</td>
-      <td>2.0</td>
-      <td>FL_307</td>
-      <td>5.857143</td>
-      <td>2.000000</td>
-      <td>3.0</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>233</th>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>...</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>35.0</td>
-      <td>2.0</td>
-      <td>FL_307</td>
-      <td>3.571429</td>
-      <td>5.000000</td>
-      <td>2.5</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>234</th>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>...</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>24.0</td>
-      <td>2.0</td>
-      <td>FL_307</td>
-      <td>6.714286</td>
-      <td>2.000000</td>
-      <td>1.0</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>235</th>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>...</td>
-      <td>5.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>27.0</td>
-      <td>2.0</td>
-      <td>FL_307</td>
-      <td>4.285714</td>
-      <td>8.000000</td>
-      <td>2.5</td>
-      <td>4.4</td>
-    </tr>
-  </tbody>
-</table>
-<p>236 rows × 41 columns</p>
-</div></div></div>
 </div>
 </div>
 </div>
