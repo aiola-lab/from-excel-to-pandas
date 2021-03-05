@@ -5,7 +5,7 @@
   - file: getting_started
 - part: Loading Data
   chapters:
-  - file: notebooks/01 - loading files.ipynb
+  - file: notebooks/01.01 - loading files.ipynb
   - file: notebooks/01.02 - loading data from HTML.ipynb
   - file: notebooks/01.03_loading_data_from_API.ipynb
 - part: Adding Columns
