@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html>
@@ -7,9 +6,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Rate Analysis &#8212; From Excel to Pandas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -17,6 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -25,8 +44,8 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -41,8 +60,8 @@
     <link rel="next" title="Linear Programming (Optimization)" href="08.03_Linear_optimization.html" />
     <link rel="prev" title="Logistics Analysis" href="08.01_Logistics_analysis.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -64,22 +83,19 @@
   <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Getting Started
  </span>
@@ -101,15 +117,15 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Loading Data
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="01%20-%20loading%20files.html">
-   Loading Files
+  <a class="reference internal" href="01.01%20-%20loading%20files.html">
+   Loading Data Files (CSV or XLSX)
   </a>
  </li>
  <li class="toctree-l1">
@@ -123,7 +139,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Adding Columns
  </span>
@@ -145,7 +161,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Table Aggregation and Reshaping
  </span>
@@ -162,7 +178,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Table Enrichment with Merge
  </span>
@@ -174,7 +190,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Industries Use Cases
  </span>
@@ -202,9 +218,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -219,25 +233,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -249,17 +263,18 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -274,19 +289,15 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/08.02_Currency_analysis.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
         
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -365,6 +376,8 @@
 </ul>
 
         </nav>
+        
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -390,15 +403,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: forex-python in /Users/guy/miniconda3/lib/python3.8/site-packages (1.5)
-Requirement already satisfied: simplejson in /Users/guy/miniconda3/lib/python3.8/site-packages (from forex-python) (3.17.2)
-Requirement already satisfied: requests in /Users/guy/miniconda3/lib/python3.8/site-packages (from forex-python) (2.23.0)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.9)
-Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: forex-python in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (1.5)
+Requirement already satisfied: simplejson in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (3.17.2)
+Requirement already satisfied: requests in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (2.25.1)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (4.0.0)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.12.5)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.11)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (3.0.4)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.6.20)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -430,39 +444,39 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GBP&#39;: 0.7126451932,
- &#39;HKD&#39;: 7.753604086,
- &#39;IDR&#39;: 14082.5521047862,
- &#39;ILS&#39;: 3.2704506137,
- &#39;DKK&#39;: 6.1263695527,
- &#39;INR&#39;: 72.5055605898,
- &#39;CHF&#39;: 0.893895708,
- &#39;MXN&#39;: 20.3553834748,
- &#39;CZK&#39;: 21.294175797,
- &#39;SGD&#39;: 1.3229261059,
- &#39;THB&#39;: 29.9744624763,
- &#39;HRK&#39;: 6.2426888541,
- &#39;EUR&#39;: 0.8237910866,
- &#39;MYR&#39;: 4.0405305215,
- &#39;NOK&#39;: 8.4104950984,
- &#39;CNY&#39;: 6.4517670319,
- &#39;BGN&#39;: 1.6111706071,
- &#39;PHP&#39;: 48.4768102809,
- &#39;PLN&#39;: 3.6930554411,
- &#39;ZAR&#39;: 14.613312464,
- &#39;CAD&#39;: 1.2609770162,
- &#39;ISK&#39;: 128.1818930719,
- &#39;BRL&#39;: 5.4067880386,
- &#39;RON&#39;: 4.0166405799,
- &#39;NZD&#39;: 1.3709531263,
- &#39;TRY&#39;: 6.9585633083,
- &#39;JPY&#39;: 105.2887387758,
- &#39;RUB&#39;: 73.8190130983,
- &#39;KRW&#39;: 1103.5423016723,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GBP&#39;: 0.7168854911,
+ &#39;HKD&#39;: 7.75826824,
+ &#39;IDR&#39;: 14264.9991690211,
+ &#39;ILS&#39;: 3.3097889314,
+ &#39;DKK&#39;: 6.1792421472,
+ &#39;INR&#39;: 72.7538640519,
+ &#39;CHF&#39;: 0.9235499418,
+ &#39;MXN&#39;: 20.8255775303,
+ &#39;CZK&#39;: 21.7782948313,
+ &#39;SGD&#39;: 1.3315605784,
+ &#39;THB&#39;: 30.3398703673,
+ &#39;HRK&#39;: 6.3046368622,
+ &#39;EUR&#39;: 0.8309788931,
+ &#39;MYR&#39;: 4.0575037394,
+ &#39;NOK&#39;: 8.5254279541,
+ &#39;CNY&#39;: 6.4688382915,
+ &#39;BGN&#39;: 1.6252285192,
+ &#39;PHP&#39;: 48.5283363803,
+ &#39;PLN&#39;: 3.7833638026,
+ &#39;ZAR&#39;: 15.034568722,
+ &#39;CAD&#39;: 1.2641681901,
+ &#39;ISK&#39;: 127.3890643178,
+ &#39;BRL&#39;: 5.6065314941,
+ &#39;RON&#39;: 4.0562572711,
+ &#39;NZD&#39;: 1.3793418647,
+ &#39;TRY&#39;: 7.4510553432,
+ &#39;JPY&#39;: 107.38740236,
+ &#39;RUB&#39;: 73.6715140435,
+ &#39;KRW&#39;: 1125.0540136281,
  &#39;USD&#39;: 1.0,
- &#39;AUD&#39;: 1.2723453332,
- &#39;HUF&#39;: 295.3291045391,
- &#39;SEK&#39;: 8.2650959717}
+ &#39;AUD&#39;: 1.283779292,
+ &#39;HUF&#39;: 302.9167359149,
+ &#39;SEK&#39;: 8.4423300648}
 </pre></div>
 </div>
 </div>
@@ -505,119 +519,119 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/li
   <tbody>
     <tr>
       <th>GBP</th>
-      <td>0.712645</td>
+      <td>0.716885</td>
     </tr>
     <tr>
       <th>HKD</th>
-      <td>7.753604</td>
+      <td>7.758268</td>
     </tr>
     <tr>
       <th>IDR</th>
-      <td>14082.552105</td>
+      <td>14264.999169</td>
     </tr>
     <tr>
       <th>ILS</th>
-      <td>3.270451</td>
+      <td>3.309789</td>
     </tr>
     <tr>
       <th>DKK</th>
-      <td>6.126370</td>
+      <td>6.179242</td>
     </tr>
     <tr>
       <th>INR</th>
-      <td>72.505561</td>
+      <td>72.753864</td>
     </tr>
     <tr>
       <th>CHF</th>
-      <td>0.893896</td>
+      <td>0.923550</td>
     </tr>
     <tr>
       <th>MXN</th>
-      <td>20.355383</td>
+      <td>20.825578</td>
     </tr>
     <tr>
       <th>CZK</th>
-      <td>21.294176</td>
+      <td>21.778295</td>
     </tr>
     <tr>
       <th>SGD</th>
-      <td>1.322926</td>
+      <td>1.331561</td>
     </tr>
     <tr>
       <th>THB</th>
-      <td>29.974462</td>
+      <td>30.339870</td>
     </tr>
     <tr>
       <th>HRK</th>
-      <td>6.242689</td>
+      <td>6.304637</td>
     </tr>
     <tr>
       <th>EUR</th>
-      <td>0.823791</td>
+      <td>0.830979</td>
     </tr>
     <tr>
       <th>MYR</th>
-      <td>4.040531</td>
+      <td>4.057504</td>
     </tr>
     <tr>
       <th>NOK</th>
-      <td>8.410495</td>
+      <td>8.525428</td>
     </tr>
     <tr>
       <th>CNY</th>
-      <td>6.451767</td>
+      <td>6.468838</td>
     </tr>
     <tr>
       <th>BGN</th>
-      <td>1.611171</td>
+      <td>1.625229</td>
     </tr>
     <tr>
       <th>PHP</th>
-      <td>48.476810</td>
+      <td>48.528336</td>
     </tr>
     <tr>
       <th>PLN</th>
-      <td>3.693055</td>
+      <td>3.783364</td>
     </tr>
     <tr>
       <th>ZAR</th>
-      <td>14.613312</td>
+      <td>15.034569</td>
     </tr>
     <tr>
       <th>CAD</th>
-      <td>1.260977</td>
+      <td>1.264168</td>
     </tr>
     <tr>
       <th>ISK</th>
-      <td>128.181893</td>
+      <td>127.389064</td>
     </tr>
     <tr>
       <th>BRL</th>
-      <td>5.406788</td>
+      <td>5.606531</td>
     </tr>
     <tr>
       <th>RON</th>
-      <td>4.016641</td>
+      <td>4.056257</td>
     </tr>
     <tr>
       <th>NZD</th>
-      <td>1.370953</td>
+      <td>1.379342</td>
     </tr>
     <tr>
       <th>TRY</th>
-      <td>6.958563</td>
+      <td>7.451055</td>
     </tr>
     <tr>
       <th>JPY</th>
-      <td>105.288739</td>
+      <td>107.387402</td>
     </tr>
     <tr>
       <th>RUB</th>
-      <td>73.819013</td>
+      <td>73.671514</td>
     </tr>
     <tr>
       <th>KRW</th>
-      <td>1103.542302</td>
+      <td>1125.054014</td>
     </tr>
     <tr>
       <th>USD</th>
@@ -625,15 +639,15 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/li
     </tr>
     <tr>
       <th>AUD</th>
-      <td>1.272345</td>
+      <td>1.283779</td>
     </tr>
     <tr>
       <th>HUF</th>
-      <td>295.329105</td>
+      <td>302.916736</td>
     </tr>
     <tr>
       <th>SEK</th>
-      <td>8.265096</td>
+      <td>8.442330</td>
     </tr>
   </tbody>
 </table>
@@ -1124,7 +1138,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/miniconda3/li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.271&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.318&#39;
 </pre></div>
 </div>
 </div>
@@ -1138,7 +1152,7 @@ As for this example, this technique is relevent for many optional analysis.</p>
 <p>Now, use case to show how useful descion based data regarding currency could be.</p>
 <p>In order to show that, we will scrap a dataframe of the rates of the ILS-USD for the last almost full year.</p>
 <ul class="simple">
-<li><p>Read the table from the exchange-rate.org website</p></li>
+<li><p>Read the table from the <a class="reference external" href="http://exchange-rate.org">exchange-rate.org</a> website</p></li>
 <li><p>Rename the column to be more meaningful</p></li>
 <li><p>Filter out table lines that are invalid (the Rate column has more than 20 characters)</p></li>
 <li><p>Remove all the characters from the <em>Rate</em> column that are not a digit (\d) or dot (.) using regular expression syntax</p></li>
@@ -1160,112 +1174,68 @@ As for this example, this technique is relevent for many optional analysis.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">a6b69348cf6f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://www.exchange-rates.org/history/ILS/USD/T&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;Rate&#39;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">:</span> <span class="s1">&#39;Notes&#39;</span><span class="p">})</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">query</span><span class="nt">(self, expr, inplace, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3467</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">3468</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">3469</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3470</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3471</span>         <span class="k">try</span><span class="p">:</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Day</th>
-      <th>Rate</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2/19/2021</td>
-      <td>Friday</td>
-      <td>3.27334</td>
-      <td>USD ILS rate for 2/19/2021</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2/18/2021</td>
-      <td>Thursday</td>
-      <td>3.26996</td>
-      <td>USD ILS rate for 2/18/2021</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2/17/2021</td>
-      <td>Wednesday</td>
-      <td>3.26633</td>
-      <td>USD ILS rate for 2/17/2021</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2/16/2021</td>
-      <td>Tuesday</td>
-      <td>3.24366</td>
-      <td>USD ILS rate for 2/16/2021</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2/15/2021</td>
-      <td>Monday</td>
-      <td>3.24344</td>
-      <td>USD ILS rate for 2/15/2021</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>133</th>
-      <td>8/27/2020</td>
-      <td>Thursday</td>
-      <td>3.36740</td>
-      <td>USD ILS rate for 8/27/2020</td>
-    </tr>
-    <tr>
-      <th>134</th>
-      <td>8/26/2020</td>
-      <td>Wednesday</td>
-      <td>3.39530</td>
-      <td>USD ILS rate for 8/26/2020</td>
-    </tr>
-    <tr>
-      <th>135</th>
-      <td>8/25/2020</td>
-      <td>Tuesday</td>
-      <td>3.39675</td>
-      <td>USD ILS rate for 8/25/2020</td>
-    </tr>
-    <tr>
-      <th>136</th>
-      <td>8/24/2020</td>
-      <td>Monday</td>
-      <td>3.40691</td>
-      <td>USD ILS rate for 8/24/2020</td>
-    </tr>
-    <tr>
-      <th>137</th>
-      <td>8/23/2020</td>
-      <td>Sunday</td>
-      <td>3.39565</td>
-      <td>USD ILS rate for 8/23/2020</td>
-    </tr>
-  </tbody>
-</table>
-<p>136 rows × 4 columns</p>
-</div></div></div>
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">eval</span><span class="nt">(self, expr, inplace, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3597</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;resolvers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resolvers&quot;</span><span class="p">,</span> <span class="p">())</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">resolvers</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3598</span> 
+<span class="ne">-&gt; </span><span class="mi">3599</span>         <span class="k">return</span> <span class="n">_eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3600</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3601</span>     <span class="k">def</span> <span class="nf">select_dtypes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/eval.py</span> in <span class="ni">eval</span><span class="nt">(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>         <span class="n">eng</span> <span class="o">=</span> <span class="n">ENGINES</span><span class="p">[</span><span class="n">engine</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>         <span class="n">eng_inst</span> <span class="o">=</span> <span class="n">eng</span><span class="p">(</span><span class="n">parsed_expr</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">347</span>         <span class="n">ret</span> <span class="o">=</span> <span class="n">eng_inst</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span> 
+<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="k">if</span> <span class="n">parsed_expr</span><span class="o">.</span><span class="n">assigner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">evaluate</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> 
+<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># make sure no names in resolvers and locals/globals clash</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">return</span> <span class="n">reconstruct_object</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>             <span class="bp">self</span><span class="o">.</span><span class="n">result_type</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aligned_axes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">terms</span><span class="o">.</span><span class="n">return_type</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">_evaluate</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">env</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">env</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="n">scope</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">full_scope</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="n">_check_ne_builtin_clash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="k">return</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">local_dict</span><span class="o">=</span><span class="n">scope</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">_check_ne_builtin_clash</span><span class="nt">(expr)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">Terms</span> <span class="n">can</span> <span class="n">contain</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">29</span><span class="s2">     names = expr.names</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span><span class="s2">     overlap = names &amp; _ne_builtins</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="s2"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/expr.py</span> in <span class="ni">names</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span><span class="s2">         if is_term(self.terms):</span>
+<span class="g g-Whitespace">    </span><span class="mi">825</span><span class="s2">             return frozenset([self.terms.name])</span>
+<span class="nn">--&gt; 826         return frozenset(term.name for term</span> in <span class="ni">com.flatten</span><span class="nt">(self.terms))</span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">828</span><span class="s2"> </span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;numpy.ndarray&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now let’s check in which day of the week, does the rate of the ILS is “stronger”, in accordance to the USD.<br>
 This data could be useful in order to maximize the rate when doing currency conversions on a regular basis.</p>
@@ -1476,8 +1446,7 @@ Name: Rate, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08.02_Currency_analysis_38_0.png" src="../_images/08.02_Currency_analysis_38_0.png" />
-</div>
+<img alt="../_images/08.02_Currency_analysis_38_0.svg" src="../_images/08.02_Currency_analysis_38_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="scatter-plot">
@@ -1499,8 +1468,7 @@ Name: Rate, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08.02_Currency_analysis_40_0.png" src="../_images/08.02_Currency_analysis_40_0.png" />
-</div>
+<img alt="../_images/08.02_Currency_analysis_40_0.svg" src="../_images/08.02_Currency_analysis_40_0.svg" /></div>
 </div>
 <p>Something here looks odd. it appears there are less trading ‘Sundays’, which could be the reason for our former result.<br>
 Let’s check it.</p>
@@ -1547,8 +1515,7 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08.02_Currency_analysis_44_0.png" src="../_images/08.02_Currency_analysis_44_0.png" />
-</div>
+<img alt="../_images/08.02_Currency_analysis_44_0.svg" src="../_images/08.02_Currency_analysis_44_0.svg" /></div>
 </div>
 <p>And based on the most lower points, we can now see that the lowest days occurs in the mid-of-the-week days.<br></p>
 </div>
@@ -1573,220 +1540,214 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-20-d17f9c36cd1b&gt;:3: FutureWarning: weekofyear and week have been deprecated, please use DatetimeIndex.isocalendar().week instead, which returns a Series.  To exactly reproduce the behavior of week and weekofyear and return an Index, you may call pd.Int64Index(idx.isocalendar().week)
-  .assign(Week = usd_to_ils_rates.index.week)
-&lt;ipython-input-20-d17f9c36cd1b&gt;:2: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
-  usd_to_ils_rates
-</pre></div>
-</div>
 <div class="output text_html"><style  type="text/css" >
-#T_19d94c38_7463_11eb_b2d2_acde48001122row0_col1{
+#T_71d78756_7387_11eb_bc25_acde48001122row0_col1{
             background-color:  #008066;
             color:  #f1f1f1;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row1_col1,#T_19d94c38_7463_11eb_b2d2_acde48001122row6_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row1_col1,#T_71d78756_7387_11eb_bc25_acde48001122row6_col1{
             background-color:  #399c66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row2_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row2_col1{
             background-color:  #389c66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row3_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row3_col1{
             background-color:  #43a166;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row4_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row4_col1{
             background-color:  #52a866;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row5_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row5_col1{
             background-color:  #319866;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row7_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row7_col1{
             background-color:  #b0d866;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row8_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row8_col1{
             background-color:  #bbdd66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row9_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row9_col1{
             background-color:  #95ca66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row10_col1,#T_19d94c38_7463_11eb_b2d2_acde48001122row13_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row10_col1,#T_71d78756_7387_11eb_bc25_acde48001122row13_col1{
             background-color:  #ebf566;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row11_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row11_col1{
             background-color:  #d5ea66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row12_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row12_col1{
             background-color:  #ffff66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row14_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row14_col1{
             background-color:  #cae466;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row15_col1,#T_19d94c38_7463_11eb_b2d2_acde48001122row16_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row15_col1,#T_71d78756_7387_11eb_bc25_acde48001122row16_col1{
             background-color:  #aad466;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row17_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row17_col1{
             background-color:  #c5e266;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row18_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row18_col1{
             background-color:  #c0e066;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row19_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row19_col1{
             background-color:  #a3d166;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row20_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row20_col1{
             background-color:  #92c866;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row21_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row21_col1{
             background-color:  #7fbf66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row22_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row22_col1{
             background-color:  #61b066;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row23_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row23_col1{
             background-color:  #2d9666;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row24_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row24_col1{
             background-color:  #279366;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row25_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row25_col1{
             background-color:  #1d8e66;
             color:  #000000;
-        }#T_19d94c38_7463_11eb_b2d2_acde48001122row26_col1{
+        }#T_71d78756_7387_11eb_bc25_acde48001122row26_col1{
             background-color:  #168a66;
             color:  #000000;
-        }</style><table id="T_19d94c38_7463_11eb_b2d2_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+        }</style><table id="T_71d78756_7387_11eb_bc25_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row0_col0" class="data row0 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row0_col1" class="data row0 col1" >3.214590</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row0_col0" class="data row0 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row0_col1" class="data row0 col1" >3.214590</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row1_col0" class="data row1 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row1_col1" class="data row1 col1" >3.273360</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row1_col0" class="data row1 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row1_col1" class="data row1 col1" >3.273360</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row2_col0" class="data row2 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row2_col1" class="data row2 col1" >3.272890</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row2_col0" class="data row2 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row2_col1" class="data row2 col1" >3.272890</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row3_col0" class="data row3 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row3_col1" class="data row3 col1" >3.283390</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row3_col0" class="data row3 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row3_col1" class="data row3 col1" >3.283390</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row4_col0" class="data row4 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row4_col1" class="data row4 col1" >3.299270</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row4_col0" class="data row4 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row4_col1" class="data row4 col1" >3.299270</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row5_col0" class="data row5 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row5_col1" class="data row5 col1" >3.265650</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row5_col0" class="data row5 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row5_col1" class="data row5 col1" >3.265650</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row6" class="row_heading level0 row6" >7</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row6_col0" class="data row6 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row6_col1" class="data row6 col1" >3.273340</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row6" class="row_heading level0 row6" >7</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row6_col0" class="data row6 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row6_col1" class="data row6 col1" >3.273340</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row7_col0" class="data row7 col0" >Sunday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row7_col1" class="data row7 col1" >3.395650</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row7_col0" class="data row7 col0" >Sunday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row7_col1" class="data row7 col1" >3.395650</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row8_col0" class="data row8 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row8_col1" class="data row8 col1" >3.406910</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row8_col0" class="data row8 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row8_col1" class="data row8 col1" >3.406910</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row9_col0" class="data row9 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row9_col1" class="data row9 col1" >3.367810</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row9_col0" class="data row9 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row9_col1" class="data row9 col1" >3.367810</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row10_col0" class="data row10 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row10_col1" class="data row10 col1" >3.456460</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row10_col0" class="data row10 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row10_col1" class="data row10 col1" >3.456460</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row11_col0" class="data row11 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row11_col1" class="data row11 col1" >3.433940</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row11_col0" class="data row11 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row11_col1" class="data row11 col1" >3.433940</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row12_col0" class="data row12 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row12_col1" class="data row12 col1" >3.477150</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row12_col0" class="data row12 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row12_col1" class="data row12 col1" >3.477150</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row13_col0" class="data row13 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row13_col1" class="data row13 col1" >3.456290</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row13_col0" class="data row13 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row13_col1" class="data row13 col1" >3.456290</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row14_col0" class="data row14 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row14_col1" class="data row14 col1" >3.422490</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row14_col0" class="data row14 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row14_col1" class="data row14 col1" >3.422490</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row15_col0" class="data row15 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row15_col1" class="data row15 col1" >3.389590</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row15_col0" class="data row15 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row15_col1" class="data row15 col1" >3.389590</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row16_col0" class="data row16 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row16_col1" class="data row16 col1" >3.389790</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row16_col0" class="data row16 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row16_col1" class="data row16 col1" >3.389790</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row17_col0" class="data row17 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row17_col1" class="data row17 col1" >3.417380</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row17_col0" class="data row17 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row17_col1" class="data row17 col1" >3.417380</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row18_col0" class="data row18 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row18_col1" class="data row18 col1" >3.411570</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row18_col0" class="data row18 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row18_col1" class="data row18 col1" >3.411570</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row19_col0" class="data row19 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row19_col1" class="data row19 col1" >3.381830</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row19_col0" class="data row19 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row19_col1" class="data row19 col1" >3.381830</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row20_col0" class="data row20 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row20_col1" class="data row20 col1" >3.364970</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row20_col0" class="data row20 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row20_col1" class="data row20 col1" >3.364970</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row21_col0" class="data row21 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row21_col1" class="data row21 col1" >3.345720</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row21_col0" class="data row21 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row21_col1" class="data row21 col1" >3.345720</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row22_col0" class="data row22 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row22_col1" class="data row22 col1" >3.314280</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row22_col0" class="data row22 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row22_col1" class="data row22 col1" >3.314280</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row23_col0" class="data row23 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row23_col1" class="data row23 col1" >3.261470</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row23_col0" class="data row23 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row23_col1" class="data row23 col1" >3.261470</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row24_col0" class="data row24 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row24_col1" class="data row24 col1" >3.255380</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row24_col0" class="data row24 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row24_col1" class="data row24 col1" >3.255380</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row25_col0" class="data row25 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row25_col1" class="data row25 col1" >3.244400</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row25_col0" class="data row25 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row25_col1" class="data row25 col1" >3.244400</td>
             </tr>
             <tr>
-                        <th id="T_19d94c38_7463_11eb_b2d2_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row26_col0" class="data row26 col0" >Wednesday</td>
-                        <td id="T_19d94c38_7463_11eb_b2d2_acde48001122row26_col1" class="data row26 col1" >3.237460</td>
+                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row26_col0" class="data row26 col0" >Wednesday</td>
+                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row26_col1" class="data row26 col1" >3.237460</td>
             </tr>
     </tbody></table></div></div>
 </div>
@@ -1805,226 +1766,220 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-21-424d1ec8ea06&gt;:3: FutureWarning: weekofyear and week have been deprecated, please use DatetimeIndex.isocalendar().week instead, which returns a Series.  To exactly reproduce the behavior of week and weekofyear and return an Index, you may call pd.Int64Index(idx.isocalendar().week)
-  .assign(Week = usd_to_ils_rates.index.week)
-&lt;ipython-input-21-424d1ec8ea06&gt;:2: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
-  usd_to_ils_rates
-</pre></div>
-</div>
 <div class="output text_html"><style  type="text/css" >
-#T_19dc12b0_7463_11eb_b2d2_acde48001122row0_col1{
+#T_721fd7ea_7387_11eb_bc25_acde48001122row0_col1{
             background-color:  #249266;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row1_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row1_col1{
             background-color:  #008066;
             color:  #f1f1f1;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row2_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row2_col1{
             background-color:  #55aa66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row3_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row3_col1{
             background-color:  #6eb666;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row4_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row4_col1{
             background-color:  #7fbf66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row5_col1,#T_19dc12b0_7463_11eb_b2d2_acde48001122row6_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row5_col1,#T_721fd7ea_7387_11eb_bc25_acde48001122row6_col1{
             background-color:  #5faf66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row7_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row7_col1{
             background-color:  #dfef66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row8_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row8_col1{
             background-color:  #bfdf66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row9_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row9_col1{
             background-color:  #c0e066;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row10_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row10_col1{
             background-color:  #d4ea66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row11_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row11_col1{
             background-color:  #f1f866;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row12_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row12_col1{
             background-color:  #ffff66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row13_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row13_col1{
             background-color:  #f5fa66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row14_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row14_col1{
             background-color:  #cde666;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row15_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row15_col1{
             background-color:  #d1e866;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row16_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row16_col1{
             background-color:  #cbe566;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row17_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row17_col1{
             background-color:  #ddee66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row18_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row18_col1{
             background-color:  #cce666;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row19_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row19_col1{
             background-color:  #c5e266;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row20_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row20_col1{
             background-color:  #aed666;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row21_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row21_col1{
             background-color:  #98cc66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row22_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row22_col1{
             background-color:  #76bb66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row23_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row23_col1{
             background-color:  #63b166;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row24_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row24_col1{
             background-color:  #56ab66;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row25_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row25_col1{
             background-color:  #45a266;
             color:  #000000;
-        }#T_19dc12b0_7463_11eb_b2d2_acde48001122row26_col1{
+        }#T_721fd7ea_7387_11eb_bc25_acde48001122row26_col1{
             background-color:  #47a366;
             color:  #000000;
-        }</style><table id="T_19dc12b0_7463_11eb_b2d2_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+        }</style><table id="T_721fd7ea_7387_11eb_bc25_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row0_col0" class="data row0 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row0_col1" class="data row0 col1" >3.174440</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row0_col0" class="data row0 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row0_col1" class="data row0 col1" >3.174440</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row1_col0" class="data row1 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row1_col1" class="data row1 col1" >3.130680</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row1_col0" class="data row1 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row1_col1" class="data row1 col1" >3.130680</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row2_col0" class="data row2 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row2_col1" class="data row2 col1" >3.231710</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row2_col0" class="data row2 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row2_col1" class="data row2 col1" >3.231710</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row3_col0" class="data row3 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row3_col1" class="data row3 col1" >3.261980</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row3_col0" class="data row3 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row3_col1" class="data row3 col1" >3.261980</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row4_col0" class="data row4 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row4_col1" class="data row4 col1" >3.281990</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row4_col0" class="data row4 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row4_col1" class="data row4 col1" >3.281990</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row5_col0" class="data row5 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row5_col1" class="data row5 col1" >3.244050</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row5_col0" class="data row5 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row5_col1" class="data row5 col1" >3.244050</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row6" class="row_heading level0 row6" >7</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row6_col0" class="data row6 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row6_col1" class="data row6 col1" >3.243440</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row6" class="row_heading level0 row6" >7</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row6_col0" class="data row6 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row6_col1" class="data row6 col1" >3.243440</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row7_col0" class="data row7 col0" >Sunday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row7_col1" class="data row7 col1" >3.395650</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row7_col0" class="data row7 col0" >Sunday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row7_col1" class="data row7 col1" >3.395650</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row8_col0" class="data row8 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row8_col1" class="data row8 col1" >3.358090</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row8_col0" class="data row8 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row8_col1" class="data row8 col1" >3.358090</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row9_col0" class="data row9 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row9_col1" class="data row9 col1" >3.358820</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row9_col0" class="data row9 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row9_col1" class="data row9 col1" >3.358820</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row10_col0" class="data row10 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row10_col1" class="data row10 col1" >3.381950</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row10_col0" class="data row10 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row10_col1" class="data row10 col1" >3.381950</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row11_col0" class="data row11 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row11_col1" class="data row11 col1" >3.416340</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row11_col0" class="data row11 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row11_col1" class="data row11 col1" >3.416340</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row12_col0" class="data row12 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row12_col1" class="data row12 col1" >3.433970</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row12_col0" class="data row12 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row12_col1" class="data row12 col1" >3.433970</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row13_col0" class="data row13 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row13_col1" class="data row13 col1" >3.421860</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row13_col0" class="data row13 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row13_col1" class="data row13 col1" >3.421860</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row14_col0" class="data row14 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row14_col1" class="data row14 col1" >3.373740</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row14_col0" class="data row14 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row14_col1" class="data row14 col1" >3.373740</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row15_col0" class="data row15 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row15_col1" class="data row15 col1" >3.378600</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row15_col0" class="data row15 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row15_col1" class="data row15 col1" >3.378600</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row16_col0" class="data row16 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row16_col1" class="data row16 col1" >3.371880</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row16_col0" class="data row16 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row16_col1" class="data row16 col1" >3.371880</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row17_col0" class="data row17 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row17_col1" class="data row17 col1" >3.393210</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row17_col0" class="data row17 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row17_col1" class="data row17 col1" >3.393210</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row18_col0" class="data row18 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row18_col1" class="data row18 col1" >3.372910</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row18_col0" class="data row18 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row18_col1" class="data row18 col1" >3.372910</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row19_col0" class="data row19 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row19_col1" class="data row19 col1" >3.364520</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row19_col0" class="data row19 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row19_col1" class="data row19 col1" >3.364520</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row20_col0" class="data row20 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row20_col1" class="data row20 col1" >3.337940</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row20_col0" class="data row20 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row20_col1" class="data row20 col1" >3.337940</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row21_col0" class="data row21 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row21_col1" class="data row21 col1" >3.311760</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row21_col0" class="data row21 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row21_col1" class="data row21 col1" >3.311760</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row22_col0" class="data row22 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row22_col1" class="data row22 col1" >3.270920</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row22_col0" class="data row22 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row22_col1" class="data row22 col1" >3.270920</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row23_col0" class="data row23 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row23_col1" class="data row23 col1" >3.248420</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row23_col0" class="data row23 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row23_col1" class="data row23 col1" >3.248420</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row24_col0" class="data row24 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row24_col1" class="data row24 col1" >3.232720</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row24_col0" class="data row24 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row24_col1" class="data row24 col1" >3.232720</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row25_col0" class="data row25 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row25_col1" class="data row25 col1" >3.213200</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row25_col0" class="data row25 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row25_col1" class="data row25 col1" >3.213200</td>
             </tr>
             <tr>
-                        <th id="T_19dc12b0_7463_11eb_b2d2_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row26_col0" class="data row26 col0" >Friday</td>
-                        <td id="T_19dc12b0_7463_11eb_b2d2_acde48001122row26_col1" class="data row26 col1" >3.215330</td>
+                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row26_col0" class="data row26 col0" >Friday</td>
+                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row26_col1" class="data row26 col1" >3.215330</td>
             </tr>
     </tbody></table></div></div>
 </div>
@@ -2057,15 +2012,15 @@ Filtering the Dataframe to exclude Sundays.</p>
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="08.01_Logistics_analysis.html" title="previous page">Logistics Analysis</a>
     <a class='right-next' id="next-link" href="08.03_Linear_optimization.html" title="next page">Linear Programming (Optimization)</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -2083,7 +2038,10 @@ Filtering the Dataframe to exclude Sundays.</p>
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
     
   </body>
 </html>

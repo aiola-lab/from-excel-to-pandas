@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html>
@@ -7,9 +6,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey Analysis &#8212; From Excel to Pandas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -17,6 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -25,8 +44,8 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -40,8 +59,8 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Linear Programming (Optimization)" href="08.03_Linear_optimization.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -63,22 +82,19 @@
   <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Getting Started
  </span>
@@ -100,15 +116,15 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Loading Data
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="01%20-%20loading%20files.html">
-   Loading Files
+  <a class="reference internal" href="01.01%20-%20loading%20files.html">
+   Loading Data Files (CSV or XLSX)
   </a>
  </li>
  <li class="toctree-l1">
@@ -122,7 +138,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Adding Columns
  </span>
@@ -144,7 +160,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Table Aggregation and Reshaping
  </span>
@@ -161,7 +177,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Table Enrichment with Merge
  </span>
@@ -173,7 +189,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Industries Use Cases
  </span>
@@ -201,9 +217,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -218,25 +232,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -248,17 +262,18 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -273,19 +288,15 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/notebooks/08.04_Survey_analysis.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
         
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -373,6 +384,8 @@
 </ul>
 
         </nav>
+        
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -954,7 +967,7 @@ memory usage: 49.4+ KB
 <div class="section" id="mini-ipip-test-questions">
 <h2>Mini-IPIP test questions<a class="headerlink" href="#mini-ipip-test-questions" title="Permalink to this headline">¶</a></h2>
 <p>Based on: “The Mini-IPIP Scales: Tiny-Yet-Effective Measures of the Big Five Factors of Personality”</p>
-<p><span class="bibtex" id="id1">[mini_ipip2006]</span></p>
+<p><span id="id1">[<span>mini_ipip2006</span>]</span></p>
 <p>Appendix 20-Item Mini-IPIP</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1046,7 +1059,7 @@ memory usage: 49.4+ KB
 </tr>
 </tbody>
 </table>
-<p>First, let’s get the questions that are written in the first line (index=0) of the table. We want the 20 questions from index 18 to index 38.</p>
+<span class="target" id="id2"></span><p>First, let’s get the questions that are written in the first line (index=0) of the table. We want the 20 questions from index 18 to index 38.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -1284,41 +1297,44 @@ Name: 0, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pingouin in /Users/guy/miniconda3/lib/python3.8/site-packages (0.3.10)
-Requirement already satisfied: outdated in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.2.0)
-Requirement already satisfied: scikit-learn in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.24.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pingouin in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (0.3.10)
+Requirement already satisfied: matplotlib&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (3.3.2)
+Requirement already satisfied: tabulate in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (0.8.9)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (1.5.3)
-Requirement already satisfied: pandas-flavor&gt;=0.1.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.2.0)
-Requirement already satisfied: tabulate in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.8.7)
-Requirement already satisfied: matplotlib&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (3.3.2)
-Requirement already satisfied: seaborn&gt;=0.9.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.11.0)
-Requirement already satisfied: numpy&gt;=1.15 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (1.19.2)
-Requirement already satisfied: pandas&gt;=0.24 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (1.1.2)
-Requirement already satisfied: statsmodels&gt;=0.10.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pingouin) (0.12.2)
-Requirement already satisfied: littleutils in /Users/guy/miniconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (0.2.2)
-Requirement already satisfied: requests in /Users/guy/miniconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (2.23.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas-flavor&gt;=0.1.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (0.2.0)
+Requirement already satisfied: scipy&gt;=1.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (1.6.1)
+Requirement already satisfied: numpy&gt;=1.15 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (1.19.5)
+Requirement already satisfied: scikit-learn in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (0.23.2)
+Requirement already satisfied: outdated in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (0.2.0)
+Requirement already satisfied: pandas&gt;=0.24 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (1.2.3)
+Requirement already satisfied: seaborn&gt;=0.9.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (0.11.0)
+Requirement already satisfied: statsmodels&gt;=0.10.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pingouin) (0.12.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2.8.1)
+Requirement already satisfied: certifi&gt;=2020.06.20 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2020.12.5)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (0.10.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (2.1.0)
-Requirement already satisfied: joblib&gt;=0.11 in /Users/guy/miniconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (1.0.1)
-Requirement already satisfied: xarray in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas-flavor&gt;=0.1.2-&gt;pingouin) (0.16.2)
-Requirement already satisfied: pillow&gt;=6.2.0 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (7.2.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (1.2.0)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (0.10.0)
-Requirement already satisfied: python-dateutil&gt;=2.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2.8.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2.4.7)
+Requirement already satisfied: pillow&gt;=6.2.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (8.0.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (1.3.0)
+Requirement already satisfied: xarray in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pandas-flavor&gt;=0.1.2-&gt;pingouin) (0.17.0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (2.1.0)
+Requirement already satisfied: joblib&gt;=0.11 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;pingouin) (0.17.0)
+Requirement already satisfied: littleutils in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (0.2.2)
+Requirement already satisfied: requests in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from outdated-&gt;pingouin) (2.25.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi&gt;=2020.06.20 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2020.6.20)
-Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in /Users/guy/miniconda3/lib/python3.8/site-packages (from matplotlib&gt;=3.0.2-&gt;pingouin) (2.4.7)
-Requirement already satisfied: pytz&gt;=2017.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;pingouin) (2020.1)
-Requirement already satisfied: patsy&gt;=0.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from statsmodels&gt;=0.10.0-&gt;pingouin) (0.5.1)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (2.9)
-Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (3.0.4)
-Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /Users/guy/miniconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (1.25.8)
-Requirement already satisfied: setuptools&gt;=38.4 in /Users/guy/miniconda3/lib/python3.8/site-packages (from xarray-&gt;pandas-flavor&gt;=0.1.2-&gt;pingouin) (46.4.0.post20200518)
-Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-packages (from cycler&gt;=0.10-&gt;matplotlib&gt;=3.0.2-&gt;pingouin) (1.14.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2017.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pandas&gt;=0.24-&gt;pingouin) (2021.1)
+Requirement already satisfied: patsy&gt;=0.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from statsmodels&gt;=0.10.0-&gt;pingouin) (0.5.1)
+Requirement already satisfied: six&gt;=1.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.1-&gt;matplotlib&gt;=3.0.2-&gt;pingouin) (1.15.0)
+Requirement already satisfied: setuptools&gt;=40.4 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from xarray-&gt;pandas-flavor&gt;=0.1.2-&gt;pingouin) (54.0.0)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (1.25.11)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (2.10)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;outdated-&gt;pingouin) (4.0.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -1346,7 +1362,7 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7635463917525773, array([0.659, 0.84 ]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7635463917525775, array([0.659, 0.84 ]))
 </pre></div>
 </div>
 </div>
@@ -1380,7 +1396,7 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7863454562366292, array([0.692, 0.855]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7863454562366294, array([0.692, 0.855]))
 </pre></div>
 </div>
 </div>
@@ -1522,10 +1538,10 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1.240</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Feb 2021</td> <th>  Prob (F-statistic):</th>  <td> 0.301</td> 
+  <th>Date:</th>             <td>Fri, 05 Mar 2021</td> <th>  Prob (F-statistic):</th>  <td> 0.301</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>22:00:17</td>     <th>  Log-Likelihood:    </th> <td> -76.904</td>
+  <th>Time:</th>                 <td>15:08:11</td>     <th>  Log-Likelihood:    </th> <td> -76.904</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    83</td>      <th>  AIC:               </th> <td>   161.8</td>
@@ -1625,7 +1641,7 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/guy/miniconda3/lib/python3.8/site-packages/statsmodels/base/model.py:1832: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/guy/opt/anaconda3/lib/python3.8/site-packages/statsmodels/base/model.py:1832: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
   warnings.warn(&#39;covariance of constraints does not have full &#39;
 </pre></div>
 </div>
@@ -1714,10 +1730,10 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   2.173</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Feb 2021</td> <th>  Prob (F-statistic):</th>  <td>0.0978</td> 
+  <th>Date:</th>             <td>Fri, 05 Mar 2021</td> <th>  Prob (F-statistic):</th>  <td>0.0978</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>22:00:18</td>     <th>  Log-Likelihood:    </th> <td> -61.619</td>
+  <th>Time:</th>                 <td>15:08:11</td>     <th>  Log-Likelihood:    </th> <td> -61.619</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    83</td>      <th>  AIC:               </th> <td>   131.2</td>
@@ -1817,7 +1833,7 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/guy/miniconda3/lib/python3.8/site-packages/statsmodels/base/model.py:1832: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/guy/opt/anaconda3/lib/python3.8/site-packages/statsmodels/base/model.py:1832: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
   warnings.warn(&#39;covariance of constraints does not have full &#39;
 </pre></div>
 </div>
@@ -1906,10 +1922,10 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   3.291</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Feb 2021</td> <th>  Prob (F-statistic):</th>  <td>0.0249</td> 
+  <th>Date:</th>             <td>Fri, 05 Mar 2021</td> <th>  Prob (F-statistic):</th>  <td>0.0249</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>22:00:18</td>     <th>  Log-Likelihood:    </th> <td> -114.53</td>
+  <th>Time:</th>                 <td>15:08:11</td>     <th>  Log-Likelihood:    </th> <td> -114.53</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    83</td>      <th>  AIC:               </th> <td>   237.1</td>
@@ -2009,7 +2025,7 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/guy/miniconda3/lib/python3.8/site-packages/statsmodels/base/model.py:1832: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/guy/opt/anaconda3/lib/python3.8/site-packages/statsmodels/base/model.py:1832: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
   warnings.warn(&#39;covariance of constraints does not have full &#39;
 </pre></div>
 </div>
@@ -2103,7 +2119,7 @@ Requirement already satisfied: six in /Users/guy/miniconda3/lib/python3.8/site-p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>147.41775587209213 1.3074590620296686e-24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>147.41775587209202 1.3074590620297142e-24
 </pre></div>
 </div>
 </div>
@@ -2245,14 +2261,14 @@ stat=0.126, p=0.434 How influential do you perceive the chatbot’s offer to hel
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="08.03_Linear_optimization.html" title="previous page">Linear Programming (Optimization)</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -2270,7 +2286,10 @@ stat=0.126, p=0.434 How influential do you perceive the chatbot’s offer to hel
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
     
   </body>
 </html>

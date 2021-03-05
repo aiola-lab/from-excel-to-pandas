@@ -1,0 +1,96 @@
+Traceback (most recent call last):
+  File "/Users/guy/opt/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/guy/opt/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from pandas.api.types import CategoricalDtype
+import calendar
+trip_intervals_with_time = (
+    fixed_trip_intervals
+    .eval("hour = scheduled.dt.hour")
+    .eval("dow = scheduled.dt.day_name()")
+    .assign(dow = lambda x : x.dow.astype(
+        CategoricalDtype(
+            ordered=True, 
+            categories=list(calendar.day_name))
+        )
+    )
+)
+trip_intervals_with_time
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-15-36b8fb37ce9d>[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0;32mimport[0m [0mcalendar[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m trip_intervals_with_time = (
+[0;32m----> 4[0;31m     [0mfixed_trip_intervals[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m     [0;34m.[0m[0meval[0m[0;34m([0m[0;34m"hour = scheduled.dt.hour"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m     [0;34m.[0m[0meval[0m[0;34m([0m[0;34m"dow = scheduled.dt.day_name()"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py[0m in [0;36meval[0;34m(self, expr, inplace, **kwargs)[0m
+[1;32m   3597[0m         [0mkwargs[0m[0;34m[[0m[0;34m"resolvers"[0m[0;34m][0m [0;34m=[0m [0mkwargs[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m"resolvers"[0m[0;34m,[0m [0;34m([0m[0;34m)[0m[0;34m)[0m [0;34m+[0m [0mtuple[0m[0;34m([0m[0mresolvers[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3598[0m [0;34m[0m[0m
+[0;32m-> 3599[0;31m         [0;32mreturn[0m [0m_eval[0m[0;34m([0m[0mexpr[0m[0;34m,[0m [0minplace[0m[0;34m=[0m[0minplace[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   3600[0m [0;34m[0m[0m
+[1;32m   3601[0m     [0;32mdef[0m [0mselect_dtypes[0m[0;34m([0m[0mself[0m[0;34m,[0m [0minclude[0m[0;34m=[0m[0;32mNone[0m[0;34m,[0m [0mexclude[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m [0;34m->[0m [0mDataFrame[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/eval.py[0m in [0;36meval[0;34m(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)[0m
+[1;32m    345[0m         [0meng[0m [0;34m=[0m [0mENGINES[0m[0;34m[[0m[0mengine[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    346[0m         [0meng_inst[0m [0;34m=[0m [0meng[0m[0;34m([0m[0mparsed_expr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 347[0;31m         [0mret[0m [0;34m=[0m [0meng_inst[0m[0;34m.[0m[0mevaluate[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    348[0m [0;34m[0m[0m
+[1;32m    349[0m         [0;32mif[0m [0mparsed_expr[0m[0;34m.[0m[0massigner[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py[0m in [0;36mevaluate[0;34m(self)[0m
+[1;32m     71[0m [0;34m[0m[0m
+[1;32m     72[0m         [0;31m# make sure no names in resolvers and locals/globals clash[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 73[0;31m         [0mres[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_evaluate[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     74[0m         return reconstruct_object(
+[1;32m     75[0m             [0mself[0m[0;34m.[0m[0mresult_type[0m[0;34m,[0m [0mres[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0maligned_axes[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mexpr[0m[0;34m.[0m[0mterms[0m[0;34m.[0m[0mreturn_type[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py[0m in [0;36m_evaluate[0;34m(self)[0m
+[1;32m    111[0m         [0menv[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mexpr[0m[0;34m.[0m[0menv[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    112[0m         [0mscope[0m [0;34m=[0m [0menv[0m[0;34m.[0m[0mfull_scope[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 113[0;31m         [0m_check_ne_builtin_clash[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mexpr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    114[0m         [0;32mreturn[0m [0mne[0m[0;34m.[0m[0mevaluate[0m[0;34m([0m[0ms[0m[0;34m,[0m [0mlocal_dict[0m[0;34m=[0m[0mscope[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    115[0m [0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py[0m in [0;36m_check_ne_builtin_clash[0;34m(expr)[0m
+[1;32m     27[0m         [0mTerms[0m [0mcan[0m [0mcontain[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     28[0m     """
+[0;32m---> 29[0;31m     [0mnames[0m [0;34m=[0m [0mexpr[0m[0;34m.[0m[0mnames[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     30[0m     [0moverlap[0m [0;34m=[0m [0mnames[0m [0;34m&[0m [0m_ne_builtins[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     31[0m [0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/expr.py[0m in [0;36mnames[0;34m(self)[0m
+[1;32m    823[0m         """
+[1;32m    824[0m         [0;32mif[0m [0mis_term[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mterms[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 825[0;31m             [0;32mreturn[0m [0mfrozenset[0m[0;34m([0m[0;34m[[0m[0mself[0m[0;34m.[0m[0mterms[0m[0;34m.[0m[0mname[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    826[0m         [0;32mreturn[0m [0mfrozenset[0m[0;34m([0m[0mterm[0m[0;34m.[0m[0mname[0m [0;32mfor[0m [0mterm[0m [0;32min[0m [0mcom[0m[0;34m.[0m[0mflatten[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mterms[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    827[0m [0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/generic.py[0m in [0;36m__hash__[0;34m(self)[0m
+[1;32m   1783[0m [0;34m[0m[0m
+[1;32m   1784[0m     [0;32mdef[0m [0m__hash__[0m[0;34m([0m[0mself[0m[0;34m)[0m [0;34m->[0m [0mint[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1785[0;31m         raise TypeError(
+[0m[1;32m   1786[0m             [0;34mf"{repr(type(self).__name__)} objects are mutable, "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1787[0m             [0;34mf"thus they cannot be hashed"[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mTypeError[0m: 'Series' objects are mutable, thus they cannot be hashed
+TypeError: 'Series' objects are mutable, thus they cannot be hashed
+
