@@ -798,7 +798,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nasdaq_100_views</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">nasdaq_100_tickers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="c1"># .head(2)</span>
+    <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Company&#39;</span><span class="p">)[[</span><span class="s1">&#39;Company&#39;</span><span class="p">]]</span>
     <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_views</span><span class="p">)</span>
 <span class="p">)</span>
@@ -854,128 +854,616 @@
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">ASML Holding</th>
+      <th rowspan="30" valign="top">Activision Blizzard</th>
       <th>0</th>
       <td>en.wikipedia</td>
-      <td>ASML_Holding</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090100</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>699.0</td>
+      <td>1437</td>
     </tr>
     <tr>
       <th>1</th>
       <td>en.wikipedia</td>
-      <td>ASML_Holding</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090200</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>722.0</td>
+      <td>1715</td>
     </tr>
     <tr>
       <th>2</th>
       <td>en.wikipedia</td>
-      <td>ASML_Holding</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090300</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>673.0</td>
+      <td>1989</td>
     </tr>
     <tr>
       <th>3</th>
       <td>en.wikipedia</td>
-      <td>ASML_Holding</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090400</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>728.0</td>
+      <td>1628</td>
     </tr>
     <tr>
       <th>4</th>
       <td>en.wikipedia</td>
-      <td>ASML_Holding</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090500</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>598.0</td>
+      <td>1260</td>
     </tr>
     <tr>
-      <th>...</th>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>5</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020090600</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1253</td>
     </tr>
     <tr>
-      <th rowspan="5" valign="top">Zoom Video Communications</th>
+      <th>6</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020090700</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1218</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020090800</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1331</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020090900</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1537</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091000</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1431</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091100</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1352</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091200</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1042</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091300</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1066</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091400</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1327</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091500</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1346</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091600</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1267</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091700</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1289</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091800</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1241</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020091900</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1117</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020092000</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1137</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020092100</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>4108</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020092200</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>3319</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020092300</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>2992</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020092400</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>2312</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>en.wikipedia</td>
+      <td>Activision_Blizzard</td>
+      <td>daily</td>
+      <td>2020092500</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1806</td>
+    </tr>
+    <tr>
       <th>25</th>
       <td>en.wikipedia</td>
-      <td>Zoom_Video_Communications</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092600</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>9231.0</td>
+      <td>1557</td>
     </tr>
     <tr>
       <th>26</th>
       <td>en.wikipedia</td>
-      <td>Zoom_Video_Communications</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092700</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>9732.0</td>
+      <td>1549</td>
     </tr>
     <tr>
       <th>27</th>
       <td>en.wikipedia</td>
-      <td>Zoom_Video_Communications</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092800</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>13180.0</td>
+      <td>1564</td>
     </tr>
     <tr>
       <th>28</th>
       <td>en.wikipedia</td>
-      <td>Zoom_Video_Communications</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092900</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>14178.0</td>
+      <td>1585</td>
     </tr>
     <tr>
       <th>29</th>
       <td>en.wikipedia</td>
-      <td>Zoom_Video_Communications</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020093000</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>13724.0</td>
+      <td>1703</td>
+    </tr>
+    <tr>
+      <th rowspan="30" valign="top">Adobe Inc.</th>
+      <th>0</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090100</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1716</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090200</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1854</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090300</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1849</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090400</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1698</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090500</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1304</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090600</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1319</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090700</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1604</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090800</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1743</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020090900</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1823</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091000</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1819</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091100</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1764</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091200</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1395</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091300</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1537</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091400</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>2398</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091500</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>2038</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091600</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>2203</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091700</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1910</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091800</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1873</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020091900</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1361</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092000</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1480</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092100</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1770</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092200</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1874</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092300</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1696</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092400</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1751</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092500</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1684</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092600</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1325</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092700</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1316</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092800</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1695</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020092900</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1869</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>en.wikipedia</td>
+      <td>Adobe_Inc.</td>
+      <td>daily</td>
+      <td>2020093000</td>
+      <td>all-access</td>
+      <td>all-agents</td>
+      <td>1758</td>
     </tr>
   </tbody>
 </table>
-<p>2465 rows × 7 columns</p>
 </div></div></div>
 </div>
 <p>We see that we have more than 2000 rows in the concatenated dataframe where each line is a view of a company in a specific day in the range of September 2020.</p>
 <p>Let’s look on one of the companies (for example, <em>Lululemon Atheletica</em>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nasdaq_100_views</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Lululemon Athletica&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nasdaq_100_views</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Activision Blizzard&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1011,302 +1499,302 @@
     <tr>
       <th>0</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090100</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1171.0</td>
+      <td>1437</td>
     </tr>
     <tr>
       <th>1</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090200</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1314.0</td>
+      <td>1715</td>
     </tr>
     <tr>
       <th>2</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090300</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>985.0</td>
+      <td>1989</td>
     </tr>
     <tr>
       <th>3</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090400</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1018.0</td>
+      <td>1628</td>
     </tr>
     <tr>
       <th>4</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090500</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>955.0</td>
+      <td>1260</td>
     </tr>
     <tr>
       <th>5</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090600</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>939.0</td>
+      <td>1253</td>
     </tr>
     <tr>
       <th>6</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090700</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1007.0</td>
+      <td>1218</td>
     </tr>
     <tr>
       <th>7</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090800</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1246.0</td>
+      <td>1331</td>
     </tr>
     <tr>
       <th>8</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020090900</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1534.0</td>
+      <td>1537</td>
     </tr>
     <tr>
       <th>9</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091000</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>2010.0</td>
+      <td>1431</td>
     </tr>
     <tr>
       <th>10</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091100</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>2046.0</td>
+      <td>1352</td>
     </tr>
     <tr>
       <th>11</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091200</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>2565.0</td>
+      <td>1042</td>
     </tr>
     <tr>
       <th>12</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091300</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1940.0</td>
+      <td>1066</td>
     </tr>
     <tr>
       <th>13</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091400</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1359.0</td>
+      <td>1327</td>
     </tr>
     <tr>
       <th>14</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091500</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1332.0</td>
+      <td>1346</td>
     </tr>
     <tr>
       <th>15</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091600</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1228.0</td>
+      <td>1267</td>
     </tr>
     <tr>
       <th>16</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091700</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1167.0</td>
+      <td>1289</td>
     </tr>
     <tr>
       <th>17</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091800</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1162.0</td>
+      <td>1241</td>
     </tr>
     <tr>
       <th>18</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020091900</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1053.0</td>
+      <td>1117</td>
     </tr>
     <tr>
       <th>19</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092000</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1138.0</td>
+      <td>1137</td>
     </tr>
     <tr>
       <th>20</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092100</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1131.0</td>
+      <td>4108</td>
     </tr>
     <tr>
       <th>21</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092200</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1183.0</td>
+      <td>3319</td>
     </tr>
     <tr>
       <th>22</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092300</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1262.0</td>
+      <td>2992</td>
     </tr>
     <tr>
       <th>23</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092400</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>980.0</td>
+      <td>2312</td>
     </tr>
     <tr>
       <th>24</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092500</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>970.0</td>
+      <td>1806</td>
     </tr>
     <tr>
       <th>25</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092600</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>880.0</td>
+      <td>1557</td>
     </tr>
     <tr>
       <th>26</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092700</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>977.0</td>
+      <td>1549</td>
     </tr>
     <tr>
       <th>27</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092800</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>986.0</td>
+      <td>1564</td>
     </tr>
     <tr>
       <th>28</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020092900</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1035.0</td>
+      <td>1585</td>
     </tr>
     <tr>
       <th>29</th>
       <td>en.wikipedia</td>
-      <td>Lululemon_Athletica</td>
+      <td>Activision_Blizzard</td>
       <td>daily</td>
       <td>2020093000</td>
       <td>all-access</td>
       <td>all-agents</td>
-      <td>1040.0</td>
+      <td>1703</td>
     </tr>
   </tbody>
 </table>
@@ -1323,7 +1811,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">focused_company</span> <span class="o">=</span> <span class="s1">&#39;Lululemon Athletica&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">focused_company</span> <span class="o">=</span> <span class="s1">&#39;Activision Blizzard&#39;</span>
 <span class="p">(</span>
     <span class="n">nasdaq_100_views</span>
     <span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">focused_company</span><span class="p">]</span>
@@ -1348,35 +1836,16 @@
 <p>Many times API are more complex, nevertheless, we can still extract the relevant data.</p>
 <p>Let’s get some stock data from <a class="reference external" href="https://www.alphavantage.co">alphavantage.co</a></p>
 <p>This web service is providing useful investment information using an API, however, like many other API providers, it requires an API key to identify the request (and sometimes chanrge for it).</p>
-<p>To allow secure execution of such API call, we will how to install a new python module and how to use it. The next cell is installing the module from <a class="reference external" href="https://ipython-secrets.readthedocs.io/en/latest/">ipython secrets</a></p>
+<p>To allow usage of secrets such as the API key for the service call, we will use a simple mechanism using <em>.env</em> file that each user should create and update with their private keys.</p>
+<p>Once we have the module to handle secrets installed, we can import it to the notebook and use it. You can get your free API key from <a class="reference external" href="https://www.alphavantage.co/support/#api-key">alphavantage.co</a>. Next time you will execute the cell and the whole notebook, the API key will be retrieved from the local file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span><span class="o">-</span><span class="n">secrets</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython-secrets in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (1.1.1)
-Requirement already satisfied: ipython in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-secrets) (7.21.0)
-Requirement already satisfied: keyring in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-secrets) (21.4.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pickleshare in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.7.5)
-Requirement already satisfied: pygments in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (2.8.0)
-Requirement already satisfied: traitlets&gt;=4.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (5.0.5)
-Requirement already satisfied: setuptools&gt;=18.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (54.0.0)
-Requirement already satisfied: appnope; sys_platform == &quot;darwin&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.1.2)
-Requirement already satisfied: pexpect&gt;4.3; sys_platform != &quot;win32&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.8.0)
-Requirement already satisfied: jedi&gt;=0.16 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.18.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (3.0.16)
-Requirement already satisfied: decorator in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (4.4.2)
-Requirement already satisfied: backcall in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython-&gt;ipython-secrets) (0.2.0)
-Requirement already satisfied: ipython-genutils in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from traitlets&gt;=4.2-&gt;ipython-&gt;ipython-secrets) (0.2.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pexpect&gt;4.3; sys_platform != &quot;win32&quot;-&gt;ipython-&gt;ipython-secrets) (0.7.0)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;ipython-secrets) (0.8.1)
-Requirement already satisfied: wcwidth in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;ipython-secrets) (0.2.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dotenv in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (0.15.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
@@ -1387,12 +1856,13 @@ Requirement already satisfied: wcwidth in /Users/guy/opt/anaconda3/lib/python3.8
 </div>
 </div>
 </div>
-<p>Once we have the module to handle secrets installed, we can import it to the notebook and use it. The module will pop up the request for the user to enter the API key, which you can get from <a class="reference external" href="https://www.alphavantage.co/support/#api-key">alphavantage.co</a>. Next time you will execute the cell and the whole notebook, the API key will be retrieved from the keyring of the machine running the notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipython_secrets</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
 
-<span class="n">ALPHAVANTAGE_API_KEY</span> <span class="o">=</span> <span class="n">get_secret</span><span class="p">(</span><span class="s1">&#39;ALPHAVANTAGE_API_KEY&#39;</span><span class="p">)</span>
+<span class="n">ALPHAVANTAGE_API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ALPHAVANTAGE_API_KEY&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1459,7 +1929,7 @@ Requirement already satisfied: wcwidth in /Users/guy/opt/anaconda3/lib/python3.8
     </tr>
     <tr>
       <th>3. Last Refreshed</th>
-      <td>2021-03-04 19:55:00</td>
+      <td>2021-03-05 20:00:00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1478,29 +1948,29 @@ Requirement already satisfied: wcwidth in /Users/guy/opt/anaconda3/lib/python3.8
       <td>...</td>
     </tr>
     <tr>
-      <th>2021-03-04 15:10:00</th>
+      <th>2021-03-05 15:11:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2994.0200', '2. high': '2994.5973...</td>
+      <td>{'1. open': '2993.4100', '2. high': '2994.0400...</td>
     </tr>
     <tr>
-      <th>2021-03-04 15:09:00</th>
+      <th>2021-03-05 15:10:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2995.0000', '2. high': '2995.0000...</td>
+      <td>{'1. open': '2991.7100', '2. high': '2996.3845...</td>
     </tr>
     <tr>
-      <th>2021-03-04 15:08:00</th>
+      <th>2021-03-05 15:09:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2999.0500', '2. high': '2999.0500...</td>
+      <td>{'1. open': '2990.9000', '2. high': '2992.0000...</td>
     </tr>
     <tr>
-      <th>2021-03-04 15:07:00</th>
+      <th>2021-03-05 15:08:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2998.0999', '2. high': '3002.8699...</td>
+      <td>{'1. open': '2995.0000', '2. high': '2997.3695...</td>
     </tr>
     <tr>
-      <th>2021-03-04 15:06:00</th>
+      <th>2021-03-05 15:07:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2994.6800', '2. high': '3000.1700...</td>
+      <td>{'1. open': '2995.0400', '2. high': '2997.0000...</td>
     </tr>
   </tbody>
 </table>
@@ -1635,44 +2105,44 @@ Requirement already satisfied: wcwidth in /Users/guy/opt/anaconda3/lib/python3.8
   </thead>
   <tbody>
     <tr>
-      <th>2021-01-08 19:52:00</th>
-      <td>3179.9999</td>
-      <td>3179.9999</td>
-      <td>3179.9999</td>
-      <td>3179.9999</td>
+      <th>2021-03-05 20:00:00</th>
+      <td>3005.0000</td>
+      <td>3005.0000</td>
+      <td>3005.0000</td>
+      <td>3005.0000</td>
+      <td>316</td>
+    </tr>
+    <tr>
+      <th>2021-03-05 19:59:00</th>
+      <td>3004.0000</td>
+      <td>3004.0000</td>
+      <td>3004.0000</td>
+      <td>3004.0000</td>
+      <td>138</td>
+    </tr>
+    <tr>
+      <th>2021-03-05 19:54:00</th>
+      <td>3004.9999</td>
+      <td>3004.9999</td>
+      <td>3004.9999</td>
+      <td>3004.9999</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>2021-03-05 19:41:00</th>
+      <td>3003.9700</td>
+      <td>3003.9700</td>
+      <td>3003.9700</td>
+      <td>3003.9700</td>
       <td>245</td>
     </tr>
     <tr>
-      <th>2021-01-08 19:35:00</th>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>256</td>
-    </tr>
-    <tr>
-      <th>2021-01-08 19:29:00</th>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>108</td>
-    </tr>
-    <tr>
-      <th>2021-01-08 19:13:00</th>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>3178.0000</td>
-      <td>155</td>
-    </tr>
-    <tr>
-      <th>2021-01-08 19:00:00</th>
-      <td>3179.0300</td>
-      <td>3179.0300</td>
-      <td>3179.0300</td>
-      <td>3179.0300</td>
-      <td>111</td>
+      <th>2021-03-05 19:36:00</th>
+      <td>3001.5000</td>
+      <td>3001.5000</td>
+      <td>3001.5000</td>
+      <td>3001.5000</td>
+      <td>493</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1683,44 +2153,44 @@ Requirement already satisfied: wcwidth in /Users/guy/opt/anaconda3/lib/python3.8
       <td>...</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:58:00</th>
-      <td>3168.8631</td>
-      <td>3169.3100</td>
-      <td>3168.4950</td>
-      <td>3168.4950</td>
-      <td>2734</td>
+      <th>2021-03-05 15:11:00</th>
+      <td>2993.4100</td>
+      <td>2994.0400</td>
+      <td>2991.9350</td>
+      <td>2993.4800</td>
+      <td>7873</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:57:00</th>
-      <td>3168.1900</td>
-      <td>3169.1800</td>
-      <td>3168.1900</td>
-      <td>3168.8505</td>
-      <td>5019</td>
+      <th>2021-03-05 15:10:00</th>
+      <td>2991.7100</td>
+      <td>2996.3845</td>
+      <td>2991.7100</td>
+      <td>2994.5100</td>
+      <td>7801</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:56:00</th>
-      <td>3166.7500</td>
-      <td>3168.1500</td>
-      <td>3166.7500</td>
-      <td>3167.5833</td>
-      <td>4853</td>
+      <th>2021-03-05 15:09:00</th>
+      <td>2990.9000</td>
+      <td>2992.0000</td>
+      <td>2987.4301</td>
+      <td>2992.0000</td>
+      <td>11182</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:55:00</th>
-      <td>3167.8750</td>
-      <td>3168.4999</td>
-      <td>3167.0229</td>
-      <td>3167.0229</td>
-      <td>4240</td>
+      <th>2021-03-05 15:08:00</th>
+      <td>2995.0000</td>
+      <td>2997.3695</td>
+      <td>2991.5800</td>
+      <td>2991.5800</td>
+      <td>6006</td>
     </tr>
     <tr>
-      <th>2021-01-08 14:54:00</th>
-      <td>3167.9000</td>
-      <td>3168.8300</td>
-      <td>3167.3600</td>
-      <td>3167.8600</td>
-      <td>3811</td>
+      <th>2021-03-05 15:07:00</th>
+      <td>2995.0400</td>
+      <td>2997.0000</td>
+      <td>2994.7950</td>
+      <td>2996.0300</td>
+      <td>7457</td>
     </tr>
   </tbody>
 </table>
@@ -1756,7 +2226,7 @@ Requirement already satisfied: wcwidth in /Users/guy/opt/anaconda3/lib/python3.8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_37_0.svg" src="../_images/01.03_loading_data_from_API_37_0.svg" /></div>
+<img alt="../_images/01.03_loading_data_from_API_36_0.svg" src="../_images/01.03_loading_data_from_API_36_0.svg" /></div>
 </div>
 </div>
 </div>

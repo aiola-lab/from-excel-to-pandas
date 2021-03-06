@@ -365,10 +365,10 @@
 </div>
 <div class="section" id="loading-the-data">
 <h2>Loading the data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">¶</a></h2>
-<p>We will get the data from HTML table that are available from <a class="reference external" href="http://rotoguru.net">Rotoguru</a>, that is gather stats data from fantasy league. We will focus on the data of the NBA players.</p>
+<p>We will get the data from HTML table that are available from <a class="reference external" href="http://rotoguru.net">Rotoguru</a>, that is gather stats data from fantasy league. We will focus on the data of the NBA players. To keep the consistency of the notebook, we will check the data for a specific week (‘2021-03-02’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;http://rotoguru1.com/cgi-bin/hyday.pl?game=fd&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;http://rotoguru1.com/cgi-bin/hyday.pl?mon=3&amp;day=2&amp;year=2021&amp;game=fd&#39;</span>
 <span class="n">dfs</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">pd</span>
     <span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>

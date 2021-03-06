@@ -1050,8 +1050,8 @@ memory usage: 2.2+ MB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">table_df</span>
-    <span class="o">.</span><span class="n">asign</span><span class="p">(</span><span class="n">approved</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">table_df</span><span class="o">.</span><span class="n">approved_for_roadway_seating</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;approved&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">approved</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">approved</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">approved_for_roadway_seating</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">))</span>
     <span class="o">.</span><span class="n">plot</span>
     <span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="n">c</span><span class="o">=</span><span class="s1">&#39;approved&#39;</span><span class="p">,</span>
@@ -1063,12 +1063,7 @@ memory usage: 2.2+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-9-c2aa3ab939b3&gt;&quot;</span><span class="gt">, line </span><span class="mi">4</span>
-    <span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">table_df</span><span class="o">.</span><span class="n">approved_for_roadway_seating</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;approved&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span>
-                                                                    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
+<img alt="../_images/01.01 - loading files_18_0.png" src="../_images/01.01 - loading files_18_0.png" />
 </div>
 </div>
 </div>
@@ -1083,9 +1078,13 @@ memory usage: 2.2+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: xlrd in /usr/local/lib/python3.9/site-packages (2.0.1)
-Note: you may need to restart the kernel to use updated packages.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: xlrd in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (1.2.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
@@ -1116,7 +1115,8 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.01 - loading files_24_0.svg" src="../_images/01.01 - loading files_24_0.svg" /></div>
+<img alt="../_images/01.01 - loading files_24_0.png" src="../_images/01.01 - loading files_24_0.png" />
+</div>
 </div>
 </div>
 </div>
