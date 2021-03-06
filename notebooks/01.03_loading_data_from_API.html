@@ -1984,8 +1984,8 @@
 <ul class="simple">
 <li><p>Start with the dataframe table that was returned from the API call</p></li>
 <li><p>Rename the long ‘Time Series…’ column name to short ‘ts’</p></li>
-<li><p>Filter out all the rows where ‘ts’ column has no value (<em>null</em>)</p></li>
-<li><p>Take only the ‘ts’ column for all the row left</p></li>
+<li><p>Filter out (using <em>query</em>) all the rows where ‘ts’ column has no value (<em>null</em>)</p></li>
+<li><p>Filter (using <em>loc</em>) only the ‘ts’ column</p></li>
 <li><p>Parse each value in the column as a series of key-value pairs and create a column for each pair</p></li>
 </ul>
 <div class="cell docutils container">
@@ -2214,19 +2214,22 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">json_series</span>
+    <span class="o">.</span><span class="n">filter</span><span class="p">([</span><span class="s1">&#39;2. high&#39;</span><span class="p">,</span><span class="s1">&#39;3. low&#39;</span><span class="p">])</span>
     <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">loc</span><span class="p">[:,(</span><span class="s1">&#39;2. high&#39;</span><span class="p">,</span><span class="s1">&#39;3. low&#39;</span><span class="p">)]</span>
     <span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="o">.</span><span class="n">plot</span><span class="p">(</span>
         <span class="n">title</span><span class="o">=</span><span class="n">symbol</span><span class="p">,</span> 
         <span class="n">rot</span><span class="o">=</span><span class="mi">45</span>
     <span class="p">)</span>
-<span class="p">);</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_36_0.svg" src="../_images/01.03_loading_data_from_API_36_0.svg" /></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;AMZN&#39;}&gt;
+</pre></div>
+</div>
+<img alt="../_images/01.03_loading_data_from_API_36_1.svg" src="../_images/01.03_loading_data_from_API_36_1.svg" /></div>
 </div>
 </div>
 </div>
