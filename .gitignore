@@ -5,3 +5,4 @@ notebooks/.ipynb_checkpoint/
 notebooks/.ipynb_checkpoints/
 _build/**
 _build/jupyter_execute/
+.env
