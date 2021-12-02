@@ -6,8 +6,7 @@ Jupyter notebooks are easy to execute and edit in the web browser, however, they
 
 # Open in AWS SageMaker Studio Lab
 
-[![Open In Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)]
-(https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/01.01%20-%20loading%20files.ipynb)
+[![Open In Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/01.01%20-%20loading%20files.ipynb)
 
 
 # Open in Binder/Colab
