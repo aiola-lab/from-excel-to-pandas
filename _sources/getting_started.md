@@ -4,6 +4,11 @@ Jupyter notebooks are easy to execute and edit in the web browser, however, they
 
     pip intall jupyter
 
+# Open in AWS SageMaker Studio Lab
+
+[![Open In Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/01.01%20-%20loading%20files.ipynb)
+
+
 # Open in Binder/Colab
 
 When you are opening a page that is based on a Jupyter notebook, you can execute it in a couple of online services, nemely, Binder and Colab. To do that check the buttons on top right of the page.

@@ -107,6 +107,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-aws-sagemaker-studio-lab">
+   Open in AWS SageMaker Studio Lab
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
    Open in Binder/Colab
   </a>
@@ -281,7 +286,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://notebooks.gesis.org/binder/v2/gh/aiola-lab/from-excel-to-pandas/HEAD/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/08.02_Currency_analysis.ipynb"><button type="button"
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/08.02_Currency_analysis.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -404,14 +409,14 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: forex-python in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (1.5)
-Requirement already satisfied: simplejson in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (3.17.2)
 Requirement already satisfied: requests in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (2.25.1)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (4.0.0)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.11)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.10)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.12.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: simplejson in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (3.17.2)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.12.5)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (4.0.0)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.11)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
@@ -446,39 +451,128 @@ Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GBP&#39;: 0.7229016586,
- &#39;HKD&#39;: 7.7647009549,
- &#39;IDR&#39;: 14394.4463059139,
- &#39;ILS&#39;: 3.3176411459,
- &#39;DKK&#39;: 6.2291003518,
- &#39;INR&#39;: 73.0696096499,
- &#39;CHF&#39;: 0.926955939,
- &#39;MXN&#39;: 21.2099179092,
- &#39;CZK&#39;: 22.0330038532,
- &#39;SGD&#39;: 1.3409281287,
- &#39;THB&#39;: 30.5092980399,
- &#39;HRK&#39;: 6.3448651365,
- &#39;EUR&#39;: 0.8376612498,
- &#39;MYR&#39;: 4.0739654884,
- &#39;NOK&#39;: 8.5533590216,
- &#39;CNY&#39;: 6.4909532585,
- &#39;BGN&#39;: 1.6382978723,
- &#39;PHP&#39;: 48.6245602278,
- &#39;PLN&#39;: 3.8321326855,
- &#39;ZAR&#39;: 15.2972859776,
- &#39;CAD&#39;: 1.2698944547,
- &#39;ISK&#39;: 128.078405093,
- &#39;BRL&#39;: 5.69433741,
- &#39;RON&#39;: 4.0888758586,
- &#39;NZD&#39;: 1.4019936338,
- &#39;TRY&#39;: 7.4972357179,
- &#39;JPY&#39;: 108.3095995979,
- &#39;RUB&#39;: 74.4519182443,
- &#39;KRW&#39;: 1128.4218462054,
- &#39;USD&#39;: 1.0,
- &#39;AUD&#39;: 1.3038197353,
- &#39;HUF&#39;: 306.8269391858,
- &#39;SEK&#39;: 8.5326687887}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">gaierror</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py</span> in <span class="ni">_new_conn</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">159</span>             <span class="n">conn</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>                 <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dns_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_kw</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/util/connection.py</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span> 
+<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/socket.py</span> in <span class="ni">getaddrinfo</span><span class="nt">(host, port, family, type, proto, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">917</span>     <span class="n">addrlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">918</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+
+<span class="ne">gaierror</span>: [Errno 8] nodename nor servname provided, or not known
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">NewConnectionError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">669</span>             <span class="c1"># Make the request on the httplib connection object.</span>
+<span class="ne">--&gt; </span><span class="mi">670</span>             <span class="n">httplib_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span>                 <span class="n">conn</span><span class="p">,</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">381</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_validate_conn</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>         <span class="k">except</span> <span class="p">(</span><span class="n">SocketTimeout</span><span class="p">,</span> <span class="n">BaseSSLError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
+<span class="g g-Whitespace">    </span><span class="mi">977</span>         <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s2">&quot;sock&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>  <span class="c1"># AppEngine might not have  `.sock`</span>
+<span class="ne">--&gt; </span><span class="mi">978</span>             <span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">979</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="c1"># Add certificate verification</span>
+<span class="ne">--&gt; </span><span class="mi">309</span>         <span class="n">conn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_conn</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>         <span class="n">hostname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py</span> in <span class="ni">_new_conn</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="k">except</span> <span class="n">SocketError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">171</span>             <span class="k">raise</span> <span class="n">NewConnectionError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span>                 <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Failed to establish a new connection: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span>
+
+<span class="ne">NewConnectionError</span>: &lt;urllib3.connection.HTTPSConnection object at 0x7f9e70629d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">MaxRetryError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">chunked</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">439</span>                 <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>                     <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">725</span> 
+<span class="ne">--&gt; </span><span class="mi">726</span>             <span class="n">retries</span> <span class="o">=</span> <span class="n">retries</span><span class="o">.</span><span class="n">increment</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">727</span>                 <span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">_pool</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">_stacktrace</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/util/retry.py</span> in <span class="ni">increment</span><span class="nt">(self, method, url, response, error, _pool, _stacktrace)</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>         <span class="k">if</span> <span class="n">new_retry</span><span class="o">.</span><span class="n">is_exhausted</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">446</span>             <span class="k">raise</span> <span class="n">MaxRetryError</span><span class="p">(</span><span class="n">_pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">error</span> <span class="ow">or</span> <span class="n">ResponseError</span><span class="p">(</span><span class="n">cause</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span> 
+
+<span class="ne">MaxRetryError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f9e70629d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ConnectionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">c8ca15bc87d1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">usd_rates</span> <span class="o">=</span> <span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">CurrencyRates</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">usd_rates</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/forex_python/converter.py</span> in <span class="ni">get_rates</span><span class="nt">(self, base_cur, date_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;base&#39;</span><span class="p">:</span> <span class="n">base_cur</span><span class="p">,</span> <span class="s1">&#39;rtype&#39;</span><span class="p">:</span> <span class="s1">&#39;fpy&#39;</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="n">source_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_source_url</span><span class="p">()</span> <span class="o">+</span> <span class="n">date_str</span>
+<span class="ne">---&gt; </span><span class="mi">52</span>         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">source_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>             <span class="n">rates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode_rates</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/api.py</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;allow_redirects&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> 
+<span class="g g-Whitespace">     </span><span class="mi">78</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/api.py</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="c1"># cases, and look like a memory leak in others.</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">61</span>         <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> 
+<span class="g g-Whitespace">     </span><span class="mi">63</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">541</span>         <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">542</span>         <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span> 
+<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="k">return</span> <span class="n">resp</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">653</span> 
+<span class="g g-Whitespace">    </span><span class="mi">654</span>         <span class="c1"># Send the request</span>
+<span class="ne">--&gt; </span><span class="mi">655</span>         <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">656</span> 
+<span class="g g-Whitespace">    </span><span class="mi">657</span>         <span class="c1"># Total elapsed time of the request (approximately)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>                 <span class="k">raise</span> <span class="n">SSLError</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span> 
+<span class="ne">--&gt; </span><span class="mi">516</span>             <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">517</span> 
+<span class="g g-Whitespace">    </span><span class="mi">518</span>         <span class="k">except</span> <span class="n">ClosedPoolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">ConnectionError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f9e70629d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
 </pre></div>
 </div>
 </div>
@@ -521,119 +615,119 @@ Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/li
   <tbody>
     <tr>
       <th>GBP</th>
-      <td>0.722902</td>
+      <td>0.712645</td>
     </tr>
     <tr>
       <th>HKD</th>
-      <td>7.764701</td>
+      <td>7.753604</td>
     </tr>
     <tr>
       <th>IDR</th>
-      <td>14394.446306</td>
+      <td>14082.552105</td>
     </tr>
     <tr>
       <th>ILS</th>
-      <td>3.317641</td>
+      <td>3.270451</td>
     </tr>
     <tr>
       <th>DKK</th>
-      <td>6.229100</td>
+      <td>6.126370</td>
     </tr>
     <tr>
       <th>INR</th>
-      <td>73.069610</td>
+      <td>72.505561</td>
     </tr>
     <tr>
       <th>CHF</th>
-      <td>0.926956</td>
+      <td>0.893896</td>
     </tr>
     <tr>
       <th>MXN</th>
-      <td>21.209918</td>
+      <td>20.355383</td>
     </tr>
     <tr>
       <th>CZK</th>
-      <td>22.033004</td>
+      <td>21.294176</td>
     </tr>
     <tr>
       <th>SGD</th>
-      <td>1.340928</td>
+      <td>1.322926</td>
     </tr>
     <tr>
       <th>THB</th>
-      <td>30.509298</td>
+      <td>29.974462</td>
     </tr>
     <tr>
       <th>HRK</th>
-      <td>6.344865</td>
+      <td>6.242689</td>
     </tr>
     <tr>
       <th>EUR</th>
-      <td>0.837661</td>
+      <td>0.823791</td>
     </tr>
     <tr>
       <th>MYR</th>
-      <td>4.073965</td>
+      <td>4.040531</td>
     </tr>
     <tr>
       <th>NOK</th>
-      <td>8.553359</td>
+      <td>8.410495</td>
     </tr>
     <tr>
       <th>CNY</th>
-      <td>6.490953</td>
+      <td>6.451767</td>
     </tr>
     <tr>
       <th>BGN</th>
-      <td>1.638298</td>
+      <td>1.611171</td>
     </tr>
     <tr>
       <th>PHP</th>
-      <td>48.624560</td>
+      <td>48.476810</td>
     </tr>
     <tr>
       <th>PLN</th>
-      <td>3.832133</td>
+      <td>3.693055</td>
     </tr>
     <tr>
       <th>ZAR</th>
-      <td>15.297286</td>
+      <td>14.613312</td>
     </tr>
     <tr>
       <th>CAD</th>
-      <td>1.269894</td>
+      <td>1.260977</td>
     </tr>
     <tr>
       <th>ISK</th>
-      <td>128.078405</td>
+      <td>128.181893</td>
     </tr>
     <tr>
       <th>BRL</th>
-      <td>5.694337</td>
+      <td>5.406788</td>
     </tr>
     <tr>
       <th>RON</th>
-      <td>4.088876</td>
+      <td>4.016641</td>
     </tr>
     <tr>
       <th>NZD</th>
-      <td>1.401994</td>
+      <td>1.370953</td>
     </tr>
     <tr>
       <th>TRY</th>
-      <td>7.497236</td>
+      <td>6.958563</td>
     </tr>
     <tr>
       <th>JPY</th>
-      <td>108.309600</td>
+      <td>105.288739</td>
     </tr>
     <tr>
       <th>RUB</th>
-      <td>74.451918</td>
+      <td>73.819013</td>
     </tr>
     <tr>
       <th>KRW</th>
-      <td>1128.421846</td>
+      <td>1103.542302</td>
     </tr>
     <tr>
       <th>USD</th>
@@ -641,15 +735,15 @@ Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/li
     </tr>
     <tr>
       <th>AUD</th>
-      <td>1.303820</td>
+      <td>1.272345</td>
     </tr>
     <tr>
       <th>HUF</th>
-      <td>306.826939</td>
+      <td>295.329105</td>
     </tr>
     <tr>
       <th>SEK</th>
-      <td>8.532669</td>
+      <td>8.265096</td>
     </tr>
   </tbody>
 </table>
@@ -1140,7 +1234,7 @@ Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.318&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.271&#39;
 </pre></div>
 </div>
 </div>
@@ -1176,68 +1270,112 @@ As for this example, this technique is relevent for many optional analysis.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">a6b69348cf6f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://www.exchange-rates.org/history/ILS/USD/T&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span> <span class="p">:</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;Rate&#39;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">:</span> <span class="s1">&#39;Notes&#39;</span><span class="p">})</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">query</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3467</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">3468</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">3469</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3470</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3471</span>         <span class="k">try</span><span class="p">:</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">eval</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3597</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;resolvers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resolvers&quot;</span><span class="p">,</span> <span class="p">())</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">resolvers</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3598</span> 
-<span class="ne">-&gt; </span><span class="mi">3599</span>         <span class="k">return</span> <span class="n">_eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3600</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3601</span>     <span class="k">def</span> <span class="nf">select_dtypes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/eval.py</span> in <span class="ni">eval</span><span class="nt">(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>         <span class="n">eng</span> <span class="o">=</span> <span class="n">ENGINES</span><span class="p">[</span><span class="n">engine</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span>         <span class="n">eng_inst</span> <span class="o">=</span> <span class="n">eng</span><span class="p">(</span><span class="n">parsed_expr</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">347</span>         <span class="n">ret</span> <span class="o">=</span> <span class="n">eng_inst</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span> 
-<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="k">if</span> <span class="n">parsed_expr</span><span class="o">.</span><span class="n">assigner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">evaluate</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> 
-<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># make sure no names in resolvers and locals/globals clash</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">return</span> <span class="n">reconstruct_object</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>             <span class="bp">self</span><span class="o">.</span><span class="n">result_type</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aligned_axes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">terms</span><span class="o">.</span><span class="n">return_type</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">_evaluate</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">env</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">env</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="n">scope</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">full_scope</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="n">_check_ne_builtin_clash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="k">return</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">local_dict</span><span class="o">=</span><span class="n">scope</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">_check_ne_builtin_clash</span><span class="nt">(expr)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">Terms</span> <span class="n">can</span> <span class="n">contain</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">29</span><span class="s2">     names = expr.names</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span><span class="s2">     overlap = names &amp; _ne_builtins</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="s2"> </span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/expr.py</span> in <span class="ni">names</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">824</span><span class="s2">         if is_term(self.terms):</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span><span class="s2">             return frozenset([self.terms.name])</span>
-<span class="nn">--&gt; 826         return frozenset(term.name for term</span> in <span class="ni">com.flatten</span><span class="nt">(self.terms))</span>
-<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">828</span><span class="s2"> </span>
-
-<span class="ne">TypeError</span>: unhashable type: &#39;numpy.ndarray&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Day</th>
+      <th>Rate</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2/19/2021</td>
+      <td>Friday</td>
+      <td>3.27334</td>
+      <td>USD ILS rate for 2/19/2021</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2/18/2021</td>
+      <td>Thursday</td>
+      <td>3.26996</td>
+      <td>USD ILS rate for 2/18/2021</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2/17/2021</td>
+      <td>Wednesday</td>
+      <td>3.26633</td>
+      <td>USD ILS rate for 2/17/2021</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2/16/2021</td>
+      <td>Tuesday</td>
+      <td>3.24366</td>
+      <td>USD ILS rate for 2/16/2021</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2/15/2021</td>
+      <td>Monday</td>
+      <td>3.24344</td>
+      <td>USD ILS rate for 2/15/2021</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>8/27/2020</td>
+      <td>Thursday</td>
+      <td>3.36740</td>
+      <td>USD ILS rate for 8/27/2020</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>8/26/2020</td>
+      <td>Wednesday</td>
+      <td>3.39530</td>
+      <td>USD ILS rate for 8/26/2020</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>8/25/2020</td>
+      <td>Tuesday</td>
+      <td>3.39675</td>
+      <td>USD ILS rate for 8/25/2020</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>8/24/2020</td>
+      <td>Monday</td>
+      <td>3.40691</td>
+      <td>USD ILS rate for 8/24/2020</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>8/23/2020</td>
+      <td>Sunday</td>
+      <td>3.39565</td>
+      <td>USD ILS rate for 8/23/2020</td>
+    </tr>
+  </tbody>
+</table>
+<p>136 rows × 4 columns</p>
+</div></div></div>
 </div>
 <p>Now let’s check in which day of the week, does the rate of the ILS is “stronger”, in accordance to the USD.<br>
 This data could be useful in order to maximize the rate when doing currency conversions on a regular basis.</p>

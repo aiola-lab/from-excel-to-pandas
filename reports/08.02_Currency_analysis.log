@@ -17,76 +17,134 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df = (
-    pd
-    .read_html('https://www.exchange-rates.org/history/ILS/USD/T')
-    [0]
-    .rename(columns = {0 : 'Date', 1: 'Day', 2 : 'Rate', 3 : 'Notes'})
-    .query('Rate.str.len() < 20')
-    .assign(Rate = lambda x : x.Rate.str.replace('[^\d\.]','',regex=True)
-    .astype(float))
+usd_rates = (
+    CurrencyRates()
+    .get_rates('USD')
 )
-df
+usd_rates
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-11-a6b69348cf6f>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m df = (
-[0;32m----> 2[0;31m     [0mpd[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      3[0m     [0;34m.[0m[0mread_html[0m[0;34m([0m[0;34m'https://www.exchange-rates.org/history/ILS/USD/T'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m     [0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m     [0;34m.[0m[0mrename[0m[0;34m([0m[0mcolumns[0m [0;34m=[0m [0;34m{[0m[0;36m0[0m [0;34m:[0m [0;34m'Date'[0m[0;34m,[0m [0;36m1[0m[0;34m:[0m [0;34m'Day'[0m[0;34m,[0m [0;36m2[0m [0;34m:[0m [0;34m'Rate'[0m[0;34m,[0m [0;36m3[0m [0;34m:[0m [0;34m'Notes'[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mgaierror[0m                                  Traceback (most recent call last)
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py[0m in [0;36m_new_conn[0;34m(self)[0m
+[1;32m    158[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 159[0;31m             conn = connection.create_connection(
+[0m[1;32m    160[0m                 [0;34m([0m[0mself[0m[0;34m.[0m[0m_dns_host[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mport[0m[0;34m)[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mtimeout[0m[0;34m,[0m [0;34m**[0m[0mextra_kw[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py[0m in [0;36mquery[0;34m(self, expr, inplace, **kwargs)[0m
-[1;32m   3467[0m         [0mkwargs[0m[0;34m[[0m[0;34m"level"[0m[0;34m][0m [0;34m=[0m [0mkwargs[0m[0;34m.[0m[0mpop[0m[0;34m([0m[0;34m"level"[0m[0;34m,[0m [0;36m0[0m[0;34m)[0m [0;34m+[0m [0;36m1[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   3468[0m         [0mkwargs[0m[0;34m[[0m[0;34m"target"[0m[0;34m][0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 3469[0;31m         [0mres[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0meval[0m[0;34m([0m[0mexpr[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   3470[0m [0;34m[0m[0m
-[1;32m   3471[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/util/connection.py[0m in [0;36mcreate_connection[0;34m(address, timeout, source_address, socket_options)[0m
+[1;32m     60[0m [0;34m[0m[0m
+[0;32m---> 61[0;31m     [0;32mfor[0m [0mres[0m [0;32min[0m [0msocket[0m[0;34m.[0m[0mgetaddrinfo[0m[0;34m([0m[0mhost[0m[0;34m,[0m [0mport[0m[0;34m,[0m [0mfamily[0m[0;34m,[0m [0msocket[0m[0;34m.[0m[0mSOCK_STREAM[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     62[0m         [0maf[0m[0;34m,[0m [0msocktype[0m[0;34m,[0m [0mproto[0m[0;34m,[0m [0mcanonname[0m[0;34m,[0m [0msa[0m [0;34m=[0m [0mres[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py[0m in [0;36meval[0;34m(self, expr, inplace, **kwargs)[0m
-[1;32m   3597[0m         [0mkwargs[0m[0;34m[[0m[0;34m"resolvers"[0m[0;34m][0m [0;34m=[0m [0mkwargs[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m"resolvers"[0m[0;34m,[0m [0;34m([0m[0;34m)[0m[0;34m)[0m [0;34m+[0m [0mtuple[0m[0;34m([0m[0mresolvers[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   3598[0m [0;34m[0m[0m
-[0;32m-> 3599[0;31m         [0;32mreturn[0m [0m_eval[0m[0;34m([0m[0mexpr[0m[0;34m,[0m [0minplace[0m[0;34m=[0m[0minplace[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   3600[0m [0;34m[0m[0m
-[1;32m   3601[0m     [0;32mdef[0m [0mselect_dtypes[0m[0;34m([0m[0mself[0m[0;34m,[0m [0minclude[0m[0;34m=[0m[0;32mNone[0m[0;34m,[0m [0mexclude[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m [0;34m->[0m [0mDataFrame[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m~/opt/anaconda3/lib/python3.8/socket.py[0m in [0;36mgetaddrinfo[0;34m(host, port, family, type, proto, flags)[0m
+[1;32m    917[0m     [0maddrlist[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 918[0;31m     [0;32mfor[0m [0mres[0m [0;32min[0m [0m_socket[0m[0;34m.[0m[0mgetaddrinfo[0m[0;34m([0m[0mhost[0m[0;34m,[0m [0mport[0m[0;34m,[0m [0mfamily[0m[0;34m,[0m [0mtype[0m[0;34m,[0m [0mproto[0m[0;34m,[0m [0mflags[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    919[0m         [0maf[0m[0;34m,[0m [0msocktype[0m[0;34m,[0m [0mproto[0m[0;34m,[0m [0mcanonname[0m[0;34m,[0m [0msa[0m [0;34m=[0m [0mres[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/eval.py[0m in [0;36meval[0;34m(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)[0m
-[1;32m    345[0m         [0meng[0m [0;34m=[0m [0mENGINES[0m[0;34m[[0m[0mengine[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m    346[0m         [0meng_inst[0m [0;34m=[0m [0meng[0m[0;34m([0m[0mparsed_expr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 347[0;31m         [0mret[0m [0;34m=[0m [0meng_inst[0m[0;34m.[0m[0mevaluate[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    348[0m [0;34m[0m[0m
-[1;32m    349[0m         [0;32mif[0m [0mparsed_expr[0m[0;34m.[0m[0massigner[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;31mgaierror[0m: [Errno 8] nodename nor servname provided, or not known
 
-[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py[0m in [0;36mevaluate[0;34m(self)[0m
-[1;32m     71[0m [0;34m[0m[0m
-[1;32m     72[0m         [0;31m# make sure no names in resolvers and locals/globals clash[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 73[0;31m         [0mres[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_evaluate[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     74[0m         return reconstruct_object(
-[1;32m     75[0m             [0mself[0m[0;34m.[0m[0mresult_type[0m[0;34m,[0m [0mres[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0maligned_axes[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mexpr[0m[0;34m.[0m[0mterms[0m[0;34m.[0m[0mreturn_type[0m[0;34m[0m[0;34m[0m[0m
+During handling of the above exception, another exception occurred:
 
-[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py[0m in [0;36m_evaluate[0;34m(self)[0m
-[1;32m    111[0m         [0menv[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mexpr[0m[0;34m.[0m[0menv[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    112[0m         [0mscope[0m [0;34m=[0m [0menv[0m[0;34m.[0m[0mfull_scope[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 113[0;31m         [0m_check_ne_builtin_clash[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mexpr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    114[0m         [0;32mreturn[0m [0mne[0m[0;34m.[0m[0mevaluate[0m[0;34m([0m[0ms[0m[0;34m,[0m [0mlocal_dict[0m[0;34m=[0m[0mscope[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    115[0m [0;34m[0m[0m
+[0;31mNewConnectionError[0m                        Traceback (most recent call last)
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py[0m in [0;36murlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    669[0m             [0;31m# Make the request on the httplib connection object.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 670[0;31m             httplib_response = self._make_request(
+[0m[1;32m    671[0m                 [0mconn[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py[0m in [0;36m_check_ne_builtin_clash[0;34m(expr)[0m
-[1;32m     27[0m         [0mTerms[0m [0mcan[0m [0mcontain[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     28[0m     """
-[0;32m---> 29[0;31m     [0mnames[0m [0;34m=[0m [0mexpr[0m[0;34m.[0m[0mnames[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     30[0m     [0moverlap[0m [0;34m=[0m [0mnames[0m [0;34m&[0m [0m_ne_builtins[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     31[0m [0;34m[0m[0m
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py[0m in [0;36m_make_request[0;34m(self, conn, method, url, timeout, chunked, **httplib_request_kw)[0m
+[1;32m    380[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 381[0;31m             [0mself[0m[0;34m.[0m[0m_validate_conn[0m[0;34m([0m[0mconn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    382[0m         [0;32mexcept[0m [0;34m([0m[0mSocketTimeout[0m[0;34m,[0m [0mBaseSSLError[0m[0;34m)[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/expr.py[0m in [0;36mnames[0;34m(self)[0m
-[1;32m    824[0m         [0;32mif[0m [0mis_term[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mterms[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    825[0m             [0;32mreturn[0m [0mfrozenset[0m[0;34m([0m[0;34m[[0m[0mself[0m[0;34m.[0m[0mterms[0m[0;34m.[0m[0mname[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 826[0;31m         [0;32mreturn[0m [0mfrozenset[0m[0;34m([0m[0mterm[0m[0;34m.[0m[0mname[0m [0;32mfor[0m [0mterm[0m [0;32min[0m [0mcom[0m[0;34m.[0m[0mflatten[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mterms[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    827[0m [0;34m[0m[0m
-[1;32m    828[0m [0;34m[0m[0m
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py[0m in [0;36m_validate_conn[0;34m(self, conn)[0m
+[1;32m    977[0m         [0;32mif[0m [0;32mnot[0m [0mgetattr[0m[0;34m([0m[0mconn[0m[0;34m,[0m [0;34m"sock"[0m[0;34m,[0m [0;32mNone[0m[0;34m)[0m[0;34m:[0m  [0;31m# AppEngine might not have  `.sock`[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 978[0;31m             [0mconn[0m[0;34m.[0m[0mconnect[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    979[0m [0;34m[0m[0m
 
-[0;31mTypeError[0m: unhashable type: 'numpy.ndarray'
-TypeError: unhashable type: 'numpy.ndarray'
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py[0m in [0;36mconnect[0;34m(self)[0m
+[1;32m    308[0m         [0;31m# Add certificate verification[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 309[0;31m         [0mconn[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_new_conn[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    310[0m         [0mhostname[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mhost[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py[0m in [0;36m_new_conn[0;34m(self)[0m
+[1;32m    170[0m         [0;32mexcept[0m [0mSocketError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 171[0;31m             raise NewConnectionError(
+[0m[1;32m    172[0m                 [0mself[0m[0;34m,[0m [0;34m"Failed to establish a new connection: %s"[0m [0;34m%[0m [0me[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+[0;31mMaxRetryError[0m                             Traceback (most recent call last)
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/requests/adapters.py[0m in [0;36msend[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    438[0m             [0;32mif[0m [0;32mnot[0m [0mchunked[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 439[0;31m                 resp = conn.urlopen(
+[0m[1;32m    440[0m                     [0mmethod[0m[0;34m=[0m[0mrequest[0m[0;34m.[0m[0mmethod[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py[0m in [0;36murlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    725[0m [0;34m[0m[0m
+[0;32m--> 726[0;31m             retries = retries.increment(
+[0m[1;32m    727[0m                 [0mmethod[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m[0;34m=[0m[0me[0m[0;34m,[0m [0m_pool[0m[0;34m=[0m[0mself[0m[0;34m,[0m [0m_stacktrace[0m[0;34m=[0m[0msys[0m[0;34m.[0m[0mexc_info[0m[0;34m([0m[0;34m)[0m[0;34m[[0m[0;36m2[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/urllib3/util/retry.py[0m in [0;36mincrement[0;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[1;32m    445[0m         [0;32mif[0m [0mnew_retry[0m[0;34m.[0m[0mis_exhausted[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 446[0;31m             [0;32mraise[0m [0mMaxRetryError[0m[0;34m([0m[0m_pool[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m [0;32mor[0m [0mResponseError[0m[0;34m([0m[0mcause[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    447[0m [0;34m[0m[0m
+
+[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+[0;31mConnectionError[0m                           Traceback (most recent call last)
+[0;32m<ipython-input-3-c8ca15bc87d1>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m usd_rates = (
+[0;32m----> 2[0;31m     [0mCurrencyRates[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m     [0;34m.[0m[0mget_rates[0m[0;34m([0m[0;34m'USD'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m )
+[1;32m      5[0m [0musd_rates[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/forex_python/converter.py[0m in [0;36mget_rates[0;34m(self, base_cur, date_obj)[0m
+[1;32m     50[0m         [0mpayload[0m [0;34m=[0m [0;34m{[0m[0;34m'base'[0m[0;34m:[0m [0mbase_cur[0m[0;34m,[0m [0;34m'rtype'[0m[0;34m:[0m [0;34m'fpy'[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     51[0m         [0msource_url[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_source_url[0m[0;34m([0m[0;34m)[0m [0;34m+[0m [0mdate_str[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 52[0;31m         [0mresponse[0m [0;34m=[0m [0mrequests[0m[0;34m.[0m[0mget[0m[0;34m([0m[0msource_url[0m[0;34m,[0m [0mparams[0m[0;34m=[0m[0mpayload[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     53[0m         [0;32mif[0m [0mresponse[0m[0;34m.[0m[0mstatus_code[0m [0;34m==[0m [0;36m200[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     54[0m             [0mrates[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_decode_rates[0m[0;34m([0m[0mresponse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/requests/api.py[0m in [0;36mget[0;34m(url, params, **kwargs)[0m
+[1;32m     74[0m [0;34m[0m[0m
+[1;32m     75[0m     [0mkwargs[0m[0;34m.[0m[0msetdefault[0m[0;34m([0m[0;34m'allow_redirects'[0m[0;34m,[0m [0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 76[0;31m     [0;32mreturn[0m [0mrequest[0m[0;34m([0m[0;34m'get'[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0mparams[0m[0;34m=[0m[0mparams[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     77[0m [0;34m[0m[0m
+[1;32m     78[0m [0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/requests/api.py[0m in [0;36mrequest[0;34m(method, url, **kwargs)[0m
+[1;32m     59[0m     [0;31m# cases, and look like a memory leak in others.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     60[0m     [0;32mwith[0m [0msessions[0m[0;34m.[0m[0mSession[0m[0;34m([0m[0;34m)[0m [0;32mas[0m [0msession[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 61[0;31m         [0;32mreturn[0m [0msession[0m[0;34m.[0m[0mrequest[0m[0;34m([0m[0mmethod[0m[0;34m=[0m[0mmethod[0m[0;34m,[0m [0murl[0m[0;34m=[0m[0murl[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     62[0m [0;34m[0m[0m
+[1;32m     63[0m [0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/requests/sessions.py[0m in [0;36mrequest[0;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[1;32m    540[0m         }
+[1;32m    541[0m         [0msend_kwargs[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0msettings[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 542[0;31m         [0mresp[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mprep[0m[0;34m,[0m [0;34m**[0m[0msend_kwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    543[0m [0;34m[0m[0m
+[1;32m    544[0m         [0;32mreturn[0m [0mresp[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/requests/sessions.py[0m in [0;36msend[0;34m(self, request, **kwargs)[0m
+[1;32m    653[0m [0;34m[0m[0m
+[1;32m    654[0m         [0;31m# Send the request[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 655[0;31m         [0mr[0m [0;34m=[0m [0madapter[0m[0;34m.[0m[0msend[0m[0;34m([0m[0mrequest[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    656[0m [0;34m[0m[0m
+[1;32m    657[0m         [0;31m# Total elapsed time of the request (approximately)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/site-packages/requests/adapters.py[0m in [0;36msend[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    514[0m                 [0;32mraise[0m [0mSSLError[0m[0;34m([0m[0me[0m[0;34m,[0m [0mrequest[0m[0;34m=[0m[0mrequest[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    515[0m [0;34m[0m[0m
+[0;32m--> 516[0;31m             [0;32mraise[0m [0mConnectionError[0m[0;34m([0m[0me[0m[0;34m,[0m [0mrequest[0m[0;34m=[0m[0mrequest[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    517[0m [0;34m[0m[0m
+[1;32m    518[0m         [0;32mexcept[0m [0mClosedPoolError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mConnectionError[0m: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+ConnectionError: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
 

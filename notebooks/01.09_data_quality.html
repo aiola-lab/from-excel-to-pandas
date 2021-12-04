@@ -105,6 +105,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started.html#open-in-aws-sagemaker-studio-lab">
+   Open in AWS SageMaker Studio Lab
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
    Open in Binder/Colab
   </a>
@@ -279,7 +284,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://notebooks.gesis.org/binder/v2/gh/aiola-lab/from-excel-to-pandas/HEAD/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/01.09_data_quality.ipynb"><button type="button"
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/01.09_data_quality.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -316,76 +321,87 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: great_expectations in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (0.13.11)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema&gt;=2.5.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (3.2.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=0.23.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.2.3)
+Requirement already satisfied: requests&gt;=2.20 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.25.1)
 Requirement already satisfied: tzlocal&gt;=1.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.1)
+Requirement already satisfied: numpy&lt;1.20.0,&gt;=1.14.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.19.5)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.8.1)
+Requirement already satisfied: scipy&gt;=0.19.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.6.1)
+Requirement already satisfied: jsonpatch&gt;=1.22 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.30)
+Requirement already satisfied: altair&lt;5,&gt;=4.0.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (4.1.0)
+Requirement already satisfied: Click&gt;=7.1.2 in /Users/guy/.local/lib/python3.8/site-packages (from great_expectations) (8.0.1)
+Requirement already satisfied: pyparsing&lt;3,&gt;=2.4 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.4.7)
 Requirement already satisfied: importlib-metadata&gt;=1.7.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (3.7.0)
+Requirement already satisfied: termcolor&gt;=1.1.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.1.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jinja2&gt;=2.10 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.11.3)
+Requirement already satisfied: pytz&gt;=2015.6 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2021.1)
+Requirement already satisfied: ipywidgets&gt;=7.5.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (7.6.3)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ruamel.yaml&gt;=0.16
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached ruamel.yaml-0.16.13-py2.py3-none-any.whl (111 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ruamel.yaml-0.17.17-py3-none-any.whl (109 kB)
+?25l
+     |███                             | 10 kB 8.3 MB/s eta 0:00:01
+     |██████                          | 20 kB 3.2 MB/s eta 0:00:01
+     |█████████                       | 30 kB 2.0 MB/s eta 0:00:01
+     |████████████                    | 40 kB 2.0 MB/s eta 0:00:01
+     |███████████████                 | 51 kB 2.2 MB/s eta 0:00:01
+     |██████████████████              | 61 kB 2.0 MB/s eta 0:00:01
+     |█████████████████████           | 71 kB 2.3 MB/s eta 0:00:01
+     |████████████████████████        | 81 kB 2.6 MB/s eta 0:00:01
+     |███████████████████████████     | 92 kB 2.7 MB/s eta 0:00:01
+     |██████████████████████████████  | 102 kB 3.0 MB/s eta 0:00:01
+     |████████████████████████████████| 109 kB 3.0 MB/s 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: jsonschema&gt;=2.5.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (3.2.0)
 Requirement already satisfied: mistune&gt;=0.8.4 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (0.8.4)
-Requirement already satisfied: numpy&lt;1.20.0,&gt;=1.14.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.19.5)
-Requirement already satisfied: Click&gt;=7.1.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (7.1.2)
-Requirement already satisfied: pytz&gt;=2015.6 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2021.1)
-Requirement already satisfied: pandas&gt;=0.23.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.2.3)
-Requirement already satisfied: altair&lt;5,&gt;=4.0.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (4.1.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests&gt;=2.20 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.25.1)
-Requirement already satisfied: scipy&gt;=0.19.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.6.1)
-Requirement already satisfied: jsonpatch&gt;=1.22 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.30)
-Requirement already satisfied: ipywidgets&gt;=7.5.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (7.6.3)
-Requirement already satisfied: jinja2&gt;=2.10 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.11.3)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.8.1)
-Requirement already satisfied: termcolor&gt;=1.1.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (1.1.0)
-Requirement already satisfied: pyparsing&lt;3,&gt;=2.4 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from great_expectations) (2.4.7)
-Requirement already satisfied: setuptools in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonschema&gt;=2.5.1-&gt;great_expectations) (54.0.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonschema&gt;=2.5.1-&gt;great_expectations) (0.17.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.11.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonschema&gt;=2.5.1-&gt;great_expectations) (1.15.0)
-Requirement already satisfied: attrs&gt;=17.4.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonschema&gt;=2.5.1-&gt;great_expectations) (20.3.0)
-Requirement already satisfied: zipp&gt;=0.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from importlib-metadata&gt;=1.7.0-&gt;great_expectations) (3.4.0)
-Requirement already satisfied: ruamel.yaml.clib&gt;=0.1.2; platform_python_implementation == &quot;CPython&quot; and python_version &lt; &quot;3.10&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ruamel.yaml&gt;=0.16-&gt;great_expectations) (0.2.2)
-Requirement already satisfied: entrypoints in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from altair&lt;5,&gt;=4.0.0-&gt;great_expectations) (0.3)
-Requirement already satisfied: toolz in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from altair&lt;5,&gt;=4.0.0-&gt;great_expectations) (0.11.1)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;great_expectations) (1.25.11)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;great_expectations) (4.0.0)
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;great_expectations) (2.10)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;great_expectations) (2020.12.5)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests&gt;=2.20-&gt;great_expectations) (4.0.0)
+Requirement already satisfied: six&gt;=1.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.1-&gt;great_expectations) (1.15.0)
 Requirement already satisfied: jsonpointer&gt;=1.9 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonpatch&gt;=1.22-&gt;great_expectations) (2.0)
+Requirement already satisfied: entrypoints in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from altair&lt;5,&gt;=4.0.0-&gt;great_expectations) (0.3)
+Requirement already satisfied: toolz in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from altair&lt;5,&gt;=4.0.0-&gt;great_expectations) (0.11.1)
+Requirement already satisfied: zipp&gt;=0.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from importlib-metadata&gt;=1.7.0-&gt;great_expectations) (3.4.0)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jinja2&gt;=2.10-&gt;great_expectations) (1.1.1)
 Requirement already satisfied: widgetsnbextension~=3.5.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (3.5.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nbformat&gt;=4.2.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (5.1.2)
-Requirement already satisfied: ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (7.21.0)
+Requirement already satisfied: nbformat&gt;=4.2.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (5.1.2)
 Requirement already satisfied: ipykernel&gt;=4.5.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (5.5.0)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (5.0.5)
+Requirement already satisfied: ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (7.21.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0; python_version &gt;= &quot;3.6&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (1.0.0)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipywidgets&gt;=7.5.1-&gt;great_expectations) (5.0.5)
-Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jinja2&gt;=2.10-&gt;great_expectations) (1.1.1)
+Requirement already satisfied: ruamel.yaml.clib&gt;=0.1.2; platform_python_implementation == &quot;CPython&quot; and python_version &lt; &quot;3.10&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ruamel.yaml&gt;=0.16-&gt;great_expectations) (0.2.2)
+Requirement already satisfied: setuptools in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonschema&gt;=2.5.1-&gt;great_expectations) (54.0.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonschema&gt;=2.5.1-&gt;great_expectations) (20.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyrsistent&gt;=0.14.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from jsonschema&gt;=2.5.1-&gt;great_expectations) (0.17.3)
 Requirement already satisfied: notebook&gt;=4.4.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from widgetsnbextension~=3.5.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (6.2.0)
-Requirement already satisfied: ipython-genutils in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.2.0)
 Requirement already satisfied: jupyter-core in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (4.7.1)
-Requirement already satisfied: pygments in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (2.8.0)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (3.0.16)
-Requirement already satisfied: backcall in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.2.0)
+Requirement already satisfied: ipython-genutils in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.2.0)
+Requirement already satisfied: appnope; platform_system == &quot;Darwin&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.1.2)
+Requirement already satisfied: tornado&gt;=4.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (6.1)
+Requirement already satisfied: jupyter-client in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (6.1.11)
 Requirement already satisfied: jedi&gt;=0.16 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.18.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (4.4.2)
-Requirement already satisfied: appnope; sys_platform == &quot;darwin&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.1.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pickleshare in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.7.5)
 Requirement already satisfied: pexpect&gt;4.3; sys_platform != &quot;win32&quot; in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (4.8.0)
-Requirement already satisfied: pickleshare in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.7.5)
-Requirement already satisfied: jupyter-client in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (6.1.11)
-Requirement already satisfied: tornado&gt;=4.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (6.1)
+Requirement already satisfied: pygments in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (2.8.0)
+Requirement already satisfied: backcall in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.2.0)
+Requirement already satisfied: decorator in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (4.4.2)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (3.0.16)
 Requirement already satisfied: prometheus-client in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.9.0)
-Requirement already satisfied: argon2-cffi in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (20.1.0)
-Requirement already satisfied: Send2Trash&gt;=1.5.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (1.5.0)
-Requirement already satisfied: terminado&gt;=0.8.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (0.9.2)
 Requirement already satisfied: nbconvert in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets&gt;=7.5.1-&gt;great_expectations) (6.0.7)
 <span class=" -Color -Color-Yellow">WARNING: No metadata found in /Users/guy/opt/anaconda3/lib/python3.8/site-packages</span>
 <span class=" -Color -Color-Red">ERROR: Could not install packages due to an EnvironmentError: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
@@ -561,6 +577,7 @@ Requirement already satisfied: nbconvert in /Users/guy/opt/anaconda3/lib/python3
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {},
   &quot;result&quot;: {
     &quot;observed_value&quot;: [
       &quot;\u05d7\u05e0\u05d5\u05d9\u05d5\u05ea \u05e0\u05d5\u05d7\u05d5\u05ea&quot;,
@@ -579,7 +596,6 @@ Requirement already satisfied: nbconvert in /Users/guy/opt/anaconda3/lib/python3
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;meta&quot;: {},
   &quot;success&quot;: true
 }
 </pre></div>
@@ -695,6 +711,7 @@ Requirement already satisfied: nbconvert in /Users/guy/opt/anaconda3/lib/python3
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {},
   &quot;result&quot;: {
     &quot;observed_value&quot;: 2.3964,
     &quot;element_count&quot;: 615101,
@@ -706,7 +723,6 @@ Requirement already satisfied: nbconvert in /Users/guy/opt/anaconda3/lib/python3
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;meta&quot;: {},
   &quot;success&quot;: true
 }
 </pre></div>
@@ -980,6 +996,7 @@ Requirement already satisfied: nbconvert in /Users/guy/opt/anaconda3/lib/python3
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {},
   &quot;result&quot;: {
     &quot;observed_value&quot;: 8105.961659946315,
     &quot;element_count&quot;: 425821,
@@ -991,7 +1008,6 @@ Requirement already satisfied: nbconvert in /Users/guy/opt/anaconda3/lib/python3
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;meta&quot;: {},
   &quot;success&quot;: true
 }
 </pre></div>
@@ -1278,6 +1294,7 @@ memory usage: 117.0+ MB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {},
   &quot;result&quot;: {
     &quot;observed_value&quot;: 94.2,
     &quot;element_count&quot;: 425821,
@@ -1289,7 +1306,6 @@ memory usage: 117.0+ MB
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;meta&quot;: {},
   &quot;success&quot;: false
 }
 </pre></div>
@@ -1304,6 +1320,9 @@ memory usage: 117.0+ MB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {
+    &quot;notes&quot;: &quot;The scaling might fail&quot;
+  },
   &quot;result&quot;: {
     &quot;observed_value&quot;: 211.62925149299676,
     &quot;element_count&quot;: 425821,
@@ -1314,9 +1333,6 @@ memory usage: 117.0+ MB
     &quot;raised_exception&quot;: false,
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
-  },
-  &quot;meta&quot;: {
-    &quot;notes&quot;: &quot;The scaling might fail&quot;
   },
   &quot;success&quot;: false
 }
@@ -1332,6 +1348,9 @@ memory usage: 117.0+ MB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {
+    &quot;notes&quot;: &quot;The scaling might fail&quot;
+  },
   &quot;result&quot;: {
     &quot;observed_value&quot;: 162.5666265872325,
     &quot;element_count&quot;: 425821,
@@ -1342,9 +1361,6 @@ memory usage: 117.0+ MB
     &quot;raised_exception&quot;: false,
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
-  },
-  &quot;meta&quot;: {
-    &quot;notes&quot;: &quot;The scaling might fail&quot;
   },
   &quot;success&quot;: false
 }
@@ -1360,6 +1376,7 @@ memory usage: 117.0+ MB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {},
   &quot;result&quot;: {
     &quot;observed_value&quot;: 30.77638523720652,
     &quot;element_count&quot;: 425821,
@@ -1371,7 +1388,6 @@ memory usage: 117.0+ MB
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;meta&quot;: {},
   &quot;success&quot;: true
 }
 </pre></div>
@@ -1386,6 +1402,7 @@ memory usage: 117.0+ MB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {},
   &quot;result&quot;: {
     &quot;observed_value&quot;: 74.53941746662224,
     &quot;element_count&quot;: 425821,
@@ -1397,7 +1414,6 @@ memory usage: 117.0+ MB
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;meta&quot;: {},
   &quot;success&quot;: true
 }
 </pre></div>
@@ -1412,6 +1428,7 @@ memory usage: 117.0+ MB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;meta&quot;: {},
   &quot;result&quot;: {
     &quot;observed_value&quot;: 13.446193705448378,
     &quot;element_count&quot;: 425821,
@@ -1423,7 +1440,6 @@ memory usage: 117.0+ MB
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;meta&quot;: {},
   &quot;success&quot;: true
 }
 </pre></div>
