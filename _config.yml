@@ -11,11 +11,10 @@ execute:
   timeout: 600
 
 # Information about where the book exists on the web
-# repository:
-#   url : https://github.com/aiola-lab/from-excel-to-pandas  
+repository:
+  url : https://github.com/aiola-lab/from-excel-to-pandas  # Online location of your book
+  branch : master  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
-  binderhub_url: "https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas/" 
+  notebook_interface: jupyterlab
 
-bibtex_bibfiles:
-   - references.bib
