@@ -28,7 +28,7 @@ json_series = (
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-19-9c1a5abccbfa>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-20-9c1a5abccbfa>[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m json_series = (
 [0;32m----> 2[0;31m     [0mdf[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m     [0;34m.[0m[0mrename[0m[0;34m([0m[0mcolumns[0m[0;34m=[0m[0;34m{[0m[0;34m'Time Series (1min)'[0m[0;34m:[0m[0;34m'ts'[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

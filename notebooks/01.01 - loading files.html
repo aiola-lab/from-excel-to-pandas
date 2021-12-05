@@ -286,7 +286,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/01.01 - loading files.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aiola-lab/from-excel-to-pandas/master?urlpath=lab/tree/notebooks/01.01 - loading files.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -344,6 +344,7 @@
 <h1>Loading Data Files (CSV or XLSX)<a class="headerlink" href="#loading-data-files-csv-or-xlsx" title="Permalink to this headline">¶</a></h1>
 <p>In the first chapter we will learn how to load data into Pandas DataFrames. We will load multile formats of data sources including CSV files, Excel files, tables from web sites, tables in Databases, etc.</p>
 <p>You can review the official Pandas documentation about <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/io.html">reading and writing data</a>, or you can follow the simple examples here with real life examples.</p>
+<p><a class="reference external" href="https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/01.01%20-%20loading%20files.ipynb"><img alt="Open In Studio Lab" src="https://studiolab.sagemaker.aws/studiolab.svg" /></a></p>
 <p>To make the notebooks cleaner and easier to read we will suppress warnings. Bad practice, however, OK for a tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -363,15 +364,13 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (1.2.3)
 Requirement already satisfied: matplotlib in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (3.3.2)
 Requirement already satisfied: pytz&gt;=2017.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pandas) (2021.1)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pandas) (2.8.1)
 Requirement already satisfied: numpy&gt;=1.16.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pandas) (1.19.5)
-Requirement already satisfied: certifi&gt;=2020.06.20 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (2020.12.5)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from pandas) (2.8.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (1.3.0)
 Requirement already satisfied: pillow&gt;=6.2.0 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (8.0.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (1.3.0)
 Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.3 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (2.4.7)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: certifi&gt;=2020.06.20 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from matplotlib) (2020.12.5)
 Requirement already satisfied: six&gt;=1.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.15.0)
 </pre></div>
 </div>

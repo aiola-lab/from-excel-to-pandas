@@ -286,7 +286,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/08.02_Currency_analysis.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aiola-lab/from-excel-to-pandas/master?urlpath=lab/tree/notebooks/08.02_Currency_analysis.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -397,6 +397,7 @@
 </div></blockquote>
 <p>A very used expression in our life, and if utilized just right, also very useful.</p>
 <p>In this notebook, we query a REST API to get the latest currency rates for many currencies. Using dynamic API compared to loading static files allows for updated data to be processed.</p>
+<p><a class="reference external" href="https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/08.02_Currency_analysis.ipynb"><img alt="Open In Studio Lab" src="https://studiolab.sagemaker.aws/studiolab.svg" /></a></p>
 <div class="section" id="loading-data-using-api">
 <h2>Loading data using API<a class="headerlink" href="#loading-data-using-api" title="Permalink to this headline">¶</a></h2>
 <p>First of all, let’s get our data.</p>
@@ -409,14 +410,14 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: forex-python in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (1.5)
-Requirement already satisfied: requests in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (2.25.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: simplejson in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (3.17.2)
+Requirement already satisfied: requests in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (2.25.1)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.11)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (4.0.0)
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.10)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.12.5)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (4.0.0)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.11)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
@@ -498,7 +499,7 @@ Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/ana
 <span class="ne">--&gt; </span><span class="mi">171</span>             <span class="k">raise</span> <span class="n">NewConnectionError</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">172</span>                 <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Failed to establish a new connection: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span>
 
-<span class="ne">NewConnectionError</span>: &lt;urllib3.connection.HTTPSConnection object at 0x7f9e70629d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+<span class="ne">NewConnectionError</span>: &lt;urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -518,7 +519,7 @@ Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/ana
 <span class="ne">--&gt; </span><span class="mi">446</span>             <span class="k">raise</span> <span class="n">MaxRetryError</span><span class="p">(</span><span class="n">_pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">error</span> <span class="ow">or</span> <span class="n">ResponseError</span><span class="p">(</span><span class="n">cause</span><span class="p">))</span>
 <span class="g g-Whitespace">    </span><span class="mi">447</span> 
 
-<span class="ne">MaxRetryError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f9e70629d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
+<span class="ne">MaxRetryError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -572,7 +573,7 @@ Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/ana
 <span class="g g-Whitespace">    </span><span class="mi">517</span> 
 <span class="g g-Whitespace">    </span><span class="mi">518</span>         <span class="k">except</span> <span class="n">ClosedPoolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 
-<span class="ne">ConnectionError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7f9e70629d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
+<span class="ne">ConnectionError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
 </pre></div>
 </div>
 </div>

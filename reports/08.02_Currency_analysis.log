@@ -71,7 +71,7 @@ During handling of the above exception, another exception occurred:
 [0;32m--> 171[0;31m             raise NewConnectionError(
 [0m[1;32m    172[0m                 [0mself[0m[0;34m,[0m [0;34m"Failed to establish a new connection: %s"[0m [0;34m%[0m [0me[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
 
 During handling of the above exception, another exception occurred:
 
@@ -91,7 +91,7 @@ During handling of the above exception, another exception occurred:
 [0;32m--> 446[0;31m             [0;32mraise[0m [0mMaxRetryError[0m[0;34m([0m[0m_pool[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m [0;32mor[0m [0mResponseError[0m[0;34m([0m[0mcause[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    447[0m [0;34m[0m[0m
 
-[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
 
 During handling of the above exception, another exception occurred:
 
@@ -145,6 +145,6 @@ During handling of the above exception, another exception occurred:
 [0m[1;32m    517[0m [0;34m[0m[0m
 [1;32m    518[0m         [0;32mexcept[0m [0mClosedPoolError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mConnectionError[0m: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
-ConnectionError: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9e70629d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[0;31mConnectionError[0m: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+ConnectionError: HTTPSConnectionPool(host='api.ratesapi.io', port=443): Max retries exceeded with url: /api/latest?base=USD&rtype=fpy (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
 

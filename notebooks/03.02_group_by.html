@@ -286,7 +286,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/03.02_group_by.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aiola-lab/from-excel-to-pandas/master?urlpath=lab/tree/notebooks/03.02_group_by.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -380,6 +380,7 @@
 <li><p><strong>apply</strong> some aggregation or other function on each group, and then</p></li>
 <li><p><strong>combine</strong> them back together into a single table.</p></li>
 </ul>
+<p><a class="reference external" href="https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/03.02_group_by.ipynb"><img alt="Open In Studio Lab" src="https://studiolab.sagemaker.aws/studiolab.svg" /></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1139,24 +1140,24 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style  type="text/css" >
-</style><table id="T_ada49_" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >id</th>    </tr>    <tr>        <th class="index_name level0" >annual_income</th>        <th class="index_name level1" >gender</th>        <th class="blank" ></th>    </tr></thead><tbody>
+</style><table id="T_be9cd_" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >id</th>    </tr>    <tr>        <th class="index_name level0" >annual_income</th>        <th class="index_name level1" >gender</th>        <th class="blank" ></th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_ada49_level0_row0" class="row_heading level0 row0" rowspan="2"> <=50K</th>
-                        <th id="T_ada49_level1_row0" class="row_heading level1 row0" > Female</th>
-                        <td id="T_ada49_row0_col0" class="data row0 col0" >38.80%</td>
+                        <th id="T_be9cd_level0_row0" class="row_heading level0 row0" rowspan="2"> <=50K</th>
+                        <th id="T_be9cd_level1_row0" class="row_heading level1 row0" > Female</th>
+                        <td id="T_be9cd_row0_col0" class="data row0 col0" >38.80%</td>
             </tr>
             <tr>
-                                <th id="T_ada49_level1_row1" class="row_heading level1 row1" > Male</th>
-                        <td id="T_ada49_row1_col0" class="data row1 col0" >61.20%</td>
+                                <th id="T_be9cd_level1_row1" class="row_heading level1 row1" > Male</th>
+                        <td id="T_be9cd_row1_col0" class="data row1 col0" >61.20%</td>
             </tr>
             <tr>
-                        <th id="T_ada49_level0_row2" class="row_heading level0 row2" rowspan="2"> >50K</th>
-                        <th id="T_ada49_level1_row2" class="row_heading level1 row2" > Female</th>
-                        <td id="T_ada49_row2_col0" class="data row2 col0" >15.04%</td>
+                        <th id="T_be9cd_level0_row2" class="row_heading level0 row2" rowspan="2"> >50K</th>
+                        <th id="T_be9cd_level1_row2" class="row_heading level1 row2" > Female</th>
+                        <td id="T_be9cd_row2_col0" class="data row2 col0" >15.04%</td>
             </tr>
             <tr>
-                                <th id="T_ada49_level1_row3" class="row_heading level1 row3" > Male</th>
-                        <td id="T_ada49_row3_col0" class="data row3 col0" >84.96%</td>
+                                <th id="T_be9cd_level1_row3" class="row_heading level1 row3" > Male</th>
+                        <td id="T_be9cd_row3_col0" class="data row3 col0" >84.96%</td>
             </tr>
     </tbody></table></div></div>
 </div>
@@ -1193,67 +1194,67 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style  type="text/css" >
-#T_c3058_row0_col0,#T_c3058_row1_col1,#T_c3058_row2_col0,#T_c3058_row3_col1,#T_c3058_row4_col0,#T_c3058_row5_col1,#T_c3058_row6_col0,#T_c3058_row7_col1{
+#T_f9aef_row0_col0,#T_f9aef_row1_col1,#T_f9aef_row2_col0,#T_f9aef_row3_col1,#T_f9aef_row4_col0,#T_f9aef_row5_col1,#T_f9aef_row6_col0,#T_f9aef_row7_col1{
             background-color:  #3b4cc0;
             color:  #f1f1f1;
-        }#T_c3058_row0_col1,#T_c3058_row1_col0{
+        }#T_f9aef_row0_col1,#T_f9aef_row1_col0{
             background-color:  #ec8165;
             color:  #000000;
-        }#T_c3058_row2_col1,#T_c3058_row3_col0{
+        }#T_f9aef_row2_col1,#T_f9aef_row3_col0{
             background-color:  #b6cefa;
             color:  #000000;
-        }#T_c3058_row4_col1,#T_c3058_row5_col0{
+        }#T_f9aef_row4_col1,#T_f9aef_row5_col0{
             background-color:  #b40426;
             color:  #f1f1f1;
-        }#T_c3058_row6_col1,#T_c3058_row7_col0{
+        }#T_f9aef_row6_col1,#T_f9aef_row7_col0{
             background-color:  #8fb1fe;
             color:  #000000;
-        }</style><table id="T_c3058_" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >education_num</th>        <th class="col_heading level0 col1" >hours_per_week</th>    </tr>    <tr>        <th class="index_name level0" >annual_income</th>        <th class="index_name level1" >gender</th>        <th class="index_name level2" ></th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+        }</style><table id="T_f9aef_" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >education_num</th>        <th class="col_heading level0 col1" >hours_per_week</th>    </tr>    <tr>        <th class="index_name level0" >annual_income</th>        <th class="index_name level1" >gender</th>        <th class="index_name level2" ></th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_c3058_level0_row0" class="row_heading level0 row0" rowspan="4"> <=50K</th>
-                        <th id="T_c3058_level1_row0" class="row_heading level1 row0" rowspan="2"> Female</th>
-                        <th id="T_c3058_level2_row0" class="row_heading level2 row0" >education_num</th>
-                        <td id="T_c3058_row0_col0" class="data row0 col0" >0.0</td>
-                        <td id="T_c3058_row0_col1" class="data row0 col1" >0.151</td>
+                        <th id="T_f9aef_level0_row0" class="row_heading level0 row0" rowspan="4"> <=50K</th>
+                        <th id="T_f9aef_level1_row0" class="row_heading level1 row0" rowspan="2"> Female</th>
+                        <th id="T_f9aef_level2_row0" class="row_heading level2 row0" >education_num</th>
+                        <td id="T_f9aef_row0_col0" class="data row0 col0" >0.0</td>
+                        <td id="T_f9aef_row0_col1" class="data row0 col1" >0.151</td>
             </tr>
             <tr>
-                                        <th id="T_c3058_level2_row1" class="row_heading level2 row1" >hours_per_week</th>
-                        <td id="T_c3058_row1_col0" class="data row1 col0" >0.151</td>
-                        <td id="T_c3058_row1_col1" class="data row1 col1" >0.0</td>
+                                        <th id="T_f9aef_level2_row1" class="row_heading level2 row1" >hours_per_week</th>
+                        <td id="T_f9aef_row1_col0" class="data row1 col0" >0.151</td>
+                        <td id="T_f9aef_row1_col1" class="data row1 col1" >0.0</td>
             </tr>
             <tr>
-                                <th id="T_c3058_level1_row2" class="row_heading level1 row2" rowspan="2"> Male</th>
-                        <th id="T_c3058_level2_row2" class="row_heading level2 row2" >education_num</th>
-                        <td id="T_c3058_row2_col0" class="data row2 col0" >0.0</td>
-                        <td id="T_c3058_row2_col1" class="data row2 col1" >0.069</td>
+                                <th id="T_f9aef_level1_row2" class="row_heading level1 row2" rowspan="2"> Male</th>
+                        <th id="T_f9aef_level2_row2" class="row_heading level2 row2" >education_num</th>
+                        <td id="T_f9aef_row2_col0" class="data row2 col0" >0.0</td>
+                        <td id="T_f9aef_row2_col1" class="data row2 col1" >0.069</td>
             </tr>
             <tr>
-                                        <th id="T_c3058_level2_row3" class="row_heading level2 row3" >hours_per_week</th>
-                        <td id="T_c3058_row3_col0" class="data row3 col0" >0.069</td>
-                        <td id="T_c3058_row3_col1" class="data row3 col1" >0.0</td>
+                                        <th id="T_f9aef_level2_row3" class="row_heading level2 row3" >hours_per_week</th>
+                        <td id="T_f9aef_row3_col0" class="data row3 col0" >0.069</td>
+                        <td id="T_f9aef_row3_col1" class="data row3 col1" >0.0</td>
             </tr>
             <tr>
-                        <th id="T_c3058_level0_row4" class="row_heading level0 row4" rowspan="4"> >50K</th>
-                        <th id="T_c3058_level1_row4" class="row_heading level1 row4" rowspan="2"> Female</th>
-                        <th id="T_c3058_level2_row4" class="row_heading level2 row4" >education_num</th>
-                        <td id="T_c3058_row4_col0" class="data row4 col0" >0.0</td>
-                        <td id="T_c3058_row4_col1" class="data row4 col1" >0.187</td>
+                        <th id="T_f9aef_level0_row4" class="row_heading level0 row4" rowspan="4"> >50K</th>
+                        <th id="T_f9aef_level1_row4" class="row_heading level1 row4" rowspan="2"> Female</th>
+                        <th id="T_f9aef_level2_row4" class="row_heading level2 row4" >education_num</th>
+                        <td id="T_f9aef_row4_col0" class="data row4 col0" >0.0</td>
+                        <td id="T_f9aef_row4_col1" class="data row4 col1" >0.187</td>
             </tr>
             <tr>
-                                        <th id="T_c3058_level2_row5" class="row_heading level2 row5" >hours_per_week</th>
-                        <td id="T_c3058_row5_col0" class="data row5 col0" >0.187</td>
-                        <td id="T_c3058_row5_col1" class="data row5 col1" >0.0</td>
+                                        <th id="T_f9aef_level2_row5" class="row_heading level2 row5" >hours_per_week</th>
+                        <td id="T_f9aef_row5_col0" class="data row5 col0" >0.187</td>
+                        <td id="T_f9aef_row5_col1" class="data row5 col1" >0.0</td>
             </tr>
             <tr>
-                                <th id="T_c3058_level1_row6" class="row_heading level1 row6" rowspan="2"> Male</th>
-                        <th id="T_c3058_level2_row6" class="row_heading level2 row6" >education_num</th>
-                        <td id="T_c3058_row6_col0" class="data row6 col0" >0.0</td>
-                        <td id="T_c3058_row6_col1" class="data row6 col1" >0.0477</td>
+                                <th id="T_f9aef_level1_row6" class="row_heading level1 row6" rowspan="2"> Male</th>
+                        <th id="T_f9aef_level2_row6" class="row_heading level2 row6" >education_num</th>
+                        <td id="T_f9aef_row6_col0" class="data row6 col0" >0.0</td>
+                        <td id="T_f9aef_row6_col1" class="data row6 col1" >0.0477</td>
             </tr>
             <tr>
-                                        <th id="T_c3058_level2_row7" class="row_heading level2 row7" >hours_per_week</th>
-                        <td id="T_c3058_row7_col0" class="data row7 col0" >0.0477</td>
-                        <td id="T_c3058_row7_col1" class="data row7 col1" >0.0</td>
+                                        <th id="T_f9aef_level2_row7" class="row_heading level2 row7" >hours_per_week</th>
+                        <td id="T_f9aef_row7_col0" class="data row7 col0" >0.0477</td>
+                        <td id="T_f9aef_row7_col1" class="data row7 col1" >0.0</td>
             </tr>
     </tbody></table></div></div>
 </div>

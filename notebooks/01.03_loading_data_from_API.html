@@ -286,7 +286,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aiola-lab/from-excel-to-pandas//v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/01.03_loading_data_from_API.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aiola-lab/from-excel-to-pandas/master?urlpath=lab/tree/notebooks/01.03_loading_data_from_API.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -359,6 +359,7 @@
 <h1>Reading Data from External API<a class="headerlink" href="#reading-data-from-external-api" title="Permalink to this headline">¶</a></h1>
 <p>Often you want to add external data to your analysis. External data can be retrieved from API (Application Programable Interface) that is provided by various services such as CRM (Customer Relationship Management) systems. You can import HTML directly into Excel using <em>“Import”</em>.</p>
 <p>In this notebook, we will learn how to use pandas <em>from_dict</em> to load data from these external API</p>
+<p><a class="reference external" href="https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/01.03_loading_data_from_API.ipynb"><img alt="Open In Studio Lab" src="https://studiolab.sagemaker.aws/studiolab.svg" /></a></p>
 <div class="section" id="loading-api-data">
 <h2>Loading API data<a class="headerlink" href="#loading-api-data" title="Permalink to this headline">¶</a></h2>
 <p>We will load a few tables from simple API as well as complex ones</p>
@@ -637,6 +638,24 @@
 <div class="section" id="loading-the-page-views-of-all-nasdaq-100">
 <h2>Loading the page views of all NASDAQ 100<a class="headerlink" href="#loading-the-page-views-of-all-nasdaq-100" title="Permalink to this headline">¶</a></h2>
 <p>We saw in the previous section how to load the values of a table from Wikipeia (or other HTML pages). Let’s use it now to load all the NASDAQ 100 index companies to compare their page views.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install lxml
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lxml in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (4.6.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nasdaq_100_wikipedia_entry</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/NASDAQ-100&#39;</span>
@@ -1832,7 +1851,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01.03_loading_data_from_API_22_0.png" src="../_images/01.03_loading_data_from_API_22_0.png" />
+<img alt="../_images/01.03_loading_data_from_API_23_0.png" src="../_images/01.03_loading_data_from_API_23_0.png" />
 </div>
 </div>
 </div>
@@ -2008,7 +2027,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">9</span><span class="n">c1a5abccbfa</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">9</span><span class="n">c1a5abccbfa</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">json_series</span> <span class="o">=</span> <span class="p">(</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">df</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Time Series (1min)&#39;</span><span class="p">:</span><span class="s1">&#39;ts&#39;</span><span class="p">})</span>
@@ -2234,7 +2253,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;AMZN&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/01.03_loading_data_from_API_36_1.svg" src="../_images/01.03_loading_data_from_API_36_1.svg" /></div>
+<img alt="../_images/01.03_loading_data_from_API_37_1.svg" src="../_images/01.03_loading_data_from_API_37_1.svg" /></div>
 </div>
 </div>
 </div>
