@@ -4,6 +4,8 @@ This is a guide for data analysts that are fluent with Excel and want to moderni
 
 The tutorial is based on a set of Jupyter notebooks demonstrating the various ways to implement the main functions that are available in Microsoft Excel with their Pandas equivalents. You can jump directly to a specific section by searching the Excel function name or read through the tutorial to learn the basic and advanced topics. The tutorial is organized in complexity order and the later chapters assume the knowledge that is covered in earlier ones. 
 
+[![Open In Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/01.01%20-%20loading%20files.ipynb)
+
 ````{tip}
 Run the notebook in an interactive environment to better learn
 ````
