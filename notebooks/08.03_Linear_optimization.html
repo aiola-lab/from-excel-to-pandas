@@ -885,7 +885,7 @@
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/apis/../solverdir/cbc/linux/64/cbc /tmp/99c4979531d44c59beddf2bb4a4c01d2-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/99c4979531d44c59beddf2bb4a4c01d2-pulp.sol (default strategy 1)
+command line - /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/apis/../solverdir/cbc/linux/64/cbc /tmp/0d254ab96f7f4c159541601a4a402f36-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/0d254ab96f7f4c159541601a4a402f36-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 11 COLUMNS
@@ -1001,7 +1001,7 @@ Total time (CPU seconds):       0.01   (Wallclock seconds):       0.01
 </div>
 </div>
 </div>
-<p>We will extract the name of the player from the variables of the linear optimizer</p>
+<p>We will extract the name of the player from the variables of the linear optimizer, and clean up the “strange” characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_roster_names</span> <span class="o">=</span> <span class="p">[</span>
@@ -1016,12 +1016,19 @@ Total time (CPU seconds):       0.01   (Wallclock seconds):       0.01
 </div>
 </div>
 <p>The list of the players above is changing every week based on their recent performance, and we can execute this analysis every time before we define our fantasy team for the next round.</p>
-<p>We can also get the table that we used as the input for the optmization process and filter it show more details on each of our players.</p>
+<p>We can also get the table that we used as the input for the optmization process and filter it show more details on each of our players. We will also calculate the sum of the salaries to verify that we are below the maximum budget of 60,000.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">all_players</span>
     <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Name in @optimized_roster_names&#39;</span><span class="p">)</span>
+    <span class="p">[[</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;FD Points&#39;</span><span class="p">,</span><span class="s1">&#39;Salary&#39;</span><span class="p">]]</span>
+    <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span><span class="s1">&#39;FD Points&#39;</span><span class="p">],</span>
+        <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">margins_name</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> 
+        <span class="n">aggfunc</span><span class="o">=</span><span class="nb">sum</span>
+    <span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1045,145 +1052,77 @@ Total time (CPU seconds):       0.01   (Wallclock seconds):       0.01
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Position</th>
-      <th>Name</th>
-      <th>FD Points</th>
+      <th></th>
+      <th></th>
       <th>Salary</th>
-      <th>Team</th>
-      <th>Opp.</th>
-      <th>Score</th>
-      <th>Min</th>
-      <th>Stats</th>
-      <th>position_length</th>
-      <th>Points</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>FD Points</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>PG</td>
-      <td>Morant, Ja^</td>
-      <td>55</td>
-      <td>7100</td>
-      <td>mem</td>
-      <td>@ was</td>
-      <td>125-111</td>
-      <td>33:02</td>
-      <td>35pt 5rb 10as 1st 4to 2trey 11-18fg 11-14ft</td>
-      <td>2</td>
-      <td>55.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>SG</td>
-      <td>George, Paul^</td>
-      <td>45</td>
-      <td>7900</td>
-      <td>lac</td>
-      <td>@ bos</td>
-      <td>112-117</td>
-      <td>38:39</td>
-      <td>32pt 5rb 4as 1st 2to 5trey 12-26fg 3-3ft</td>
-      <td>2</td>
-      <td>45.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>PG</td>
-      <td>Melton, De'Anthony</td>
-      <td>38.3</td>
-      <td>4600</td>
-      <td>mem</td>
-      <td>@ was</td>
-      <td>125-111</td>
-      <td>26:21</td>
-      <td>20pt 4rb 5as 2st 6trey 6-11fg 2-2ft</td>
-      <td>2</td>
-      <td>38.3</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>SG</td>
-      <td>Quickley, Immanuel</td>
-      <td>37.8</td>
-      <td>5100</td>
-      <td>nyk</td>
-      <td>@ sas</td>
-      <td>93-119</td>
-      <td>29:12</td>
-      <td>26pt 4rb 4as 1st 2to 6trey 8-21fg 4-4ft</td>
-      <td>2</td>
-      <td>37.8</td>
-    </tr>
-    <tr>
-      <th>90</th>
-      <td>SF</td>
-      <td>James, LeBron^</td>
-      <td>59</td>
-      <td>10800</td>
-      <td>lal</td>
-      <td>v pho</td>
-      <td>104-114</td>
-      <td>37:38</td>
-      <td>38pt 5rb 6as 2st 1bl 3to 3trey 16-24fg 3-5ft</td>
-      <td>2</td>
-      <td>59.0</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>SF</td>
-      <td>Barton, Will^</td>
-      <td>35.1</td>
+      <th>Barton, Will^</th>
+      <th>SF</th>
+      <th>35.1</th>
       <td>4900</td>
-      <td>den</td>
-      <td>@ mil</td>
-      <td>128-97</td>
-      <td>34:28</td>
-      <td>14pt 8rb 5as 1st 1bl 2to 2trey 6-11fg</td>
-      <td>2</td>
-      <td>35.1</td>
     </tr>
     <tr>
-      <th>96</th>
-      <td>PF</td>
-      <td>Lyles, Trey^</td>
-      <td>33</td>
-      <td>4000</td>
-      <td>sas</td>
-      <td>v nyk</td>
-      <td>119-93</td>
-      <td>30:04</td>
-      <td>18pt 5rb 2as 2st 4trey 7-13fg</td>
-      <td>2</td>
-      <td>33.0</td>
+      <th>George, Paul^</th>
+      <th>SG</th>
+      <th>45</th>
+      <td>7900</td>
     </tr>
     <tr>
-      <th>97</th>
-      <td>PF</td>
-      <td>Saric, Dario</td>
-      <td>32.5</td>
-      <td>4100</td>
-      <td>pho</td>
-      <td>@ lal</td>
-      <td>114-104</td>
-      <td>26:19</td>
-      <td>21pt 5rb 3as 1st 2to 2trey 7-17fg 5-6ft</td>
-      <td>2</td>
-      <td>32.5</td>
+      <th>James, LeBron^</th>
+      <th>SF</th>
+      <th>59</th>
+      <td>10800</td>
     </tr>
     <tr>
-      <th>180</th>
-      <td>C</td>
-      <td>Jokic, Nikola^</td>
-      <td>69.5</td>
+      <th>Jokic, Nikola^</th>
+      <th>C</th>
+      <th>69.5</th>
       <td>11000</td>
-      <td>den</td>
-      <td>@ mil</td>
-      <td>128-97</td>
-      <td>36:24</td>
-      <td>37pt 10rb 11as 2st 2to 2trey 15-23fg 5-5ft</td>
-      <td>1</td>
-      <td>69.5</td>
+    </tr>
+    <tr>
+      <th>Lyles, Trey^</th>
+      <th>PF</th>
+      <th>33</th>
+      <td>4000</td>
+    </tr>
+    <tr>
+      <th>Melton, De'Anthony</th>
+      <th>PG</th>
+      <th>38.3</th>
+      <td>4600</td>
+    </tr>
+    <tr>
+      <th>Morant, Ja^</th>
+      <th>PG</th>
+      <th>55</th>
+      <td>7100</td>
+    </tr>
+    <tr>
+      <th>Quickley, Immanuel</th>
+      <th>SG</th>
+      <th>37.8</th>
+      <td>5100</td>
+    </tr>
+    <tr>
+      <th>Saric, Dario</th>
+      <th>PF</th>
+      <th>32.5</th>
+      <td>4100</td>
+    </tr>
+    <tr>
+      <th>Total</th>
+      <th></th>
+      <th></th>
+      <td>59500</td>
     </tr>
   </tbody>
 </table>
