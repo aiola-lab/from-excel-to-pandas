@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Categories from numeric values &#8212; From Excel to Pandas</title>
+    <title>Group numeric values into categories (bins) &#8212; From Excel to Pandas</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,22 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,14 +53,17 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Creating a Pivot Table" href="03.01_pivot_tables.html" />
     <link rel="prev" title="Date Functions" href="02.02_date_functions.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,59 +72,48 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
    Install Locally
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-aws-sagemaker-studio-lab">
-   Open in AWS SageMaker Studio Lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
-   Open in Binder/Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
-   Open in Visual Studio Code
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Loading Data
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.01%20-%20loading%20files.html">
    Loading Data Files (CSV or XLSX)
@@ -144,12 +130,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Adding Columns
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02.01_Adding_New_Columns.html">
    Adding New Columns
@@ -162,45 +148,40 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Categories from numeric values
+   Group numeric values into categories (bins)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Aggregation and Reshaping
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.01_pivot_tables.html">
    Creating a Pivot Table
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03.02_group_by.html">
-   Split a Table into Groups
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Enrichment with Merge
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.03_merge.html">
    Merge/Join Tables (VLOOKUP)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Industries Use Cases
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="08.01_Logistics_analysis.html">
    Logistics Analysis
@@ -223,6 +204,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -266,18 +248,18 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -301,13 +283,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cut-function">
    Cut Function
@@ -315,7 +297,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#real-life-example">
-   Real life example
+   Real-life example
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -387,19 +369,113 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Group numeric values into categories (bins)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cut-function">
+   Cut Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-life-example">
+   Real-life example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-data">
+     Loading Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-data-visulizations">
+     Simple Data Visulizations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-bins-with-cut">
+     Creating bins with
+     <em>
+      Cut
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-the-bins-limits">
+     Setting the bins’ limits
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-meaningful-labels">
+     Adding meaningful labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boxplot-for-each-bin">
+     Boxplot for each bin
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-wrong-with-historgram">
+   What is wrong with Historgram
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernel-density-estimator-kde">
+     Kernel Density Estimator (KDE)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumulative-distribution-function-cdf">
+     Cumulative Distribution Function (CDF)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-by-quantiles-using-qcut">
+   Group by Quantiles using
+   <em>
+    qcut
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heat-map-with-the-new-value-group">
+     Heat map with the new value group
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="categories-from-numeric-values">
-<h1>Categories from numeric values<a class="headerlink" href="#categories-from-numeric-values" title="Permalink to this headline">¶</a></h1>
-<p>We often have a column with many numeric values and we want to group them to bins or buckets, such as age groups or value tiers. In Excel we can do it using:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="group-numeric-values-into-categories-bins">
+<h1>Group numeric values into categories (bins)<a class="headerlink" href="#group-numeric-values-into-categories-bins" title="Permalink to this headline">¶</a></h1>
+<p>We often have a column with many numeric values and we want into group them to bins or buckets, such as age groups or value tiers. In Excel we can do it using and of the following options:</p>
 <ul class="simple">
 <li><p>Data Menu -&gt; Data Analysis -&gt; Histogram or Rank and Percentile</p></li>
 <li><p><em>VLOOKUP</em> (<code class="docutils literal notranslate"><span class="pre">=LOOKUP(A1,{0,7,14,31,90,180,360},{&quot;0-6&quot;,&quot;7-13&quot;,&quot;14-30&quot;,&quot;31-89&quot;,&quot;90-179&quot;,&quot;180-359&quot;,&quot;&gt;360&quot;})</span></code>, for example), or</p></li>
@@ -409,7 +485,7 @@
 <p><a class="reference external" href="https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/02.08_group_values.ipynb"><img alt="Open In Studio Lab" src="https://studiolab.sagemaker.aws/studiolab.svg" /></a></p>
 <div class="section" id="cut-function">
 <h2>Cut Function<a class="headerlink" href="#cut-function" title="Permalink to this headline">¶</a></h2>
-<p>Since this is a common need, Pandas has built-in functions <em>cut</em> and <em>qcut</em> that make it more flexible and accurate.</p>
+<p>Since this is a common need, Pandas has built-in functions <em>cut</em> and <em>qcut</em> that make it more flexible and accurate. We start with importing pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -419,7 +495,8 @@
 </div>
 </div>
 <div class="section" id="real-life-example">
-<h2>Real life example<a class="headerlink" href="#real-life-example" title="Permalink to this headline">¶</a></h2>
+<h2>Real-life example<a class="headerlink" href="#real-life-example" title="Permalink to this headline">¶</a></h2>
+<p>Let’s analyze data regarding the impact of weatehr information on numbers of bike rentals. We know that when it is too cold or too hot, people rent less bike. But what is the cutoff temperature value? When we listen to the next 10 days weather forecast, how should we prepare our bike rental fleet to meet the expected demand?</p>
 <div class="section" id="loading-data">
 <h3>Loading Data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h3>
 <p>As usual, let’s load a dataset to work on. We will use the dataset that is used before, “Bike Share”. This is a data set about the demand of bike share service in Seoul. Please note that we need to modify the default encoding of <em>read_csv</em> from ‘UTF-8’ to ‘latin1’.</p>
@@ -742,7 +819,7 @@
 8758    (-6.36, 5.08]
 8759    (-6.36, 5.08]
 Name: Temperature(°C), Length: 8760, dtype: category
-Categories (5, interval[float64]): [(-17.857, -6.36] &lt; (-6.36, 5.08] &lt; (5.08, 16.52] &lt; (16.52, 27.96] &lt; (27.96, 39.4]]
+Categories (5, interval[float64, right]): [(-17.857, -6.36] &lt; (-6.36, 5.08] &lt; (5.08, 16.52] &lt; (16.52, 27.96] &lt; (27.96, 39.4]]
 </pre></div>
 </div>
 </div>
@@ -935,6 +1012,30 @@ Name: Temperature Range, dtype: int64
 <p>The second option is using counts of the different percentiles of the data and using a cumulative plot makes it easy to find the value of each percentile and calculate the percentage of data points between every given percentiles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install statsmodels
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (0.13.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from statsmodels) (1.7.3)
+Requirement already satisfied: patsy&gt;=0.5.2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from statsmodels) (0.5.2)
+Requirement already satisfied: numpy&gt;=1.17 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from statsmodels) (1.21.5)
+Requirement already satisfied: pandas&gt;=0.25 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from statsmodels) (1.3.5)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
+Requirement already satisfied: pytz&gt;=2017.3 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2021.3)
+Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.distributions.empirical_distribution</span> <span class="kn">import</span> <span class="n">ECDF</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -951,7 +1052,7 @@ Name: Temperature Range, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_24_0.png" src="../_images/02.08_group_values_24_0.png" />
+<img alt="../_images/02.08_group_values_25_0.png" src="../_images/02.08_group_values_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -964,7 +1065,7 @@ Name: Temperature Range, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_25_0.png" src="../_images/02.08_group_values_25_0.png" />
+<img alt="../_images/02.08_group_values_26_0.png" src="../_images/02.08_group_values_26_0.png" />
 </div>
 </div>
 </div>
@@ -1012,7 +1113,7 @@ Name: Usage Level, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_28_0.png" src="../_images/02.08_group_values_28_0.png" />
+<img alt="../_images/02.08_group_values_29_0.png" src="../_images/02.08_group_values_29_0.png" />
 </div>
 </div>
 <div class="section" id="heat-map-with-the-new-value-group">
@@ -1042,7 +1143,7 @@ Name: Usage Level, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02.08_group_values_31_0.png" src="../_images/02.08_group_values_31_0.png" />
+<img alt="../_images/02.08_group_values_32_0.png" src="../_images/02.08_group_values_32_0.png" />
 </div>
 </div>
 </div>
@@ -1071,36 +1172,42 @@ Name: Usage Level, dtype: int64
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02.02_date_functions.html" title="previous page">Date Functions</a>
-    <a class='right-next' id="next-link" href="03.01_pivot_tables.html" title="next page">Creating a Pivot Table</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02.02_date_functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Date Functions</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="03.01_pivot_tables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Creating a Pivot Table</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By The Aiola Team<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By The Aiola Team<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>

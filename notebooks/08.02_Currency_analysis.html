@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Rate Analysis &#8212; From Excel to Pandas</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,22 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,14 +53,17 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Linear Programming (Optimization)" href="08.03_Linear_optimization.html" />
     <link rel="prev" title="Logistics Analysis" href="08.01_Logistics_analysis.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,59 +72,48 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
    Install Locally
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-aws-sagemaker-studio-lab">
-   Open in AWS SageMaker Studio Lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
-   Open in Binder/Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
-   Open in Visual Studio Code
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Loading Data
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.01%20-%20loading%20files.html">
    Loading Data Files (CSV or XLSX)
@@ -144,12 +130,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Adding Columns
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02.01_Adding_New_Columns.html">
    Adding New Columns
@@ -162,45 +148,40 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02.08_group_values.html">
-   Categories from numeric values
+   Group numeric values into categories (bins)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Aggregation and Reshaping
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.01_pivot_tables.html">
    Creating a Pivot Table
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03.02_group_by.html">
-   Split a Table into Groups
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Enrichment with Merge
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.03_merge.html">
    Merge/Join Tables (VLOOKUP)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Industries Use Cases
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="08.01_Logistics_analysis.html">
    Logistics Analysis
@@ -223,6 +204,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -266,18 +248,18 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -301,13 +283,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loading-data-using-api">
    Loading data using API
@@ -380,17 +362,104 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Currency Rate Analysis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data-using-api">
+   Loading data using API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-rates-for-a-specific-date">
+     Getting rates for a specific date
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#putting-it-all-together">
+     Putting it all together
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deal-conversion">
+   Deal conversion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-rates-sources">
+     Additional rates sources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analysis-use-case">
+   Analysis Use-case
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-output">
+     Analysis output
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-visualization">
+   Data Visualization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-chart">
+     Line Chart
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plot">
+     Scatter Plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-across-weeks-using-groupby">
+   Analyze Across Weeks using Groupby
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-conclusion">
+     Analysis conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="currency-rate-analysis">
+  <div class="tex2jax_ignore mathjax_ignore section" id="currency-rate-analysis">
 <h1>Currency Rate Analysis<a class="headerlink" href="#currency-rate-analysis" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>Money often costs too much. –Ralph Waldo Emerson</p>
@@ -409,18 +478,44 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: forex-python in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (1.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting forex-python
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: simplejson in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (3.17.2)
-Requirement already satisfied: requests in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from forex-python) (2.25.1)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (1.25.11)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (4.0.0)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2.10)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3/lib/python3.8/site-packages (from requests-&gt;forex-python) (2020.12.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading forex_python-1.8-py3-none-any.whl (8.2 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Error parsing requirements for nbconvert: [Errno 2] No such file or directory: &#39;/Users/guy/opt/anaconda3/lib/python3.8/site-packages/nbconvert-6.0.7.dist-info/METADATA&#39;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting simplejson
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading simplejson-3.17.6-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (130 kB)
+?25l
+
+     |██▌                             | 10 kB 15.6 MB/s eta 0:00:01
+     |█████                           | 20 kB 14.2 MB/s eta 0:00:01
+     |███████▌                        | 30 kB 9.3 MB/s eta 0:00:01 
+     |██████████                      | 40 kB 4.0 MB/s eta 0:00:01 
+     |████████████▋                   | 51 kB 4.9 MB/s eta 0:00:01 
+     |███████████████                 | 61 kB 4.8 MB/s eta 0:00:01 
+     |█████████████████▋              | 71 kB 5.5 MB/s eta 0:00:01 
+     |████████████████████▏           | 81 kB 5.1 MB/s eta 0:00:01 
+     |██████████████████████▋         | 92 kB 4.4 MB/s eta 0:00:01 
+     |█████████████████████████▏      | 102 kB 4.8 MB/s eta 0:00:01
+     |███████████████████████████▋    | 112 kB 4.8 MB/s eta 0:00:01
+     |██████████████████████████████▏ | 122 kB 4.8 MB/s eta 0:00:01
+     |████████████████████████████████| 130 kB 4.8 MB/s            
+?25hRequirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from forex-python) (2.27.1)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from requests-&gt;forex-python) (3.3)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from requests-&gt;forex-python) (1.26.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from requests-&gt;forex-python) (2.0.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from requests-&gt;forex-python) (2021.10.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: simplejson, forex-python
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed forex-python-1.8 simplejson-3.17.6
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -452,128 +547,37 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">gaierror</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py</span> in <span class="ni">_new_conn</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">159</span>             <span class="n">conn</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span>                 <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dns_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_kw</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/util/connection.py</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> 
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/socket.py</span> in <span class="ni">getaddrinfo</span><span class="nt">(host, port, family, type, proto, flags)</span>
-<span class="g g-Whitespace">    </span><span class="mi">917</span>     <span class="n">addrlist</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">--&gt; </span><span class="mi">918</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">919</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
-
-<span class="ne">gaierror</span>: [Errno 8] nodename nor servname provided, or not known
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">NewConnectionError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>             <span class="c1"># Make the request on the httplib connection object.</span>
-<span class="ne">--&gt; </span><span class="mi">670</span>             <span class="n">httplib_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>                 <span class="n">conn</span><span class="p">,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">381</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_validate_conn</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span>         <span class="k">except</span> <span class="p">(</span><span class="n">SocketTimeout</span><span class="p">,</span> <span class="n">BaseSSLError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
-<span class="g g-Whitespace">    </span><span class="mi">977</span>         <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s2">&quot;sock&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>  <span class="c1"># AppEngine might not have  `.sock`</span>
-<span class="ne">--&gt; </span><span class="mi">978</span>             <span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">979</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="c1"># Add certificate verification</span>
-<span class="ne">--&gt; </span><span class="mi">309</span>         <span class="n">conn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_conn</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>         <span class="n">hostname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connection.py</span> in <span class="ni">_new_conn</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="k">except</span> <span class="n">SocketError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">171</span>             <span class="k">raise</span> <span class="n">NewConnectionError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>                 <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Failed to establish a new connection: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span>
-
-<span class="ne">NewConnectionError</span>: &lt;urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">MaxRetryError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">chunked</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">439</span>                 <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span>                     <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">725</span> 
-<span class="ne">--&gt; </span><span class="mi">726</span>             <span class="n">retries</span> <span class="o">=</span> <span class="n">retries</span><span class="o">.</span><span class="n">increment</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span>                 <span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">_pool</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">_stacktrace</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/urllib3/util/retry.py</span> in <span class="ni">increment</span><span class="nt">(self, method, url, response, error, _pool, _stacktrace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>         <span class="k">if</span> <span class="n">new_retry</span><span class="o">.</span><span class="n">is_exhausted</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">446</span>             <span class="k">raise</span> <span class="n">MaxRetryError</span><span class="p">(</span><span class="n">_pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">error</span> <span class="ow">or</span> <span class="n">ResponseError</span><span class="p">(</span><span class="n">cause</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span> 
-
-<span class="ne">MaxRetryError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ConnectionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">c8ca15bc87d1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">usd_rates</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">CurrencyRates</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s1">&#39;USD&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">usd_rates</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/forex_python/converter.py</span> in <span class="ni">get_rates</span><span class="nt">(self, base_cur, date_obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;base&#39;</span><span class="p">:</span> <span class="n">base_cur</span><span class="p">,</span> <span class="s1">&#39;rtype&#39;</span><span class="p">:</span> <span class="s1">&#39;fpy&#39;</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="n">source_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_source_url</span><span class="p">()</span> <span class="o">+</span> <span class="n">date_str</span>
-<span class="ne">---&gt; </span><span class="mi">52</span>         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">source_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span>         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span>             <span class="n">rates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode_rates</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/api.py</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> 
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;allow_redirects&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span> 
-<span class="g g-Whitespace">     </span><span class="mi">78</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/api.py</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="c1"># cases, and look like a memory leak in others.</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>         <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> 
-<span class="g g-Whitespace">     </span><span class="mi">63</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span>         <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">542</span>         <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span> 
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="k">return</span> <span class="n">resp</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span> 
-<span class="g g-Whitespace">    </span><span class="mi">654</span>         <span class="c1"># Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">655</span>         <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span> 
-<span class="g g-Whitespace">    </span><span class="mi">657</span>         <span class="c1"># Total elapsed time of the request (approximately)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>                 <span class="k">raise</span> <span class="n">SSLError</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">515</span> 
-<span class="ne">--&gt; </span><span class="mi">516</span>             <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">517</span> 
-<span class="g g-Whitespace">    </span><span class="mi">518</span>         <span class="k">except</span> <span class="n">ClosedPoolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="ne">ConnectionError</span>: HTTPSConnectionPool(host=&#39;api.ratesapi.io&#39;, port=443): Max retries exceeded with url: /api/latest?base=USD&amp;rtype=fpy (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x7fc7500c8d00&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;EUR&#39;: 0.8812125484666902,
+ &#39;JPY&#39;: 113.79978850898836,
+ &#39;BGN&#39;: 1.7234755022911525,
+ &#39;CZK&#39;: 21.454881917518506,
+ &#39;DKK&#39;: 6.558953119492422,
+ &#39;GBP&#39;: 0.736984490659147,
+ &#39;HUF&#39;: 315.64152273528373,
+ &#39;PLN&#39;: 3.993479027141346,
+ &#39;RON&#39;: 4.357860415932322,
+ &#39;SEK&#39;: 9.17694747973211,
+ &#39;CHF&#39;: 0.9123193514275644,
+ &#39;ISK&#39;: 128.30454705675007,
+ &#39;NOK&#39;: 8.85821290095171,
+ &#39;HRK&#39;: 6.633768064857243,
+ &#39;RUB&#39;: 76.52273528375044,
+ &#39;TRY&#39;: 13.414698625308425,
+ &#39;AUD&#39;: 1.3900246739513569,
+ &#39;BRL&#39;: 5.469069439548819,
+ &#39;CAD&#39;: 1.2522911526260134,
+ &#39;CNY&#39;: 6.339971801198449,
+ &#39;HKD&#39;: 7.787275290800141,
+ &#39;IDR&#39;: 14314.592879802609,
+ &#39;INR&#39;: 74.39108212900952,
+ &#39;KRW&#39;: 1191.302432146634,
+ &#39;MXN&#39;: 20.464310891787097,
+ &#39;MYR&#39;: 4.186464575255552,
+ &#39;NZD&#39;: 1.4878392668311595,
+ &#39;PHP&#39;: 51.261015156855834,
+ &#39;SGD&#39;: 1.3447303489601692,
+ &#39;THB&#39;: 32.92033838561861,
+ &#39;ZAR&#39;: 15.116848783926681}
 </pre></div>
 </div>
 </div>
@@ -615,136 +619,128 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
   </thead>
   <tbody>
     <tr>
-      <th>GBP</th>
-      <td>0.712645</td>
-    </tr>
-    <tr>
-      <th>HKD</th>
-      <td>7.753604</td>
-    </tr>
-    <tr>
-      <th>IDR</th>
-      <td>14082.552105</td>
-    </tr>
-    <tr>
-      <th>ILS</th>
-      <td>3.270451</td>
-    </tr>
-    <tr>
-      <th>DKK</th>
-      <td>6.126370</td>
-    </tr>
-    <tr>
-      <th>INR</th>
-      <td>72.505561</td>
-    </tr>
-    <tr>
-      <th>CHF</th>
-      <td>0.893896</td>
-    </tr>
-    <tr>
-      <th>MXN</th>
-      <td>20.355383</td>
-    </tr>
-    <tr>
-      <th>CZK</th>
-      <td>21.294176</td>
-    </tr>
-    <tr>
-      <th>SGD</th>
-      <td>1.322926</td>
-    </tr>
-    <tr>
-      <th>THB</th>
-      <td>29.974462</td>
-    </tr>
-    <tr>
-      <th>HRK</th>
-      <td>6.242689</td>
-    </tr>
-    <tr>
       <th>EUR</th>
-      <td>0.823791</td>
-    </tr>
-    <tr>
-      <th>MYR</th>
-      <td>4.040531</td>
-    </tr>
-    <tr>
-      <th>NOK</th>
-      <td>8.410495</td>
-    </tr>
-    <tr>
-      <th>CNY</th>
-      <td>6.451767</td>
-    </tr>
-    <tr>
-      <th>BGN</th>
-      <td>1.611171</td>
-    </tr>
-    <tr>
-      <th>PHP</th>
-      <td>48.476810</td>
-    </tr>
-    <tr>
-      <th>PLN</th>
-      <td>3.693055</td>
-    </tr>
-    <tr>
-      <th>ZAR</th>
-      <td>14.613312</td>
-    </tr>
-    <tr>
-      <th>CAD</th>
-      <td>1.260977</td>
-    </tr>
-    <tr>
-      <th>ISK</th>
-      <td>128.181893</td>
-    </tr>
-    <tr>
-      <th>BRL</th>
-      <td>5.406788</td>
-    </tr>
-    <tr>
-      <th>RON</th>
-      <td>4.016641</td>
-    </tr>
-    <tr>
-      <th>NZD</th>
-      <td>1.370953</td>
-    </tr>
-    <tr>
-      <th>TRY</th>
-      <td>6.958563</td>
+      <td>0.881213</td>
     </tr>
     <tr>
       <th>JPY</th>
-      <td>105.288739</td>
+      <td>113.799789</td>
     </tr>
     <tr>
-      <th>RUB</th>
-      <td>73.819013</td>
+      <th>BGN</th>
+      <td>1.723476</td>
     </tr>
     <tr>
-      <th>KRW</th>
-      <td>1103.542302</td>
+      <th>CZK</th>
+      <td>21.454882</td>
     </tr>
     <tr>
-      <th>USD</th>
-      <td>1.000000</td>
+      <th>DKK</th>
+      <td>6.558953</td>
     </tr>
     <tr>
-      <th>AUD</th>
-      <td>1.272345</td>
+      <th>GBP</th>
+      <td>0.736984</td>
     </tr>
     <tr>
       <th>HUF</th>
-      <td>295.329105</td>
+      <td>315.641523</td>
+    </tr>
+    <tr>
+      <th>PLN</th>
+      <td>3.993479</td>
+    </tr>
+    <tr>
+      <th>RON</th>
+      <td>4.357860</td>
     </tr>
     <tr>
       <th>SEK</th>
-      <td>8.265096</td>
+      <td>9.176947</td>
+    </tr>
+    <tr>
+      <th>CHF</th>
+      <td>0.912319</td>
+    </tr>
+    <tr>
+      <th>ISK</th>
+      <td>128.304547</td>
+    </tr>
+    <tr>
+      <th>NOK</th>
+      <td>8.858213</td>
+    </tr>
+    <tr>
+      <th>HRK</th>
+      <td>6.633768</td>
+    </tr>
+    <tr>
+      <th>RUB</th>
+      <td>76.522735</td>
+    </tr>
+    <tr>
+      <th>TRY</th>
+      <td>13.414699</td>
+    </tr>
+    <tr>
+      <th>AUD</th>
+      <td>1.390025</td>
+    </tr>
+    <tr>
+      <th>BRL</th>
+      <td>5.469069</td>
+    </tr>
+    <tr>
+      <th>CAD</th>
+      <td>1.252291</td>
+    </tr>
+    <tr>
+      <th>CNY</th>
+      <td>6.339972</td>
+    </tr>
+    <tr>
+      <th>HKD</th>
+      <td>7.787275</td>
+    </tr>
+    <tr>
+      <th>IDR</th>
+      <td>14314.592880</td>
+    </tr>
+    <tr>
+      <th>INR</th>
+      <td>74.391082</td>
+    </tr>
+    <tr>
+      <th>KRW</th>
+      <td>1191.302432</td>
+    </tr>
+    <tr>
+      <th>MXN</th>
+      <td>20.464311</td>
+    </tr>
+    <tr>
+      <th>MYR</th>
+      <td>4.186465</td>
+    </tr>
+    <tr>
+      <th>NZD</th>
+      <td>1.487839</td>
+    </tr>
+    <tr>
+      <th>PHP</th>
+      <td>51.261015</td>
+    </tr>
+    <tr>
+      <th>SGD</th>
+      <td>1.344730</td>
+    </tr>
+    <tr>
+      <th>THB</th>
+      <td>32.920338</td>
+    </tr>
+    <tr>
+      <th>ZAR</th>
+      <td>15.116849</td>
     </tr>
   </tbody>
 </table>
@@ -774,39 +770,39 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GBP&#39;: 0.8213774762,
- &#39;HKD&#39;: 7.7559611152,
- &#39;IDR&#39;: 14901.9992663243,
- &#39;ILS&#39;: 3.527054292,
- &#39;DKK&#39;: 6.8395084373,
- &#39;INR&#39;: 75.8680300807,
- &#39;CHF&#39;: 0.9712949376,
- &#39;MXN&#39;: 22.9686353632,
- &#39;CZK&#39;: 24.9541452678,
- &#39;SGD&#39;: 1.4234225972,
- &#39;THB&#39;: 31.8947175348,
- &#39;HRK&#39;: 6.9557043287,
- &#39;EUR&#39;: 0.9170946442,
- &#39;MYR&#39;: 4.3625275128,
- &#39;NOK&#39;: 10.0034849596,
- &#39;CNY&#39;: 7.1347212032,
- &#39;BGN&#39;: 1.7936537051,
- &#39;PHP&#39;: 50.76027146,
- &#39;PLN&#39;: 4.1460931768,
- &#39;ZAR&#39;: 17.6518708731,
- &#39;CAD&#39;: 1.40067865,
- &#39;ISK&#39;: 143.3418928833,
- &#39;BRL&#39;: 5.581162876,
- &#39;RON&#39;: 4.441947909,
- &#39;NZD&#39;: 1.6388481291,
- &#39;TRY&#39;: 6.8073184153,
- &#39;JPY&#39;: 107.5385179751,
- &#39;RUB&#39;: 71.4544203962,
- &#39;KRW&#39;: 1241.2967718269,
- &#39;USD&#39;: 1.0,
- &#39;AUD&#39;: 1.530997799,
- &#39;HUF&#39;: 320.432868672,
- &#39;SEK&#39;: 9.663701394}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;EUR&#39;: 0.917094644167278,
+ &#39;USD&#39;: 1,
+ &#39;JPY&#39;: 107.53851797505503,
+ &#39;BGN&#39;: 1.7936537050623624,
+ &#39;CZK&#39;: 24.954145267791635,
+ &#39;DKK&#39;: 6.839508437270726,
+ &#39;GBP&#39;: 0.8213774761555392,
+ &#39;HUF&#39;: 320.43286867204694,
+ &#39;PLN&#39;: 4.146093176815848,
+ &#39;RON&#39;: 4.44194790902421,
+ &#39;SEK&#39;: 9.663701393983859,
+ &#39;CHF&#39;: 0.9712949376375641,
+ &#39;ISK&#39;: 143.34189288334557,
+ &#39;NOK&#39;: 10.003484959647835,
+ &#39;HRK&#39;: 6.95570432868672,
+ &#39;RUB&#39;: 71.45442039618489,
+ &#39;TRY&#39;: 6.807318415260455,
+ &#39;AUD&#39;: 1.530997798972854,
+ &#39;BRL&#39;: 5.581162876008804,
+ &#39;CAD&#39;: 1.400678650036684,
+ &#39;CNY&#39;: 7.134721203228173,
+ &#39;HKD&#39;: 7.7559611151870875,
+ &#39;IDR&#39;: 14901.999266324283,
+ &#39;ILS&#39;: 3.5270542920029344,
+ &#39;INR&#39;: 75.86803008070433,
+ &#39;KRW&#39;: 1241.2967718268526,
+ &#39;MXN&#39;: 22.96863536316948,
+ &#39;MYR&#39;: 4.362527512839325,
+ &#39;NZD&#39;: 1.6388481291269257,
+ &#39;PHP&#39;: 50.76027146001467,
+ &#39;SGD&#39;: 1.4234225972120322,
+ &#39;THB&#39;: 31.894717534849594,
+ &#39;ZAR&#39;: 17.6518708730741}
 </pre></div>
 </div>
 </div>
@@ -856,8 +852,88 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
   </thead>
   <tbody>
     <tr>
+      <th>EUR</th>
+      <td>0.917095</td>
+    </tr>
+    <tr>
+      <th>USD</th>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>JPY</th>
+      <td>107.538518</td>
+    </tr>
+    <tr>
+      <th>BGN</th>
+      <td>1.793654</td>
+    </tr>
+    <tr>
+      <th>CZK</th>
+      <td>24.954145</td>
+    </tr>
+    <tr>
+      <th>DKK</th>
+      <td>6.839508</td>
+    </tr>
+    <tr>
       <th>GBP</th>
       <td>0.821377</td>
+    </tr>
+    <tr>
+      <th>HUF</th>
+      <td>320.432869</td>
+    </tr>
+    <tr>
+      <th>PLN</th>
+      <td>4.146093</td>
+    </tr>
+    <tr>
+      <th>RON</th>
+      <td>4.441948</td>
+    </tr>
+    <tr>
+      <th>SEK</th>
+      <td>9.663701</td>
+    </tr>
+    <tr>
+      <th>CHF</th>
+      <td>0.971295</td>
+    </tr>
+    <tr>
+      <th>ISK</th>
+      <td>143.341893</td>
+    </tr>
+    <tr>
+      <th>NOK</th>
+      <td>10.003485</td>
+    </tr>
+    <tr>
+      <th>HRK</th>
+      <td>6.955704</td>
+    </tr>
+    <tr>
+      <th>RUB</th>
+      <td>71.454420</td>
+    </tr>
+    <tr>
+      <th>TRY</th>
+      <td>6.807318</td>
+    </tr>
+    <tr>
+      <th>AUD</th>
+      <td>1.530998</td>
+    </tr>
+    <tr>
+      <th>BRL</th>
+      <td>5.581163</td>
+    </tr>
+    <tr>
+      <th>CAD</th>
+      <td>1.400679</td>
+    </tr>
+    <tr>
+      <th>CNY</th>
+      <td>7.134721</td>
     </tr>
     <tr>
       <th>HKD</th>
@@ -872,24 +948,28 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
       <td>3.527054</td>
     </tr>
     <tr>
-      <th>DKK</th>
-      <td>6.839508</td>
-    </tr>
-    <tr>
       <th>INR</th>
       <td>75.868030</td>
     </tr>
     <tr>
-      <th>CHF</th>
-      <td>0.971295</td>
+      <th>KRW</th>
+      <td>1241.296772</td>
     </tr>
     <tr>
       <th>MXN</th>
       <td>22.968635</td>
     </tr>
     <tr>
-      <th>CZK</th>
-      <td>24.954145</td>
+      <th>MYR</th>
+      <td>4.362528</td>
+    </tr>
+    <tr>
+      <th>NZD</th>
+      <td>1.638848</td>
+    </tr>
+    <tr>
+      <th>PHP</th>
+      <td>50.760271</td>
     </tr>
     <tr>
       <th>SGD</th>
@@ -900,92 +980,8 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
       <td>31.894718</td>
     </tr>
     <tr>
-      <th>HRK</th>
-      <td>6.955704</td>
-    </tr>
-    <tr>
-      <th>EUR</th>
-      <td>0.917095</td>
-    </tr>
-    <tr>
-      <th>MYR</th>
-      <td>4.362528</td>
-    </tr>
-    <tr>
-      <th>NOK</th>
-      <td>10.003485</td>
-    </tr>
-    <tr>
-      <th>CNY</th>
-      <td>7.134721</td>
-    </tr>
-    <tr>
-      <th>BGN</th>
-      <td>1.793654</td>
-    </tr>
-    <tr>
-      <th>PHP</th>
-      <td>50.760271</td>
-    </tr>
-    <tr>
-      <th>PLN</th>
-      <td>4.146093</td>
-    </tr>
-    <tr>
       <th>ZAR</th>
       <td>17.651871</td>
-    </tr>
-    <tr>
-      <th>CAD</th>
-      <td>1.400679</td>
-    </tr>
-    <tr>
-      <th>ISK</th>
-      <td>143.341893</td>
-    </tr>
-    <tr>
-      <th>BRL</th>
-      <td>5.581163</td>
-    </tr>
-    <tr>
-      <th>RON</th>
-      <td>4.441948</td>
-    </tr>
-    <tr>
-      <th>NZD</th>
-      <td>1.638848</td>
-    </tr>
-    <tr>
-      <th>TRY</th>
-      <td>6.807318</td>
-    </tr>
-    <tr>
-      <th>JPY</th>
-      <td>107.538518</td>
-    </tr>
-    <tr>
-      <th>RUB</th>
-      <td>71.454420</td>
-    </tr>
-    <tr>
-      <th>KRW</th>
-      <td>1241.296772</td>
-    </tr>
-    <tr>
-      <th>USD</th>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>AUD</th>
-      <td>1.530998</td>
-    </tr>
-    <tr>
-      <th>HUF</th>
-      <td>320.432869</td>
-    </tr>
-    <tr>
-      <th>SEK</th>
-      <td>9.663701</td>
     </tr>
   </tbody>
 </table>
@@ -1045,8 +1041,88 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
   </thead>
   <tbody>
     <tr>
+      <th>EUR</th>
+      <td>0.917095</td>
+    </tr>
+    <tr>
+      <th>USD</th>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>JPY</th>
+      <td>107.538518</td>
+    </tr>
+    <tr>
+      <th>BGN</th>
+      <td>1.793654</td>
+    </tr>
+    <tr>
+      <th>CZK</th>
+      <td>24.954145</td>
+    </tr>
+    <tr>
+      <th>DKK</th>
+      <td>6.839508</td>
+    </tr>
+    <tr>
       <th>GBP</th>
       <td>0.821377</td>
+    </tr>
+    <tr>
+      <th>HUF</th>
+      <td>320.432869</td>
+    </tr>
+    <tr>
+      <th>PLN</th>
+      <td>4.146093</td>
+    </tr>
+    <tr>
+      <th>RON</th>
+      <td>4.441948</td>
+    </tr>
+    <tr>
+      <th>SEK</th>
+      <td>9.663701</td>
+    </tr>
+    <tr>
+      <th>CHF</th>
+      <td>0.971295</td>
+    </tr>
+    <tr>
+      <th>ISK</th>
+      <td>143.341893</td>
+    </tr>
+    <tr>
+      <th>NOK</th>
+      <td>10.003485</td>
+    </tr>
+    <tr>
+      <th>HRK</th>
+      <td>6.955704</td>
+    </tr>
+    <tr>
+      <th>RUB</th>
+      <td>71.454420</td>
+    </tr>
+    <tr>
+      <th>TRY</th>
+      <td>6.807318</td>
+    </tr>
+    <tr>
+      <th>AUD</th>
+      <td>1.530998</td>
+    </tr>
+    <tr>
+      <th>BRL</th>
+      <td>5.581163</td>
+    </tr>
+    <tr>
+      <th>CAD</th>
+      <td>1.400679</td>
+    </tr>
+    <tr>
+      <th>CNY</th>
+      <td>7.134721</td>
     </tr>
     <tr>
       <th>HKD</th>
@@ -1061,24 +1137,28 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
       <td>3.527054</td>
     </tr>
     <tr>
-      <th>DKK</th>
-      <td>6.839508</td>
-    </tr>
-    <tr>
       <th>INR</th>
       <td>75.868030</td>
     </tr>
     <tr>
-      <th>CHF</th>
-      <td>0.971295</td>
+      <th>KRW</th>
+      <td>1241.296772</td>
     </tr>
     <tr>
       <th>MXN</th>
       <td>22.968635</td>
     </tr>
     <tr>
-      <th>CZK</th>
-      <td>24.954145</td>
+      <th>MYR</th>
+      <td>4.362528</td>
+    </tr>
+    <tr>
+      <th>NZD</th>
+      <td>1.638848</td>
+    </tr>
+    <tr>
+      <th>PHP</th>
+      <td>50.760271</td>
     </tr>
     <tr>
       <th>SGD</th>
@@ -1089,92 +1169,8 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
       <td>31.894718</td>
     </tr>
     <tr>
-      <th>HRK</th>
-      <td>6.955704</td>
-    </tr>
-    <tr>
-      <th>EUR</th>
-      <td>0.917095</td>
-    </tr>
-    <tr>
-      <th>MYR</th>
-      <td>4.362528</td>
-    </tr>
-    <tr>
-      <th>NOK</th>
-      <td>10.003485</td>
-    </tr>
-    <tr>
-      <th>CNY</th>
-      <td>7.134721</td>
-    </tr>
-    <tr>
-      <th>BGN</th>
-      <td>1.793654</td>
-    </tr>
-    <tr>
-      <th>PHP</th>
-      <td>50.760271</td>
-    </tr>
-    <tr>
-      <th>PLN</th>
-      <td>4.146093</td>
-    </tr>
-    <tr>
       <th>ZAR</th>
       <td>17.651871</td>
-    </tr>
-    <tr>
-      <th>CAD</th>
-      <td>1.400679</td>
-    </tr>
-    <tr>
-      <th>ISK</th>
-      <td>143.341893</td>
-    </tr>
-    <tr>
-      <th>BRL</th>
-      <td>5.581163</td>
-    </tr>
-    <tr>
-      <th>RON</th>
-      <td>4.441948</td>
-    </tr>
-    <tr>
-      <th>NZD</th>
-      <td>1.638848</td>
-    </tr>
-    <tr>
-      <th>TRY</th>
-      <td>6.807318</td>
-    </tr>
-    <tr>
-      <th>JPY</th>
-      <td>107.538518</td>
-    </tr>
-    <tr>
-      <th>RUB</th>
-      <td>71.454420</td>
-    </tr>
-    <tr>
-      <th>KRW</th>
-      <td>1241.296772</td>
-    </tr>
-    <tr>
-      <th>USD</th>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>AUD</th>
-      <td>1.530998</td>
-    </tr>
-    <tr>
-      <th>HUF</th>
-      <td>320.432869</td>
-    </tr>
-    <tr>
-      <th>SEK</th>
-      <td>9.663701</td>
     </tr>
   </tbody>
 </table>
@@ -1208,7 +1204,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>91.70946442
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>91.7094644167278
 </pre></div>
 </div>
 </div>
@@ -1235,7 +1231,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/guy/opt/anaconda3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.271&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.167&#39;
 </pre></div>
 </div>
 </div>
@@ -1298,38 +1294,38 @@ As for this example, this technique is relevent for many optional analysis.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>2/19/2021</td>
+      <td>1/21/2022</td>
       <td>Friday</td>
-      <td>3.27334</td>
-      <td>USD ILS rate for 2/19/2021</td>
+      <td>3.14075</td>
+      <td>USD ILS rate for 1/21/2022</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2/18/2021</td>
+      <td>1/20/2022</td>
       <td>Thursday</td>
-      <td>3.26996</td>
-      <td>USD ILS rate for 2/18/2021</td>
+      <td>3.13599</td>
+      <td>USD ILS rate for 1/20/2022</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2/17/2021</td>
+      <td>1/19/2022</td>
       <td>Wednesday</td>
-      <td>3.26633</td>
-      <td>USD ILS rate for 2/17/2021</td>
+      <td>3.13773</td>
+      <td>USD ILS rate for 1/19/2022</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2/16/2021</td>
+      <td>1/18/2022</td>
       <td>Tuesday</td>
-      <td>3.24366</td>
-      <td>USD ILS rate for 2/16/2021</td>
+      <td>3.13639</td>
+      <td>USD ILS rate for 1/18/2022</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2/15/2021</td>
+      <td>1/17/2022</td>
       <td>Monday</td>
-      <td>3.24344</td>
-      <td>USD ILS rate for 2/15/2021</td>
+      <td>3.10865</td>
+      <td>USD ILS rate for 1/17/2022</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1339,43 +1335,43 @@ As for this example, this technique is relevent for many optional analysis.</p>
       <td>...</td>
     </tr>
     <tr>
-      <th>133</th>
-      <td>8/27/2020</td>
+      <th>125</th>
+      <td>7/30/2021</td>
+      <td>Friday</td>
+      <td>3.22303</td>
+      <td>USD ILS rate for 7/30/2021</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>7/29/2021</td>
       <td>Thursday</td>
-      <td>3.36740</td>
-      <td>USD ILS rate for 8/27/2020</td>
+      <td>3.23996</td>
+      <td>USD ILS rate for 7/29/2021</td>
     </tr>
     <tr>
-      <th>134</th>
-      <td>8/26/2020</td>
+      <th>127</th>
+      <td>7/28/2021</td>
       <td>Wednesday</td>
-      <td>3.39530</td>
-      <td>USD ILS rate for 8/26/2020</td>
+      <td>3.24354</td>
+      <td>USD ILS rate for 7/28/2021</td>
     </tr>
     <tr>
-      <th>135</th>
-      <td>8/25/2020</td>
+      <th>128</th>
+      <td>7/27/2021</td>
       <td>Tuesday</td>
-      <td>3.39675</td>
-      <td>USD ILS rate for 8/25/2020</td>
+      <td>3.25632</td>
+      <td>USD ILS rate for 7/27/2021</td>
     </tr>
     <tr>
-      <th>136</th>
-      <td>8/24/2020</td>
+      <th>129</th>
+      <td>7/26/2021</td>
       <td>Monday</td>
-      <td>3.40691</td>
-      <td>USD ILS rate for 8/24/2020</td>
-    </tr>
-    <tr>
-      <th>137</th>
-      <td>8/23/2020</td>
-      <td>Sunday</td>
-      <td>3.39565</td>
-      <td>USD ILS rate for 8/23/2020</td>
+      <td>3.25722</td>
+      <td>USD ILS rate for 7/26/2021</td>
     </tr>
   </tbody>
 </table>
-<p>136 rows × 4 columns</p>
+<p>130 rows × 4 columns</p>
 </div></div></div>
 </div>
 <p>Now let’s check in which day of the week, does the rate of the ILS is “stronger”, in accordance to the USD.<br>
@@ -1397,12 +1393,11 @@ This data could be useful in order to maximize the rate when doing currency conv
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
-Sunday       3.411458
-Monday       3.329011
-Friday       3.325780
-Tuesday      3.323671
-Thursday     3.321638
-Wednesday    3.320156
+Monday       3.176526
+Tuesday      3.175030
+Wednesday    3.174225
+Friday       3.172393
+Thursday     3.172075
 Name: Rate, dtype: float64
 </pre></div>
 </div>
@@ -1426,12 +1421,11 @@ Name: Rate, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
-Sunday       3.408500
-Monday       3.352180
-Tuesday      3.344420
-Wednesday    3.337945
-Thursday     3.329660
-Friday       3.324850
+Monday       3.200975
+Tuesday      3.200585
+Wednesday    3.195530
+Friday       3.189345
+Thursday     3.186640
 Name: Rate, dtype: float64
 </pre></div>
 </div>
@@ -1506,34 +1500,34 @@ Name: Rate, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>2021-02-19</th>
+      <th>2022-01-21</th>
       <td>Friday</td>
-      <td>3.27334</td>
-      <td>USD ILS rate for 2/19/2021</td>
+      <td>3.14075</td>
+      <td>USD ILS rate for 1/21/2022</td>
     </tr>
     <tr>
-      <th>2021-02-18</th>
+      <th>2022-01-20</th>
       <td>Thursday</td>
-      <td>3.26996</td>
-      <td>USD ILS rate for 2/18/2021</td>
+      <td>3.13599</td>
+      <td>USD ILS rate for 1/20/2022</td>
     </tr>
     <tr>
-      <th>2021-02-17</th>
+      <th>2022-01-19</th>
       <td>Wednesday</td>
-      <td>3.26633</td>
-      <td>USD ILS rate for 2/17/2021</td>
+      <td>3.13773</td>
+      <td>USD ILS rate for 1/19/2022</td>
     </tr>
     <tr>
-      <th>2021-02-16</th>
+      <th>2022-01-18</th>
       <td>Tuesday</td>
-      <td>3.24366</td>
-      <td>USD ILS rate for 2/16/2021</td>
+      <td>3.13639</td>
+      <td>USD ILS rate for 1/18/2022</td>
     </tr>
     <tr>
-      <th>2021-02-15</th>
+      <th>2022-01-17</th>
       <td>Monday</td>
-      <td>3.24344</td>
-      <td>USD ILS rate for 2/15/2021</td>
+      <td>3.10865</td>
+      <td>USD ILS rate for 1/17/2022</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1542,38 +1536,38 @@ Name: Rate, dtype: float64
       <td>...</td>
     </tr>
     <tr>
-      <th>2020-08-27</th>
+      <th>2021-07-30</th>
+      <td>Friday</td>
+      <td>3.22303</td>
+      <td>USD ILS rate for 7/30/2021</td>
+    </tr>
+    <tr>
+      <th>2021-07-29</th>
       <td>Thursday</td>
-      <td>3.36740</td>
-      <td>USD ILS rate for 8/27/2020</td>
+      <td>3.23996</td>
+      <td>USD ILS rate for 7/29/2021</td>
     </tr>
     <tr>
-      <th>2020-08-26</th>
+      <th>2021-07-28</th>
       <td>Wednesday</td>
-      <td>3.39530</td>
-      <td>USD ILS rate for 8/26/2020</td>
+      <td>3.24354</td>
+      <td>USD ILS rate for 7/28/2021</td>
     </tr>
     <tr>
-      <th>2020-08-25</th>
+      <th>2021-07-27</th>
       <td>Tuesday</td>
-      <td>3.39675</td>
-      <td>USD ILS rate for 8/25/2020</td>
+      <td>3.25632</td>
+      <td>USD ILS rate for 7/27/2021</td>
     </tr>
     <tr>
-      <th>2020-08-24</th>
+      <th>2021-07-26</th>
       <td>Monday</td>
-      <td>3.40691</td>
-      <td>USD ILS rate for 8/24/2020</td>
-    </tr>
-    <tr>
-      <th>2020-08-23</th>
-      <td>Sunday</td>
-      <td>3.39565</td>
-      <td>USD ILS rate for 8/23/2020</td>
+      <td>3.25722</td>
+      <td>USD ILS rate for 7/26/2021</td>
     </tr>
   </tbody>
 </table>
-<p>136 rows × 3 columns</p>
+<p>130 rows × 3 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1587,7 +1581,8 @@ Name: Rate, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08.02_Currency_analysis_38_0.svg" src="../_images/08.02_Currency_analysis_38_0.svg" /></div>
+<img alt="../_images/08.02_Currency_analysis_38_0.png" src="../_images/08.02_Currency_analysis_38_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="scatter-plot">
@@ -1609,7 +1604,8 @@ Name: Rate, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08.02_Currency_analysis_40_0.svg" src="../_images/08.02_Currency_analysis_40_0.svg" /></div>
+<img alt="../_images/08.02_Currency_analysis_40_0.png" src="../_images/08.02_Currency_analysis_40_0.png" />
+</div>
 </div>
 <p>Something here looks odd. it appears there are less trading ‘Sundays’, which could be the reason for our former result.<br>
 Let’s check it.</p>
@@ -1628,7 +1624,6 @@ Let’s check it.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
 Friday       26
 Monday       26
-Sunday        6
 Thursday     26
 Tuesday      26
 Wednesday    26
@@ -1656,7 +1651,8 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08.02_Currency_analysis_44_0.svg" src="../_images/08.02_Currency_analysis_44_0.svg" /></div>
+<img alt="../_images/08.02_Currency_analysis_44_0.png" src="../_images/08.02_Currency_analysis_44_0.png" />
+</div>
 </div>
 <p>And based on the most lower points, we can now see that the lowest days occurs in the mid-of-the-week days.<br></p>
 </div>
@@ -1681,216 +1677,265 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style  type="text/css" >
-#T_71d78756_7387_11eb_bc25_acde48001122row0_col1{
-            background-color:  #008066;
-            color:  #f1f1f1;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row1_col1,#T_71d78756_7387_11eb_bc25_acde48001122row6_col1{
-            background-color:  #399c66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row2_col1{
-            background-color:  #389c66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row3_col1{
-            background-color:  #43a166;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row4_col1{
-            background-color:  #52a866;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row5_col1{
-            background-color:  #319866;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row7_col1{
-            background-color:  #b0d866;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row8_col1{
-            background-color:  #bbdd66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row9_col1{
-            background-color:  #95ca66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row10_col1,#T_71d78756_7387_11eb_bc25_acde48001122row13_col1{
-            background-color:  #ebf566;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row11_col1{
-            background-color:  #d5ea66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row12_col1{
-            background-color:  #ffff66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row14_col1{
-            background-color:  #cae466;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row15_col1,#T_71d78756_7387_11eb_bc25_acde48001122row16_col1{
-            background-color:  #aad466;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row17_col1{
-            background-color:  #c5e266;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row18_col1{
-            background-color:  #c0e066;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row19_col1{
-            background-color:  #a3d166;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row20_col1{
-            background-color:  #92c866;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row21_col1{
-            background-color:  #7fbf66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row22_col1{
-            background-color:  #61b066;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row23_col1{
-            background-color:  #2d9666;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row24_col1{
-            background-color:  #279366;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row25_col1{
-            background-color:  #1d8e66;
-            color:  #000000;
-        }#T_71d78756_7387_11eb_bc25_acde48001122row26_col1{
-            background-color:  #168a66;
-            color:  #000000;
-        }</style><table id="T_71d78756_7387_11eb_bc25_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row0_col0" class="data row0 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row0_col1" class="data row0 col1" >3.214590</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row1_col0" class="data row1 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row1_col1" class="data row1 col1" >3.273360</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row2_col0" class="data row2 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row2_col1" class="data row2 col1" >3.272890</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row3_col0" class="data row3 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row3_col1" class="data row3 col1" >3.283390</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row4_col0" class="data row4 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row4_col1" class="data row4 col1" >3.299270</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row5_col0" class="data row5 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row5_col1" class="data row5 col1" >3.265650</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row6" class="row_heading level0 row6" >7</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row6_col0" class="data row6 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row6_col1" class="data row6 col1" >3.273340</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row7_col0" class="data row7 col0" >Sunday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row7_col1" class="data row7 col1" >3.395650</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row8_col0" class="data row8 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row8_col1" class="data row8 col1" >3.406910</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row9_col0" class="data row9 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row9_col1" class="data row9 col1" >3.367810</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row10_col0" class="data row10 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row10_col1" class="data row10 col1" >3.456460</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row11_col0" class="data row11 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row11_col1" class="data row11 col1" >3.433940</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row12_col0" class="data row12 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row12_col1" class="data row12 col1" >3.477150</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row13_col0" class="data row13 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row13_col1" class="data row13 col1" >3.456290</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row14_col0" class="data row14 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row14_col1" class="data row14 col1" >3.422490</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row15_col0" class="data row15 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row15_col1" class="data row15 col1" >3.389590</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row16_col0" class="data row16 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row16_col1" class="data row16 col1" >3.389790</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row17_col0" class="data row17 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row17_col1" class="data row17 col1" >3.417380</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row18_col0" class="data row18 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row18_col1" class="data row18 col1" >3.411570</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row19_col0" class="data row19 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row19_col1" class="data row19 col1" >3.381830</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row20_col0" class="data row20 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row20_col1" class="data row20 col1" >3.364970</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row21_col0" class="data row21 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row21_col1" class="data row21 col1" >3.345720</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row22_col0" class="data row22 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row22_col1" class="data row22 col1" >3.314280</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row23_col0" class="data row23 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row23_col1" class="data row23 col1" >3.261470</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row24_col0" class="data row24 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row24_col1" class="data row24 col1" >3.255380</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row25_col0" class="data row25 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row25_col1" class="data row25 col1" >3.244400</td>
-            </tr>
-            <tr>
-                        <th id="T_71d78756_7387_11eb_bc25_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row26_col0" class="data row26 col0" >Wednesday</td>
-                        <td id="T_71d78756_7387_11eb_bc25_acde48001122row26_col1" class="data row26 col1" >3.237460</td>
-            </tr>
-    </tbody></table></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/ipykernel_launcher.py:3: FutureWarning: weekofyear and week have been deprecated, please use DatetimeIndex.isocalendar().week instead, which returns a Series.  To exactly reproduce the behavior of week and weekofyear and return an Index, you may call pd.Int64Index(idx.isocalendar().week)
+  This is separate from the ipykernel package so we can avoid doing imports until
+/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/ipykernel_launcher.py:5: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+  &quot;&quot;&quot;
+</pre></div>
+</div>
+<div class="output text_html"><style type="text/css">
+#T_40b01_row0_col1 {
+  background-color: #008066;
+  color: #f1f1f1;
+}
+#T_40b01_row1_col1 {
+  background-color: #269266;
+  color: #f1f1f1;
+}
+#T_40b01_row2_col1 {
+  background-color: #2d9666;
+  color: #f1f1f1;
+}
+#T_40b01_row3_col1 {
+  background-color: #ffff66;
+  color: #000000;
+}
+#T_40b01_row4_col1 {
+  background-color: #c7e366;
+  color: #000000;
+}
+#T_40b01_row5_col1 {
+  background-color: #d2e866;
+  color: #000000;
+}
+#T_40b01_row6_col1 {
+  background-color: #f2f866;
+  color: #000000;
+}
+#T_40b01_row7_col1 {
+  background-color: #c8e366;
+  color: #000000;
+}
+#T_40b01_row8_col1 {
+  background-color: #b7db66;
+  color: #000000;
+}
+#T_40b01_row9_col1 {
+  background-color: #a5d266;
+  color: #000000;
+}
+#T_40b01_row10_col1 {
+  background-color: #b5da66;
+  color: #000000;
+}
+#T_40b01_row11_col1 {
+  background-color: #afd766;
+  color: #000000;
+}
+#T_40b01_row12_col1 {
+  background-color: #cce666;
+  color: #000000;
+}
+#T_40b01_row13_col1 {
+  background-color: #d8ec66;
+  color: #000000;
+}
+#T_40b01_row14_col1 {
+  background-color: #daec66;
+  color: #000000;
+}
+#T_40b01_row15_col1 {
+  background-color: #b6db66;
+  color: #000000;
+}
+#T_40b01_row16_col1 {
+  background-color: #9bcd66;
+  color: #000000;
+}
+#T_40b01_row17_col1 {
+  background-color: #299466;
+  color: #f1f1f1;
+}
+#T_40b01_row18_col1 {
+  background-color: #118866;
+  color: #f1f1f1;
+}
+#T_40b01_row19_col1 {
+  background-color: #038166;
+  color: #f1f1f1;
+}
+#T_40b01_row20_col1 {
+  background-color: #77bb66;
+  color: #f1f1f1;
+}
+#T_40b01_row21_col1 {
+  background-color: #65b266;
+  color: #f1f1f1;
+}
+#T_40b01_row22_col1 {
+  background-color: #56ab66;
+  color: #f1f1f1;
+}
+#T_40b01_row23_col1 {
+  background-color: #329866;
+  color: #f1f1f1;
+}
+#T_40b01_row24_col1 {
+  background-color: #66b266;
+  color: #f1f1f1;
+}
+#T_40b01_row25_col1 {
+  background-color: #0e8666;
+  color: #f1f1f1;
+}
+</style>
+<table id="T_40b01_">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th class="col_heading level0 col0" >Day</th>
+      <th class="col_heading level0 col1" >Rate</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >Week</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_40b01_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_40b01_row0_col0" class="data row0 col0" >Wednesday</td>
+      <td id="T_40b01_row0_col1" class="data row0 col1" >3.115250</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_40b01_row1_col0" class="data row1 col0" >Wednesday</td>
+      <td id="T_40b01_row1_col1" class="data row1 col1" >3.136660</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_40b01_row2_col0" class="data row2 col0" >Wednesday</td>
+      <td id="T_40b01_row2_col1" class="data row2 col1" >3.140750</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row3" class="row_heading level0 row3" >30</th>
+      <td id="T_40b01_row3_col0" class="data row3 col0" >Wednesday</td>
+      <td id="T_40b01_row3_col1" class="data row3 col1" >3.257220</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row4" class="row_heading level0 row4" >31</th>
+      <td id="T_40b01_row4_col0" class="data row4 col0" >Wednesday</td>
+      <td id="T_40b01_row4_col1" class="data row4 col1" >3.226110</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row5" class="row_heading level0 row5" >32</th>
+      <td id="T_40b01_row5_col0" class="data row5 col0" >Wednesday</td>
+      <td id="T_40b01_row5_col1" class="data row5 col1" >3.231880</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row6" class="row_heading level0 row6" >33</th>
+      <td id="T_40b01_row6_col0" class="data row6 col0" >Wednesday</td>
+      <td id="T_40b01_row6_col1" class="data row6 col1" >3.250010</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row7" class="row_heading level0 row7" >34</th>
+      <td id="T_40b01_row7_col0" class="data row7 col0" >Wednesday</td>
+      <td id="T_40b01_row7_col1" class="data row7 col1" >3.226620</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row8" class="row_heading level0 row8" >35</th>
+      <td id="T_40b01_row8_col0" class="data row8 col0" >Wednesday</td>
+      <td id="T_40b01_row8_col1" class="data row8 col1" >3.216950</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row9" class="row_heading level0 row9" >36</th>
+      <td id="T_40b01_row9_col0" class="data row9 col0" >Wednesday</td>
+      <td id="T_40b01_row9_col1" class="data row9 col1" >3.206780</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row10" class="row_heading level0 row10" >37</th>
+      <td id="T_40b01_row10_col0" class="data row10 col0" >Wednesday</td>
+      <td id="T_40b01_row10_col1" class="data row10 col1" >3.216150</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row11" class="row_heading level0 row11" >38</th>
+      <td id="T_40b01_row11_col0" class="data row11 col0" >Wednesday</td>
+      <td id="T_40b01_row11_col1" class="data row11 col1" >3.212520</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row12" class="row_heading level0 row12" >39</th>
+      <td id="T_40b01_row12_col0" class="data row12 col0" >Wednesday</td>
+      <td id="T_40b01_row12_col1" class="data row12 col1" >3.228600</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row13" class="row_heading level0 row13" >40</th>
+      <td id="T_40b01_row13_col0" class="data row13 col0" >Wednesday</td>
+      <td id="T_40b01_row13_col1" class="data row13 col1" >3.235110</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row14" class="row_heading level0 row14" >41</th>
+      <td id="T_40b01_row14_col0" class="data row14 col0" >Wednesday</td>
+      <td id="T_40b01_row14_col1" class="data row14 col1" >3.236410</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row15" class="row_heading level0 row15" >42</th>
+      <td id="T_40b01_row15_col0" class="data row15 col0" >Wednesday</td>
+      <td id="T_40b01_row15_col1" class="data row15 col1" >3.216550</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row16" class="row_heading level0 row16" >43</th>
+      <td id="T_40b01_row16_col0" class="data row16 col0" >Wednesday</td>
+      <td id="T_40b01_row16_col1" class="data row16 col1" >3.201460</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row17" class="row_heading level0 row17" >44</th>
+      <td id="T_40b01_row17_col0" class="data row17 col0" >Wednesday</td>
+      <td id="T_40b01_row17_col1" class="data row17 col1" >3.138260</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row18" class="row_heading level0 row18" >45</th>
+      <td id="T_40b01_row18_col0" class="data row18 col0" >Wednesday</td>
+      <td id="T_40b01_row18_col1" class="data row18 col1" >3.125190</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row19" class="row_heading level0 row19" >46</th>
+      <td id="T_40b01_row19_col0" class="data row19 col0" >Wednesday</td>
+      <td id="T_40b01_row19_col1" class="data row19 col1" >3.117110</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row20" class="row_heading level0 row20" >47</th>
+      <td id="T_40b01_row20_col0" class="data row20 col0" >Wednesday</td>
+      <td id="T_40b01_row20_col1" class="data row20 col1" >3.181760</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row21" class="row_heading level0 row21" >48</th>
+      <td id="T_40b01_row21_col0" class="data row21 col0" >Wednesday</td>
+      <td id="T_40b01_row21_col1" class="data row21 col1" >3.171570</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row22" class="row_heading level0 row22" >49</th>
+      <td id="T_40b01_row22_col0" class="data row22 col0" >Wednesday</td>
+      <td id="T_40b01_row22_col1" class="data row22 col1" >3.163360</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row23" class="row_heading level0 row23" >50</th>
+      <td id="T_40b01_row23_col0" class="data row23 col0" >Wednesday</td>
+      <td id="T_40b01_row23_col1" class="data row23 col1" >3.143060</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row24" class="row_heading level0 row24" >51</th>
+      <td id="T_40b01_row24_col0" class="data row24 col0" >Wednesday</td>
+      <td id="T_40b01_row24_col1" class="data row24 col1" >3.172170</td>
+    </tr>
+    <tr>
+      <th id="T_40b01_level0_row25" class="row_heading level0 row25" >52</th>
+      <td id="T_40b01_row25_col0" class="data row25 col0" >Wednesday</td>
+      <td id="T_40b01_row25_col1" class="data row25 col1" >3.123020</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1907,222 +1952,257 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style  type="text/css" >
-#T_721fd7ea_7387_11eb_bc25_acde48001122row0_col1{
-            background-color:  #249266;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row1_col1{
-            background-color:  #008066;
-            color:  #f1f1f1;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row2_col1{
-            background-color:  #55aa66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row3_col1{
-            background-color:  #6eb666;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row4_col1{
-            background-color:  #7fbf66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row5_col1,#T_721fd7ea_7387_11eb_bc25_acde48001122row6_col1{
-            background-color:  #5faf66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row7_col1{
-            background-color:  #dfef66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row8_col1{
-            background-color:  #bfdf66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row9_col1{
-            background-color:  #c0e066;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row10_col1{
-            background-color:  #d4ea66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row11_col1{
-            background-color:  #f1f866;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row12_col1{
-            background-color:  #ffff66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row13_col1{
-            background-color:  #f5fa66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row14_col1{
-            background-color:  #cde666;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row15_col1{
-            background-color:  #d1e866;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row16_col1{
-            background-color:  #cbe566;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row17_col1{
-            background-color:  #ddee66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row18_col1{
-            background-color:  #cce666;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row19_col1{
-            background-color:  #c5e266;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row20_col1{
-            background-color:  #aed666;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row21_col1{
-            background-color:  #98cc66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row22_col1{
-            background-color:  #76bb66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row23_col1{
-            background-color:  #63b166;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row24_col1{
-            background-color:  #56ab66;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row25_col1{
-            background-color:  #45a266;
-            color:  #000000;
-        }#T_721fd7ea_7387_11eb_bc25_acde48001122row26_col1{
-            background-color:  #47a366;
-            color:  #000000;
-        }</style><table id="T_721fd7ea_7387_11eb_bc25_acde48001122" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Day</th>        <th class="col_heading level0 col1" >Rate</th>    </tr>    <tr>        <th class="index_name level0" >Week</th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row0_col0" class="data row0 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row0_col1" class="data row0 col1" >3.174440</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row1_col0" class="data row1 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row1_col1" class="data row1 col1" >3.130680</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row2_col0" class="data row2 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row2_col1" class="data row2 col1" >3.231710</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row3" class="row_heading level0 row3" >4</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row3_col0" class="data row3 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row3_col1" class="data row3 col1" >3.261980</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row4" class="row_heading level0 row4" >5</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row4_col0" class="data row4 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row4_col1" class="data row4 col1" >3.281990</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row5" class="row_heading level0 row5" >6</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row5_col0" class="data row5 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row5_col1" class="data row5 col1" >3.244050</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row6" class="row_heading level0 row6" >7</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row6_col0" class="data row6 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row6_col1" class="data row6 col1" >3.243440</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row7" class="row_heading level0 row7" >34</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row7_col0" class="data row7 col0" >Sunday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row7_col1" class="data row7 col1" >3.395650</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row8" class="row_heading level0 row8" >35</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row8_col0" class="data row8 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row8_col1" class="data row8 col1" >3.358090</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row9" class="row_heading level0 row9" >36</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row9_col0" class="data row9 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row9_col1" class="data row9 col1" >3.358820</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row10" class="row_heading level0 row10" >37</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row10_col0" class="data row10 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row10_col1" class="data row10 col1" >3.381950</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row11" class="row_heading level0 row11" >38</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row11_col0" class="data row11 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row11_col1" class="data row11 col1" >3.416340</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row12" class="row_heading level0 row12" >39</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row12_col0" class="data row12 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row12_col1" class="data row12 col1" >3.433970</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row13" class="row_heading level0 row13" >40</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row13_col0" class="data row13 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row13_col1" class="data row13 col1" >3.421860</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row14" class="row_heading level0 row14" >41</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row14_col0" class="data row14 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row14_col1" class="data row14 col1" >3.373740</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row15" class="row_heading level0 row15" >42</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row15_col0" class="data row15 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row15_col1" class="data row15 col1" >3.378600</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row16" class="row_heading level0 row16" >43</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row16_col0" class="data row16 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row16_col1" class="data row16 col1" >3.371880</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row17" class="row_heading level0 row17" >44</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row17_col0" class="data row17 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row17_col1" class="data row17 col1" >3.393210</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row18" class="row_heading level0 row18" >45</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row18_col0" class="data row18 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row18_col1" class="data row18 col1" >3.372910</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row19" class="row_heading level0 row19" >46</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row19_col0" class="data row19 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row19_col1" class="data row19 col1" >3.364520</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row20" class="row_heading level0 row20" >47</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row20_col0" class="data row20 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row20_col1" class="data row20 col1" >3.337940</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row21" class="row_heading level0 row21" >48</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row21_col0" class="data row21 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row21_col1" class="data row21 col1" >3.311760</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row22" class="row_heading level0 row22" >49</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row22_col0" class="data row22 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row22_col1" class="data row22 col1" >3.270920</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row23" class="row_heading level0 row23" >50</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row23_col0" class="data row23 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row23_col1" class="data row23 col1" >3.248420</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row24" class="row_heading level0 row24" >51</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row24_col0" class="data row24 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row24_col1" class="data row24 col1" >3.232720</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row25" class="row_heading level0 row25" >52</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row25_col0" class="data row25 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row25_col1" class="data row25 col1" >3.213200</td>
-            </tr>
-            <tr>
-                        <th id="T_721fd7ea_7387_11eb_bc25_acde48001122level0_row26" class="row_heading level0 row26" >53</th>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row26_col0" class="data row26 col0" >Friday</td>
-                        <td id="T_721fd7ea_7387_11eb_bc25_acde48001122row26_col1" class="data row26 col1" >3.215330</td>
-            </tr>
-    </tbody></table></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/ipykernel_launcher.py:3: FutureWarning: weekofyear and week have been deprecated, please use DatetimeIndex.isocalendar().week instead, which returns a Series.  To exactly reproduce the behavior of week and weekofyear and return an Index, you may call pd.Int64Index(idx.isocalendar().week)
+  This is separate from the ipykernel package so we can avoid doing imports until
+/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/ipykernel_launcher.py:5: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+  &quot;&quot;&quot;
+</pre></div>
+</div>
+<div class="output text_html"><style type="text/css">
+#T_1b97e_row0_col1, #T_1b97e_row22_col1 {
+  background-color: #219066;
+  color: #f1f1f1;
+}
+#T_1b97e_row1_col1 {
+  background-color: #2d9666;
+  color: #f1f1f1;
+}
+#T_1b97e_row2_col1 {
+  background-color: #399c66;
+  color: #f1f1f1;
+}
+#T_1b97e_row3_col1 {
+  background-color: #f3f966;
+  color: #000000;
+}
+#T_1b97e_row4_col1 {
+  background-color: #e0f066;
+  color: #000000;
+}
+#T_1b97e_row5_col1 {
+  background-color: #e5f266;
+  color: #000000;
+}
+#T_1b97e_row6_col1 {
+  background-color: #ffff66;
+  color: #000000;
+}
+#T_1b97e_row7_col1 {
+  background-color: #e3f166;
+  color: #000000;
+}
+#T_1b97e_row8_col1 {
+  background-color: #cfe766;
+  color: #000000;
+}
+#T_1b97e_row9_col1 {
+  background-color: #cee666;
+  color: #000000;
+}
+#T_1b97e_row10_col1 {
+  background-color: #d7eb66;
+  color: #000000;
+}
+#T_1b97e_row11_col1 {
+  background-color: #c8e366;
+  color: #000000;
+}
+#T_1b97e_row12_col1 {
+  background-color: #d1e866;
+  color: #000000;
+}
+#T_1b97e_row13_col1 {
+  background-color: #f4fa66;
+  color: #000000;
+}
+#T_1b97e_row14_col1 {
+  background-color: #eef666;
+  color: #000000;
+}
+#T_1b97e_row15_col1 {
+  background-color: #d8ec66;
+  color: #000000;
+}
+#T_1b97e_row16_col1 {
+  background-color: #90c866;
+  color: #000000;
+}
+#T_1b97e_row17_col1 {
+  background-color: #369a66;
+  color: #f1f1f1;
+}
+#T_1b97e_row18_col1 {
+  background-color: #379b66;
+  color: #f1f1f1;
+}
+#T_1b97e_row19_col1 {
+  background-color: #008066;
+  color: #f1f1f1;
+}
+#T_1b97e_row20_col1, #T_1b97e_row23_col1 {
+  background-color: #1c8e66;
+  color: #f1f1f1;
+}
+#T_1b97e_row21_col1 {
+  background-color: #5cae66;
+  color: #f1f1f1;
+}
+#T_1b97e_row24_col1 {
+  background-color: #78bc66;
+  color: #f1f1f1;
+}
+#T_1b97e_row25_col1 {
+  background-color: #2a9466;
+  color: #f1f1f1;
+}
+</style>
+<table id="T_1b97e_">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th class="col_heading level0 col0" >Day</th>
+      <th class="col_heading level0 col1" >Rate</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >Week</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_1b97e_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_1b97e_row0_col0" class="data row0 col0" >Friday</td>
+      <td id="T_1b97e_row0_col1" class="data row0 col1" >3.094070</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_1b97e_row1_col0" class="data row1 col0" >Friday</td>
+      <td id="T_1b97e_row1_col1" class="data row1 col1" >3.101660</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_1b97e_row2_col0" class="data row2 col0" >Friday</td>
+      <td id="T_1b97e_row2_col1" class="data row2 col1" >3.108650</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row3" class="row_heading level0 row3" >30</th>
+      <td id="T_1b97e_row3_col0" class="data row3 col0" >Friday</td>
+      <td id="T_1b97e_row3_col1" class="data row3 col1" >3.223030</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row4" class="row_heading level0 row4" >31</th>
+      <td id="T_1b97e_row4_col0" class="data row4 col0" >Friday</td>
+      <td id="T_1b97e_row4_col1" class="data row4 col1" >3.211620</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row5" class="row_heading level0 row5" >32</th>
+      <td id="T_1b97e_row5_col0" class="data row5 col0" >Friday</td>
+      <td id="T_1b97e_row5_col1" class="data row5 col1" >3.214420</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row6" class="row_heading level0 row6" >33</th>
+      <td id="T_1b97e_row6_col0" class="data row6 col0" >Friday</td>
+      <td id="T_1b97e_row6_col1" class="data row6 col1" >3.230950</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row7" class="row_heading level0 row7" >34</th>
+      <td id="T_1b97e_row7_col0" class="data row7 col0" >Friday</td>
+      <td id="T_1b97e_row7_col1" class="data row7 col1" >3.213500</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row8" class="row_heading level0 row8" >35</th>
+      <td id="T_1b97e_row8_col0" class="data row8 col0" >Friday</td>
+      <td id="T_1b97e_row8_col1" class="data row8 col1" >3.201020</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row9" class="row_heading level0 row9" >36</th>
+      <td id="T_1b97e_row9_col0" class="data row9 col0" >Friday</td>
+      <td id="T_1b97e_row9_col1" class="data row9 col1" >3.200490</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row10" class="row_heading level0 row10" >37</th>
+      <td id="T_1b97e_row10_col0" class="data row10 col0" >Friday</td>
+      <td id="T_1b97e_row10_col1" class="data row10 col1" >3.206100</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row11" class="row_heading level0 row11" >38</th>
+      <td id="T_1b97e_row11_col0" class="data row11 col0" >Friday</td>
+      <td id="T_1b97e_row11_col1" class="data row11 col1" >3.196930</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row12" class="row_heading level0 row12" >39</th>
+      <td id="T_1b97e_row12_col0" class="data row12 col0" >Friday</td>
+      <td id="T_1b97e_row12_col1" class="data row12 col1" >3.202280</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row13" class="row_heading level0 row13" >40</th>
+      <td id="T_1b97e_row13_col0" class="data row13 col0" >Friday</td>
+      <td id="T_1b97e_row13_col1" class="data row13 col1" >3.223680</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row14" class="row_heading level0 row14" >41</th>
+      <td id="T_1b97e_row14_col0" class="data row14 col0" >Friday</td>
+      <td id="T_1b97e_row14_col1" class="data row14 col1" >3.220030</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row15" class="row_heading level0 row15" >42</th>
+      <td id="T_1b97e_row15_col0" class="data row15 col0" >Friday</td>
+      <td id="T_1b97e_row15_col1" class="data row15 col1" >3.206570</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row16" class="row_heading level0 row16" >43</th>
+      <td id="T_1b97e_row16_col0" class="data row16 col0" >Friday</td>
+      <td id="T_1b97e_row16_col1" class="data row16 col1" >3.162350</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row17" class="row_heading level0 row17" >44</th>
+      <td id="T_1b97e_row17_col0" class="data row17 col0" >Friday</td>
+      <td id="T_1b97e_row17_col1" class="data row17 col1" >3.106930</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row18" class="row_heading level0 row18" >45</th>
+      <td id="T_1b97e_row18_col0" class="data row18 col0" >Friday</td>
+      <td id="T_1b97e_row18_col1" class="data row18 col1" >3.107230</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row19" class="row_heading level0 row19" >46</th>
+      <td id="T_1b97e_row19_col0" class="data row19 col0" >Friday</td>
+      <td id="T_1b97e_row19_col1" class="data row19 col1" >3.073350</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row20" class="row_heading level0 row20" >47</th>
+      <td id="T_1b97e_row20_col0" class="data row20 col0" >Friday</td>
+      <td id="T_1b97e_row20_col1" class="data row20 col1" >3.090720</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row21" class="row_heading level0 row21" >48</th>
+      <td id="T_1b97e_row21_col0" class="data row21 col0" >Friday</td>
+      <td id="T_1b97e_row21_col1" class="data row21 col1" >3.130300</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row22" class="row_heading level0 row22" >49</th>
+      <td id="T_1b97e_row22_col0" class="data row22 col0" >Friday</td>
+      <td id="T_1b97e_row22_col1" class="data row22 col1" >3.094200</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row23" class="row_heading level0 row23" >50</th>
+      <td id="T_1b97e_row23_col0" class="data row23 col0" >Friday</td>
+      <td id="T_1b97e_row23_col1" class="data row23 col1" >3.090750</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row24" class="row_heading level0 row24" >51</th>
+      <td id="T_1b97e_row24_col0" class="data row24 col0" >Friday</td>
+      <td id="T_1b97e_row24_col1" class="data row24 col1" >3.147230</td>
+    </tr>
+    <tr>
+      <th id="T_1b97e_level0_row25" class="row_heading level0 row25" >52</th>
+      <td id="T_1b97e_row25_col0" class="data row25 col0" >Friday</td>
+      <td id="T_1b97e_row25_col1" class="data row25 col1" >3.099640</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="section" id="analysis-conclusion">
 <h3>Analysis conclusion<a class="headerlink" href="#analysis-conclusion" title="Permalink to this headline">¶</a></h3>
@@ -2153,36 +2233,42 @@ Filtering the Dataframe to exclude Sundays.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="08.01_Logistics_analysis.html" title="previous page">Logistics Analysis</a>
-    <a class='right-next' id="next-link" href="08.03_Linear_optimization.html" title="next page">Linear Programming (Optimization)</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="08.01_Logistics_analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Logistics Analysis</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="08.03_Linear_optimization.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Linear Programming (Optimization)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By The Aiola Team<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By The Aiola Team<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>

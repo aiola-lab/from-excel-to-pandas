@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linear Programming (Optimization) &#8212; From Excel to Pandas</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,22 +31,21 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,14 +55,17 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Survey Analysis" href="08.04_Survey_analysis.html" />
     <link rel="prev" title="Currency Rate Analysis" href="08.02_Currency_analysis.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,59 +74,48 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
    Install Locally
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-aws-sagemaker-studio-lab">
-   Open in AWS SageMaker Studio Lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
-   Open in Binder/Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
-   Open in Visual Studio Code
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Loading Data
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.01%20-%20loading%20files.html">
    Loading Data Files (CSV or XLSX)
@@ -144,12 +132,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Adding Columns
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02.01_Adding_New_Columns.html">
    Adding New Columns
@@ -162,45 +150,40 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02.08_group_values.html">
-   Categories from numeric values
+   Group numeric values into categories (bins)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Aggregation and Reshaping
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.01_pivot_tables.html">
    Creating a Pivot Table
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03.02_group_by.html">
-   Split a Table into Groups
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Enrichment with Merge
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.03_merge.html">
    Merge/Join Tables (VLOOKUP)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Industries Use Cases
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="08.01_Logistics_analysis.html">
    Logistics Analysis
@@ -223,6 +206,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -266,18 +250,18 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -301,13 +285,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loading-the-data">
    Loading the data
@@ -347,17 +331,71 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Linear Programming (Optimization)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-the-data">
+   Loading the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-the-lp-library">
+   Installing the LP Library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-the-problem-variables">
+   Defining the problem variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-target">
+     Problem target
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-dictionaries">
+     Variable Dictionaries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-programming-lp-definition">
+     Linear Programming (LP) Definition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lp-solution">
+     LP Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="linear-programming-optimization">
+  <div class="tex2jax_ignore mathjax_ignore section" id="linear-programming-optimization">
 <h1>Linear Programming (Optimization)<a class="headerlink" href="#linear-programming-optimization" title="Permalink to this headline">¶</a></h1>
 <p>In this example, we will use an common analysis that is used to optimize decision based on constrains, and it is based on the great blog post <a class="reference external" href="https://towardsdatascience.com/how-to-solve-optimization-problems-with-python-9088bf8d48e5">How to Solve Optimization Problems with Python</a></p>
 <p><a class="reference external" href="https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/08.03_Linear_optimization.ipynb"><img alt="Open In Studio Lab" src="https://studiolab.sagemaker.aws/studiolab.svg" /></a></p>
@@ -417,68 +455,184 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">163</span><span class="n">b13cc065d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">all_players</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">dfs</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">rename</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">query</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3467</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">3468</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">3469</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3470</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3471</span>         <span class="k">try</span><span class="p">:</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">eval</span><span class="nt">(self, expr, inplace, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3597</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;resolvers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resolvers&quot;</span><span class="p">,</span> <span class="p">())</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">resolvers</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3598</span> 
-<span class="ne">-&gt; </span><span class="mi">3599</span>         <span class="k">return</span> <span class="n">_eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3600</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3601</span>     <span class="k">def</span> <span class="nf">select_dtypes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/eval.py</span> in <span class="ni">eval</span><span class="nt">(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>         <span class="n">eng</span> <span class="o">=</span> <span class="n">ENGINES</span><span class="p">[</span><span class="n">engine</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span>         <span class="n">eng_inst</span> <span class="o">=</span> <span class="n">eng</span><span class="p">(</span><span class="n">parsed_expr</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">347</span>         <span class="n">ret</span> <span class="o">=</span> <span class="n">eng_inst</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span> 
-<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="k">if</span> <span class="n">parsed_expr</span><span class="o">.</span><span class="n">assigner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">evaluate</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> 
-<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="c1"># make sure no names in resolvers and locals/globals clash</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">return</span> <span class="n">reconstruct_object</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>             <span class="bp">self</span><span class="o">.</span><span class="n">result_type</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aligned_axes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">terms</span><span class="o">.</span><span class="n">return_type</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">_evaluate</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">env</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">env</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="n">scope</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">full_scope</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="n">_check_ne_builtin_clash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="k">return</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">local_dict</span><span class="o">=</span><span class="n">scope</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/engines.py</span> in <span class="ni">_check_ne_builtin_clash</span><span class="nt">(expr)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">Terms</span> <span class="n">can</span> <span class="n">contain</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">29</span><span class="s2">     names = expr.names</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span><span class="s2">     overlap = names &amp; _ne_builtins</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="s2"> </span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/computation/expr.py</span> in <span class="ni">names</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">824</span><span class="s2">         if is_term(self.terms):</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span><span class="s2">             return frozenset([self.terms.name])</span>
-<span class="nn">--&gt; 826         return frozenset(term.name for term</span> in <span class="ni">com.flatten</span><span class="nt">(self.terms))</span>
-<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">828</span><span class="s2"> </span>
-
-<span class="ne">TypeError</span>: unhashable type: &#39;numpy.ndarray&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Position</th>
+      <th>Name</th>
+      <th>FD Points</th>
+      <th>Salary</th>
+      <th>Team</th>
+      <th>Opp.</th>
+      <th>Score</th>
+      <th>Min</th>
+      <th>Stats</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>PG</td>
+      <td>Morant, Ja^</td>
+      <td>55</td>
+      <td>7100</td>
+      <td>mem</td>
+      <td>@ was</td>
+      <td>125-111</td>
+      <td>33:02</td>
+      <td>35pt 5rb 10as 1st 4to 2trey 11-18fg 11-14ft</td>
+      <td>55.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PG</td>
+      <td>Westbrook, Russell^</td>
+      <td>53.7</td>
+      <td>9600</td>
+      <td>was</td>
+      <td>v mem</td>
+      <td>111-125</td>
+      <td>35:31</td>
+      <td>23pt 6rb 15as 3st 8to 3trey 8-16fg 4-9ft</td>
+      <td>53.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SG</td>
+      <td>George, Paul^</td>
+      <td>45</td>
+      <td>7900</td>
+      <td>lac</td>
+      <td>@ bos</td>
+      <td>112-117</td>
+      <td>38:39</td>
+      <td>32pt 5rb 4as 1st 2to 5trey 12-26fg 3-3ft</td>
+      <td>45.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>SG</td>
+      <td>DeRozan, DeMar^</td>
+      <td>43.3</td>
+      <td>8200</td>
+      <td>sas</td>
+      <td>v nyk</td>
+      <td>119-93</td>
+      <td>29:44</td>
+      <td>10pt 4rb 11as 4st 2-5fg 6-6ft</td>
+      <td>43.3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PG</td>
+      <td>Murray, Jamal^</td>
+      <td>41.6</td>
+      <td>8500</td>
+      <td>den</td>
+      <td>@ mil</td>
+      <td>128-97</td>
+      <td>37:59</td>
+      <td>24pt 3rb 6as 2st 1to 1trey 10-17fg 3-3ft</td>
+      <td>41.6</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>C</td>
+      <td>Robinson, Mitchell</td>
+      <td>0</td>
+      <td>4500</td>
+      <td>nyk</td>
+      <td>@ sas</td>
+      <td>93-119</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>C</td>
+      <td>Bryant, Thomas</td>
+      <td>0</td>
+      <td>6200</td>
+      <td>was</td>
+      <td>v mem</td>
+      <td>111-125</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>C</td>
+      <td>Leonard, Meyers</td>
+      <td>0</td>
+      <td>3500</td>
+      <td>mia</td>
+      <td>v atl</td>
+      <td>80-94</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>C</td>
+      <td>Gasol, Marc</td>
+      <td>0</td>
+      <td>4800</td>
+      <td>lal</td>
+      <td>v pho</td>
+      <td>104-114</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>C</td>
+      <td>Oturu, Daniel</td>
+      <td>0</td>
+      <td>3500</td>
+      <td>lac</td>
+      <td>@ bos</td>
+      <td>112-117</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>198 rows × 10 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="installing-the-lp-library">
@@ -491,12 +645,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: pulp in /usr/local/lib/python3.9/site-packages (2.4)
-Requirement already satisfied: amply&gt;=0.1.2 in /usr/local/lib/python3.9/site-packages (from pulp) (0.1.4)
-Requirement already satisfied: docutils&gt;=0.3 in /usr/local/lib/python3.9/site-packages (from amply&gt;=0.1.2-&gt;pulp) (0.16)
-Requirement already satisfied: pyparsing in /usr/local/lib/python3.9/site-packages (from amply&gt;=0.1.2-&gt;pulp) (2.4.7)
-Note: you may need to restart the kernel to use updated packages.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pulp in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (2.6.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
@@ -541,6 +693,12 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;Fantasy Points Problem&#39;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/pulp.py:1352: UserWarning: Spaces are not permitted in the name. Converted to &#39;_&#39;
+  warnings.warn(&quot;Spaces are not permitted in the name. Converted to &#39;_&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -699,6 +857,92 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/apis/../solverdir/cbc/linux/64/cbc /tmp/064a84b21ea44fe48ef4b9f98e14d93d-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/064a84b21ea44fe48ef4b9f98e14d93d-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 11 COLUMNS
+At line 927 RHS
+At line 934 BOUNDS
+At line 1133 ENDATA
+Problem MODEL has 6 rows, 198 columns and 396 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 406.74 - 0.00 seconds
+Cgl0003I 0 fixed, 2 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 1 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0004I processed model has 6 rows, 145 columns (145 integer (139 of which binary)) and 290 elements
+Cutoff increment increased from 1e-05 to 0.0999
+Cbc0038I Initial state - 2 integers unsatisfied sum - 0.2
+Cbc0038I Solution found of -405.2
+Cbc0038I Cleaned solution of -405.2
+Cbc0038I Before mini branch and bound, 143 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 6 rows 145 columns, reduced to 0 rows 0 columns
+Cbc0038I Mini branch and bound did not improve solution (0.00 seconds)
+Cbc0038I Round again with cutoff of -405.5
+Cbc0038I Reduced cost fixing fixed 138 variables on major pass 2
+Cbc0038I Pass   1: suminf.    0.03896 (2) obj. -405.5 iterations 1
+Cbc0038I Pass   2: suminf.    0.20000 (2) obj. -406.74 iterations 4
+Cbc0038I Pass   3: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass   4: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass   5: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass   6: suminf.    0.03896 (2) obj. -405.5 iterations 1
+Cbc0038I Pass   7: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass   8: suminf.    0.03896 (2) obj. -405.5 iterations 1
+Cbc0038I Pass   9: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  10: suminf.    0.20000 (2) obj. -406.74 iterations 2
+Cbc0038I Pass  11: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass  12: suminf.    0.03896 (2) obj. -405.5 iterations 1
+Cbc0038I Pass  13: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  14: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  15: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  16: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  17: suminf.    0.20000 (2) obj. -406.74 iterations 2
+Cbc0038I Pass  18: suminf.    0.03896 (2) obj. -405.5 iterations 2
+Cbc0038I Pass  19: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass  20: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass  21: suminf.    0.03896 (2) obj. -405.5 iterations 2
+Cbc0038I Pass  22: suminf.    0.20000 (2) obj. -406.74 iterations 1
+Cbc0038I Pass  23: suminf.    0.03896 (2) obj. -405.5 iterations 2
+Cbc0038I Pass  24: suminf.    0.03896 (2) obj. -405.5 iterations 1
+Cbc0038I Pass  25: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  26: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  27: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  28: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  29: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I Pass  30: suminf.    0.03896 (2) obj. -405.5 iterations 0
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 143 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.01 seconds)
+Cbc0038I After 0.01 seconds - Feasibility pump exiting with objective of -405.2 - took 0.00 seconds
+Cbc0012I Integer solution of -405.2 found by feasibility pump after 0 iterations and 0 nodes (0.01 seconds)
+Cbc0001I Search completed - best objective -405.2, took 0 iterations and 0 nodes (0.01 seconds)
+Cbc0035I Maximum depth 0, 131 variables fixed on reduced cost
+Cuts at root node changed objective from -406.74 to -405.2
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                405.20000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.01
+Time (Wallclock seconds):       0.01
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.01   (Wallclock seconds):       0.01
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
@@ -719,15 +963,15 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_Ball,_LaMelo^,
- _Bridges,_Miles,
- _Green,_Draymond^,
- _Hachimura,_Rui^,
- _Monk,_Malik,
- _Murray,_Dejounte^,
- _Oladipo,_Victor^,
- _Porzingis,_Kristaps^,
- _Valanciunas,_Jonas^]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_Barton,_Will^,
+ _George,_Paul^,
+ _James,_LeBron^,
+ _Jokic,_Nikola^,
+ _Lyles,_Trey^,
+ _Melton,_De&#39;Anthony,
+ _Morant,_Ja^,
+ _Quickley,_Immanuel,
+ _Saric,_Dario]
 </pre></div>
 </div>
 </div>
@@ -759,36 +1003,42 @@ Note: you may need to restart the kernel to use updated packages.
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="08.02_Currency_analysis.html" title="previous page">Currency Rate Analysis</a>
-    <a class='right-next' id="next-link" href="08.04_Survey_analysis.html" title="next page">Survey Analysis</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="08.02_Currency_analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Currency Rate Analysis</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="08.04_Survey_analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Survey Analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By The Aiola Team<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By The Aiola Team<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>

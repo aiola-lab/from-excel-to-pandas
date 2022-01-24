@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Split a Table into Groups &#8212; From Excel to Pandas</title>
+    <title>&lt;no title&gt; &#8212; From Excel to Pandas</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,22 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -59,14 +53,17 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Merge/Join Tables (VLOOKUP)" href="03.03_merge.html" />
     <link rel="prev" title="Creating a Pivot Table" href="03.01_pivot_tables.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,59 +72,48 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">From Excel to Pandas</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to the tutorial “from-Excel-to-Pandas” for data analysis
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
    Install Locally
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-aws-sagemaker-studio-lab">
-   Open in AWS SageMaker Studio Lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-binder-colab">
-   Open in Binder/Colab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html#open-in-visual-studio-code">
-   Open in Visual Studio Code
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Loading Data
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.01%20-%20loading%20files.html">
    Loading Data Files (CSV or XLSX)
@@ -144,12 +130,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Adding Columns
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="02.01_Adding_New_Columns.html">
    Adding New Columns
@@ -162,45 +148,40 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02.08_group_values.html">
-   Categories from numeric values
+   Group numeric values into categories (bins)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Aggregation and Reshaping
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.01_pivot_tables.html">
    Creating a Pivot Table
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Split a Table into Groups
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Table Enrichment with Merge
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03.03_merge.html">
    Merge/Join Tables (VLOOKUP)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Industries Use Cases
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="08.01_Logistics_analysis.html">
    Logistics Analysis
@@ -223,6 +204,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -266,1002 +248,61 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/aiola-lab/from-excel-to-pandas/master?urlpath=lab/tree/notebooks/03.02_group_by.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-data">
-   Loading data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-all-pages">
-   Loading all pages
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-the-dataset">
-     Saving the dataset
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#counting-values">
-   Counting Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sorting-values">
-   Sorting Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualization-of-the-data">
-   Visualization of the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-advanced-aggregation-functions">
-   More advanced Aggregation Functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calclulating-mean">
-   Calclulating mean
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-by-multiple-keys">
-   Group by multiple keys
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advanced-group-functions">
-   Advanced Group Functions
-  </a>
- </li>
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="split-a-table-into-groups">
-<h1>Split a Table into Groups<a class="headerlink" href="#split-a-table-into-groups" title="Permalink to this headline">¶</a></h1>
-<p>The <em>groupby</em> function is one of the most powerful and useful functions for dataframes in Pandas. The main idea is to:</p>
-<ul class="simple">
-<li><p><strong>split</strong> a large dataframe table into groups based on some values or categories in some of the columns, and then</p></li>
-<li><p><strong>apply</strong> some aggregation or other function on each group, and then</p></li>
-<li><p><strong>combine</strong> them back together into a single table.</p></li>
-</ul>
-<p><a class="reference external" href="https://studiolab.sagemaker.aws/import/github/aiola-lab/from-excel-to-pandas/blob/master/notebooks/03.02_group_by.ipynb"><img alt="Open In Studio Lab" src="https://studiolab.sagemaker.aws/studiolab.svg" /></a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="loading-data">
-<h2>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h2>
-<p>We will now start with another data from API from an open source <a class="reference external" href="https://www.openbrewerydb.org/">brewery-DB API</a>. We can analyze it to answer questions regarding states or other groups in the data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">open_brewery_api_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.openbrewerydb.org/breweries?per_page=50&#39;</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">open_brewery_api_url</span><span class="p">)</span>
-<span class="n">response</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brewery_list</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">pd</span>
-    <span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-<span class="p">)</span>
-
-<span class="n">brewery_list</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>name</th>
-      <th>brewery_type</th>
-      <th>street</th>
-      <th>address_2</th>
-      <th>address_3</th>
-      <th>city</th>
-      <th>state</th>
-      <th>county_province</th>
-      <th>postal_code</th>
-      <th>country</th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>phone</th>
-      <th>website_url</th>
-      <th>updated_at</th>
-      <th>created_at</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>10-56-brewing-company-knox</td>
-      <td>10-56 Brewing Company</td>
-      <td>micro</td>
-      <td>400 Brown Cir</td>
-      <td>None</td>
-      <td>None</td>
-      <td>Knox</td>
-      <td>Indiana</td>
-      <td>None</td>
-      <td>46534</td>
-      <td>United States</td>
-      <td>-86.627954</td>
-      <td>41.289715</td>
-      <td>6308165790</td>
-      <td>None</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>10-barrel-brewing-co-bend-1</td>
-      <td>10 Barrel Brewing Co</td>
-      <td>large</td>
-      <td>62970 18th St</td>
-      <td>None</td>
-      <td>None</td>
-      <td>Bend</td>
-      <td>Oregon</td>
-      <td>None</td>
-      <td>97701-9847</td>
-      <td>United States</td>
-      <td>None</td>
-      <td>None</td>
-      <td>5415851007</td>
-      <td>http://www.10barrel.com</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>10-barrel-brewing-co-bend-2</td>
-      <td>10 Barrel Brewing Co</td>
-      <td>large</td>
-      <td>1135 NW Galveston Ave Ste B</td>
-      <td>None</td>
-      <td>None</td>
-      <td>Bend</td>
-      <td>Oregon</td>
-      <td>None</td>
-      <td>97703-2465</td>
-      <td>United States</td>
-      <td>None</td>
-      <td>None</td>
-      <td>5415851007</td>
-      <td>None</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>10-barrel-brewing-co-bend-pub-bend</td>
-      <td>10 Barrel Brewing Co - Bend Pub</td>
-      <td>large</td>
-      <td>62950 NE 18th St</td>
-      <td>None</td>
-      <td>None</td>
-      <td>Bend</td>
-      <td>Oregon</td>
-      <td>None</td>
-      <td>97701</td>
-      <td>United States</td>
-      <td>-121.2809536</td>
-      <td>44.0912109</td>
-      <td>5415851007</td>
-      <td>None</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>10-barrel-brewing-co-boise-boise</td>
-      <td>10 Barrel Brewing Co - Boise</td>
-      <td>large</td>
-      <td>826 W Bannock St</td>
-      <td>None</td>
-      <td>None</td>
-      <td>Boise</td>
-      <td>Idaho</td>
-      <td>None</td>
-      <td>83702-5857</td>
-      <td>United States</td>
-      <td>-116.202929</td>
-      <td>43.618516</td>
-      <td>2083445870</td>
-      <td>http://www.10barrel.com</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-      <td>2021-10-23T02:24:55.243Z</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</div>
-<div class="section" id="loading-all-pages">
-<h2>Loading all pages<a class="headerlink" href="#loading-all-pages" title="Permalink to this headline">¶</a></h2>
-<p>If the number of results from an API is high, the API often uses pagination and returns a constant number of results in each page.</p>
-<ul class="simple">
-<li><p>Start with an empty list of values</p></li>
-<li><p>For each page between page 1 and page 150:</p></li>
-<li><p>Read the data from the API with the page number</p></li>
-<li><p>Add the data to the growing list</p></li>
-<li><p>Finally, create a dataframe with the above whole list of breweries</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">api_dataset</span> <span class="o">=</span> <span class="p">[]</span> 
-
-<span class="c1">#looping through and putting data to the list api_dataset</span>
-<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">150</span><span class="p">):</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">open_brewery_api_url</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;&amp;page=</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-    <span class="n">api_dataset</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-<span class="n">breweries_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">api_dataset</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="saving-the-dataset">
-<h3>Saving the dataset<a class="headerlink" href="#saving-the-dataset" title="Permalink to this headline">¶</a></h3>
-<p>We can save the dataset for later usage. We can save it in Excel format or CSV.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">breweries_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/us_breweries.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="counting-values">
-<h2>Counting Values<a class="headerlink" href="#counting-values" title="Permalink to this headline">¶</a></h2>
-<p>The simplest aggregation function for each group is the <em>size</em>. How many breweries do we have in each state?</p>
-<ul class="simple">
-<li><p>Start with the brewery table above</p></li>
-<li><p>Group the rows by <em>state</em></p></li>
-<li><p>Count the size of each group</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">breweries_data</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">size</span><span class="p">()</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
-Alabama                  44
-Alaska                   51
-Arizona                 116
-Arkansas                 43
-Bouche du Rhône           2
-California              855
-Colorado                391
-Connecticut              86
-Delaware                 26
-District of Columbia     16
-Florida                 290
-Georgia                  96
-Hawaii                   21
-Idaho                    57
-Illinois                232
-Indiana                 148
-Iowa                     83
-Kansas                   40
-Kentucky                 53
-Louisiana                40
-MIssouri                  1
-Maine                   109
-Maryland                105
-Massachusetts           152
-Michigan                355
-Minnesota               161
-Mississippi              15
-Missouri                128
-Montana                  87
-Nebraska                 53
-Nevada                   47
-New Hampshire            69
-New Jersey              110
-New Mexico               82
-New York                384
-North Carolina          277
-North Dakota             26
-Ohio                    279
-Oklahoma                 39
-Oregon                  264
-Pennsylvania            317
-Rhode Island             21
-South Carolina           69
-South Dakota             40
-Tennessee               102
-Texas                   315
-Utah                     34
-Vermont                  54
-Virginia                237
-Washington              437
-Washington                1
-West Virginia            28
-Wisconsin               199
-Wyoming                  29
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="sorting-values">
-<h2>Sorting Values<a class="headerlink" href="#sorting-values" title="Permalink to this headline">¶</a></h2>
-<p>To sort the values is also simple with <em>sort_value()</em> function</p>
-<ul class="simple">
-<li><p>Start with the brewery table above</p></li>
-<li><p>Group the rows by <em>state</em></p></li>
-<li><p>Count the size of each group</p></li>
-<li><p>Sort the list of states and and the count of the breweries in descending order</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">breweries_data</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">size</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
-California              855
-Washington              437
-Colorado                391
-New York                384
-Michigan                355
-Pennsylvania            317
-Texas                   315
-Florida                 290
-Ohio                    279
-North Carolina          277
-Oregon                  264
-Virginia                237
-Illinois                232
-Wisconsin               199
-Minnesota               161
-Massachusetts           152
-Indiana                 148
-Missouri                128
-Arizona                 116
-New Jersey              110
-Maine                   109
-Maryland                105
-Tennessee               102
-Georgia                  96
-Montana                  87
-Connecticut              86
-Iowa                     83
-New Mexico               82
-South Carolina           69
-New Hampshire            69
-Idaho                    57
-Vermont                  54
-Kentucky                 53
-Nebraska                 53
-Alaska                   51
-Nevada                   47
-Alabama                  44
-Arkansas                 43
-Louisiana                40
-South Dakota             40
-Kansas                   40
-Oklahoma                 39
-Utah                     34
-Wyoming                  29
-West Virginia            28
-Delaware                 26
-North Dakota             26
-Rhode Island             21
-Hawaii                   21
-District of Columbia     16
-Mississippi              15
-Bouche du Rhône           2
-Washington                1
-MIssouri                  1
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="visualization-of-the-data">
-<h2>Visualization of the data<a class="headerlink" href="#visualization-of-the-data" title="Permalink to this headline">¶</a></h2>
-<p>Let’s do a simple visualization of the data without any map, just using the longitude and latitude values of each brewery.</p>
-<ul class="simple">
-<li><p>Start with the brewery table above</p></li>
-<li><p>Convert the longitude and latitude to be numeric values</p></li>
-<li><p>Plot the results</p></li>
-<li><p>as hexbin with longitude and latitudes as the coordinates</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">breweries_data</span>
-    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">longitude</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">longitude</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">latitude</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">plot</span>
-    <span class="o">.</span><span class="n">hexbin</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span> 
-        <span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> 
-        <span class="n">gridsize</span><span class="o">=</span><span class="mi">20</span>
-    <span class="p">)</span>
-<span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/03.02_group_by_14_0.png" src="../_images/03.02_group_by_14_0.png" />
-</div>
-</div>
-<p>The graph above looks like the map of the US and the distribution of breweries in geographic terms. We can see the deep green in NY area which we already know that is third on the list of states (after the huge California and Colorado), but also see an even deeper blue area around Illinois. We will dive deeper into these questions, when we merge the zip code level with the data, and find the where should you live or visit if you want to taste as many breweries as possible.</p>
-</div>
-<div class="section" id="more-advanced-aggregation-functions">
-<h2>More advanced Aggregation Functions<a class="headerlink" href="#more-advanced-aggregation-functions" title="Permalink to this headline">¶</a></h2>
-<p>Our data set doesn’t have many numeric field, and we should load a different data set to examine the more advanced aggregation options of <em>groupby</em>. We will use one of the famouse data sets used for learning to build machine learning models. The last column <em>annual_income</em> has only two values <em>&lt;=50K</em> and <em>&gt;50K</em>, and we want to try and predict based on the other parameters such as age, gender, years of education, etc. in which bucket each person lands.</p>
-<ul class="simple">
-<li><p>Define the column names for the data</p></li>
-<li><p>Read the CSV format of the data from the dataset URL</p></li>
-<li><p>Set the names of the columns as defined above</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adult_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span><span class="s1">&#39;workclass&#39;</span><span class="p">,</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="s1">&#39;education&#39;</span><span class="p">,</span><span class="s1">&#39;education_num&#39;</span><span class="p">,</span><span class="s1">&#39;marital_status&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;occupation&#39;</span><span class="p">,</span> <span class="s1">&#39;relationship&#39;</span><span class="p">,</span><span class="s1">&#39;race&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span><span class="s1">&#39;capital_gain&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;capital_loss&#39;</span><span class="p">,</span><span class="s1">&#39;hours_per_week&#39;</span><span class="p">,</span><span class="s1">&#39;native_country&#39;</span><span class="p">,</span><span class="s1">&#39;annual_income&#39;</span><span class="p">]</span>
-<span class="n">adults_data</span> <span class="o">=</span> <span class="p">(</span>
-  <span class="n">pd</span>
-  <span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data&#39;</span><span class="p">,</span> 
-    <span class="n">names</span> <span class="o">=</span> <span class="n">adult_names</span>
-  <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">adults_data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>workclass</th>
-      <th>id</th>
-      <th>education</th>
-      <th>education_num</th>
-      <th>marital_status</th>
-      <th>occupation</th>
-      <th>relationship</th>
-      <th>race</th>
-      <th>gender</th>
-      <th>capital_gain</th>
-      <th>capital_loss</th>
-      <th>hours_per_week</th>
-      <th>native_country</th>
-      <th>annual_income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>39</td>
-      <td>State-gov</td>
-      <td>77516</td>
-      <td>Bachelors</td>
-      <td>13</td>
-      <td>Never-married</td>
-      <td>Adm-clerical</td>
-      <td>Not-in-family</td>
-      <td>White</td>
-      <td>Male</td>
-      <td>2174</td>
-      <td>0</td>
-      <td>40</td>
-      <td>United-States</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>50</td>
-      <td>Self-emp-not-inc</td>
-      <td>83311</td>
-      <td>Bachelors</td>
-      <td>13</td>
-      <td>Married-civ-spouse</td>
-      <td>Exec-managerial</td>
-      <td>Husband</td>
-      <td>White</td>
-      <td>Male</td>
-      <td>0</td>
-      <td>0</td>
-      <td>13</td>
-      <td>United-States</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>38</td>
-      <td>Private</td>
-      <td>215646</td>
-      <td>HS-grad</td>
-      <td>9</td>
-      <td>Divorced</td>
-      <td>Handlers-cleaners</td>
-      <td>Not-in-family</td>
-      <td>White</td>
-      <td>Male</td>
-      <td>0</td>
-      <td>0</td>
-      <td>40</td>
-      <td>United-States</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>53</td>
-      <td>Private</td>
-      <td>234721</td>
-      <td>11th</td>
-      <td>7</td>
-      <td>Married-civ-spouse</td>
-      <td>Handlers-cleaners</td>
-      <td>Husband</td>
-      <td>Black</td>
-      <td>Male</td>
-      <td>0</td>
-      <td>0</td>
-      <td>40</td>
-      <td>United-States</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>28</td>
-      <td>Private</td>
-      <td>338409</td>
-      <td>Bachelors</td>
-      <td>13</td>
-      <td>Married-civ-spouse</td>
-      <td>Prof-specialty</td>
-      <td>Wife</td>
-      <td>Black</td>
-      <td>Female</td>
-      <td>0</td>
-      <td>0</td>
-      <td>40</td>
-      <td>Cuba</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>32556</th>
-      <td>27</td>
-      <td>Private</td>
-      <td>257302</td>
-      <td>Assoc-acdm</td>
-      <td>12</td>
-      <td>Married-civ-spouse</td>
-      <td>Tech-support</td>
-      <td>Wife</td>
-      <td>White</td>
-      <td>Female</td>
-      <td>0</td>
-      <td>0</td>
-      <td>38</td>
-      <td>United-States</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>32557</th>
-      <td>40</td>
-      <td>Private</td>
-      <td>154374</td>
-      <td>HS-grad</td>
-      <td>9</td>
-      <td>Married-civ-spouse</td>
-      <td>Machine-op-inspct</td>
-      <td>Husband</td>
-      <td>White</td>
-      <td>Male</td>
-      <td>0</td>
-      <td>0</td>
-      <td>40</td>
-      <td>United-States</td>
-      <td>&gt;50K</td>
-    </tr>
-    <tr>
-      <th>32558</th>
-      <td>58</td>
-      <td>Private</td>
-      <td>151910</td>
-      <td>HS-grad</td>
-      <td>9</td>
-      <td>Widowed</td>
-      <td>Adm-clerical</td>
-      <td>Unmarried</td>
-      <td>White</td>
-      <td>Female</td>
-      <td>0</td>
-      <td>0</td>
-      <td>40</td>
-      <td>United-States</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>32559</th>
-      <td>22</td>
-      <td>Private</td>
-      <td>201490</td>
-      <td>HS-grad</td>
-      <td>9</td>
-      <td>Never-married</td>
-      <td>Adm-clerical</td>
-      <td>Own-child</td>
-      <td>White</td>
-      <td>Male</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20</td>
-      <td>United-States</td>
-      <td>&lt;=50K</td>
-    </tr>
-    <tr>
-      <th>32560</th>
-      <td>52</td>
-      <td>Self-emp-inc</td>
-      <td>287927</td>
-      <td>HS-grad</td>
-      <td>9</td>
-      <td>Married-civ-spouse</td>
-      <td>Exec-managerial</td>
-      <td>Wife</td>
-      <td>White</td>
-      <td>Female</td>
-      <td>15024</td>
-      <td>0</td>
-      <td>40</td>
-      <td>United-States</td>
-      <td>&gt;50K</td>
-    </tr>
-  </tbody>
-</table>
-<p>32561 rows × 15 columns</p>
-</div></div></div>
-</div>
-</div>
-<div class="section" id="calclulating-mean">
-<h2>Calclulating mean<a class="headerlink" href="#calclulating-mean" title="Permalink to this headline">¶</a></h2>
-<p>First we can calculate the average age in each income group, and see if there is any difference.</p>
-<ul class="simple">
-<li><p>Start with the adults data that was loaded above</p></li>
-<li><p>Group using the <em>annual_income</em> value and take only the <em>age</em> value</p></li>
-<li><p>Calculate the average of each group</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">adults_data</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;annual_income&#39;</span><span class="p">)[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annual_income
- &lt;=50K    36.783738
- &gt;50K     44.249841
-Name: age, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can see that the average age of people who earned more than 50K is over 44, while the average age of the lower income (less than 50K) is younger and around 36 years</p>
-</div>
-<div class="section" id="group-by-multiple-keys">
-<h2>Group by multiple keys<a class="headerlink" href="#group-by-multiple-keys" title="Permalink to this headline">¶</a></h2>
-<p>Let’s see if women earn less than men, and we will do that by grouping both by the income group (<em>annual_income</em>) and the gender column.</p>
-<ul class="simple">
-<li><p>Start with the adults data that was loaded above</p></li>
-<li><p>Group using the <em>annual_income</em> and the <em>gender</em> values</p></li>
-<li><p>Calculate the size of each group</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">adults_data</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;annual_income&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">])</span>
-    <span class="o">.</span><span class="n">size</span><span class="p">()</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annual_income  gender 
- &lt;=50K          Female     9592
-                Male      15128
- &gt;50K           Female     1179
-                Male       6662
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>It is hard to calculate the percentage and evaluate the difference from the size of each group. Let’s calculate the percentage and also format the out to make it easier to read the results.</p>
-<ul class="simple">
-<li><p>Start with the adults data that was loaded above</p></li>
-<li><p>Group using the <em>annual_income</em> and <em>gender</em> values and take only the <em>id</em> value</p></li>
-<li><p>Calculate the size of each group</p></li>
-<li><p>Group again by the first level (<em>annual_income</em>)</p></li>
-<li><p>For each row in each group calculate the ratio of the size of the row with the total size of the group</p></li>
-<li><p>Apply style to the results</p></li>
-<li><p>Format the results as percentage with two digit precision.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">adults_data</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;annual_income&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">])[[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span>
-    <span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
-    <span class="o">.</span><span class="n">style</span>
-    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.2%}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style  type="text/css" >
-</style><table id="T_be9cd_" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >id</th>    </tr>    <tr>        <th class="index_name level0" >annual_income</th>        <th class="index_name level1" >gender</th>        <th class="blank" ></th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_be9cd_level0_row0" class="row_heading level0 row0" rowspan="2"> <=50K</th>
-                        <th id="T_be9cd_level1_row0" class="row_heading level1 row0" > Female</th>
-                        <td id="T_be9cd_row0_col0" class="data row0 col0" >38.80%</td>
-            </tr>
-            <tr>
-                                <th id="T_be9cd_level1_row1" class="row_heading level1 row1" > Male</th>
-                        <td id="T_be9cd_row1_col0" class="data row1 col0" >61.20%</td>
-            </tr>
-            <tr>
-                        <th id="T_be9cd_level0_row2" class="row_heading level0 row2" rowspan="2"> >50K</th>
-                        <th id="T_be9cd_level1_row2" class="row_heading level1 row2" > Female</th>
-                        <td id="T_be9cd_row2_col0" class="data row2 col0" >15.04%</td>
-            </tr>
-            <tr>
-                                <th id="T_be9cd_level1_row3" class="row_heading level1 row3" > Male</th>
-                        <td id="T_be9cd_row3_col0" class="data row3 col0" >84.96%</td>
-            </tr>
-    </tbody></table></div></div>
-</div>
-<p>We can now easily see that the percentage of women with higher income is less than half that of the lower income. Hopefully, the current data (this data is extracted from the 1994 Census database) has improved the gender equlity in this aspect.</p>
-</div>
-<div class="section" id="advanced-group-functions">
-<h2>Advanced Group Functions<a class="headerlink" href="#advanced-group-functions" title="Permalink to this headline">¶</a></h2>
-<p>We saw before how to apply a function on each row in a dataframe table, but many times we want to apply a function on a group of rows based on a value of a column or a couple of columns.</p>
-<p>We can also take each of the groups and calculate more advanced functions such as Correlation. Let’s see if we find Correlation with in each group between years of education and the number of work per week (which shows some quality of hard work)</p>
-<ul class="simple">
-<li><p>Start with the adults data that was loaded above</p></li>
-<li><p>Take the <em>annual_income</em> and <em>gender</em> values with the <em>education_num</em> and <em>hours_per_week</em> values</p></li>
-<li><p>Group by the <em>annual_income</em> and <em>gender</em> (and calculate the average of the other values in each group)</p></li>
-<li><p>Calculate the Correlation of the values in each group</p></li>
-<li><p>Replace the self-Correlation values of 1 with 0</p></li>
-<li><p>Apply style to the results</p></li>
-<li><p>Format the results with three digit precision.</p></li>
-<li><p>Color the background of the cells according to the correlation values</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">adults_data</span>
-    <span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;annual_income&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span><span class="s1">&#39;education_num&#39;</span><span class="p">,</span><span class="s1">&#39;hours_per_week&#39;</span><span class="p">]]</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;annual_income&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">])</span>
-    <span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">style</span>
-    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.3}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style  type="text/css" >
-#T_f9aef_row0_col0,#T_f9aef_row1_col1,#T_f9aef_row2_col0,#T_f9aef_row3_col1,#T_f9aef_row4_col0,#T_f9aef_row5_col1,#T_f9aef_row6_col0,#T_f9aef_row7_col1{
-            background-color:  #3b4cc0;
-            color:  #f1f1f1;
-        }#T_f9aef_row0_col1,#T_f9aef_row1_col0{
-            background-color:  #ec8165;
-            color:  #000000;
-        }#T_f9aef_row2_col1,#T_f9aef_row3_col0{
-            background-color:  #b6cefa;
-            color:  #000000;
-        }#T_f9aef_row4_col1,#T_f9aef_row5_col0{
-            background-color:  #b40426;
-            color:  #f1f1f1;
-        }#T_f9aef_row6_col1,#T_f9aef_row7_col0{
-            background-color:  #8fb1fe;
-            color:  #000000;
-        }</style><table id="T_f9aef_" ><thead>    <tr>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >education_num</th>        <th class="col_heading level0 col1" >hours_per_week</th>    </tr>    <tr>        <th class="index_name level0" >annual_income</th>        <th class="index_name level1" >gender</th>        <th class="index_name level2" ></th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_f9aef_level0_row0" class="row_heading level0 row0" rowspan="4"> <=50K</th>
-                        <th id="T_f9aef_level1_row0" class="row_heading level1 row0" rowspan="2"> Female</th>
-                        <th id="T_f9aef_level2_row0" class="row_heading level2 row0" >education_num</th>
-                        <td id="T_f9aef_row0_col0" class="data row0 col0" >0.0</td>
-                        <td id="T_f9aef_row0_col1" class="data row0 col1" >0.151</td>
-            </tr>
-            <tr>
-                                        <th id="T_f9aef_level2_row1" class="row_heading level2 row1" >hours_per_week</th>
-                        <td id="T_f9aef_row1_col0" class="data row1 col0" >0.151</td>
-                        <td id="T_f9aef_row1_col1" class="data row1 col1" >0.0</td>
-            </tr>
-            <tr>
-                                <th id="T_f9aef_level1_row2" class="row_heading level1 row2" rowspan="2"> Male</th>
-                        <th id="T_f9aef_level2_row2" class="row_heading level2 row2" >education_num</th>
-                        <td id="T_f9aef_row2_col0" class="data row2 col0" >0.0</td>
-                        <td id="T_f9aef_row2_col1" class="data row2 col1" >0.069</td>
-            </tr>
-            <tr>
-                                        <th id="T_f9aef_level2_row3" class="row_heading level2 row3" >hours_per_week</th>
-                        <td id="T_f9aef_row3_col0" class="data row3 col0" >0.069</td>
-                        <td id="T_f9aef_row3_col1" class="data row3 col1" >0.0</td>
-            </tr>
-            <tr>
-                        <th id="T_f9aef_level0_row4" class="row_heading level0 row4" rowspan="4"> >50K</th>
-                        <th id="T_f9aef_level1_row4" class="row_heading level1 row4" rowspan="2"> Female</th>
-                        <th id="T_f9aef_level2_row4" class="row_heading level2 row4" >education_num</th>
-                        <td id="T_f9aef_row4_col0" class="data row4 col0" >0.0</td>
-                        <td id="T_f9aef_row4_col1" class="data row4 col1" >0.187</td>
-            </tr>
-            <tr>
-                                        <th id="T_f9aef_level2_row5" class="row_heading level2 row5" >hours_per_week</th>
-                        <td id="T_f9aef_row5_col0" class="data row5 col0" >0.187</td>
-                        <td id="T_f9aef_row5_col1" class="data row5 col1" >0.0</td>
-            </tr>
-            <tr>
-                                <th id="T_f9aef_level1_row6" class="row_heading level1 row6" rowspan="2"> Male</th>
-                        <th id="T_f9aef_level2_row6" class="row_heading level2 row6" >education_num</th>
-                        <td id="T_f9aef_row6_col0" class="data row6 col0" >0.0</td>
-                        <td id="T_f9aef_row6_col1" class="data row6 col1" >0.0477</td>
-            </tr>
-            <tr>
-                                        <th id="T_f9aef_level2_row7" class="row_heading level2 row7" >hours_per_week</th>
-                        <td id="T_f9aef_row7_col0" class="data row7 col0" >0.0477</td>
-                        <td id="T_f9aef_row7_col1" class="data row7 col1" >0.0</td>
-            </tr>
-    </tbody></table></div></div>
-</div>
-<p>We can see that within each group the correlation of “hard work”, as we defined it before, is higher for the female (0.151 and 0.187) than the male (0.069 and 0.0477).</p>
-</div>
-</div>
-
+  
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -1284,36 +325,42 @@ dtype: int64
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="03.01_pivot_tables.html" title="previous page">Creating a Pivot Table</a>
-    <a class='right-next' id="next-link" href="03.03_merge.html" title="next page">Merge/Join Tables (VLOOKUP)</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03.01_pivot_tables.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Creating a Pivot Table</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="03.03_merge.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Merge/Join Tables (VLOOKUP)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By The Aiola Team<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By The Aiola Team<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>
