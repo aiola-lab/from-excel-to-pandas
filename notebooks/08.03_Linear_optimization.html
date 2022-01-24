@@ -407,12 +407,29 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="loading-the-data">
 <h2>Loading the data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">¶</a></h2>
 <p>We will get the data from HTML table that are available from <a class="reference external" href="http://rotoguru.net">Rotoguru</a>, that is gather stats data from fantasy league. We will focus on the data of the NBA players. To keep the consistency of the notebook, we will check the data for a specific week (‘2021-03-02’)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;http://rotoguru1.com/cgi-bin/hyday.pl?mon=3&amp;day=2&amp;year=2021&amp;game=fd&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2021</span>
+<span class="n">month</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;http://rotoguru1.com/cgi-bin/hyday.pl?mon=</span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">&amp;day=</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s1">&amp;year=</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&amp;game=fd&#39;</span>
 <span class="n">dfs</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">pd</span>
     <span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
@@ -446,7 +463,8 @@
             <span class="mi">8</span><span class="p">:</span><span class="s1">&#39;Stats&#39;</span>
             <span class="p">}</span>
     <span class="p">)</span>
-    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Position.str.len() &lt;= 2&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">position_length</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Position</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">())</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;position_length &lt;= 2&#39;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Points</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;FD Points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
     <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Salary</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">Salary</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[$,]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
 <span class="p">)</span>
@@ -482,6 +500,7 @@
       <th>Score</th>
       <th>Min</th>
       <th>Stats</th>
+      <th>position_length</th>
       <th>Points</th>
     </tr>
   </thead>
@@ -497,6 +516,7 @@
       <td>125-111</td>
       <td>33:02</td>
       <td>35pt 5rb 10as 1st 4to 2trey 11-18fg 11-14ft</td>
+      <td>2</td>
       <td>55.0</td>
     </tr>
     <tr>
@@ -510,6 +530,7 @@
       <td>111-125</td>
       <td>35:31</td>
       <td>23pt 6rb 15as 3st 8to 3trey 8-16fg 4-9ft</td>
+      <td>2</td>
       <td>53.7</td>
     </tr>
     <tr>
@@ -523,6 +544,7 @@
       <td>112-117</td>
       <td>38:39</td>
       <td>32pt 5rb 4as 1st 2to 5trey 12-26fg 3-3ft</td>
+      <td>2</td>
       <td>45.0</td>
     </tr>
     <tr>
@@ -536,6 +558,7 @@
       <td>119-93</td>
       <td>29:44</td>
       <td>10pt 4rb 11as 4st 2-5fg 6-6ft</td>
+      <td>2</td>
       <td>43.3</td>
     </tr>
     <tr>
@@ -549,10 +572,12 @@
       <td>128-97</td>
       <td>37:59</td>
       <td>24pt 3rb 6as 2st 1to 1trey 10-17fg 3-3ft</td>
+      <td>2</td>
       <td>41.6</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -575,6 +600,7 @@
       <td>93-119</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>1</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -588,6 +614,7 @@
       <td>111-125</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>1</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -601,6 +628,7 @@
       <td>80-94</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>1</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -614,6 +642,7 @@
       <td>104-114</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>1</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -627,11 +656,12 @@
       <td>112-117</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>1</td>
       <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>198 rows × 10 columns</p>
+<p>198 rows × 11 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -693,12 +723,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_score</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;Fantasy Points Problem&#39;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/pulp.py:1352: UserWarning: Spaces are not permitted in the name. Converted to &#39;_&#39;
-  warnings.warn(&quot;Spaces are not permitted in the name. Converted to &#39;_&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -861,7 +885,7 @@
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/apis/../solverdir/cbc/linux/64/cbc /tmp/c0103b1c81124911ad8713621378ee65-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/c0103b1c81124911ad8713621378ee65-pulp.sol (default strategy 1)
+command line - /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/apis/../solverdir/cbc/linux/64/cbc /tmp/99c4979531d44c59beddf2bb4a4c01d2-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/99c4979531d44c59beddf2bb4a4c01d2-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 11 COLUMNS
@@ -937,10 +961,10 @@ Objective value:                405.20000000
 Enumerated nodes:               0
 Total iterations:               0
 Time (CPU seconds):             0.01
-Time (Wallclock seconds):       0.02
+Time (Wallclock seconds):       0.01
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.02   (Wallclock seconds):       0.02
+Total time (CPU seconds):       0.01   (Wallclock seconds):       0.01
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
@@ -951,7 +975,7 @@ Total time (CPU seconds):       0.02   (Wallclock seconds):       0.02
 <p>And filter the list of the possible players to the ones that were selected (their variable value is 1):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_roster</span> <span class="o">=</span> <span class="p">(</span> 
     <span class="nb">list</span><span class="p">(</span>
         <span class="nb">filter</span><span class="p">(</span>
             <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">varValue</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> 
@@ -959,6 +983,7 @@ Total time (CPU seconds):       0.02   (Wallclock seconds):       0.02
         <span class="p">)</span>
     <span class="p">)</span>
 <span class="p">)</span>
+<span class="n">optimized_roster</span>
 </pre></div>
 </div>
 </div>
@@ -976,7 +1001,194 @@ Total time (CPU seconds):       0.02   (Wallclock seconds):       0.02
 </div>
 </div>
 </div>
+<p>We will extract the name of the player from the variables of the linear optimizer</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_roster_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">name</span>
+    <span class="o">.</span><span class="n">name</span>
+    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">strip</span><span class="p">()</span> 
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">optimized_roster</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>The list of the players above is changing every week based on their recent performance, and we can execute this analysis every time before we define our fantasy team for the next round.</p>
+<p>We can also get the table that we used as the input for the optmization process and filter it show more details on each of our players.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">all_players</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Name in @optimized_roster_names&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Position</th>
+      <th>Name</th>
+      <th>FD Points</th>
+      <th>Salary</th>
+      <th>Team</th>
+      <th>Opp.</th>
+      <th>Score</th>
+      <th>Min</th>
+      <th>Stats</th>
+      <th>position_length</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>PG</td>
+      <td>Morant, Ja^</td>
+      <td>55</td>
+      <td>7100</td>
+      <td>mem</td>
+      <td>@ was</td>
+      <td>125-111</td>
+      <td>33:02</td>
+      <td>35pt 5rb 10as 1st 4to 2trey 11-18fg 11-14ft</td>
+      <td>2</td>
+      <td>55.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SG</td>
+      <td>George, Paul^</td>
+      <td>45</td>
+      <td>7900</td>
+      <td>lac</td>
+      <td>@ bos</td>
+      <td>112-117</td>
+      <td>38:39</td>
+      <td>32pt 5rb 4as 1st 2to 5trey 12-26fg 3-3ft</td>
+      <td>2</td>
+      <td>45.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PG</td>
+      <td>Melton, De'Anthony</td>
+      <td>38.3</td>
+      <td>4600</td>
+      <td>mem</td>
+      <td>@ was</td>
+      <td>125-111</td>
+      <td>26:21</td>
+      <td>20pt 4rb 5as 2st 6trey 6-11fg 2-2ft</td>
+      <td>2</td>
+      <td>38.3</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>SG</td>
+      <td>Quickley, Immanuel</td>
+      <td>37.8</td>
+      <td>5100</td>
+      <td>nyk</td>
+      <td>@ sas</td>
+      <td>93-119</td>
+      <td>29:12</td>
+      <td>26pt 4rb 4as 1st 2to 6trey 8-21fg 4-4ft</td>
+      <td>2</td>
+      <td>37.8</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>SF</td>
+      <td>James, LeBron^</td>
+      <td>59</td>
+      <td>10800</td>
+      <td>lal</td>
+      <td>v pho</td>
+      <td>104-114</td>
+      <td>37:38</td>
+      <td>38pt 5rb 6as 2st 1bl 3to 3trey 16-24fg 3-5ft</td>
+      <td>2</td>
+      <td>59.0</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>SF</td>
+      <td>Barton, Will^</td>
+      <td>35.1</td>
+      <td>4900</td>
+      <td>den</td>
+      <td>@ mil</td>
+      <td>128-97</td>
+      <td>34:28</td>
+      <td>14pt 8rb 5as 1st 1bl 2to 2trey 6-11fg</td>
+      <td>2</td>
+      <td>35.1</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>PF</td>
+      <td>Lyles, Trey^</td>
+      <td>33</td>
+      <td>4000</td>
+      <td>sas</td>
+      <td>v nyk</td>
+      <td>119-93</td>
+      <td>30:04</td>
+      <td>18pt 5rb 2as 2st 4trey 7-13fg</td>
+      <td>2</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>PF</td>
+      <td>Saric, Dario</td>
+      <td>32.5</td>
+      <td>4100</td>
+      <td>pho</td>
+      <td>@ lal</td>
+      <td>114-104</td>
+      <td>26:19</td>
+      <td>21pt 5rb 3as 1st 2to 2trey 7-17fg 5-6ft</td>
+      <td>2</td>
+      <td>32.5</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>C</td>
+      <td>Jokic, Nikola^</td>
+      <td>69.5</td>
+      <td>11000</td>
+      <td>den</td>
+      <td>@ mil</td>
+      <td>128-97</td>
+      <td>36:24</td>
+      <td>37pt 10rb 11as 2st 2to 2trey 15-23fg 5-5ft</td>
+      <td>1</td>
+      <td>69.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </div>
 </div>
 </div>
