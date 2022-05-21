@@ -20,6 +20,7 @@
 - part: Table Enrichment with Merge
   chapters:
   - file: notebooks/03.03_merge.ipynb
+  - file: notebooks/03.04_concat_tables.ipynb
 - part: Industries Use Cases
   chapters:
   - file: notebooks/08.01_Logistics_analysis.ipynb
