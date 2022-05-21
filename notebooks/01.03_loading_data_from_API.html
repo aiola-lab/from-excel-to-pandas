@@ -37,17 +37,19 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -679,7 +681,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lxml in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (4.7.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: lxml in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (4.8.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: There was an error checking the latest version of pip.</span>
+
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -776,35 +782,35 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>96</th>
+      <th>97</th>
+      <td>Walgreens Boots Alliance</td>
+      <td>WBA</td>
+      <td>Consumer Staples</td>
+      <td>Drug Retail</td>
+    </tr>
+    <tr>
+      <th>98</th>
       <td>Workday</td>
       <td>WDAY</td>
       <td>Information Technology</td>
       <td>Application Software</td>
     </tr>
     <tr>
-      <th>97</th>
+      <th>99</th>
       <td>Xcel Energy</td>
       <td>XEL</td>
       <td>Utilities</td>
       <td>Multi-Utilities</td>
     </tr>
     <tr>
-      <th>98</th>
-      <td>Xilinx</td>
-      <td>XLNX</td>
-      <td>Information Technology</td>
-      <td>Semiconductors</td>
-    </tr>
-    <tr>
-      <th>99</th>
+      <th>100</th>
       <td>Zoom</td>
       <td>ZM</td>
       <td>Information Technology</td>
       <td>Application Software</td>
     </tr>
     <tr>
-      <th>100</th>
+      <th>101</th>
       <td>Zscaler</td>
       <td>ZS</td>
       <td>Information Technology</td>
@@ -812,7 +818,7 @@
     </tr>
   </tbody>
 </table>
-<p>101 rows × 4 columns</p>
+<p>102 rows × 4 columns</p>
 </div></div></div>
 </div>
 <p>Now we want to get all the views of each company on our list. We will define a simple function that will get the name of the company and return the views of this company’s page.</p>
@@ -1900,7 +1906,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dotenv in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (0.19.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dotenv in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.20.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: There was an error checking the latest version of pip.</span>
+
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -1981,7 +1991,7 @@
     </tr>
     <tr>
       <th>3. Last Refreshed</th>
-      <td>2022-01-25 19:58:00</td>
+      <td>2022-05-20 19:59:00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -2000,29 +2010,29 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:06:00</th>
+      <th>2022-05-20 15:07:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2772.0000', '2. high': '2772.0000...</td>
+      <td>{'1. open': '2108.8392', '2. high': '2111.6600...</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:05:00</th>
+      <th>2022-05-20 15:06:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2772.0000', '2. high': '2789.9700...</td>
+      <td>{'1. open': '2111.4100', '2. high': '2111.4100...</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:04:00</th>
+      <th>2022-05-20 15:05:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2784.7500', '2. high': '2784.7500...</td>
+      <td>{'1. open': '2111.1683', '2. high': '2111.1683...</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:03:00</th>
+      <th>2022-05-20 15:04:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2799.7200', '2. high': '2799.7200...</td>
+      <td>{'1. open': '2113.0875', '2. high': '2114.8200...</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:02:00</th>
+      <th>2022-05-20 15:03:00</th>
       <td>NaN</td>
-      <td>{'1. open': '2799.7200', '2. high': '2800.0000...</td>
+      <td>{'1. open': '2117.0000', '2. high': '2117.0100...</td>
     </tr>
   </tbody>
 </table>
@@ -2087,44 +2097,44 @@
   </thead>
   <tbody>
     <tr>
-      <th>2022-01-25 19:58:00</th>
-      <td>2805.0000</td>
-      <td>2805.0000</td>
-      <td>2805.0000</td>
-      <td>2805.0000</td>
-      <td>145</td>
+      <th>2022-05-20 19:59:00</th>
+      <td>2157.0000</td>
+      <td>2157.0000</td>
+      <td>2157.0000</td>
+      <td>2157.0000</td>
+      <td>463</td>
     </tr>
     <tr>
-      <th>2022-01-25 19:50:00</th>
-      <td>2807.0000</td>
-      <td>2807.1500</td>
-      <td>2807.0000</td>
-      <td>2807.1500</td>
-      <td>797</td>
+      <th>2022-05-20 19:55:00</th>
+      <td>2157.0000</td>
+      <td>2157.0000</td>
+      <td>2157.0000</td>
+      <td>2157.0000</td>
+      <td>227</td>
     </tr>
     <tr>
-      <th>2022-01-25 19:49:00</th>
-      <td>2808.1000</td>
-      <td>2808.1000</td>
-      <td>2807.0100</td>
-      <td>2807.0100</td>
-      <td>498</td>
+      <th>2022-05-20 19:45:00</th>
+      <td>2157.1000</td>
+      <td>2157.1000</td>
+      <td>2157.1000</td>
+      <td>2157.1000</td>
+      <td>529</td>
     </tr>
     <tr>
-      <th>2022-01-25 19:41:00</th>
-      <td>2808.1000</td>
-      <td>2808.1000</td>
-      <td>2808.1000</td>
-      <td>2808.1000</td>
-      <td>229</td>
+      <th>2022-05-20 18:43:00</th>
+      <td>2154.4000</td>
+      <td>2154.4000</td>
+      <td>2154.4000</td>
+      <td>2154.4000</td>
+      <td>435</td>
     </tr>
     <tr>
-      <th>2022-01-25 19:37:00</th>
-      <td>2815.0000</td>
-      <td>2815.0000</td>
-      <td>2815.0000</td>
-      <td>2815.0000</td>
-      <td>148</td>
+      <th>2022-05-20 18:36:00</th>
+      <td>2151.8200</td>
+      <td>2151.8200</td>
+      <td>2151.8200</td>
+      <td>2151.8200</td>
+      <td>134</td>
     </tr>
     <tr>
       <th>...</th>
@@ -2135,44 +2145,44 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:06:00</th>
-      <td>2772.0000</td>
-      <td>2772.0000</td>
-      <td>2771.0000</td>
-      <td>2771.0000</td>
-      <td>2400</td>
+      <th>2022-05-20 15:07:00</th>
+      <td>2108.8392</td>
+      <td>2111.6600</td>
+      <td>2108.7900</td>
+      <td>2109.9900</td>
+      <td>8308</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:05:00</th>
-      <td>2772.0000</td>
-      <td>2789.9700</td>
-      <td>2770.0000</td>
-      <td>2770.0000</td>
-      <td>4548</td>
+      <th>2022-05-20 15:06:00</th>
+      <td>2111.4100</td>
+      <td>2111.4100</td>
+      <td>2108.5600</td>
+      <td>2109.3198</td>
+      <td>4978</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:04:00</th>
-      <td>2784.7500</td>
-      <td>2784.7500</td>
-      <td>2770.0000</td>
-      <td>2772.0000</td>
-      <td>5272</td>
+      <th>2022-05-20 15:05:00</th>
+      <td>2111.1683</td>
+      <td>2111.1683</td>
+      <td>2107.8600</td>
+      <td>2108.1201</td>
+      <td>9070</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:03:00</th>
-      <td>2799.7200</td>
-      <td>2799.7200</td>
-      <td>2796.0000</td>
-      <td>2799.7200</td>
-      <td>19920</td>
+      <th>2022-05-20 15:04:00</th>
+      <td>2113.0875</td>
+      <td>2114.8200</td>
+      <td>2110.0200</td>
+      <td>2111.6524</td>
+      <td>7870</td>
     </tr>
     <tr>
-      <th>2022-01-25 16:02:00</th>
-      <td>2799.7200</td>
-      <td>2800.0000</td>
-      <td>2799.7200</td>
-      <td>2799.7200</td>
-      <td>7705</td>
+      <th>2022-05-20 15:03:00</th>
+      <td>2117.0000</td>
+      <td>2117.0100</td>
+      <td>2112.5700</td>
+      <td>2112.6300</td>
+      <td>13826</td>
     </tr>
   </tbody>
 </table>

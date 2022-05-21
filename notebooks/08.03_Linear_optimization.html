@@ -37,20 +37,22 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Survey Analysis" href="08.04_Survey_analysis.html" />
@@ -675,7 +677,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pulp in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (2.6.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pulp in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (2.6.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: There was an error checking the latest version of pip.</span>
+
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -885,7 +891,7 @@
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/pulp/apis/../solverdir/cbc/linux/64/cbc /tmp/03f0acb58b1d4c20bb1c95b819349ac5-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/03f0acb58b1d4c20bb1c95b819349ac5-pulp.sol (default strategy 1)
+command line - /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pulp/apis/../solverdir/cbc/linux/64/cbc /tmp/b387aba546984ac1a2498ef7827e26bf-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/b387aba546984ac1a2498ef7827e26bf-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 11 COLUMNS
@@ -905,7 +911,7 @@ Cbc0038I Solution found of -405.2
 Cbc0038I Cleaned solution of -405.2
 Cbc0038I Before mini branch and bound, 143 integers at bound fixed and 0 continuous
 Cbc0038I Full problem 6 rows 145 columns, reduced to 0 rows 0 columns
-Cbc0038I Mini branch and bound did not improve solution (0.01 seconds)
+Cbc0038I Mini branch and bound did not improve solution (0.00 seconds)
 Cbc0038I Round again with cutoff of -405.5
 Cbc0038I Reduced cost fixing fixed 138 variables on major pass 2
 Cbc0038I Pass   1: suminf.    0.03896 (2) obj. -405.5 iterations 1
@@ -960,7 +966,7 @@ Result - Optimal solution found
 Objective value:                405.20000000
 Enumerated nodes:               0
 Total iterations:               0
-Time (CPU seconds):             0.00
+Time (CPU seconds):             0.01
 Time (Wallclock seconds):       0.01
 
 Option for printingOptions changed from normal to all

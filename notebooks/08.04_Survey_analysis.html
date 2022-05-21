@@ -37,20 +37,22 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Linear Programming (Optimization)" href="08.03_Linear_optimization.html" />
@@ -1609,10 +1611,10 @@ Name: 0, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1.240</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 27 Jan 2022</td> <th>  Prob (F-statistic):</th>  <td> 0.301</td> 
+  <th>Date:</th>             <td>Sat, 21 May 2022</td> <th>  Prob (F-statistic):</th>  <td> 0.301</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>00:36:20</td>     <th>  Log-Likelihood:    </th> <td> -76.904</td>
+  <th>Time:</th>                 <td>23:17:40</td>     <th>  Log-Likelihood:    </th> <td> -76.904</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    83</td>      <th>  AIC:               </th> <td>   161.8</td>
@@ -1712,7 +1714,7 @@ Name: 0, dtype: object
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/statsmodels/base/model.py:1873: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/statsmodels/base/model.py:1873: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
   &#39;rank is %d&#39; % (J, J_), ValueWarning)
 </pre></div>
 </div>
@@ -1801,10 +1803,10 @@ Name: 0, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   2.173</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 27 Jan 2022</td> <th>  Prob (F-statistic):</th>  <td>0.0978</td> 
+  <th>Date:</th>             <td>Sat, 21 May 2022</td> <th>  Prob (F-statistic):</th>  <td>0.0978</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>00:36:20</td>     <th>  Log-Likelihood:    </th> <td> -61.619</td>
+  <th>Time:</th>                 <td>23:17:40</td>     <th>  Log-Likelihood:    </th> <td> -61.619</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    83</td>      <th>  AIC:               </th> <td>   131.2</td>
@@ -1904,7 +1906,7 @@ Name: 0, dtype: object
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/statsmodels/base/model.py:1873: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/statsmodels/base/model.py:1873: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
   &#39;rank is %d&#39; % (J, J_), ValueWarning)
 </pre></div>
 </div>
@@ -1993,10 +1995,10 @@ Name: 0, dtype: object
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   3.291</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 27 Jan 2022</td> <th>  Prob (F-statistic):</th>  <td>0.0249</td> 
+  <th>Date:</th>             <td>Sat, 21 May 2022</td> <th>  Prob (F-statistic):</th>  <td>0.0249</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>00:36:20</td>     <th>  Log-Likelihood:    </th> <td> -114.53</td>
+  <th>Time:</th>                 <td>23:17:40</td>     <th>  Log-Likelihood:    </th> <td> -114.53</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    83</td>      <th>  AIC:               </th> <td>   237.1</td>
@@ -2096,7 +2098,7 @@ Name: 0, dtype: object
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/statsmodels/base/model.py:1873: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/statsmodels/base/model.py:1873: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 14, but rank is 10
   &#39;rank is %d&#39; % (J, J_), ValueWarning)
 </pre></div>
 </div>

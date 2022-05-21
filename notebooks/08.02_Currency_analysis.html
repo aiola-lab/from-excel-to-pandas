@@ -37,17 +37,19 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -516,37 +518,36 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;EUR&#39;: 0.8867606632969762,
- &#39;JPY&#39;: 114.26797907244837,
- &#39;BGN&#39;: 1.734326505276226,
- &#39;CZK&#39;: 21.75312583133812,
- &#39;DKK&#39;: 6.599272856256097,
- &#39;GBP&#39;: 0.7400727143743904,
- &#39;HUF&#39;: 318.94120776802345,
- &#39;PLN&#39;: 4.067039106145252,
- &#39;RON&#39;: 4.385120156069877,
- &#39;SEK&#39;: 9.266028198989092,
- &#39;CHF&#39;: 0.9209896249002395,
- &#39;ISK&#39;: 129.11235257603974,
- &#39;NOK&#39;: 8.877804380597677,
- &#39;HRK&#39;: 6.676421033962934,
- &#39;RUB&#39;: 79.15669060920459,
- &#39;TRY&#39;: 13.556530992285182,
- &#39;AUD&#39;: 1.3946084951671545,
- &#39;BRL&#39;: 5.416688835683249,
- &#39;CAD&#39;: 1.2568058880908044,
- &#39;CNY&#39;: 6.321982796843132,
- &#39;HKD&#39;: 7.784960539150483,
- &#39;IDR&#39;: 14352.496231267181,
- &#39;INR&#39;: 74.86813868936774,
- &#39;KRW&#39;: 1197.1534982708167,
- &#39;MXN&#39;: 20.559102598208746,
- &#39;MYR&#39;: 4.191540303272147,
- &#39;NZD&#39;: 1.4955218586503505,
- &#39;PHP&#39;: 51.19091957080784,
- &#39;SGD&#39;: 1.3445065176908753,
- &#39;THB&#39;: 32.960007094085306,
- &#39;ZAR&#39;: 15.151015340959475}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;EUR&#39;: 0.9454476694714947,
+ &#39;JPY&#39;: 127.95688758627209,
+ &#39;BGN&#39;: 1.8491065519523493,
+ &#39;CZK&#39;: 23.324194005861774,
+ &#39;DKK&#39;: 7.036399735274652,
+ &#39;GBP&#39;: 0.8019287132457218,
+ &#39;HUF&#39;: 362.0402760707195,
+ &#39;PLN&#39;: 4.383568119504585,
+ &#39;RON&#39;: 4.6777914342441145,
+ &#39;SEK&#39;: 9.919164224260186,
+ &#39;CHF&#39;: 0.9719202042166966,
+ &#39;ISK&#39;: 130.94450222180203,
+ &#39;NOK&#39;: 9.702183984116479,
+ &#39;HRK&#39;: 7.122530017963506,
+ &#39;TRY&#39;: 15.902524345277488,
+ &#39;AUD&#39;: 1.416280608868299,
+ &#39;BRL&#39;: 4.915287888815354,
+ &#39;CAD&#39;: 1.2788125177271437,
+ &#39;CNY&#39;: 6.678453247612744,
+ &#39;HKD&#39;: 7.847121111846458,
+ &#39;IDR&#39;: 14656.320317670416,
+ &#39;INR&#39;: 77.6795877848161,
+ &#39;KRW&#39;: 1267.4482367400963,
+ &#39;MXN&#39;: 19.884088115722793,
+ &#39;MYR&#39;: 4.388957171220572,
+ &#39;NZD&#39;: 1.5616904604330148,
+ &#39;PHP&#39;: 52.17074784910655,
+ &#39;SGD&#39;: 1.3792190602250165,
+ &#39;THB&#39;: 34.30462323910371,
+ &#39;ZAR&#39;: 15.801361444644039}
 </pre></div>
 </div>
 </div>
@@ -589,127 +590,123 @@
   <tbody>
     <tr>
       <th>EUR</th>
-      <td>0.886761</td>
+      <td>0.945448</td>
     </tr>
     <tr>
       <th>JPY</th>
-      <td>114.267979</td>
+      <td>127.956888</td>
     </tr>
     <tr>
       <th>BGN</th>
-      <td>1.734327</td>
+      <td>1.849107</td>
     </tr>
     <tr>
       <th>CZK</th>
-      <td>21.753126</td>
+      <td>23.324194</td>
     </tr>
     <tr>
       <th>DKK</th>
-      <td>6.599273</td>
+      <td>7.036400</td>
     </tr>
     <tr>
       <th>GBP</th>
-      <td>0.740073</td>
+      <td>0.801929</td>
     </tr>
     <tr>
       <th>HUF</th>
-      <td>318.941208</td>
+      <td>362.040276</td>
     </tr>
     <tr>
       <th>PLN</th>
-      <td>4.067039</td>
+      <td>4.383568</td>
     </tr>
     <tr>
       <th>RON</th>
-      <td>4.385120</td>
+      <td>4.677791</td>
     </tr>
     <tr>
       <th>SEK</th>
-      <td>9.266028</td>
+      <td>9.919164</td>
     </tr>
     <tr>
       <th>CHF</th>
-      <td>0.920990</td>
+      <td>0.971920</td>
     </tr>
     <tr>
       <th>ISK</th>
-      <td>129.112353</td>
+      <td>130.944502</td>
     </tr>
     <tr>
       <th>NOK</th>
-      <td>8.877804</td>
+      <td>9.702184</td>
     </tr>
     <tr>
       <th>HRK</th>
-      <td>6.676421</td>
-    </tr>
-    <tr>
-      <th>RUB</th>
-      <td>79.156691</td>
+      <td>7.122530</td>
     </tr>
     <tr>
       <th>TRY</th>
-      <td>13.556531</td>
+      <td>15.902524</td>
     </tr>
     <tr>
       <th>AUD</th>
-      <td>1.394608</td>
+      <td>1.416281</td>
     </tr>
     <tr>
       <th>BRL</th>
-      <td>5.416689</td>
+      <td>4.915288</td>
     </tr>
     <tr>
       <th>CAD</th>
-      <td>1.256806</td>
+      <td>1.278813</td>
     </tr>
     <tr>
       <th>CNY</th>
-      <td>6.321983</td>
+      <td>6.678453</td>
     </tr>
     <tr>
       <th>HKD</th>
-      <td>7.784961</td>
+      <td>7.847121</td>
     </tr>
     <tr>
       <th>IDR</th>
-      <td>14352.496231</td>
+      <td>14656.320318</td>
     </tr>
     <tr>
       <th>INR</th>
-      <td>74.868139</td>
+      <td>77.679588</td>
     </tr>
     <tr>
       <th>KRW</th>
-      <td>1197.153498</td>
+      <td>1267.448237</td>
     </tr>
     <tr>
       <th>MXN</th>
-      <td>20.559103</td>
+      <td>19.884088</td>
     </tr>
     <tr>
       <th>MYR</th>
-      <td>4.191540</td>
+      <td>4.388957</td>
     </tr>
     <tr>
       <th>NZD</th>
-      <td>1.495522</td>
+      <td>1.561690</td>
     </tr>
     <tr>
       <th>PHP</th>
-      <td>51.190920</td>
+      <td>52.170748</td>
     </tr>
     <tr>
       <th>SGD</th>
-      <td>1.344507</td>
+      <td>1.379219</td>
     </tr>
     <tr>
       <th>THB</th>
-      <td>32.960007</td>
+      <td>34.304623</td>
     </tr>
     <tr>
       <th>ZAR</th>
-      <td>15.151015</td>
+      <td>15.801361</td>
     </tr>
   </tbody>
 </table>
@@ -1200,7 +1197,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.176&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.359&#39;
 </pre></div>
 </div>
 </div>
@@ -1263,38 +1260,38 @@ As for this example, this technique is relevent for many optional analysis.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1/26/2022</td>
-      <td>Wednesday</td>
-      <td>3.18856</td>
-      <td>USD ILS rate for 1/26/2022</td>
+      <td>5/20/2022</td>
+      <td>Friday</td>
+      <td>3.36283</td>
+      <td>USD ILS rate for 5/20/2022</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1/25/2022</td>
-      <td>Tuesday</td>
-      <td>3.17419</td>
-      <td>USD ILS rate for 1/25/2022</td>
+      <td>5/19/2022</td>
+      <td>Thursday</td>
+      <td>3.38042</td>
+      <td>USD ILS rate for 5/19/2022</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1/24/2022</td>
-      <td>Monday</td>
-      <td>3.17426</td>
-      <td>USD ILS rate for 1/24/2022</td>
+      <td>5/18/2022</td>
+      <td>Wednesday</td>
+      <td>3.37941</td>
+      <td>USD ILS rate for 5/18/2022</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1/21/2022</td>
-      <td>Friday</td>
-      <td>3.14075</td>
-      <td>USD ILS rate for 1/21/2022</td>
+      <td>5/17/2022</td>
+      <td>Tuesday</td>
+      <td>3.34471</td>
+      <td>USD ILS rate for 5/17/2022</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1/20/2022</td>
-      <td>Thursday</td>
-      <td>3.13599</td>
-      <td>USD ILS rate for 1/20/2022</td>
+      <td>5/16/2022</td>
+      <td>Monday</td>
+      <td>3.37882</td>
+      <td>USD ILS rate for 5/16/2022</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1304,43 +1301,43 @@ As for this example, this technique is relevent for many optional analysis.</p>
       <td>...</td>
     </tr>
     <tr>
-      <th>124</th>
-      <td>8/5/2021</td>
-      <td>Thursday</td>
-      <td>3.21315</td>
-      <td>USD ILS rate for 8/5/2021</td>
-    </tr>
-    <tr>
       <th>125</th>
-      <td>8/4/2021</td>
-      <td>Wednesday</td>
-      <td>3.21513</td>
-      <td>USD ILS rate for 8/4/2021</td>
+      <td>11/26/2021</td>
+      <td>Friday</td>
+      <td>3.18176</td>
+      <td>USD ILS rate for 11/26/2021</td>
     </tr>
     <tr>
       <th>126</th>
-      <td>8/3/2021</td>
-      <td>Tuesday</td>
-      <td>3.21162</td>
-      <td>USD ILS rate for 8/3/2021</td>
+      <td>11/25/2021</td>
+      <td>Thursday</td>
+      <td>3.16222</td>
+      <td>USD ILS rate for 11/25/2021</td>
     </tr>
     <tr>
       <th>127</th>
-      <td>8/2/2021</td>
-      <td>Monday</td>
-      <td>3.22611</td>
-      <td>USD ILS rate for 8/2/2021</td>
+      <td>11/24/2021</td>
+      <td>Wednesday</td>
+      <td>3.14962</td>
+      <td>USD ILS rate for 11/24/2021</td>
     </tr>
     <tr>
       <th>128</th>
-      <td>7/30/2021</td>
-      <td>Friday</td>
-      <td>3.22303</td>
-      <td>USD ILS rate for 7/30/2021</td>
+      <td>11/23/2021</td>
+      <td>Tuesday</td>
+      <td>3.13881</td>
+      <td>USD ILS rate for 11/23/2021</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>11/22/2021</td>
+      <td>Monday</td>
+      <td>3.09072</td>
+      <td>USD ILS rate for 11/22/2021</td>
     </tr>
   </tbody>
 </table>
-<p>129 rows × 4 columns</p>
+<p>130 rows × 4 columns</p>
 </div></div></div>
 </div>
 <p>Now let’s check in which day of the week, does the rate of the ILS is “stronger”, in accordance to the USD.<br>
@@ -1362,11 +1359,11 @@ This data could be useful in order to maximize the rate when doing currency conv
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
-Monday       3.173335
-Friday       3.172393
-Wednesday    3.172110
-Tuesday      3.171872
-Thursday     3.169360
+Friday       3.219182
+Thursday     3.218715
+Monday       3.213923
+Tuesday      3.211181
+Wednesday    3.209393
 Name: Rate, dtype: float64
 </pre></div>
 </div>
@@ -1390,11 +1387,11 @@ Name: Rate, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
-Friday       3.189345
-Wednesday    3.188200
-Monday       3.187375
-Tuesday      3.186545
-Thursday     3.171570
+Tuesday      3.212945
+Friday       3.211785
+Monday       3.211590
+Thursday     3.209310
+Wednesday    3.196990
 Name: Rate, dtype: float64
 </pre></div>
 </div>
@@ -1469,34 +1466,34 @@ Name: Rate, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>2022-01-26</th>
-      <td>Wednesday</td>
-      <td>3.18856</td>
-      <td>USD ILS rate for 1/26/2022</td>
-    </tr>
-    <tr>
-      <th>2022-01-25</th>
-      <td>Tuesday</td>
-      <td>3.17419</td>
-      <td>USD ILS rate for 1/25/2022</td>
-    </tr>
-    <tr>
-      <th>2022-01-24</th>
-      <td>Monday</td>
-      <td>3.17426</td>
-      <td>USD ILS rate for 1/24/2022</td>
-    </tr>
-    <tr>
-      <th>2022-01-21</th>
+      <th>2022-05-20</th>
       <td>Friday</td>
-      <td>3.14075</td>
-      <td>USD ILS rate for 1/21/2022</td>
+      <td>3.36283</td>
+      <td>USD ILS rate for 5/20/2022</td>
     </tr>
     <tr>
-      <th>2022-01-20</th>
+      <th>2022-05-19</th>
       <td>Thursday</td>
-      <td>3.13599</td>
-      <td>USD ILS rate for 1/20/2022</td>
+      <td>3.38042</td>
+      <td>USD ILS rate for 5/19/2022</td>
+    </tr>
+    <tr>
+      <th>2022-05-18</th>
+      <td>Wednesday</td>
+      <td>3.37941</td>
+      <td>USD ILS rate for 5/18/2022</td>
+    </tr>
+    <tr>
+      <th>2022-05-17</th>
+      <td>Tuesday</td>
+      <td>3.34471</td>
+      <td>USD ILS rate for 5/17/2022</td>
+    </tr>
+    <tr>
+      <th>2022-05-16</th>
+      <td>Monday</td>
+      <td>3.37882</td>
+      <td>USD ILS rate for 5/16/2022</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1505,38 +1502,38 @@ Name: Rate, dtype: float64
       <td>...</td>
     </tr>
     <tr>
-      <th>2021-08-05</th>
-      <td>Thursday</td>
-      <td>3.21315</td>
-      <td>USD ILS rate for 8/5/2021</td>
-    </tr>
-    <tr>
-      <th>2021-08-04</th>
-      <td>Wednesday</td>
-      <td>3.21513</td>
-      <td>USD ILS rate for 8/4/2021</td>
-    </tr>
-    <tr>
-      <th>2021-08-03</th>
-      <td>Tuesday</td>
-      <td>3.21162</td>
-      <td>USD ILS rate for 8/3/2021</td>
-    </tr>
-    <tr>
-      <th>2021-08-02</th>
-      <td>Monday</td>
-      <td>3.22611</td>
-      <td>USD ILS rate for 8/2/2021</td>
-    </tr>
-    <tr>
-      <th>2021-07-30</th>
+      <th>2021-11-26</th>
       <td>Friday</td>
-      <td>3.22303</td>
-      <td>USD ILS rate for 7/30/2021</td>
+      <td>3.18176</td>
+      <td>USD ILS rate for 11/26/2021</td>
+    </tr>
+    <tr>
+      <th>2021-11-25</th>
+      <td>Thursday</td>
+      <td>3.16222</td>
+      <td>USD ILS rate for 11/25/2021</td>
+    </tr>
+    <tr>
+      <th>2021-11-24</th>
+      <td>Wednesday</td>
+      <td>3.14962</td>
+      <td>USD ILS rate for 11/24/2021</td>
+    </tr>
+    <tr>
+      <th>2021-11-23</th>
+      <td>Tuesday</td>
+      <td>3.13881</td>
+      <td>USD ILS rate for 11/23/2021</td>
+    </tr>
+    <tr>
+      <th>2021-11-22</th>
+      <td>Monday</td>
+      <td>3.09072</td>
+      <td>USD ILS rate for 11/22/2021</td>
     </tr>
   </tbody>
 </table>
-<p>129 rows × 3 columns</p>
+<p>130 rows × 3 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1593,7 +1590,7 @@ Let’s check it.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Day
 Friday       26
 Monday       26
-Thursday     25
+Thursday     26
 Tuesday      26
 Wednesday    26
 Name: Rate, dtype: int64
@@ -1647,116 +1644,104 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_0ebd8_row0_col1 {
+#T_2142a_row0_col1 {
   background-color: #008066;
   color: #f1f1f1;
 }
-#T_0ebd8_row1_col1 {
-  background-color: #289366;
+#T_2142a_row1_col1 {
+  background-color: #0f8766;
   color: #f1f1f1;
 }
-#T_0ebd8_row2_col1 {
-  background-color: #309866;
-  color: #f1f1f1;
-}
-#T_0ebd8_row3_col1 {
-  background-color: #8bc566;
-  color: #000000;
-}
-#T_0ebd8_row4_col1 {
-  background-color: #cce666;
-  color: #000000;
-}
-#T_0ebd8_row5_col1 {
-  background-color: #d2e866;
-  color: #000000;
-}
-#T_0ebd8_row6_col1 {
-  background-color: #ddee66;
-  color: #000000;
-}
-#T_0ebd8_row7_col1 {
-  background-color: #ffff66;
-  color: #000000;
-}
-#T_0ebd8_row8_col1 {
-  background-color: #d3e966;
-  color: #000000;
-}
-#T_0ebd8_row9_col1 {
-  background-color: #c1e066;
-  color: #000000;
-}
-#T_0ebd8_row10_col1 {
-  background-color: #add666;
-  color: #000000;
-}
-#T_0ebd8_row11_col1 {
-  background-color: #bfdf66;
-  color: #000000;
-}
-#T_0ebd8_row12_col1 {
-  background-color: #b8dc66;
-  color: #000000;
-}
-#T_0ebd8_row13_col1 {
-  background-color: #d7eb66;
-  color: #000000;
-}
-#T_0ebd8_row14_col1 {
-  background-color: #e3f166;
-  color: #000000;
-}
-#T_0ebd8_row15_col1 {
-  background-color: #e6f266;
-  color: #000000;
-}
-#T_0ebd8_row16_col1 {
-  background-color: #c0e066;
-  color: #000000;
-}
-#T_0ebd8_row17_col1 {
-  background-color: #a3d166;
-  color: #000000;
-}
-#T_0ebd8_row18_col1 {
-  background-color: #2b9566;
-  color: #f1f1f1;
-}
-#T_0ebd8_row19_col1 {
+#T_2142a_row2_col1 {
   background-color: #128866;
   color: #f1f1f1;
 }
-#T_0ebd8_row20_col1 {
-  background-color: #038166;
+#T_2142a_row3_col1 {
+  background-color: #43a166;
   color: #f1f1f1;
 }
-#T_0ebd8_row21_col1 {
-  background-color: #7ebe66;
+#T_2142a_row4_col1 {
+  background-color: #42a066;
+  color: #f1f1f1;
+}
+#T_2142a_row5_col1, #T_2142a_row15_col1 {
+  background-color: #63b166;
+  color: #f1f1f1;
+}
+#T_2142a_row6_col1 {
+  background-color: #6bb566;
+  color: #f1f1f1;
+}
+#T_2142a_row7_col1 {
+  background-color: #65b266;
+  color: #f1f1f1;
+}
+#T_2142a_row8_col1 {
+  background-color: #76bb66;
+  color: #f1f1f1;
+}
+#T_2142a_row9_col1 {
+  background-color: #84c266;
   color: #000000;
 }
-#T_0ebd8_row22_col1 {
-  background-color: #6ab466;
+#T_2142a_row10_col1 {
+  background-color: #81c066;
+  color: #000000;
+}
+#T_2142a_row11_col1 {
+  background-color: #54aa66;
   color: #f1f1f1;
 }
-#T_0ebd8_row23_col1 {
-  background-color: #5bad66;
+#T_2142a_row12_col1 {
+  background-color: #4aa466;
   color: #f1f1f1;
 }
-#T_0ebd8_row24_col1 {
-  background-color: #349a66;
+#T_2142a_row13_col1 {
+  background-color: #5faf66;
   color: #f1f1f1;
 }
-#T_0ebd8_row25_col1 {
-  background-color: #6cb666;
+#T_2142a_row14_col1 {
+  background-color: #4ba566;
   color: #f1f1f1;
 }
-#T_0ebd8_row26_col1 {
-  background-color: #0e8666;
+#T_2142a_row16_col1 {
+  background-color: #a7d366;
+  color: #000000;
+}
+#T_2142a_row17_col1 {
+  background-color: #ddee66;
+  color: #000000;
+}
+#T_2142a_row18_col1 {
+  background-color: #ffff66;
+  color: #000000;
+}
+#T_2142a_row19_col1 {
+  background-color: #c2e066;
+  color: #000000;
+}
+#T_2142a_row20_col1 {
+  background-color: #309866;
+  color: #f1f1f1;
+}
+#T_2142a_row21_col1, #T_2142a_row24_col1 {
+  background-color: #299466;
+  color: #f1f1f1;
+}
+#T_2142a_row22_col1 {
+  background-color: #239166;
+  color: #f1f1f1;
+}
+#T_2142a_row23_col1 {
+  background-color: #148a66;
+  color: #f1f1f1;
+}
+#T_2142a_row25_col1 {
+  background-color: #058266;
   color: #f1f1f1;
 }
 </style>
-<table id="T_0ebd8_">
+<table id="T_2142a_">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
@@ -1771,139 +1756,134 @@ Filtering the Dataframe to exclude Sundays.</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_0ebd8_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_0ebd8_row0_col0" class="data row0 col0" >Wednesday</td>
-      <td id="T_0ebd8_row0_col1" class="data row0 col1" >3.115250</td>
+      <th id="T_2142a_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_2142a_row0_col0" class="data row0 col0" >Wednesday</td>
+      <td id="T_2142a_row0_col1" class="data row0 col1" >3.115250</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_0ebd8_row1_col0" class="data row1 col0" >Wednesday</td>
-      <td id="T_0ebd8_row1_col1" class="data row1 col1" >3.136660</td>
+      <th id="T_2142a_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_2142a_row1_col0" class="data row1 col0" >Wednesday</td>
+      <td id="T_2142a_row1_col1" class="data row1 col1" >3.136660</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_0ebd8_row2_col0" class="data row2 col0" >Wednesday</td>
-      <td id="T_0ebd8_row2_col1" class="data row2 col1" >3.140750</td>
+      <th id="T_2142a_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_2142a_row2_col0" class="data row2 col0" >Wednesday</td>
+      <td id="T_2142a_row2_col1" class="data row2 col1" >3.140750</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_0ebd8_row3_col0" class="data row3 col0" >Wednesday</td>
-      <td id="T_0ebd8_row3_col1" class="data row3 col1" >3.188560</td>
+      <th id="T_2142a_level0_row3" class="row_heading level0 row3" >4</th>
+      <td id="T_2142a_row3_col0" class="data row3 col0" >Wednesday</td>
+      <td id="T_2142a_row3_col1" class="data row3 col1" >3.207520</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row4" class="row_heading level0 row4" >30</th>
-      <td id="T_0ebd8_row4_col0" class="data row4 col0" >Friday</td>
-      <td id="T_0ebd8_row4_col1" class="data row4 col1" >3.223030</td>
+      <th id="T_2142a_level0_row4" class="row_heading level0 row4" >5</th>
+      <td id="T_2142a_row4_col0" class="data row4 col0" >Wednesday</td>
+      <td id="T_2142a_row4_col1" class="data row4 col1" >3.206050</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row5" class="row_heading level0 row5" >31</th>
-      <td id="T_0ebd8_row5_col0" class="data row5 col0" >Wednesday</td>
-      <td id="T_0ebd8_row5_col1" class="data row5 col1" >3.226110</td>
+      <th id="T_2142a_level0_row5" class="row_heading level0 row5" >6</th>
+      <td id="T_2142a_row5_col0" class="data row5 col0" >Wednesday</td>
+      <td id="T_2142a_row5_col1" class="data row5 col1" >3.251370</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row6" class="row_heading level0 row6" >32</th>
-      <td id="T_0ebd8_row6_col0" class="data row6 col0" >Wednesday</td>
-      <td id="T_0ebd8_row6_col1" class="data row6 col1" >3.231880</td>
+      <th id="T_2142a_level0_row6" class="row_heading level0 row6" >7</th>
+      <td id="T_2142a_row6_col0" class="data row6 col0" >Wednesday</td>
+      <td id="T_2142a_row6_col1" class="data row6 col1" >3.262140</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row7" class="row_heading level0 row7" >33</th>
-      <td id="T_0ebd8_row7_col0" class="data row7 col0" >Wednesday</td>
-      <td id="T_0ebd8_row7_col1" class="data row7 col1" >3.250010</td>
+      <th id="T_2142a_level0_row7" class="row_heading level0 row7" >8</th>
+      <td id="T_2142a_row7_col0" class="data row7 col0" >Wednesday</td>
+      <td id="T_2142a_row7_col1" class="data row7 col1" >3.253240</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row8" class="row_heading level0 row8" >34</th>
-      <td id="T_0ebd8_row8_col0" class="data row8 col0" >Wednesday</td>
-      <td id="T_0ebd8_row8_col1" class="data row8 col1" >3.226620</td>
+      <th id="T_2142a_level0_row8" class="row_heading level0 row8" >9</th>
+      <td id="T_2142a_row8_col0" class="data row8 col0" >Wednesday</td>
+      <td id="T_2142a_row8_col1" class="data row8 col1" >3.276830</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row9" class="row_heading level0 row9" >35</th>
-      <td id="T_0ebd8_row9_col0" class="data row9 col0" >Wednesday</td>
-      <td id="T_0ebd8_row9_col1" class="data row9 col1" >3.216950</td>
+      <th id="T_2142a_level0_row9" class="row_heading level0 row9" >10</th>
+      <td id="T_2142a_row9_col0" class="data row9 col0" >Wednesday</td>
+      <td id="T_2142a_row9_col1" class="data row9 col1" >3.295400</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row10" class="row_heading level0 row10" >36</th>
-      <td id="T_0ebd8_row10_col0" class="data row10 col0" >Wednesday</td>
-      <td id="T_0ebd8_row10_col1" class="data row10 col1" >3.206780</td>
+      <th id="T_2142a_level0_row10" class="row_heading level0 row10" >11</th>
+      <td id="T_2142a_row10_col0" class="data row10 col0" >Wednesday</td>
+      <td id="T_2142a_row10_col1" class="data row10 col1" >3.291900</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row11" class="row_heading level0 row11" >37</th>
-      <td id="T_0ebd8_row11_col0" class="data row11 col0" >Wednesday</td>
-      <td id="T_0ebd8_row11_col1" class="data row11 col1" >3.216150</td>
+      <th id="T_2142a_level0_row11" class="row_heading level0 row11" >12</th>
+      <td id="T_2142a_row11_col0" class="data row11 col0" >Wednesday</td>
+      <td id="T_2142a_row11_col1" class="data row11 col1" >3.230900</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row12" class="row_heading level0 row12" >38</th>
-      <td id="T_0ebd8_row12_col0" class="data row12 col0" >Wednesday</td>
-      <td id="T_0ebd8_row12_col1" class="data row12 col1" >3.212520</td>
+      <th id="T_2142a_level0_row12" class="row_heading level0 row12" >13</th>
+      <td id="T_2142a_row12_col0" class="data row12 col0" >Wednesday</td>
+      <td id="T_2142a_row12_col1" class="data row12 col1" >3.216810</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row13" class="row_heading level0 row13" >39</th>
-      <td id="T_0ebd8_row13_col0" class="data row13 col0" >Wednesday</td>
-      <td id="T_0ebd8_row13_col1" class="data row13 col1" >3.228600</td>
+      <th id="T_2142a_level0_row13" class="row_heading level0 row13" >14</th>
+      <td id="T_2142a_row13_col0" class="data row13 col0" >Wednesday</td>
+      <td id="T_2142a_row13_col1" class="data row13 col1" >3.245360</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row14" class="row_heading level0 row14" >40</th>
-      <td id="T_0ebd8_row14_col0" class="data row14 col0" >Wednesday</td>
-      <td id="T_0ebd8_row14_col1" class="data row14 col1" >3.235110</td>
+      <th id="T_2142a_level0_row14" class="row_heading level0 row14" >15</th>
+      <td id="T_2142a_row14_col0" class="data row14 col0" >Wednesday</td>
+      <td id="T_2142a_row14_col1" class="data row14 col1" >3.218350</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row15" class="row_heading level0 row15" >41</th>
-      <td id="T_0ebd8_row15_col0" class="data row15 col0" >Wednesday</td>
-      <td id="T_0ebd8_row15_col1" class="data row15 col1" >3.236410</td>
+      <th id="T_2142a_level0_row15" class="row_heading level0 row15" >16</th>
+      <td id="T_2142a_row15_col0" class="data row15 col0" >Wednesday</td>
+      <td id="T_2142a_row15_col1" class="data row15 col1" >3.251140</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row16" class="row_heading level0 row16" >42</th>
-      <td id="T_0ebd8_row16_col0" class="data row16 col0" >Wednesday</td>
-      <td id="T_0ebd8_row16_col1" class="data row16 col1" >3.216550</td>
+      <th id="T_2142a_level0_row16" class="row_heading level0 row16" >17</th>
+      <td id="T_2142a_row16_col0" class="data row16 col0" >Wednesday</td>
+      <td id="T_2142a_row16_col1" class="data row16 col1" >3.343850</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row17" class="row_heading level0 row17" >43</th>
-      <td id="T_0ebd8_row17_col0" class="data row17 col0" >Wednesday</td>
-      <td id="T_0ebd8_row17_col1" class="data row17 col1" >3.201460</td>
+      <th id="T_2142a_level0_row17" class="row_heading level0 row17" >18</th>
+      <td id="T_2142a_row17_col0" class="data row17 col0" >Wednesday</td>
+      <td id="T_2142a_row17_col1" class="data row17 col1" >3.417140</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row18" class="row_heading level0 row18" >44</th>
-      <td id="T_0ebd8_row18_col0" class="data row18 col0" >Wednesday</td>
-      <td id="T_0ebd8_row18_col1" class="data row18 col1" >3.138260</td>
+      <th id="T_2142a_level0_row18" class="row_heading level0 row18" >19</th>
+      <td id="T_2142a_row18_col0" class="data row18 col0" >Wednesday</td>
+      <td id="T_2142a_row18_col1" class="data row18 col1" >3.464200</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row19" class="row_heading level0 row19" >45</th>
-      <td id="T_0ebd8_row19_col0" class="data row19 col0" >Wednesday</td>
-      <td id="T_0ebd8_row19_col1" class="data row19 col1" >3.125190</td>
+      <th id="T_2142a_level0_row19" class="row_heading level0 row19" >20</th>
+      <td id="T_2142a_row19_col0" class="data row19 col0" >Wednesday</td>
+      <td id="T_2142a_row19_col1" class="data row19 col1" >3.380420</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row20" class="row_heading level0 row20" >46</th>
-      <td id="T_0ebd8_row20_col0" class="data row20 col0" >Wednesday</td>
-      <td id="T_0ebd8_row20_col1" class="data row20 col1" >3.117110</td>
+      <th id="T_2142a_level0_row20" class="row_heading level0 row20" >47</th>
+      <td id="T_2142a_row20_col0" class="data row20 col0" >Wednesday</td>
+      <td id="T_2142a_row20_col1" class="data row20 col1" >3.181760</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row21" class="row_heading level0 row21" >47</th>
-      <td id="T_0ebd8_row21_col0" class="data row21 col0" >Wednesday</td>
-      <td id="T_0ebd8_row21_col1" class="data row21 col1" >3.181760</td>
+      <th id="T_2142a_level0_row21" class="row_heading level0 row21" >48</th>
+      <td id="T_2142a_row21_col0" class="data row21 col0" >Wednesday</td>
+      <td id="T_2142a_row21_col1" class="data row21 col1" >3.171570</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row22" class="row_heading level0 row22" >48</th>
-      <td id="T_0ebd8_row22_col0" class="data row22 col0" >Wednesday</td>
-      <td id="T_0ebd8_row22_col1" class="data row22 col1" >3.171570</td>
+      <th id="T_2142a_level0_row22" class="row_heading level0 row22" >49</th>
+      <td id="T_2142a_row22_col0" class="data row22 col0" >Wednesday</td>
+      <td id="T_2142a_row22_col1" class="data row22 col1" >3.163360</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row23" class="row_heading level0 row23" >49</th>
-      <td id="T_0ebd8_row23_col0" class="data row23 col0" >Wednesday</td>
-      <td id="T_0ebd8_row23_col1" class="data row23 col1" >3.163360</td>
+      <th id="T_2142a_level0_row23" class="row_heading level0 row23" >50</th>
+      <td id="T_2142a_row23_col0" class="data row23 col0" >Wednesday</td>
+      <td id="T_2142a_row23_col1" class="data row23 col1" >3.143060</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row24" class="row_heading level0 row24" >50</th>
-      <td id="T_0ebd8_row24_col0" class="data row24 col0" >Wednesday</td>
-      <td id="T_0ebd8_row24_col1" class="data row24 col1" >3.143060</td>
+      <th id="T_2142a_level0_row24" class="row_heading level0 row24" >51</th>
+      <td id="T_2142a_row24_col0" class="data row24 col0" >Wednesday</td>
+      <td id="T_2142a_row24_col1" class="data row24 col1" >3.172170</td>
     </tr>
     <tr>
-      <th id="T_0ebd8_level0_row25" class="row_heading level0 row25" >51</th>
-      <td id="T_0ebd8_row25_col0" class="data row25 col0" >Wednesday</td>
-      <td id="T_0ebd8_row25_col1" class="data row25 col1" >3.172170</td>
-    </tr>
-    <tr>
-      <th id="T_0ebd8_level0_row26" class="row_heading level0 row26" >52</th>
-      <td id="T_0ebd8_row26_col0" class="data row26 col0" >Wednesday</td>
-      <td id="T_0ebd8_row26_col1" class="data row26 col1" >3.123020</td>
+      <th id="T_2142a_level0_row25" class="row_heading level0 row25" >52</th>
+      <td id="T_2142a_row25_col0" class="data row25 col0" >Wednesday</td>
+      <td id="T_2142a_row25_col1" class="data row25 col1" >3.123020</td>
     </tr>
   </tbody>
 </table>
@@ -1925,108 +1905,100 @@ Filtering the Dataframe to exclude Sundays.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_00419_row0_col1, #T_00419_row23_col1 {
-  background-color: #219066;
+#T_86b65_row0_col1, #T_86b65_row22_col1 {
+  background-color: #028066;
   color: #f1f1f1;
 }
-#T_00419_row1_col1 {
-  background-color: #2d9666;
+#T_86b65_row1_col1 {
+  background-color: #088466;
   color: #f1f1f1;
 }
-#T_00419_row2_col1 {
-  background-color: #399c66;
+#T_86b65_row2_col1 {
+  background-color: #0e8666;
   color: #f1f1f1;
 }
-#T_00419_row3_col1 {
-  background-color: #a3d166;
+#T_86b65_row3_col1 {
+  background-color: #44a266;
+  color: #f1f1f1;
+}
+#T_86b65_row4_col1 {
+  background-color: #3c9e66;
+  color: #f1f1f1;
+}
+#T_86b65_row5_col1 {
+  background-color: #54aa66;
+  color: #f1f1f1;
+}
+#T_86b65_row6_col1 {
+  background-color: #4fa766;
+  color: #f1f1f1;
+}
+#T_86b65_row7_col1 {
+  background-color: #6db666;
+  color: #f1f1f1;
+}
+#T_86b65_row8_col1 {
+  background-color: #61b066;
+  color: #f1f1f1;
+}
+#T_86b65_row9_col1 {
+  background-color: #83c166;
   color: #000000;
 }
-#T_00419_row4_col1 {
-  background-color: #f3f966;
+#T_86b65_row10_col1 {
+  background-color: #79bc66;
   color: #000000;
 }
-#T_00419_row5_col1 {
-  background-color: #e0f066;
+#T_86b65_row11_col1, #T_86b65_row13_col1 {
+  background-color: #64b266;
+  color: #f1f1f1;
+}
+#T_86b65_row12_col1 {
+  background-color: #4ba566;
+  color: #f1f1f1;
+}
+#T_86b65_row14_col1 {
+  background-color: #5eae66;
+  color: #f1f1f1;
+}
+#T_86b65_row15_col1 {
+  background-color: #6bb566;
+  color: #f1f1f1;
+}
+#T_86b65_row16_col1 {
+  background-color: #a6d266;
   color: #000000;
 }
-#T_00419_row6_col1 {
-  background-color: #e5f266;
+#T_86b65_row17_col1 {
+  background-color: #dcee66;
   color: #000000;
 }
-#T_00419_row7_col1 {
+#T_86b65_row18_col1 {
   background-color: #ffff66;
   color: #000000;
 }
-#T_00419_row8_col1 {
-  background-color: #e3f166;
+#T_86b65_row19_col1 {
+  background-color: #d0e866;
   color: #000000;
 }
-#T_00419_row9_col1 {
-  background-color: #cfe766;
-  color: #000000;
-}
-#T_00419_row10_col1 {
-  background-color: #cee666;
-  color: #000000;
-}
-#T_00419_row11_col1 {
-  background-color: #d7eb66;
-  color: #000000;
-}
-#T_00419_row12_col1 {
-  background-color: #c8e366;
-  color: #000000;
-}
-#T_00419_row13_col1 {
-  background-color: #d1e866;
-  color: #000000;
-}
-#T_00419_row14_col1 {
-  background-color: #f4fa66;
-  color: #000000;
-}
-#T_00419_row15_col1 {
-  background-color: #eef666;
-  color: #000000;
-}
-#T_00419_row16_col1 {
-  background-color: #d8ec66;
-  color: #000000;
-}
-#T_00419_row17_col1 {
-  background-color: #90c866;
-  color: #000000;
-}
-#T_00419_row18_col1 {
-  background-color: #369a66;
-  color: #f1f1f1;
-}
-#T_00419_row19_col1 {
-  background-color: #379b66;
-  color: #f1f1f1;
-}
-#T_00419_row20_col1 {
+#T_86b65_row20_col1, #T_86b65_row23_col1 {
   background-color: #008066;
   color: #f1f1f1;
 }
-#T_00419_row21_col1, #T_00419_row24_col1 {
-  background-color: #1c8e66;
+#T_86b65_row21_col1 {
+  background-color: #209066;
   color: #f1f1f1;
 }
-#T_00419_row22_col1 {
-  background-color: #5cae66;
+#T_86b65_row24_col1 {
+  background-color: #2e9666;
   color: #f1f1f1;
 }
-#T_00419_row25_col1 {
-  background-color: #78bc66;
-  color: #f1f1f1;
-}
-#T_00419_row26_col1 {
-  background-color: #2a9466;
+#T_86b65_row25_col1 {
+  background-color: #078366;
   color: #f1f1f1;
 }
 </style>
-<table id="T_00419_">
+<table id="T_86b65_">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
@@ -2041,139 +2013,134 @@ Filtering the Dataframe to exclude Sundays.</p>
   </thead>
   <tbody>
     <tr>
-      <th id="T_00419_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_00419_row0_col0" class="data row0 col0" >Friday</td>
-      <td id="T_00419_row0_col1" class="data row0 col1" >3.094070</td>
+      <th id="T_86b65_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_86b65_row0_col0" class="data row0 col0" >Friday</td>
+      <td id="T_86b65_row0_col1" class="data row0 col1" >3.094070</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_00419_row1_col0" class="data row1 col0" >Friday</td>
-      <td id="T_00419_row1_col1" class="data row1 col1" >3.101660</td>
+      <th id="T_86b65_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_86b65_row1_col0" class="data row1 col0" >Friday</td>
+      <td id="T_86b65_row1_col1" class="data row1 col1" >3.101660</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_00419_row2_col0" class="data row2 col0" >Friday</td>
-      <td id="T_00419_row2_col1" class="data row2 col1" >3.108650</td>
+      <th id="T_86b65_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_86b65_row2_col0" class="data row2 col0" >Friday</td>
+      <td id="T_86b65_row2_col1" class="data row2 col1" >3.108650</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_00419_row3_col0" class="data row3 col0" >Monday</td>
-      <td id="T_00419_row3_col1" class="data row3 col1" >3.174190</td>
+      <th id="T_86b65_level0_row3" class="row_heading level0 row3" >4</th>
+      <td id="T_86b65_row3_col0" class="data row3 col0" >Friday</td>
+      <td id="T_86b65_row3_col1" class="data row3 col1" >3.174190</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row4" class="row_heading level0 row4" >30</th>
-      <td id="T_00419_row4_col0" class="data row4 col0" >Friday</td>
-      <td id="T_00419_row4_col1" class="data row4 col1" >3.223030</td>
+      <th id="T_86b65_level0_row4" class="row_heading level0 row4" >5</th>
+      <td id="T_86b65_row4_col0" class="data row4 col0" >Friday</td>
+      <td id="T_86b65_row4_col1" class="data row4 col1" >3.163880</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row5" class="row_heading level0 row5" >31</th>
-      <td id="T_00419_row5_col0" class="data row5 col0" >Friday</td>
-      <td id="T_00419_row5_col1" class="data row5 col1" >3.211620</td>
+      <th id="T_86b65_level0_row5" class="row_heading level0 row5" >6</th>
+      <td id="T_86b65_row5_col0" class="data row5 col0" >Friday</td>
+      <td id="T_86b65_row5_col1" class="data row5 col1" >3.193020</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row6" class="row_heading level0 row6" >32</th>
-      <td id="T_00419_row6_col0" class="data row6 col0" >Friday</td>
-      <td id="T_00419_row6_col1" class="data row6 col1" >3.214420</td>
+      <th id="T_86b65_level0_row6" class="row_heading level0 row6" >7</th>
+      <td id="T_86b65_row6_col0" class="data row6 col0" >Friday</td>
+      <td id="T_86b65_row6_col1" class="data row6 col1" >3.187010</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row7" class="row_heading level0 row7" >33</th>
-      <td id="T_00419_row7_col0" class="data row7 col0" >Friday</td>
-      <td id="T_00419_row7_col1" class="data row7 col1" >3.230950</td>
+      <th id="T_86b65_level0_row7" class="row_heading level0 row7" >8</th>
+      <td id="T_86b65_row7_col0" class="data row7 col0" >Friday</td>
+      <td id="T_86b65_row7_col1" class="data row7 col1" >3.223520</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row8" class="row_heading level0 row8" >34</th>
-      <td id="T_00419_row8_col0" class="data row8 col0" >Friday</td>
-      <td id="T_00419_row8_col1" class="data row8 col1" >3.213500</td>
+      <th id="T_86b65_level0_row8" class="row_heading level0 row8" >9</th>
+      <td id="T_86b65_row8_col0" class="data row8 col0" >Friday</td>
+      <td id="T_86b65_row8_col1" class="data row8 col1" >3.208720</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row9" class="row_heading level0 row9" >35</th>
-      <td id="T_00419_row9_col0" class="data row9 col0" >Friday</td>
-      <td id="T_00419_row9_col1" class="data row9 col1" >3.201020</td>
+      <th id="T_86b65_level0_row9" class="row_heading level0 row9" >10</th>
+      <td id="T_86b65_row9_col0" class="data row9 col0" >Friday</td>
+      <td id="T_86b65_row9_col1" class="data row9 col1" >3.250110</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row10" class="row_heading level0 row10" >36</th>
-      <td id="T_00419_row10_col0" class="data row10 col0" >Friday</td>
-      <td id="T_00419_row10_col1" class="data row10 col1" >3.200490</td>
+      <th id="T_86b65_level0_row10" class="row_heading level0 row10" >11</th>
+      <td id="T_86b65_row10_col0" class="data row10 col0" >Friday</td>
+      <td id="T_86b65_row10_col1" class="data row10 col1" >3.238470</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row11" class="row_heading level0 row11" >37</th>
-      <td id="T_00419_row11_col0" class="data row11 col0" >Friday</td>
-      <td id="T_00419_row11_col1" class="data row11 col1" >3.206100</td>
+      <th id="T_86b65_level0_row11" class="row_heading level0 row11" >12</th>
+      <td id="T_86b65_row11_col0" class="data row11 col0" >Friday</td>
+      <td id="T_86b65_row11_col1" class="data row11 col1" >3.212440</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row12" class="row_heading level0 row12" >38</th>
-      <td id="T_00419_row12_col0" class="data row12 col0" >Friday</td>
-      <td id="T_00419_row12_col1" class="data row12 col1" >3.196930</td>
+      <th id="T_86b65_level0_row12" class="row_heading level0 row12" >13</th>
+      <td id="T_86b65_row12_col0" class="data row12 col0" >Friday</td>
+      <td id="T_86b65_row12_col1" class="data row12 col1" >3.182330</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row13" class="row_heading level0 row13" >39</th>
-      <td id="T_00419_row13_col0" class="data row13 col0" >Friday</td>
-      <td id="T_00419_row13_col1" class="data row13 col1" >3.202280</td>
+      <th id="T_86b65_level0_row13" class="row_heading level0 row13" >14</th>
+      <td id="T_86b65_row13_col0" class="data row13 col0" >Friday</td>
+      <td id="T_86b65_row13_col1" class="data row13 col1" >3.213450</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row14" class="row_heading level0 row14" >40</th>
-      <td id="T_00419_row14_col0" class="data row14 col0" >Friday</td>
-      <td id="T_00419_row14_col1" class="data row14 col1" >3.223680</td>
+      <th id="T_86b65_level0_row14" class="row_heading level0 row14" >15</th>
+      <td id="T_86b65_row14_col0" class="data row14 col0" >Friday</td>
+      <td id="T_86b65_row14_col1" class="data row14 col1" >3.205370</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row15" class="row_heading level0 row15" >41</th>
-      <td id="T_00419_row15_col0" class="data row15 col0" >Friday</td>
-      <td id="T_00419_row15_col1" class="data row15 col1" >3.220030</td>
+      <th id="T_86b65_level0_row15" class="row_heading level0 row15" >16</th>
+      <td id="T_86b65_row15_col0" class="data row15 col0" >Friday</td>
+      <td id="T_86b65_row15_col1" class="data row15 col1" >3.221920</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row16" class="row_heading level0 row16" >42</th>
-      <td id="T_00419_row16_col0" class="data row16 col0" >Friday</td>
-      <td id="T_00419_row16_col1" class="data row16 col1" >3.206570</td>
+      <th id="T_86b65_level0_row16" class="row_heading level0 row16" >17</th>
+      <td id="T_86b65_row16_col0" class="data row16 col0" >Friday</td>
+      <td id="T_86b65_row16_col1" class="data row16 col1" >3.292740</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row17" class="row_heading level0 row17" >43</th>
-      <td id="T_00419_row17_col0" class="data row17 col0" >Friday</td>
-      <td id="T_00419_row17_col1" class="data row17 col1" >3.162350</td>
+      <th id="T_86b65_level0_row17" class="row_heading level0 row17" >18</th>
+      <td id="T_86b65_row17_col0" class="data row17 col0" >Friday</td>
+      <td id="T_86b65_row17_col1" class="data row17 col1" >3.358250</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row18" class="row_heading level0 row18" >44</th>
-      <td id="T_00419_row18_col0" class="data row18 col0" >Friday</td>
-      <td id="T_00419_row18_col1" class="data row18 col1" >3.106930</td>
+      <th id="T_86b65_level0_row18" class="row_heading level0 row18" >19</th>
+      <td id="T_86b65_row18_col0" class="data row18 col0" >Friday</td>
+      <td id="T_86b65_row18_col1" class="data row18 col1" >3.401920</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row19" class="row_heading level0 row19" >45</th>
-      <td id="T_00419_row19_col0" class="data row19 col0" >Friday</td>
-      <td id="T_00419_row19_col1" class="data row19 col1" >3.107230</td>
+      <th id="T_86b65_level0_row19" class="row_heading level0 row19" >20</th>
+      <td id="T_86b65_row19_col0" class="data row19 col0" >Friday</td>
+      <td id="T_86b65_row19_col1" class="data row19 col1" >3.344710</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row20" class="row_heading level0 row20" >46</th>
-      <td id="T_00419_row20_col0" class="data row20 col0" >Friday</td>
-      <td id="T_00419_row20_col1" class="data row20 col1" >3.073350</td>
+      <th id="T_86b65_level0_row20" class="row_heading level0 row20" >47</th>
+      <td id="T_86b65_row20_col0" class="data row20 col0" >Friday</td>
+      <td id="T_86b65_row20_col1" class="data row20 col1" >3.090720</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row21" class="row_heading level0 row21" >47</th>
-      <td id="T_00419_row21_col0" class="data row21 col0" >Friday</td>
-      <td id="T_00419_row21_col1" class="data row21 col1" >3.090720</td>
+      <th id="T_86b65_level0_row21" class="row_heading level0 row21" >48</th>
+      <td id="T_86b65_row21_col0" class="data row21 col0" >Friday</td>
+      <td id="T_86b65_row21_col1" class="data row21 col1" >3.130300</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row22" class="row_heading level0 row22" >48</th>
-      <td id="T_00419_row22_col0" class="data row22 col0" >Friday</td>
-      <td id="T_00419_row22_col1" class="data row22 col1" >3.130300</td>
+      <th id="T_86b65_level0_row22" class="row_heading level0 row22" >49</th>
+      <td id="T_86b65_row22_col0" class="data row22 col0" >Friday</td>
+      <td id="T_86b65_row22_col1" class="data row22 col1" >3.094200</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row23" class="row_heading level0 row23" >49</th>
-      <td id="T_00419_row23_col0" class="data row23 col0" >Friday</td>
-      <td id="T_00419_row23_col1" class="data row23 col1" >3.094200</td>
+      <th id="T_86b65_level0_row23" class="row_heading level0 row23" >50</th>
+      <td id="T_86b65_row23_col0" class="data row23 col0" >Friday</td>
+      <td id="T_86b65_row23_col1" class="data row23 col1" >3.090750</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row24" class="row_heading level0 row24" >50</th>
-      <td id="T_00419_row24_col0" class="data row24 col0" >Friday</td>
-      <td id="T_00419_row24_col1" class="data row24 col1" >3.090750</td>
+      <th id="T_86b65_level0_row24" class="row_heading level0 row24" >51</th>
+      <td id="T_86b65_row24_col0" class="data row24 col0" >Friday</td>
+      <td id="T_86b65_row24_col1" class="data row24 col1" >3.147230</td>
     </tr>
     <tr>
-      <th id="T_00419_level0_row25" class="row_heading level0 row25" >51</th>
-      <td id="T_00419_row25_col0" class="data row25 col0" >Friday</td>
-      <td id="T_00419_row25_col1" class="data row25 col1" >3.147230</td>
-    </tr>
-    <tr>
-      <th id="T_00419_level0_row26" class="row_heading level0 row26" >52</th>
-      <td id="T_00419_row26_col0" class="data row26 col0" >Friday</td>
-      <td id="T_00419_row26_col1" class="data row26 col1" >3.099640</td>
+      <th id="T_86b65_level0_row25" class="row_heading level0 row25" >52</th>
+      <td id="T_86b65_row25_col0" class="data row25 col0" >Friday</td>
+      <td id="T_86b65_row25_col1" class="data row25 col1" >3.099640</td>
     </tr>
   </tbody>
 </table>
