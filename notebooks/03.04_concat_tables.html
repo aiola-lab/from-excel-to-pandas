@@ -308,6 +308,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concatinate-the-rounds-scores-together">
+   Concatinate the rounds scores together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-standing-table">
    Building Standing Table
   </a>
@@ -340,6 +345,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concatinate-multuple-tables">
    Concatinate multuple tables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concatinate-the-rounds-scores-together">
+   Concatinate the rounds scores together
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -403,6 +413,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>As you can see in the <a class="reference external" href="https://www.worldfootball.net/schedule/eng-premier-league-2020-2021-spieltag/1/">web site</a>, the format of the table is simple, and we can parse it with:</p>
+<ul class="simple">
+<li><p>Take the second (index of 1) on the web site</p></li>
+<li><p>Keep only the columns 2, 4, 5</p></li>
+<li><p>Rename the columns to reflect the names of the teams and the score</p></li>
+<li><p>Parse the score with the first (index of 0) character is the number of goals of the home team</p></li>
+<li><p>and the third (index of 2) character is the number of goals of the away team</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -534,7 +552,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="concatinate-multuple-tables">
 <h2>Concatinate multuple tables<a class="headerlink" href="#concatinate-multuple-tables" title="Permalink to this headline">¶</a></h2>
-<p>We want to concatinate the scores of multiple rounds</p>
+<p>We want to concatinate the scores of multiple rounds. Using a for-loop we will load the results of each round and add them to a list of rounds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">round_tables</span> <span class="o">=</span> <span class="p">[]</span>
@@ -564,6 +582,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="concatinate-the-rounds-scores-together">
+<h2>Concatinate the rounds scores together<a class="headerlink" href="#concatinate-the-rounds-scores-together" title="Permalink to this headline">¶</a></h2>
+<p>In Excel it is not easy to stitch multiple tables together into a single larger table. Nevertheless, with Pandas it is easy, as we can see in the following example:</p>
+<ul class="simple">
+<li><p>Concatinate the list of round scores</p></li>
+<li><p>Calculate the number of points of the home team (3 for a win, 1 for a draw)</p></li>
+<li><p>Calculate the number of points of the away team</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1038,7 +1065,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="building-standing-table">
 <h2>Building Standing Table<a class="headerlink" href="#building-standing-table" title="Permalink to this headline">¶</a></h2>
-<p>We will take the socres and calculate the standing table based on this scores.</p>
+<p>We will <code class="docutils literal notranslate"><span class="pre">concat</span></code> again on the socres and calculate the standing table based on these scores.</p>
+<ul class="simple">
+<li><p>We will concatinate the following two tables</p></li>
+<li><p>First, we will calculate the games, points, and goals for the home teams</p></li>
+<li><p>Second, we will repeat the process for the away teams</p></li>
+<li><p>Next, we will sum the values from the two tables for each team</p></li>
+<li><p>Calculate the goal difference that is used as tie breaker in case of equal points</p></li>
+<li><p>Sort by the number of points and the goal difference</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
