@@ -380,7 +380,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="loading-raw-table-data">
 <h2>Loading raw table data<a class="headerlink" href="#loading-raw-table-data" title="Permalink to this headline">¶</a></h2>
-<p>For this example, we will take an example of score table from one of the sports in the US, and calculate the standing table of that league using the league rules for points and rankings.</p>
+<p>For this example, we will take an example of score table from Premier League in the UK, and calculate the standing table of that league using the league rules for points and rankings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.worldfootball.net/schedule/eng-premier-league-2020-2021-spieltag/1/&#39;</span>
@@ -415,11 +415,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>As you can see in the <a class="reference external" href="https://www.worldfootball.net/schedule/eng-premier-league-2020-2021-spieltag/1/">web site</a>, the format of the table is simple, and we can parse it with:</p>
 <ul class="simple">
-<li><p>Take the second (index of 1) on the web site</p></li>
+<li><p>Take the second (index of 1) HTML table on the web site</p></li>
 <li><p>Keep only the columns 2, 4, 5</p></li>
-<li><p>Rename the columns to reflect the names of the teams and the score</p></li>
-<li><p>Parse the score with the first (index of 0) character is the number of goals of the home team</p></li>
-<li><p>and the third (index of 2) character is the number of goals of the away team</p></li>
+<li><p>Rename the columns to reflect the names of the <strong>home</strong> and <strong>away</strong> teams and the score</p></li>
+<li><p>Parse the score with the first (index of 0) character is the number of goals of the <strong>home</strong> team</p></li>
+<li><p>and the third (index of 2) character is the number of goals of the <strong>away</strong> team</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1068,9 +1068,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>We will <code class="docutils literal notranslate"><span class="pre">concat</span></code> again on the socres and calculate the standing table based on these scores.</p>
 <ul class="simple">
 <li><p>We will concatinate the following two tables</p></li>
-<li><p>First, we will calculate the games, points, and goals for the home teams</p></li>
-<li><p>Second, we will repeat the process for the away teams</p></li>
-<li><p>Next, we will sum the values from the two tables for each team</p></li>
+<li><p>First table, we will calculate the games, points, and goals for the <strong>home</strong> teams</p></li>
+<li><p>Second table, we will repeat the process for the <strong>away</strong> teams</p></li>
+<li><p>Next, we will <em>sum</em> the values from the two tables group-by each team</p></li>
 <li><p>Calculate the goal difference that is used as tie breaker in case of equal points</p></li>
 <li><p>Sort by the number of points and the goal difference</p></li>
 </ul>
